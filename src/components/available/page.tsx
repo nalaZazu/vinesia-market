@@ -1,15 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import bottlePic from "../../assets/image/image 25.png";
-import { BeakerIcon } from "@heroicons/react/24/solid";
 const Available = () => {
   return (
-    <div>
-      <h3>Available Soon</h3>
+    <div >
+      <h2 className="text-primary font-bold">Available Soon</h2>
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2 h-80">
-        <div className="bg-availableGray  flex justify-end items-end">
-          <div className="m-4">
-            <BeakerIcon className="h-6 w-6 text-blue-500" />
+        <div className="bg-availprimary  flex justify-end items-end">
+          <div className="m-2">
             <p className="font-bold">Text about drop</p>
             <p>Date</p>
           </div>
@@ -19,18 +17,21 @@ const Available = () => {
               alt="Picture of the author"
               width={150}
               height={150}
+              className="mb-3"
             />
             <Image
               src={bottlePic}
               alt="Picture of the author"
               width={150}
               height={150}
+              className="mb-3"
             />
             <Image
               src={bottlePic}
               alt="Picture of the author"
               width={150}
               height={150}
+              className="mb-3"
             />
           </div>
         </div>
@@ -39,12 +40,12 @@ const Available = () => {
           {/* <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Subscribe to our newsletter.
           </h2> */}
-          <p className="  text-lg leading-8  ">
+          <p className=" text-lg leading-8  font-bold w-9/12">
             Soon you will be able to invest in new wines. Sign up for the
             waiting list to get notified.
           </p>
           <div className="mt-6 flex max-w-md gap-x-4">
-            <label htmlFor="email-address" className="sr-only">
+            <label htmlFor="email-address" className="sr-only text-black">
               Email address
             </label>
             <input
@@ -57,7 +58,7 @@ const Available = () => {
               placeholder="placeholder"
             />
           </div>
-          <div className="relative flex gap-x-3">
+          <div className="relative flex gap-x-3 mt-6">
             <div className="flex h-6 items-center">
               <input
                 id="offers"
@@ -75,7 +76,7 @@ const Available = () => {
 
           <button
             type="submit"
-            className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+            className="flex-none mt-6 rounded-md bg-availsecondary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:availsecondary cursor-pointer"
           >
             Subscribe
           </button>
