@@ -1,12 +1,14 @@
 "use client";
 import Available from "@/components/available/page";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import Heritage from "@/components/heritage/page";
 
 export default function Home() {
   return (
     <>
-      <Available />
+      <div className="container mx-auto">
+        <Heritage />
+        <Available />
+      </div>
     </>
   );
 }

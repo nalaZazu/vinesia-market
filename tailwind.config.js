@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+
         availableGray: '#D9D9D9',
         themegray: '#F4F4F4',
         spacegray: '#41464b',
@@ -18,8 +19,14 @@ module.exports = {
       //   'gradient-conic':
       //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       // },
+
+        primary: "#41464B",
+        secondary: "#000000",
+        availprimary: "#D9D9D9",
+        availsecondary: "#6C757D",
+      },     
+
     },
   },
-  plugins: [
-  ],
+  plugins: [],
 };
