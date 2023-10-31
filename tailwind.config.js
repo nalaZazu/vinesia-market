@@ -8,23 +8,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-
-        availableGray: '#D9D9D9',
-        themegray: '#F4F4F4',
-        spacegray: '#41464b',
-      },
-      // backgroundImage: {
-      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      //   'gradient-conic':
-      //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      // },
-
+        themegray: "#F4F4F4",
+        spacegray: "#41464b",
+        /**market listing color  */
         primary: "#41464B",
         secondary: "#000000",
-        availprimary: "#D9D9D9",
-        availsecondary: "#6C757D",
-      },     
-
+        bgprimary: "#D9D9D9",
+        bgsecondary: "#6C757D",  
+      },      
     },
   },
   plugins: [],
