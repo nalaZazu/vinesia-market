@@ -12,6 +12,7 @@ module.exports = {
         availableGray: '#D9D9D9',
         themegray: '#F4F4F4',
         spacegray: '#41464b',
+        typegray: '#6C757D',
       },
       // backgroundImage: {
       //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
