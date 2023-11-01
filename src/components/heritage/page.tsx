@@ -3,10 +3,11 @@ import React from "react";
 import winbottle from "../../assets/image/Frame1.png";
 import backbg from "../../assets/image/bg.png";
 import alert from "../../assets/image/alert-circle.png";
+import HeritageTab from "../heritagetab/page";
 const Heritage = () => {
   return (
     <div className="py-16 sm:py-24">
-      <h1 className="text-primary font-bold">Invest in heritage</h1>
+      <h1 className="font-semibold text-primary leading-10 text-4xl">Invest in heritage</h1>
       <div className="mx-auto max-w-7xl px-4 py-8">
         <div className="mx-auto max-w-2xl  lg:max-w-none  ">
           {/* <div className="mt-6  grid lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0">
@@ -23,7 +24,7 @@ const Heritage = () => {
                     className="mb-3"
                   />
                   <h4 className=" font-semibold  text-base	leading-6">
-                    Brunello di Montalcino "Piaggione" | 2019
+                    Brunello di Montalcino {`"Piaggione"`} | 2019
                   </h4>
                   <p className="flex text-xs  items-center font-medium">
                     6 bottles collection{" "}
@@ -60,7 +61,7 @@ const Heritage = () => {
                     className="mb-3"
                   />
                   <h4 className=" font-semibold  text-base	leading-6">
-                    Brunello di Montalcino "Piaggione" | 2019
+                    Brunello di Montalcino {`"Piaggione"`} | 2019
                   </h4>
                   <p className="flex text-xs  items-center font-medium">
                     6 bottles collection{" "}
@@ -103,6 +104,7 @@ const Heritage = () => {
           </div>
         </div>
       </div>
+      {/* <HeritageTab/> */}
     </div>
   );
 };

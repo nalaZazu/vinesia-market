@@ -3,9 +3,9 @@ import React from "react";
 import bottlePic from "../../assets/image/image25.png";
 const Available = () => {
   return (
-    <div className="py-16 sm:py-24">
+    <div className=" ">
              
-      <h2 className="text-primary font-bold">Available Soon</h2>
+      <h1 className="font-semibold text-primary leading-10 text-4xl">Available Soon</h1>
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-4 gap-y-8 lg:max-w-none lg:grid-cols-2 h-80">
         <div className="bg-bgprimary  flex justify-end items-end">
           <div className="mb-8">
