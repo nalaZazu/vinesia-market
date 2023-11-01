@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "../../assets/img/Logo1.png";
 import arrowTray from "../../assets/icon/log-in.svg";
-
 import Image from "next/image";
 const Header = () => {
   return (

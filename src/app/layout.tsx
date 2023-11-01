@@ -2,9 +2,9 @@ import Header from '@/components/header/page';
 import './globals.css';
 import type { Metadata } from 'next'
 import Footer from '@/components/footer/page';
-// import { Inter } from 'next/font/google'
+import { Jost } from 'next/font/google'
 
-// const inter = Inter({ subsets: ['latin'] })
+const inter = Jost({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,12 +17,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <body>
         <Header/>
         {children}
         <Footer/>
         </body>
-    </html>
+    </html> 
   )
 }

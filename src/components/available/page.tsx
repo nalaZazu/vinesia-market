@@ -3,10 +3,11 @@ import React from "react";
 import bottlePic from "../../assets/image/image 25.png";
 const Available = () => {
   return (
-    <div >
+    <div className="py-16 sm:py-24">
+             
       <h2 className="text-primary font-bold">Available Soon</h2>
-      <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2 h-80">
-        <div className="bg-availprimary  flex justify-end items-end">
+      <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-4 gap-y-8 lg:max-w-none lg:grid-cols-2 h-80">
+        <div className="bg-bgprimary  flex justify-end items-end">
           <div className="m-2">
             <p className="font-bold">Text about drop</p>
             <p>Date</p>
@@ -76,7 +77,7 @@ const Available = () => {
 
           <button
             type="submit"
-            className="flex-none mt-6 rounded-md bg-availsecondary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:availsecondary cursor-pointer"
+            className="flex-none mt-6 rounded-md bg-bgsecondary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bgsecondary cursor-pointer"
           >
             Subscribe
           </button>
