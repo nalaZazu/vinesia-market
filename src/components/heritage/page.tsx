@@ -59,14 +59,13 @@ const Heritage = () => {
 
       <div className="mx-auto max-w-7xl px-4 py-8">
         <div className="mx-auto max-w-2xl  lg:max-w-none  ">
-
           <div className="mt-6  grid lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0">
             <div>
               <div>
                 <Slider {...sliderSettings}>
                   {[1, 2, 3, 4]?.map((p, i) => {
                     return (
-                      <div>
+                      <div key={i}>
                         <ProductCard />
                       </div>
                     );
