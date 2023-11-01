@@ -3,9 +3,13 @@
 
 export default class {
   static set = (key, value) =>
-    window.localStorage.setItem(key, JSON.stringify(value));
+    typeof window !== "undefined"
+      ? window.localStorage.setItem(key, JSON.stringify(value))
+      : null;
+
   static get = (key) => {
-    const t = window.localStorage.getItem(key);
+    const t =
+      typeof window !== "undefined" ? window.localStorage.getItem(key) : null;
     if (t === "undefined" || t === null) return "";
 
     if (t === "true" || t === "false" || typeof t === "boolean") return t;
@@ -17,7 +21,6 @@ export default class {
   static clear = () => {
     // let dispatch = useDispatch();
     // dispatch(logoutAction());
-
-    window.localStorage.clear();
+    typeof window !== "undefined" ? window.localStorage.clear() : null;
   };
 }
