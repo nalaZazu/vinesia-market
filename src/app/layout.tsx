@@ -3,7 +3,8 @@ import './globals.css';
 import type { Metadata } from 'next'
 import Footer from '@/components/footer/page';
 import { Jost } from 'next/font/google'
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const inter = Jost({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
