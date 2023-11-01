@@ -12,6 +12,7 @@ module.exports = {
         spacegray: "#41464b",
         bordergray: '#A0A6AC',
         tabsgray: '#C6C7C8',
+        bgbutton: '#842029',
         
         /**market listing color  */
 
