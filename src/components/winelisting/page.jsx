@@ -66,7 +66,7 @@ const Listing = () => {
                 );
               })}
           </div>
-          <div className="flex justify-center mt-8">
+          <div className="grid justify-center mt-8">
             <button className="py-2.5 px-4 bg-bgsecondary text-white rounded-lg text-center">
               Explore
             </button>

@@ -22,9 +22,7 @@ const Header = () => {
               src={logo}
               alt="Picture of the author"
               width={80}
-              height={80}
-              // blurDataURL="data:..." automatically provided
-              // placeholder="blur" // Optional blur-up while loading
+              height={80}    
             />
           </div>
 
@@ -55,9 +53,7 @@ const Header = () => {
               src={arrowTray}
               alt="Picture of the author"
               width={20}
-              height={20}
-              // blurDataURL="data:..." automatically provided
-              // placeholder="blur" // Optional blur-up while loading
+              height={20}      
             />
             <button>Sign Up / Login</button>
             <div className="flex items-center space-x-2">
