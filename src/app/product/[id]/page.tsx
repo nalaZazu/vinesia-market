@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import React, { useEffect, useState } from "react";
 import bottle from "../../../assets/icon/bottle.svg";
 import case1 from "../../../assets/icon/Case.svg";
 import redwine from "../../../assets/icon/redwine.svg";
@@ -10,16 +11,21 @@ import ownership from "../../../assets/icon/ownership.svg";
 import frame from "../../../assets/icon/Frame.svg";
 import playvideo from "../../../assets/icon/Playvideo.svg";
 import logo1 from "../../../assets/icon/logo1.svg";
+import infologo from "../../../assets/icon/info.svg";
+import pricehistory from "../../../assets/icon/pricehistory.svg";
+import { productlist } from "@/constants/winelist";
 
 import Link from "next/link";
 // import orange from "../style.module.css"
-import React, { useEffect, useState } from "react";
 import css from "styled-jsx/css";
 // client componet fetching
 
-function Product() {
+export default function Product() {
   const [show, setShow] = useState([]);
-
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+  const [isOpen, setIsOpen] = useState(false);
   const axiosCall = async () => {
     const data = await fetch("https://fakestoreapi.com/products");
     const reposne = data.json();
@@ -29,12 +35,13 @@ function Product() {
   useEffect(() => {
     axiosCall();
   }, []);
+
   // this is className base strcture of style base module
   // const {brown} = orange
   return (
     <div>
       <nav className="flex pt-5" aria-label="Breadcrumb">
-        <ol className="container mx-auto flex  items-center inline-flex  space-x-1 md:space-x-3">
+        <ol className="container mx-auto flex items-center space-x-1 md:space-x-3">
           <li className="inline-flex items-center">
             <a
               href="#"
@@ -174,7 +181,7 @@ function Product() {
                   </button>
                   <button
                     type="button"
-                    className="w-full h-12 mb-3 px-6 text-sm font-medium text-gray-900 focus:outline-none  rounded-lg border border-gray-200 text-white focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                    className="w-full h-12 mb-3 px-6 text-sm font-medium focus:outline-none  rounded-lg border border-gray-200 text-white focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                   >
                     Place a bid
                   </button>
@@ -489,12 +496,11 @@ function Product() {
         </div>
       </section>
       {/* hero section end*/}
-
       {/* our peace of mind pledge section start */}
       <section className=" py-14">
         <div className="container mx-auto">
-          <h2 className=" capitalize text-2xl font-semibold">
-            <span className=" text-typegray text-2xl font-normal">our</span>{" "}
+          <h2 className=" capitalize text-3xl font-semibold">
+            <span className=" text-typegray text-3xl font-normal">our</span>{" "}
             peace of mind pledge
           </h2>
           <p className=" text-base font-medium w-11/12 pt-4">
@@ -504,81 +510,403 @@ function Product() {
           </p>
 
           <div className="md:basis-3/5 basis-full z-0 pt-10">
-            <div className="flex flex-wrap gap-5 justify-center">
-              <div className="max-w-md p-5 bg-themegray ">
-                <div className="flex items-center gap-5 space-x-12">
-                  <div>
-                    <p className="text-base font-bold text-gray-900 truncate dark:text-white">
-                      Proof <br /> of authenticity
-                    </p>
-                    <hr className=" border-t-2" />
-                  </div>
-                  <div>
-                    <Image
-                      src={Vector}
-                      alt="Picture of the author"
-                      width={60}
-                    />
-                  </div>
+            <div className="container grid mx-auto gap-6 lg:grid-cols-4">
+              <div className="max-w-md bg-themegray flex items-center justify-between p-4">
+                <div>
+                  <p className="text-base font-bold text-gray-900 truncate dark:text-white">
+                    Proof
+                  </p>
+                  <p className="text-base font-bold text-gray-900 truncate dark:text-white pb-4">
+                    of authenticity
+                  </p>
+                  <hr className=" border-t-2" />
+                </div>
+                <div>
+                  <Image src={Vector} alt="Picture of the author" width={70} />
                 </div>
               </div>
-              <div className="max-w-md p-5 bg-themegray ">
-                <div className="flex items-center gap-5 space-x-12">
-                  <div className="flex-1">
-                    <p className="text-base font-bold text-gray-900 truncate dark:text-white">
-                      Proof
-                      <br /> of ownership
-                    </p>
-                    <hr className=" border-t-2" />
-                  </div>
-                  <div>
-                    <Image
-                      src={ownership}
-                      alt="Picture of the author"
-                      width={80}
-                    />
-                  </div>
+
+              <div className="max-w-md bg-themegray flex items-center justify-between p-4">
+                <div className="flex-1">
+                  <p className="text-base font-bold text-gray-900 truncate dark:text-white">
+                    Proof
+                  </p>
+                  <p className="text-base font-bold text-gray-900 truncate dark:text-white pb-4">
+                    of ownership
+                  </p>
+                  <hr className=" border-t-2" />
+                </div>
+                <div>
+                  <Image
+                    src={ownership}
+                    alt="Picture of the author"
+                    width={70}
+                  />
                 </div>
               </div>
-              <div className="max-w-md p-5 bg-themegray ">
-                <div className="flex items-center gap-5 space-x-6">
-                  <div className="flex-1">
-                    <p className="text-base font-bold text-gray-900 truncate dark:text-white">
-                      Proof of
-                      <br /> storage conditions
-                    </p>
-                    <hr className=" border-t-2" />
-                  </div>
-                  <div>
-                    <Image src={frame} alt="Picture of the author" width={80} />
-                  </div>
+
+              <div className="max-w-md bg-themegray flex items-center justify-between p-4">
+                <div className="flex-1">
+                  <p className="text-base font-bold text-gray-900 truncate dark:text-white">
+                    Proof of
+                  </p>
+                  <p className="text-base font-bold text-gray-900 truncate dark:text-white pb-4">
+                    storage conditions
+                  </p>
+                  <hr className=" border-t-2" />
+                </div>
+                <div>
+                  <Image
+                    src={frame}
+                    alt="Picture of the author"
+                    width={70}
+                    className=""
+                  />
                 </div>
               </div>
-              <div className="max-w-md p-5 bg-themegray ">
-                <div className="flex items-center gap-5 space-x-12">
-                  <div className="flex-1">
-                    <p className="text-base font-bold text-gray-900 truncate dark:text-white">
-                      See our video
-                    </p>
-                    <hr className=" border-t-2" />
-                  </div>
-                  <div>
-                    <Image
-                      src={playvideo}
-                      alt="Picture of the author"
-                      width={100}
-                      height={100}
-                    />
-                  </div>
+
+              <div className="max-w-md bg-themegray flex items-center justify-between p-4">
+                <div className="flex-1">
+                  <p className="text-base font-bold text-gray-900 truncate dark:text-white pb-4">
+                    See our video
+                  </p>
+                  <hr className=" border-t-2" />
+                </div>
+                <div>
+                  <Image
+                    src={playvideo}
+                    alt="Picture of the author"
+                    width={120}
+                    className=""
+                  />
                 </div>
               </div>
+            </div>
+            <div className="flex justify-center pt-7">
+              <button
+                type="button"
+                className="text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center"
+              >
+                Invest now
+              </button>
             </div>
           </div>
         </div>
       </section>
       {/* our peace of mind pledge section end */}
+      {/* Release details section start */}
+      <section className="container mx-auto">
+        <div className="flex justify-between ">
+          <div>
+            <h2 className="text-3xl font-medium">Release details</h2>
+          </div>
+          <div className="flex text-spacegray">
+            <p className="flex gap-4 items-center">
+              <span>On the market are </span>
+              <span className=" text-lg font-medium">24</span>
+              <span>editions of this product</span>
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+                  />
+                </svg>
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className=" bg-themegray p-6 mt-7">
+          <div className="grid gap-5 lg:grid-cols-2">
+            <div className="text-spacegray">
+              <h2 className=" text-xl font-medium">Pricing details</h2>
+              <div>
+                {/* first box */}
+                <div className=" grid gap-0 lg:grid-cols-2 pt-6">
+                  <div className=" border-2 p-4 py-7 border-typegray">
+                    <div className="flex gap-3">
+                      <h2 className=" text-sm">Release Price </h2>
+                      <Image src={infologo} alt="Picture of the author" />
+                    </div>
+                    <p className=" text-lg font-medium">€38,888</p>
+                  </div>
+                  <div className=" border-2 p-4 py-7 border-typegray">
+                    <div className="flex gap-3">
+                      <h2 className=" text-sm">Average MARKET PRICE</h2>
+                      <Image src={infologo} alt="Picture of the author" />
+                    </div>
+                    <p className=" text-lg font-medium">€48,888</p>
+                  </div>
+                </div>
+                {/* second box */}
+                <div className=" grid gap-0 lg:grid-cols-2">
+                  <div className=" border-2 p-4 border-typegray">
+                    <div>
+                      <h2 className=" text-sm">Highest Price</h2>
+                      <h2 className=" text-sm">ever transacted for product</h2>
+                    </div>
+                    <p className=" text-lg font-medium">€68,888</p>
+                  </div>
+                  <div className=" border-2 p-4 bg-typegray border-typegray text-white">
+                    <div>
+                      <h2 className=" text-sm">Price Change</h2>
+                      <h2 className=" text-sm">since first release</h2>
+                    </div>
+                    <p className=" text-lg font-medium">+ 66.6%↑</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Image src={pricehistory} alt="Picture of the author" />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Release details section end */}
+      {/* All editions start */}
+      <section className="container mx-auto py-24">
+        <div className="flex justify-between items-center gap-5">
+          <div className="basis-1/6">
+            <h2 className="text-3xl font-medium">All editions</h2>
+          </div>
+          <div className="basis-4/5">
+            <hr className=" border-spacegray" />
+          </div>
+          <div className="flex text-spacegray">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-5 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
+              />
+            </svg>
+          </div>
+        </div>
+        <div className="flex justify-between items-center mx-auto pt-14 w-[1170px]">
+          <div className="">
+            <ul
+              className="flex flex-wrap text-sm font-medium text-center bg-tabsgray rounded-md p-1"
+              id="default-tab"
+              data-tabs-toggle="#default-tab-content"
+              role="tablist"
+            >
+              <li className="mr-2" role="presentation">
+                <button
+                  className="px-10 py-2 rounded-md bg-white shadow-md"
+                  id="profile-tab"
+                  data-tabs-target="#profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                >
+                  All
+                </button>
+              </li>
+              <li className="mr-2" role="presentation">
+                <button
+                  className="px-9 py-2 rounded-md "
+                  id="profile-tab"
+                  data-tabs-target="#profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                >
+                  Ask
+                </button>
+              </li>
+              <li className="mr-2" role="presentation">
+                <button
+                  className="px-9 py-2 rounded-md"
+                  id="profile-tab"
+                  data-tabs-target="#profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                >
+                  Bid
+                </button>
+              </li>
+            </ul>
+            {/* <div id="default-tab-content">
+          Name
+          <div
+            className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+            id="profile"
+            role="tabpanel"
+            aria-labelledby="profile-tab"
+          >
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              This is some placeholder content the{" "}
+              <strong className="font-medium text-gray-800 dark:text-white">
+                Profile tab's associated content
+              </strong>
+              . Clicking another tab will toggle the visibility of this one for
+              the next. The tab JavaScript swaps classes to control the content
+              visibility and styling.
+            </p>
+          </div>
+        </div> */}
+          </div>
+          <div className=" -mt-5">
+            <p>Sort by</p>
+            <div className="relative inline-block text-left">
+              <button
+                onClick={toggleDropdown}
+                type="button"
+                className=" gap-3 flex justify-between text-spacegray shadow-none  border focus:ring-0 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 w-full text-left items-center"
+              >
+                See More
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="w-4 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </button>
+
+              {isOpen && (
+                <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                  {/* Dropdown content here */}
+                  <ul className="py-2">
+                    <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                      Item 1
+                    </li>
+                    <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                      Item 2
+                    </li>
+                    <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                      Item 3
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 w-[1170px] mx-auto">
+            {productlist &&
+              productlist.map((item) => {
+                const {
+                  bottle1,
+                  id,
+                  imageAlt,
+                  imageSrc,
+                  price,
+                  name,
+                  remain,
+                  subtitle,
+                } = item;
+                return (
+                  <div key={id}>
+                    <Image
+                      src={imageSrc}
+                      alt={imageAlt}
+                      width={250}
+                      height={250}
+                      className="mb-3"
+                    />
+                    <h4 className="font-semibold  text-base	leading-6">
+                      {name}
+                    </h4>
+                    <p className="flex text-xs   items-center font-medium">
+                      {subtitle}
+                      <span className="ml-2">
+                        <Image
+                          src={frame}
+                          alt="Picture of the author"
+                          width={15}
+                          height={15}
+                          quality={75}
+                        />
+                      </span>
+                    </p>
+                    <span>
+                      <p className="font-medium text-xs leading-3">Owner</p>
+                      <span className=" mt-2 inline-flex items-center rounded-md bg-[#842029] px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-[#842029] ">
+                        Vinesia
+                      </span>
+                    </span>
+
+                    <hr className="my-4 text-[#C6C7C8] font-bold" />
+                    <span>
+                      <h3 className="font-medium text-xs  leading-3">
+                        BUY NOW
+                      </h3>
+                      <h3 className="font-medium text-lg leading-7">{price}</h3>
+                    </span>
+                    <span className="flex ">
+                      <p>{bottle1}</p>
+                      <p className="text-[#959596] ml-3">{remain} </p>
+                    </span>
+                  </div>
+                );
+              })}
+          </div>
+          <div className="flex justify-center mt-8">
+            <button className="py-2.5 px-4 bg-bgsecondary text-white rounded-lg text-center">
+              Explore
+            </button>
+          </div>
+        </div>
+      </section>
+      {/* All editions end */}
+      {/* How to invest in wine start */}
+      <section className=" bg-themegray shadow-lg">
+        <div className="container max-w-screen-lg justify-between items-center flex mx-auto py-6">
+          <div>
+            <h3 className=" text-lg font-semibold">How to invest in wine</h3>
+            <p className=" w-3/4 font-normal text-sm">
+              See our video to gather new informations
+            </p>
+            <p className=" w-3/4 font-normal text-sm">
+              See our video to gather new informations See our video to gather
+              new informations See our video to gather new informations See our
+              video to gather new informations See our video to gather new
+              informations See our video to gather new informations
+            </p>
+          </div>
+          <div>
+            <iframe
+              width="400"
+              height="230"
+              className=" rounded-md"
+              src="https://www.youtube.com/embed/7gquYRxLMFI?si=S7E_iDRbr-b1dZef"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      {/* How to invest in wine end */}
     </div>
   );
 }
-
-export default Product;
