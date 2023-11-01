@@ -3,11 +3,59 @@ import React from "react";
 import winbottle from "../../assets/image/Frame1.png";
 import backbg from "../../assets/image/bg.png";
 import alert from "../../assets/image/alert-circle.png";
-import HeritageTab from "../heritagetab/page";
+import ProductCard from "../cards/ProductCard";
+import Slider from "react-slick";
+import { NextIcon, PrevIcon } from "@/assets/icon/Icons";
 const Heritage = () => {
+  const sliderSettings = {
+    // dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+    prevArrow: (
+      <div className="slick-custom-arrow slick-prev top-full ">
+        <div className="border border-gray-600 rounded-lg w-8 h-8 text-center flex items-center">
+          <div className="mx-auto">
+            <PrevIcon />
+          </div>
+        </div>
+      </div>
+    ),
+    nextArrow: (
+      <div className="slick-custom-arrow slick-next top-full">
+        <div className="border border-gray-600 rounded-lg w-8 h-8 text-center flex items-center">
+          <div className="mx-auto">
+            <NextIcon />
+          </div>
+        </div>
+      </div>
+    ),
+  };
+
   return (
     <div className="py-16 sm:py-24">
-      <h1 className="font-semibold text-primary leading-10 text-4xl">Invest in heritage</h1>
+      <h1 className="text-primary font-bold">Invest in heritage</h1>
       <div className="mx-auto max-w-7xl px-4 py-8">
         <div className="mx-auto max-w-2xl  lg:max-w-none  ">
           {/* <div className="mt-6  grid lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0">
@@ -24,7 +72,7 @@ const Heritage = () => {
                     className="mb-3"
                   />
                   <h4 className=" font-semibold  text-base	leading-6">
-                    Brunello di Montalcino {`"Piaggione"`} | 2019
+                    Brunello di Montalcino "Piaggione" | 2019
                   </h4>
                   <p className="flex text-xs  items-center font-medium">
                     6 bottles collection{" "}
@@ -61,7 +109,7 @@ const Heritage = () => {
                     className="mb-3"
                   />
                   <h4 className=" font-semibold  text-base	leading-6">
-                    Brunello di Montalcino {`"Piaggione"`} | 2019
+                    Brunello di Montalcino "Piaggione" | 2019
                   </h4>
                   <p className="flex text-xs  items-center font-medium">
                     6 bottles collection{" "}
