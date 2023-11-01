@@ -8,10 +8,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        themegray: "#F4F4F4",
-        spacegray: "#41464b",
-        /**market listing color  */
-
         availableGray: "#D9D9D9",
         themegray: "#F4F4F4",
         spacegray: "#41464b",
@@ -21,6 +17,7 @@ module.exports = {
         bgprimary: "#D9D9D9",
         bgsecondary: "#6C757D",
       },
+
     },
   },
   plugins: [],

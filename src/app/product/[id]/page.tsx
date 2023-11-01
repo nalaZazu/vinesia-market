@@ -34,7 +34,7 @@ function Product() {
   return (
     <div>
       <nav className="flex pt-5" aria-label="Breadcrumb">
-        <ol className="container mx-auto flex  items-center inline-flex items-center space-x-1 md:space-x-3">
+        <ol className="container mx-auto flex  items-center inline-flex  space-x-1 md:space-x-3">
           <li className="inline-flex items-center">
             <a
               href="#"

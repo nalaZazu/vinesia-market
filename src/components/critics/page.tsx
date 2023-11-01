@@ -3,9 +3,114 @@ import React from "react";
 import img1 from "../../assets/image/image1.png";
 import img2 from "../../assets/image/image 23.png";
 import arrow from "../../assets/icon/arrow.svg";
+import arrowleft from "../../assets/image/arrow slide left.png";
+import wine from "../../assets/image/group2.png";
+import signature from "../../assets/image/Zrzut ekranu 2023-10-1 o 11.17 1.png";
 const Critics = () => {
   return (
     <>
+      {/* critics -section */}
+      <h1 className="text-primary font-semibold text-3xl leading-10">
+        Critics selection
+      </h1>
+      {/* <div className=" flex"> 
+          <div className="flex-none mt-6">
+            <ul className="list-decimal list-outside font-semibold leading-6  ">
+              <li>Chateau La Mission Haut Brion Cru Classe 2009
+
+                <button className="mt-6">
+            <Image src={arrowleft} alt="arrow" />
+          </button>
+              </li>
+              <li>Chateau La Mission Haut Brion Cru Classe 2009</li>
+              <li>Chateau La Mission Haut Brion Cru Classe 2009</li>
+            </ul>
+           
+          </div>
+           
+          <div className="flex-1 w-64  ml-5">
+            
+            <p className="flex">
+            <Image  src={wine} alt="image" width={150}  height={100}/>
+
+              Collections are carefully curated around specific themes,
+              featuring exceptional wines from prestigious wineries worldwide.
+              Each collection is a celebration of the finest vintages,
+              thoughtfully selected by our team of experts. Some of our
+              collections also include captivating artwork from the renowned
+              artist Reso, adding an artistic touch to the wine collections you
+              invest in.
+            </p>
+            <div className="flex">
+              <button className="py-2.5 px-4 mt-3 bg-bgsecondary text-white rounded-lg  ">
+                Start Exploring
+              </button>
+              <button className="py-2.5 px-4 mt-3 ml-2  text-bgsecondary rounded-lg  font-medium text-base flex">
+                Meet the artist
+                <Image src={arrow} alt="arrow" />
+              </button>
+            </div>
+          </div>
+    
+        <div className="flex-1 w-32">
+          <Image className="mx-auto" src={img2} alt="image" />
+        </div>
+      </div> */}
+
+      <div className="grid grid-cols-3 gap-2">
+        <div className=" flex justify-around items-start">
+          <div className="mt-6 w-[45%]">
+            <ul className="list-decimal list-outside font-semibold leading-6">
+              <li>Chateau La Mission Haut Brion Cru Classe 2009</li>
+              <li className="mt-6">Chateau La Mission Haut Brion Cru Classe 2009</li>
+              <li className=" mt-6 ">Chateau La Mission Haut Brion Cru Classe 2009</li>
+            </ul>
+          </div>
+          <button className="mt-6">
+            <Image src={arrowleft} alt="arrow" />
+          </button>
+        </div>
+
+        <div className="col-span-2">
+          <div className="flex">
+            <div className="flex  justify-evenly">
+              {" "}
+              <Image src={wine} alt="image" />
+              <p className=" w-3/5 ">
+                “This wine blushes in the glass like a tender, rosy dawn,
+                inviting the drinker to embrace its delicate hue. The play of
+                soft pinks and hints of coral dances under the light, hinting at
+                the allure within. Nose: The first inhalation enchants with a
+                floral bouquet reminiscent of a blooming garden in spring. Notes
+                of fresh roses and lavender harmoniously intertwine, giving this
+                wine a sweet and aromatic charm. Taste: The initial sip caresses
+                the palate with the gentle embrace of ripe strawberries, teasing
+                the taste buds with their luscious juiciness. A subtle citrus
+                outhfeel that enhances the overall elegance of this wine.
+               <div>
+                  <button className="py-2.5 px-4 mt-3 border border-bgsecondary  text-bgsecondary rounded-lg text-base font-medium">
+                  Invest now
+                  </button>
+                </div>
+              </p>
+            </div>
+            
+            <div className="w-[100%]">
+              <h2 className="font-normal text-sm">Score</h2>
+              <div className="flex flex-col ">
+                <span className="font-semibold text-4xl">5/5</span>
+                <span className="text-base font-medium mt-5">
+                  by Robert Parker
+                </span>
+              </div>
+              <span>
+                <Image src={signature} alt="signature" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className=" flex py-24">
         <div className="flex w-3/5">
           <div className="flex-1 ">
