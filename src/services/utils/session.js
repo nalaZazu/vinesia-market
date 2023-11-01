@@ -2,9 +2,10 @@
 // import { logoutAction } from "../../redux/account";
 
 export default class {
-  static set = (key, value) => localStorage.setItem(key, JSON.stringify(value));
+  static set = (key, value) =>
+    window.localStorage.setItem(key, JSON.stringify(value));
   static get = (key) => {
-    const t = localStorage.getItem(key);
+    const t = window.localStorage.getItem(key);
     if (t === "undefined" || t === null) return "";
 
     if (t === "true" || t === "false" || typeof t === "boolean") return t;
@@ -17,6 +18,6 @@ export default class {
     // let dispatch = useDispatch();
     // dispatch(logoutAction());
 
-    localStorage.clear();
+    window.localStorage.clear();
   };
 }
