@@ -62,7 +62,6 @@ const Banner = () => {
                     ></span>
                   </div>
                 </div>
-                 
               </li>
               <li className="flex relative">
                 Proof of Storage conditions
@@ -78,17 +77,18 @@ const Banner = () => {
                 <div className="relative">
                   <div className="absolute   inline-block w-40 px-4 py-3  mt-2 -ml-32 text-white !bg-[#959596] rounded-lg z-10 top-[14px] left-[68px]">
                     <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]">
-                    Rating comes from world recognized critics like by either Robert Parker, Jeb Dunnuck or Suckling.
+                      Rating comes from world recognized critics like by either
+                      Robert Parker, Jeb Dunnuck or Suckling.
                     </span>
                     <span
                       className="absolute  w-2 h-2 -mb-1 transform rotate-45 !bg-[#959596] z-30"
-                      
-                      style={{ left: "31%" , top:"-4%" }}
+                      style={{ left: "31%", top: "-4%" }}
                     ></span>
                   </div>
                 </div>
-                 
               </li>
+
+              <li></li>
             </ul>
           </div>
         </div>
@@ -96,7 +96,7 @@ const Banner = () => {
         {/* next section  */}
         <div className="grid justify-end">
           {/* // grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8 */}
-          
+
           <Image src={group1} alt="Picture of the author" />
         </div>
       </div>
