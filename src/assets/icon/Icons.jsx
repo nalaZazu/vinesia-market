@@ -29,13 +29,15 @@ export function NextIcon() {
 
 export function PrevIcon() {
   return (
-    <div className="rotate-180">
+    <div className="">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
         height="20"
         viewBox="0 0 20 20"
         fill="none"
+        version="1.1"
+        transform="matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,0,0)"
       >
         <path
           d="M4.16699 10H15.8337"
@@ -43,14 +45,14 @@ export function PrevIcon() {
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-        />
+        ></path>
         <path
           d="M10 4.16663L15.8333 9.99996L10 15.8333"
           stroke="#212529"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-        />
+        ></path>
       </svg>
     </div>
   );
