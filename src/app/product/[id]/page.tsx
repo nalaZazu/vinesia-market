@@ -14,6 +14,10 @@ import logo1 from "../../../assets/icon/logo1.svg";
 import infologo from "../../../assets/icon/info.svg";
 import pricehistory from "../../../assets/icon/pricehistory.svg";
 import { productlist } from "@/constants/winelist";
+import group from "../../../assets/icon/Group.png";
+import kranu from "../../../assets/icon/kranu.png";
+import zut from "../../../assets/icon/zut.png";
+import productimg from "../../../assets/icon/productsimage.png";
 
 import Link from "next/link";
 // import orange from "../style.module.css"
@@ -880,14 +884,14 @@ export default function Product() {
       </section>
       {/* All editions end */}
       {/* How to invest in wine start */}
-      <section className=" bg-themegray shadow-lg">
-        <div className="container max-w-screen-lg justify-between items-center flex mx-auto py-6">
+      <section className="bg-themegray shadow-lg">
+        <div className="container max-w-screen-md justify-between items-center flex mx-auto py-6">
           <div>
             <h3 className=" text-lg font-semibold">How to invest in wine</h3>
             <p className=" w-3/4 font-normal text-sm">
               See our video to gather new informations
             </p>
-            <p className=" w-3/4 font-normal text-sm">
+            <p className=" w-4/5 font-normal text-sm">
               See our video to gather new informations See our video to gather
               new informations See our video to gather new informations See our
               video to gather new informations See our video to gather new
@@ -907,6 +911,317 @@ export default function Product() {
         </div>
       </section>
       {/* How to invest in wine end */}
+      {/* About Chateau La Mission Haut Brion Cru Classe | 2009 start */}
+      <section className="pt-10">
+        <div className=" container mx-auto">
+          <h2 className=" capitalize text-3xl font-semibold">
+            <span className=" text-typegray text-4xl font-normal">About</span>{" "}
+            Chateau La Mission Haut Brion Cru Classe | 2009
+          </h2>
+        </div>
+
+        <div className="container max-w-screen-xl items-center flex mx-auto py-6 px-16">
+          <div>
+            <div className="flex gap-3">
+              <Image
+                src={redwine}
+                alt="Picture of the author"
+                width={20}
+                height={20}
+                // blurDataURL="data:..." automatically provided
+                // placeholder="blur" // Optional blur-up while loading
+              />
+              <span className="font-bold text-base text-spacegray">
+                Red, 14% Alc
+              </span>
+            </div>
+            <p className=" w-5/6 font-normal text-base">
+              An evocative nose, floral and exotic with black cherry, lychee and
+              passion fruit aromas, delicate and nuanced. Svelte on the palate
+              with sculpted and refined tannins – it’s confident, with sinew,
+              muscle and plump fruit, but not showy. The 2019 Le Pin is a rich,
+              expansive wine that soars from the glass with aromas of raspberry
+              preserve, plums, wild berries, rose petals and licorice, framed by
+              a deftly judged patina of creamy new oak. Full-bodied, supple and
+              velvety, it’s broad and enveloping, with a fleshy core of fruit
+              that’s framed by lively acids and powdery tannins, concluding with
+              a long, aromatic finish. Le Pin’s vines are rooted in clay, which
+              no doubt helps to explain how this wine can perform so well
+              in warm, dry vintages.
+            </p>
+          </div>
+          <div>
+            <iframe
+              width="400"
+              height="230"
+              className=" rounded-md"
+              src="https://www.youtube.com/embed/7gquYRxLMFI?si=S7E_iDRbr-b1dZef"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            ></iframe>
+          </div>
+        </div>
+        <div className="container  items-center flex mx-auto py-1 border-2 border-bordergray">
+          {[1, 2, 3].map((d, i) => {
+            return (
+              <div className=" border-e-2 p-6">
+                <h3 className=" text-base">
+                  A. Critic name{" "}
+                  <span className=" text-lg font-semibold text-black">
+                    100/
+                  </span>
+                  <span className=" text-xs text-black">100</span>
+                </h3>
+                <hr />
+                <p className="text-center text-base">
+                  This is the best wine for romantic dinner and long term
+                  investment. Buy it as soon as you can, cause it wont last
+                  long. Buy it as soon as you can.
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+      {/* About Chateau La Mission Haut Brion Cru Classe | 2009 end */}
+      {/* About artwork start */}
+      <section className="pt-10">
+        <div className="container mx-auto">
+          <h2 className="capitalize text-3xl font-semibold">
+            <span className="text-typegray text-4xl font-normal">About</span>{" "}
+            artwork
+          </h2>
+          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-16">
+            <div>
+              <p className="text-xs text-bordergray">Original Art</p>
+              <p className="text-xs font-semibold">
+                Stop Breathing, White_2Stripes_black_blue
+              </p>
+              <p className="text-xs text-bordergray">
+                WP Nr.1 Screen print on paper 31x 41 cm 2022
+              </p>
+              <p className="text-xs font-medium">Artist Famous and Known</p>
+              <p className="font-normal text-base">
+                Reso’s deep connection with New York City has been a profound
+                source of inspiration throughout his life. The vibrant
+                subcultural graffiti movement in the 70s and 80s, which painted
+                the cityscape with mesmerizing letterings on subway cars, left
+                an indelible mark on his artistic journey. New York’s contrasts
+                and diverse experiences shaped Reso’s creativity, leading him to
+                explore typography and the power of letters to evoke emotions in
+                viewers. His art, born in secrecy and yet attracting extreme
+                attention, later evolved into a multidimensional experience,
+                where letters overlapped, and functionality gave way to artistic
+                expression. Through his international presence, Reso’s name and
+                influence became synonymous with the graffiti movement, but he
+                sought artistic liberation beyond its confines, embracing a new
+                chapter of his creative exploration. Reso turned away from the
+                legibility of characters and lettering and instead focused on
+                the viewer’s emotional access to his work. His signs are encoded
+                in a unique and personal way, making the individual layers no
+                longer easy to separate, and the letters lose their classic
+                distinguishing features when merged through the overlay of
+                letter forms and colors. Reso consciously breaks with
+                traditional reading habits and offers viewers a completely new
+                image of typography. He no longer arranges the letters
+                classically from left to right and one behind the other, but
+                allows them to merge into constructs of form in order to provide
+                viewers with new visual experiences.
+              </p>
+            </div>
+            <div className="flex justify-end">
+              <Image
+                src={group}
+                alt="Picture of the author"
+                width={450}
+                height={300}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* About artwork end */}
+      {/* About Winery Château Le Pin start */}
+      <section className="pt-10">
+        <div className="container mx-auto">
+          <h2 className="capitalize text-3xl font-semibold">
+            <span className="text-typegray text-4xl font-normal">About</span>{" "}
+            Winery Château Le Pin
+          </h2>
+          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-16">
+            <div>
+              <p>France, Region, Appellation</p>
+              <p className="font-normal text-base">
+                Château Le Pin is a mini chateau in the Pomerol appellation on
+                the right bank of the Bordeaux region. It is considered a cult
+                estate and is highly sought-after by wine collectors. Its tiny
+                production, averaging just 600-700 cases a year, commands even
+                higher prices than Château Petrus, making it one of the most
+                expensive wines in Bordeaux! Madame Laubie and her family had
+                owned this small vineyard since 1924, but sold it in 1979 to the
+                Belgian Mr. Jacques Thienpont. At that time, the vineyard
+                covered just one hectare. Today, the vineyard covers 2.7
+                hectares. The name derives from the two pine trees that grow on
+                the estate, near the winery.
+              </p>
+            </div>
+            <div className="flex justify-end">
+              <Image
+                src={kranu}
+                alt="Picture of the author"
+                width={450}
+                height={300}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="pt-10">
+        <div className="container mx-auto">
+          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-16">
+            <div className="flex">
+              <Image
+                src={zut}
+                alt="Picture of the author"
+                width={450}
+                height={300}
+              />
+            </div>
+            <div>
+              <p>France, Region, Appellation</p>
+              <p className="font-normal text-base">
+                Château Le Pin is a mini chateau in the Pomerol appellation on
+                the right bank of the Bordeaux region. It is considered a cult
+                estate and is highly sought-after by wine collectors. Its tiny
+                production, averaging just 600-700 cases a year, commands even
+                higher prices than Château Petrus, making it one of the most
+                expensive wines in Bordeaux! Madame Laubie and her family had
+                owned this small vineyard since 1924, but sold it in 1979 to the
+                Belgian Mr. Jacques Thienpont. At that time, the vineyard
+                covered just one hectare. Today, the vineyard covers 2.7
+                hectares. The name derives from the two pine trees that grow on
+                the estate, near the winery.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* About Winery Château Le Pin end */}
+      {/* You may also like start */}
+      <section className=" py-14">
+        <div className="container mx-auto">
+          <h2 className=" capitalize text-3xl font-semibold">
+            You may also like
+          </h2>
+          <div className="md:basis-3/5 basis-full z-0 pt-10">
+            <div className="container grid mx-auto gap-6 lg:grid-cols-4">
+              <div className="max-w-md bg-themegray flex items-end text-center h-[400px] pb-6 border-2 border-spacegray">
+                <div>
+                  <div className="flex justify-center pb-8">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h1 className=" text-3xl font-semibold">
+                      Vinesia Art Collections
+                    </h1>
+                  </div>
+                  <div className="flex justify-center pt-7">
+                    <button
+                      type="button"
+                      className="text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center"
+                    >
+                      Explore
+                    </button>
+                  </div>
+                </div>
+              </div>
+              {[1, 2, 3].map((d, i) => {
+                return (
+                  <div className="max-w-md flex text-center pb-6">
+                    <div>
+                      <div className="flex justify-center pb-8">
+                        <div>
+                          <div className="flex gap-3 pb-3">
+                            <Image
+                              src={productimg}
+                              alt="Picture of the author"
+                              width={300}
+                              height={20}
+                            />
+                          </div>
+                          <div className=" text-left">
+                            <h4 className=" text-base font-semibold">
+                              Brunello di Montalcino "Piaggione" | 2019
+                            </h4>
+                            <p className=" text-xs ">6 bottles collection</p>
+                            <p className=" text-xs font-semibold">OWNER</p>
+                            <p className=" text-xs bg-bgbutton w-12 text-center text-white mb-2">
+                              Vinesia
+                            </p>
+                            <hr />
+                            <button className="text-xs uppercase ">
+                              buy now
+                            </button>
+                            <h3 className=" font-semibold text-lg ">€3,600</h3>
+                            <p className=" flex gap-3">
+                              <span className=" text-xs font-medium">
+                                50 bottles
+                              </span>
+                              <span className=" text-xs">50 remaining</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* You may also like end */}
+      {/* Be the first to know start */}
+      <section>
+        <div className=" flex justify-end items-center">
+          <div className="flex bg-themegray w-2/5 justify-between p-3">
+            <h2>Be the first to know </h2>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+      {/* Be the first to know end */}
     </div>
   );
 }
