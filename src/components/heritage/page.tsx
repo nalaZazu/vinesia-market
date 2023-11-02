@@ -55,7 +55,7 @@ const Heritage = () => {
 
   return (
     <div className="py-16 sm:py-24">
-      <h1 className="text-primary font-bold">Invest in heritage</h1>
+      <h1 className="text-primary font-semibold  tracking-tight text-xxl">Invest in heritage</h1>
       <div className="mx-auto max-w-7xl px-4 py-8">
         <div className="mx-auto max-w-2xl  lg:max-w-none  ">
           {/* <div className="mt-6  grid lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0">
@@ -71,10 +71,10 @@ const Heritage = () => {
                     alt="Picture of the author"
                     className="mb-3"
                   />
-                  <h4 className=" font-semibold  text-base	leading-6">
+                  <h4 className="text-black text-base font-semibold  tracking-tight">
                     Brunello di Montalcino "Piaggione" | 2019
                   </h4>
-                  <p className="flex text-xs  items-center font-medium">
+                  <p className="flex items-center  text-black text-xxs font-medium   tracking-wide">
                     6 bottles collection{" "}
                     <span className="ml-2">
                       <Image
@@ -87,31 +87,32 @@ const Heritage = () => {
                     </span>
                   </p>
                   <span>
-                    <p className="font-semibold text-xs">Owner</p>
-                    <span className="inline-flex items-center rounded-md bg-[#842029] px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-[#842029]">
+                    <p className="text-black text-xxs font-semibold  tracking-wide">Owner</p>
+                    <span className="inline-flex items-center rounded-md bg-[#842029] px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-[#842029]  mt-2  ">
                       Vinesia
                     </span>
                   </span>
                   <hr className="my-4 text-[#C6C7C8] font-bold" />
                   <span>
-                    <h3 className="font-semibold text-xs leading-4">BUY NOW</h3>
-                    <h3 className="font-semibold text-lg">€3,600</h3>
+                    <h3 className=" text-black text-xxs font-semibold  tracking-wide">BUY NOW</h3>
+                    <h3 className="font-semibold text-lg  text-black   tracking-tight">€3,600</h3>
                   </span>
-                  <span className="flex font-medium text-xs">
+                  <span className="flex   text-xxs    text-black font-medium   tracking-wide">
                     <p>50 bottles</p>
-                    <p className="text-[#959596] ml-3">50 remaining </p>
+                    <p className="text-[#959596] ml-3 text-xxs font-medium  tracking-wide">50 remaining </p>
                   </span>
                 </div>
+
                 <div>
                   <Image
                     src={winbottle}
                     alt="Picture of the author"
                     className="mb-3"
                   />
-                  <h4 className=" font-semibold  text-base	leading-6">
+                  <h4 className="text-black text-base font-semibold  tracking-tight">
                     Brunello di Montalcino "Piaggione" | 2019
                   </h4>
-                  <p className="flex text-xs  items-center font-medium">
+                  <p className="flex items-center  text-black text-xxs font-medium  tracking-wide">
                     6 bottles collection{" "}
                     <span className="ml-2">
                       <Image
@@ -124,15 +125,15 @@ const Heritage = () => {
                     </span>
                   </p>
                   <span>
-                    <p className="font-semibold text-xs">Owner</p>
-                    <span className="inline-flex items-center rounded-md bg-[#842029] px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-[#842029]">
+                    <p className="text-black text-xxs font-semibold  tracking-wide">Owner</p>
+                    <span className="inline-flex items-center rounded-md bg-[#842029] px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-[#842029]  mt-2 ">
                       Vinesia
                     </span>
                   </span>
                   <hr className="my-4 text-[#C6C7C8] font-bold" />
                   <span>
-                    <h3 className="font-semibold text-xs leading-4">BUY NOW</h3>
-                    <h3 className="font-semibold text-lg">€3,600</h3>
+                    <h3 className=" text-black text-xxs font-semibold  tracking-wide">BUY NOW</h3>
+                    <h3 className="font-semibold text-lg  text-black   tracking-tight">€3,600</h3>
                   </span>
                   <span className="flex font-medium text-xs">
                     <p>50 bottles</p>
