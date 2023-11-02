@@ -56,17 +56,19 @@ const Heritage = () => {
   return (
     <div className="py-16 sm:py-24">
       <h1 className="text-primary font-bold">Invest in heritage</h1>
-
       <div className="mx-auto max-w-7xl px-4 py-8">
         <div className="mx-auto max-w-2xl  lg:max-w-none  ">
+          {/* <div className="mt-6  grid lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0">
+        
+          </div>   */}
 
-          <div className="mt-6  grid lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0">
+          <div className="  grid lg:grid-cols-2 md:grid-cols-1 grid-cols-2 gap-4 md:gap-0">
             <div>
               <div>
                 <Slider {...sliderSettings}>
                   {[1, 2, 3, 4]?.map((p, i) => {
                     return (
-                      <div>
+                      <div key={i}>
                         <ProductCard />
                       </div>
                     );
@@ -74,7 +76,6 @@ const Heritage = () => {
                 </Slider>
               </div>
             </div>
-
             <div className="ml-4  lg:mt-0">
               <Image
                 src={backbg}
@@ -85,6 +86,7 @@ const Heritage = () => {
           </div>
         </div>
       </div>
+      {/* <HeritageTab/> */}
     </div>
   );
 };

@@ -8,7 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 .slick-prev, .slick-next{
-  top: 100%;
+  top: 100% !important;
 }
 @media (prefers-color-scheme: dark) {
   :root {

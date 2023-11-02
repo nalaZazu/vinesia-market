@@ -9,7 +9,7 @@ export default function ProductCard() {
       <div>
         <Image src={winbottle} alt="Picture of the author" className="mb-3" />
         <h4 className="w-3/4     font-semibold  text-base	leading-6">
-          Brunello di Montalcino "Piaggione" | 2019
+          Brunello di Montalcino {`"Piaggione"`} | 2019
         </h4>
         <p className="flex text-xs  items-center font-medium">
           6 bottles collection{" "}
