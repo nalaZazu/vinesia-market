@@ -9,16 +9,16 @@ import {
   Tooltip,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip
-);
 
 export default function Appactivity() {
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip
+  );
   const daysLeft = 10;
 
   const current = [1, 200, 3000, 20000, 29009, 39009, 79009];
