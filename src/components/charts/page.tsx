@@ -24,7 +24,7 @@ export default function Appactivity() {
   const current = [1, 200, 3000, 20000, 29009, 39009, 79009];
   const previous = [1, 200, 3000, 200, 299];
 
-  const options = {
+  const options: any = {
     responsive: true,
     interaction: {
       mode: "index" as const,

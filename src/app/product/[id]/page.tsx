@@ -64,7 +64,7 @@ export default function Product() {
         <p>With Art of Lola Designer Fun</p>
       </div>
       {/* hero section start*/}
-      <ProductTopSection wine={data?.wine} />
+      <ProductTopSection />
       {/* hero section end*/}
       {/* our peace of mind pledge section start */}
       <PeaceOfMind />
@@ -226,7 +226,7 @@ export default function Product() {
                 } = item;
                 return (
                   <div key={id}>
-                    <ProductCard data={item} />
+                    <ProductCard />
 
                     <Image
                       src={imageSrc}
@@ -361,7 +361,7 @@ export default function Product() {
         <div className="container  items-center flex mx-auto py-1 border-2 border-bordergray">
           {[1, 2, 3].map((d, i) => {
             return (
-              <div className=" border-e-2 p-6">
+              <div key={i} className=" border-e-2 p-6">
                 <h3 className=" text-base">
                   A. Critic name{" "}
                   <span className=" text-lg font-semibold text-black">
@@ -552,7 +552,7 @@ export default function Product() {
               </div>
               {[1, 2, 3].map((d, i) => {
                 return (
-                  <div className="max-w-md flex text-center pb-6">
+                  <div key={i} className="max-w-md flex text-center pb-6">
                     <div>
                       <div className="flex justify-center pb-8">
                         <div>
@@ -566,7 +566,7 @@ export default function Product() {
                           </div>
                           <div className=" text-left">
                             <h4 className=" text-base font-semibold">
-                              Brunello di Montalcino "Piaggione" | 2019
+                              Brunello di Montalcino {`"Piaggione"`} | 2019
                             </h4>
                             <p className=" text-xs ">6 bottles collection</p>
                             <p className=" text-xs font-semibold">OWNER</p>
