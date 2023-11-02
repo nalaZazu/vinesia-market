@@ -16,13 +16,26 @@ module.exports = {
         spacegray: "#41464b",
         bordergray: "#A0A6AC",
         tabsgray: "#C6C7C8",
+
+
         bgbutton: "#842029",
+
         typegray: "#6C757D",
         primary: "#41464B",
         secondary: "#000000",
         bgprimary: "#D9D9D9",
         bgsecondary: "#6C757D",
       },
+
+      
+      /** Font
+       * FontsName:[fontSize, lineHeight]
+       */
+      fontSize: {
+        xxs: ["10px", " 14.45px"],
+        xxl: ["32px", "46.24px"],
+      },
+
     },
   },
   plugins: [],
