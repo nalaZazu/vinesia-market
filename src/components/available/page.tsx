@@ -19,7 +19,10 @@ const Available = () => {
               alt="Picture of the author"
               width={400}
               height={350}
+              style={{objectFit: "contain"}}
+              quality={75}
               className="mb-3"
+
             />
           </div>
         </div>
