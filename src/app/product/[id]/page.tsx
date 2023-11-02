@@ -1,26 +1,32 @@
 "use client";
 import Image from "next/image";
+import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import bottle from "../../../assets/icon/bottle.svg";
-import case1 from "../../../assets/icon/Case.svg";
-import redwine from "../../../assets/icon/redwine.svg";
-import big from "../../../assets/icon/big.png";
-import big1 from "../../../assets/icon/big1.png";
-import Vector from "../../../assets/icon/Vector.svg";
-import ownership from "../../../assets/icon/ownership.svg";
-import frame from "../../../assets/icon/Frame.svg";
-import playvideo from "../../../assets/icon/Playvideo.svg";
-import logo1 from "../../../assets/icon/logo1.svg";
-import infologo from "../../../assets/icon/info.svg";
-import pricehistory from "../../../assets/icon/pricehistory.svg";
+import redwine from "@/assets/icon/redwine.svg";
+import frame from "@/assets/icon/Frame.svg";
 import { productlist } from "@/constants/winelist";
+import group from "@/assets/icon/Group.png";
+import kranu from "@/assets/icon/kranu.png";
+import zut from "@/assets/icon/zut.png";
+import productimg from "@/assets/icon/productsimage.png";
 
-import Link from "next/link";
-// import orange from "../style.module.css"
-import css from "styled-jsx/css";
+// import Link from "next/link";
+// import css from "styled-jsx/css";
+import Appactivity from "@/components/charts/page";
+import BreadCrumb from "@/common/BreadCrumb";
+import ProductTopSection from "@/components/productDetail/ProductTopSection";
+import PeaceOfMind from "@/components/productDetail/PeaceOfMind";
+import ReleaseDateSection from "@/components/productDetail/ReleaseDateSection";
+import ProductCard from "@/components/cards/ProductCard";
+import { getProductDetail } from "@/services/ProductDetail";
+// import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching
 
 export default function Product() {
+  const { id } = useParams();
+  const [data, setData] = useState({});
+  console.log("Params", id);
+
   const [show, setShow] = useState([]);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -34,51 +40,23 @@ export default function Product() {
   };
   useEffect(() => {
     axiosCall();
-  }, []);
+    if (id) {
+      getProductDetail(id)
+        .then((res) => {
+          console.log("Res from Product Detail ", res);
+          setData(res?.data);
+        })
+        .catch((err) => {
+          console.log("Err from Product Detail", err);
+        });
+    }
+  }, [id]);
 
   // this is className base strcture of style base module
   // const {brown} = orange
   return (
     <div>
-      <nav className="flex pt-5" aria-label="Breadcrumb">
-        <ol className="container mx-auto flex items-center space-x-1 md:space-x-3">
-          <li className="inline-flex items-center">
-            <a
-              href="#"
-              className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
-            >
-              Vinesia Marketplace
-            </a>
-          </li>
-          <li>
-            <div className="flex items-center">
-              /
-              <a
-                href="#"
-                className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white"
-              >
-                Home Page
-              </a>
-            </div>
-          </li>
-          <li aria-current="page">
-            <div className="flex items-center">
-              /
-              <span className="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
-                Collections
-              </span>
-            </div>
-          </li>
-          <li aria-current="page">
-            <div className="flex items-center">
-              /
-              <span className="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
-                Chateau La Mission and Art
-              </span>
-            </div>
-          </li>
-        </ol>
-      </nav>
+      <BreadCrumb />
       <div className=" container mx-auto py-5 py-md-2">
         <h1 className=" text-3xl font-bold tracking-tight text-spacegray">
           Chateau La Mission Haut Brion Cru Classe | 2009
@@ -86,592 +64,13 @@ export default function Product() {
         <p>With Art of Lola Designer Fun</p>
       </div>
       {/* hero section start*/}
-      <section className="bg-themegray py-12 mt-5">
-        {/* <div className="container flex grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-2"> */}
-        <div className="container grid max-w-screen-xl  mx-auto lg:grid-cols-3">
-          {/* first section start */}
-          <div>
-            <div className="bg-white py-1">
-              <div>
-                <div className="flex py-3 border-b gap-3 items-center">
-                  <div className="w-2/6 text-end uppercase text-xs">
-                    <span className=" text-spacegray ">First release DaTE</span>
-                  </div>
-                  <div className="flex space-x-2 border-s ps-3">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      className="w-4 h-6"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
-                      />
-                    </svg>
-                    <span className="font-bold text-base text-spacegray">
-                      Sep 29, 2023
-                    </span>
-                  </div>
-                </div>
-                <div className="flex py-3 gap-3 items-center">
-                  <div className="w-2/6 text-end text-xs">
-                    <span className=" text-spacegray ">OWNER</span>
-                  </div>
-                  <div className="flex space-x-2 border-b">
-                    <Image
-                      src={logo1}
-                      alt="Picture of the author"
-                      width={20}
-                      height={20}
-                      // blurDataURL="data:..." automatically provided
-                      // placeholder="blur" // Optional blur-up while loading
-                    />
-                    <a href="#">
-                      <span className="font-bold text-base text-spacegray">
-                        @Vinesia
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <div className="flex py-3 gap-3 items-center">
-                  <div className="w-2/6 text-end uppercase text-xs">
-                    <span className=" text-spacegray ">Edition</span>
-                  </div>
-                  <div className="flex space-x-2 border-s ps-3">
-                    <span className="font-bold text-base text-spacegray">
-                      #1 from 24
-                    </span>
-                  </div>
-                </div>
-                <div className="flex py-3 gap-3 items-center">
-                  <div className="w-2/6 text-end uppercase text-xs">
-                    <span className=" text-spacegray ">Wine asset ID</span>
-                  </div>
-                  <div className="flex space-x-2 border-s ps-3">
-                    <span className="font-bold text-base text-spacegray">
-                      1234_1234_1345678
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-spacegray text-white py-1 px-10">
-              <div>
-                <div className="flex justify-between py-3 gap-3 items-center">
-                  <div className=" capitalize text-xs text-white">
-                    <span>ask price</span>
-                  </div>
-                  <div className="flex">
-                    <span className=" uppercase font-bold text-xs">
-                      AVAILABLE to buy
-                    </span>
-                  </div>
-                </div>
-                <div>
-                  <p className=" text-2xl font-medium">€66,666</p>
-                  <p className=" text-xs">Last sale: €55,666 more</p>
-                </div>
-                <div className="py-6">
-                  <button className="w-full h-12 mb-3 px-6 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                    Accept ask
-                  </button>
-                  <button
-                    type="button"
-                    className="w-full h-12 mb-3 px-6 text-sm font-medium focus:outline-none  rounded-lg border border-gray-200 text-white focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                  >
-                    Place a bid
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* first section end */}
-
-          {/* slider start */}
-          <div>
-            <div className="flex justify-center">
-              <span>
-                <Image src={big1} alt="Picture of the author" />
-              </span>
-            </div>
-            <div className="flex justify-center">
-              <div className="flex bg-white items-center gap-5 py-2 px-5 text-spacegray shadow-md rounded-md">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15.75 19.5L8.25 12l7.5-7.5"
-                  />
-                </svg>
-
-                <div>
-                  <Image
-                    src={big1}
-                    alt="Picture of the author"
-                    width={55}
-                    className=" flex justify-center rounded-sm shadow-sm border border-spacegray"
-                  />
-                </div>
-                <div>
-                  <Image
-                    src={big}
-                    alt="Picture of the author"
-                    width={55}
-                    className=" flex justify-center rounded-sm shadow-sm border border-spacegray"
-                  />
-                </div>
-                <div>
-                  <Image
-                    src={big1}
-                    alt="Picture of the author"
-                    width={55}
-                    className=" flex justify-center rounded-sm shadow-sm border border-spacegray"
-                  />
-                </div>
-                <div>
-                  <Image
-                    src={big}
-                    alt="Picture of the author"
-                    width={55}
-                    className=" flex justify-center rounded-sm shadow-sm border border-spacegray"
-                  />
-                </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          {/* slider end */}
-          {/* second section start */}
-          <div>
-            <div className="flex gap-5 ps-5 ps-md-3">
-              <div className="border-b-4 rounded border-spacegray">
-                <button className="ml-1 text-2xl font-medium text-spacegray">
-                  Wine
-                </button>
-                <p className=" text-xs">LWIN:123456</p>
-              </div>
-              <div>
-                <button className="ml-1 text-2xl font-medium text-spacegray">
-                  Art
-                </button>
-                <p className=" text-xs">Artist: Lola Designer Funny</p>
-              </div>
-            </div>
-            <div className="bg-white py-1">
-              <div>
-                <div className="flex py-3 gap-3">
-                  <div className="w-2/6 text-end text-base">
-                    <span className=" text-spacegray ">
-                      This wine is sourced
-                    </span>
-                  </div>
-                  <div className="flex space-x-2 border-b">
-                    <Image
-                      src={bottle}
-                      alt="Picture of the author"
-                      width={20}
-                      height={20}
-                      // blurDataURL="data:..." automatically provided
-                      // placeholder="blur" // Optional blur-up while loading
-                    />
-                    <a href="#">
-                      <span className="font-bold text-base text-spacegray">
-                        directly from the winery
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <div className="flex py-3 gap-3 ">
-                  <div className="w-2/6 text-end uppercase text-xs">
-                    <span className=" text-spacegray ">Case & bottle size</span>
-                  </div>
-                  <div>
-                    <div className="flex space-x-2 border-s ps-3">
-                      <Image
-                        src={case1}
-                        alt="Picture of the author"
-                        width={20}
-                        height={20}
-                        // blurDataURL="data:..." automatically provided
-                        // placeholder="blur" // Optional blur-up while loading
-                      />
-                      <span className="font-bold text-base text-spacegray">
-                        99 bottle case,
-                      </span>
-                    </div>
-                    <div>
-                      <span className=" ps-10 font-bold text-base text-spacegray">
-                        Double Magnum (1,5l)
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex py-3 gap-3 ">
-                  <div className="w-2/6 text-end uppercase text-xs">
-                    <span className=" text-spacegray ">type</span>
-                  </div>
-                  <div className="flex space-x-2 border-s ps-3">
-                    <Image
-                      src={redwine}
-                      alt="Picture of the author"
-                      width={20}
-                      height={20}
-                      // blurDataURL="data:..." automatically provided
-                      // placeholder="blur" // Optional blur-up while loading
-                    />
-                    <span className="font-bold text-base text-spacegray">
-                      Red, 14% Alc
-                    </span>
-                  </div>
-                </div>
-                <div className="flex py-3 gap-3">
-                  <div className=" flex justify-end items-center w-2/6 text-end uppercase text-xs">
-                    <span className=" text-spacegray ">Origin</span>
-                  </div>
-                  <div className="flex space-x-2 border-s ps-3">
-                    <div>
-                      <div>
-                        <span className="text-base text-spacegray">
-                          Winery:{" "}
-                        </span>
-                        <a href="#" className="border-b border-black font-bold">
-                          Château Le Pin
-                        </a>
-                      </div>
-                      <div>
-                        <span className="font-bold text-base text-spacegray">
-                          France, Region, Appellation
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-2">
-                  <div className="grid grid-cols-4 gap-4">
-                    <div className="bg-themegray col-span-1 py-6">
-                      <p className="text-spacegray text-xs text-center">
-                        A. Critic name
-                      </p>
-                      <div className="flex items-end justify-center">
-                        <p className=" text-xl">100/</p>
-                        <span className=" text-xs">100</span>
-                      </div>
-                    </div>
-                    <div className="bg-themegray col-span-1 py-6">
-                      <p className="text-spacegray text-xs text-center">
-                        B. Critic name
-                      </p>
-                      <div className="flex items-end justify-center">
-                        <p className=" text-xl">98/</p>
-                        <span className=" text-xs">100</span>
-                      </div>
-                    </div>
-                    <div className="bg-themegray col-span-1 py-6">
-                      <p className="text-spacegray text-xs text-center">
-                        J. Critic name
-                      </p>
-                      <div className="flex items-end justify-center">
-                        <p className=" text-xl">19/</p>
-                        <span className=" text-xs">20</span>
-                      </div>
-                    </div>
-                    <div className="bg-themegray col-span-1 py-6">
-                      <p className="text-spacegray text-xs text-center">
-                        G. Critic name
-                      </p>
-                      <div className="flex items-end justify-center">
-                        <p className=" text-xl">99/</p>
-                        <span className=" text-xs">100</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <hr className=" border-t-2" />
-                <div className="flex justify-end items-center gap-12 py-2 px-5 text-spacegray">
-                  <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"
-                      />
-                    </svg>
-                    <p>Share</p>
-                  </div>
-                  <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-                      />
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <p>999</p>
-                  </div>
-                  <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
-                      />
-                    </svg>
-                    <p>999</p>
-                  </div>
-                  <button
-                    type="button"
-                    className="text-spacegray bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 mr-2"
-                  >
-                    See More
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      className="w-4 h-4 ms-2 text-spacegray"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* second section end */}
-        </div>
-      </section>
+      <ProductTopSection />
       {/* hero section end*/}
       {/* our peace of mind pledge section start */}
-      <section className=" py-14">
-        <div className="container mx-auto">
-          <h2 className=" capitalize text-3xl font-semibold">
-            <span className=" text-typegray text-3xl font-normal">our</span>{" "}
-            peace of mind pledge
-          </h2>
-          <p className=" text-base font-medium w-11/12 pt-4">
-            “Investor Peace of Mind” is a core principle at Vinesia. It
-            encapsulates our commitment to providing a secure, transparent, and
-            hassle-free investment experience. Here’s what it entails:
-          </p>
-
-          <div className="md:basis-3/5 basis-full z-0 pt-10">
-            <div className="container grid mx-auto gap-6 lg:grid-cols-4">
-              <div className="max-w-md bg-themegray flex items-center justify-between p-4">
-                <div>
-                  <p className="text-base font-bold text-gray-900 truncate dark:text-white">
-                    Proof
-                  </p>
-                  <p className="text-base font-bold text-gray-900 truncate dark:text-white pb-4">
-                    of authenticity
-                  </p>
-                  <hr className=" border-t-2" />
-                </div>
-                <div>
-                  <Image src={Vector} alt="Picture of the author" width={70} />
-                </div>
-              </div>
-
-              <div className="max-w-md bg-themegray flex items-center justify-between p-4">
-                <div className="flex-1">
-                  <p className="text-base font-bold text-gray-900 truncate dark:text-white">
-                    Proof
-                  </p>
-                  <p className="text-base font-bold text-gray-900 truncate dark:text-white pb-4">
-                    of ownership
-                  </p>
-                  <hr className=" border-t-2" />
-                </div>
-                <div>
-                  <Image
-                    src={ownership}
-                    alt="Picture of the author"
-                    width={70}
-                  />
-                </div>
-              </div>
-
-              <div className="max-w-md bg-themegray flex items-center justify-between p-4">
-                <div className="flex-1">
-                  <p className="text-base font-bold text-gray-900 truncate dark:text-white">
-                    Proof of
-                  </p>
-                  <p className="text-base font-bold text-gray-900 truncate dark:text-white pb-4">
-                    storage conditions
-                  </p>
-                  <hr className=" border-t-2" />
-                </div>
-                <div>
-                  <Image
-                    src={frame}
-                    alt="Picture of the author"
-                    width={70}
-                    className=""
-                  />
-                </div>
-              </div>
-
-              <div className="max-w-md bg-themegray flex items-center justify-between p-4">
-                <div className="flex-1">
-                  <p className="text-base font-bold text-gray-900 truncate dark:text-white pb-4">
-                    See our video
-                  </p>
-                  <hr className=" border-t-2" />
-                </div>
-                <div>
-                  <Image
-                    src={playvideo}
-                    alt="Picture of the author"
-                    width={120}
-                    className=""
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-center pt-7">
-              <button
-                type="button"
-                className="text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center"
-              >
-                Invest now
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PeaceOfMind />
       {/* our peace of mind pledge section end */}
       {/* Release details section start */}
-      <section className="container mx-auto">
-        <div className="flex justify-between ">
-          <div>
-            <h2 className="text-3xl font-medium">Release details</h2>
-          </div>
-          <div className="flex text-spacegray">
-            <p className="flex gap-4 items-center">
-              <span>On the market are </span>
-              <span className=" text-lg font-medium">24</span>
-              <span>editions of this product</span>
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
-                  />
-                </svg>
-              </span>
-            </p>
-          </div>
-        </div>
-
-        <div className=" bg-themegray p-6 mt-7">
-          <div className="grid gap-5 lg:grid-cols-2">
-            <div className="text-spacegray">
-              <h2 className=" text-xl font-medium">Pricing details</h2>
-              <div>
-                {/* first box */}
-                <div className=" grid gap-0 lg:grid-cols-2 pt-6">
-                  <div className=" border-2 p-4 py-7 border-typegray">
-                    <div className="flex gap-3">
-                      <h2 className=" text-sm">Release Price </h2>
-                      <Image src={infologo} alt="Picture of the author" />
-                    </div>
-                    <p className=" text-lg font-medium">€38,888</p>
-                  </div>
-                  <div className=" border-2 p-4 py-7 border-typegray">
-                    <div className="flex gap-3">
-                      <h2 className=" text-sm">Average MARKET PRICE</h2>
-                      <Image src={infologo} alt="Picture of the author" />
-                    </div>
-                    <p className=" text-lg font-medium">€48,888</p>
-                  </div>
-                </div>
-                {/* second box */}
-                <div className=" grid gap-0 lg:grid-cols-2">
-                  <div className=" border-2 p-4 border-typegray">
-                    <div>
-                      <h2 className=" text-sm">Highest Price</h2>
-                      <h2 className=" text-sm">ever transacted for product</h2>
-                    </div>
-                    <p className=" text-lg font-medium">€68,888</p>
-                  </div>
-                  <div className=" border-2 p-4 bg-typegray border-typegray text-white">
-                    <div>
-                      <h2 className=" text-sm">Price Change</h2>
-                      <h2 className=" text-sm">since first release</h2>
-                    </div>
-                    <p className=" text-lg font-medium">+ 66.6%↑</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <Image src={pricehistory} alt="Picture of the author" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ReleaseDateSection />
       {/* Release details section end */}
       {/* All editions start */}
       <section className="container mx-auto py-24">
@@ -827,6 +226,8 @@ export default function Product() {
                 } = item;
                 return (
                   <div key={id}>
+                    <ProductCard />
+
                     <Image
                       src={imageSrc}
                       alt={imageAlt}
@@ -880,14 +281,14 @@ export default function Product() {
       </section>
       {/* All editions end */}
       {/* How to invest in wine start */}
-      <section className=" bg-themegray shadow-lg">
-        <div className="container max-w-screen-lg justify-between items-center flex mx-auto py-6">
+      <section className="bg-themegray shadow-lg">
+        <div className="container max-w-screen-md justify-between items-center flex mx-auto py-6">
           <div>
             <h3 className=" text-lg font-semibold">How to invest in wine</h3>
             <p className=" w-3/4 font-normal text-sm">
               See our video to gather new informations
             </p>
-            <p className=" w-3/4 font-normal text-sm">
+            <p className=" w-4/5 font-normal text-sm">
               See our video to gather new informations See our video to gather
               new informations See our video to gather new informations See our
               video to gather new informations See our video to gather new
@@ -907,6 +308,347 @@ export default function Product() {
         </div>
       </section>
       {/* How to invest in wine end */}
+      {/* About Chateau La Mission Haut Brion Cru Classe | 2009 start */}
+      <section className="pt-10">
+        <div className=" container mx-auto">
+          <h2 className=" capitalize text-3xl font-semibold">
+            <span className=" text-typegray text-4xl font-normal">About</span>{" "}
+            Chateau La Mission Haut Brion Cru Classe | 2009
+          </h2>
+        </div>
+
+        <div className="container max-w-screen-xl items-center flex mx-auto py-6 px-16">
+          <div>
+            <div className="flex gap-3">
+              <Image
+                src={redwine}
+                alt="Picture of the author"
+                width={20}
+                height={20}
+                // blurDataURL="data:..." automatically provided
+                // placeholder="blur" // Optional blur-up while loading
+              />
+              <span className="font-bold text-base text-spacegray">
+                Red, 14% Alc
+              </span>
+            </div>
+            <p className=" w-5/6 font-normal text-base">
+              An evocative nose, floral and exotic with black cherry, lychee and
+              passion fruit aromas, delicate and nuanced. Svelte on the palate
+              with sculpted and refined tannins – it’s confident, with sinew,
+              muscle and plump fruit, but not showy. The 2019 Le Pin is a rich,
+              expansive wine that soars from the glass with aromas of raspberry
+              preserve, plums, wild berries, rose petals and licorice, framed by
+              a deftly judged patina of creamy new oak. Full-bodied, supple and
+              velvety, it’s broad and enveloping, with a fleshy core of fruit
+              that’s framed by lively acids and powdery tannins, concluding with
+              a long, aromatic finish. Le Pin’s vines are rooted in clay, which
+              no doubt helps to explain how this wine can perform so well
+              in warm, dry vintages.
+            </p>
+          </div>
+          <div>
+            <iframe
+              width="400"
+              height="230"
+              className=" rounded-md"
+              src="https://www.youtube.com/embed/7gquYRxLMFI?si=S7E_iDRbr-b1dZef"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            ></iframe>
+          </div>
+        </div>
+        <div className="container  items-center flex mx-auto py-1 border-2 border-bordergray">
+          {[1, 2, 3].map((d, i) => {
+            return (
+              <div key={i} className=" border-e-2 p-6">
+                <h3 className=" text-base">
+                  A. Critic name{" "}
+                  <span className=" text-lg font-semibold text-black">
+                    100/
+                  </span>
+                  <span className=" text-xs text-black">100</span>
+                </h3>
+                <hr />
+                <p className="text-center text-base">
+                  This is the best wine for romantic dinner and long term
+                  investment. Buy it as soon as you can, cause it wont last
+                  long. Buy it as soon as you can.
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+      {/* About Chateau La Mission Haut Brion Cru Classe | 2009 end */}
+      {/* About artwork start */}
+      <section className="pt-10">
+        <div className="container mx-auto">
+          <h2 className="capitalize text-3xl font-semibold">
+            <span className="text-typegray text-4xl font-normal">About</span>{" "}
+            artwork
+          </h2>
+          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-16">
+            <div>
+              <p className="text-xs text-bordergray">Original Art</p>
+              <p className="text-xs font-semibold">
+                Stop Breathing, White_2Stripes_black_blue
+              </p>
+              <p className="text-xs text-bordergray">
+                WP Nr.1 Screen print on paper 31x 41 cm 2022
+              </p>
+              <p className="text-xs font-medium">Artist Famous and Known</p>
+              <p className="font-normal text-base">
+                Reso’s deep connection with New York City has been a profound
+                source of inspiration throughout his life. The vibrant
+                subcultural graffiti movement in the 70s and 80s, which painted
+                the cityscape with mesmerizing letterings on subway cars, left
+                an indelible mark on his artistic journey. New York’s contrasts
+                and diverse experiences shaped Reso’s creativity, leading him to
+                explore typography and the power of letters to evoke emotions in
+                viewers. His art, born in secrecy and yet attracting extreme
+                attention, later evolved into a multidimensional experience,
+                where letters overlapped, and functionality gave way to artistic
+                expression. Through his international presence, Reso’s name and
+                influence became synonymous with the graffiti movement, but he
+                sought artistic liberation beyond its confines, embracing a new
+                chapter of his creative exploration. Reso turned away from the
+                legibility of characters and lettering and instead focused on
+                the viewer’s emotional access to his work. His signs are encoded
+                in a unique and personal way, making the individual layers no
+                longer easy to separate, and the letters lose their classic
+                distinguishing features when merged through the overlay of
+                letter forms and colors. Reso consciously breaks with
+                traditional reading habits and offers viewers a completely new
+                image of typography. He no longer arranges the letters
+                classically from left to right and one behind the other, but
+                allows them to merge into constructs of form in order to provide
+                viewers with new visual experiences.
+              </p>
+            </div>
+            <div className="flex justify-end">
+              <Image
+                src={group}
+                alt="Picture of the author"
+                width={450}
+                height={300}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* About artwork end */}
+      {/* About Winery Château Le Pin start */}
+      <section className="pt-10">
+        <div className="container mx-auto">
+          <h2 className="capitalize text-3xl font-semibold">
+            <span className="text-typegray text-4xl font-normal">About</span>{" "}
+            Winery Château Le Pin
+          </h2>
+          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-16">
+            <div>
+              <p>France, Region, Appellation</p>
+              <p className="font-normal text-base">
+                Château Le Pin is a mini chateau in the Pomerol appellation on
+                the right bank of the Bordeaux region. It is considered a cult
+                estate and is highly sought-after by wine collectors. Its tiny
+                production, averaging just 600-700 cases a year, commands even
+                higher prices than Château Petrus, making it one of the most
+                expensive wines in Bordeaux! Madame Laubie and her family had
+                owned this small vineyard since 1924, but sold it in 1979 to the
+                Belgian Mr. Jacques Thienpont. At that time, the vineyard
+                covered just one hectare. Today, the vineyard covers 2.7
+                hectares. The name derives from the two pine trees that grow on
+                the estate, near the winery.
+              </p>
+            </div>
+            <div className="flex justify-end">
+              <Image
+                src={kranu}
+                alt="Picture of the author"
+                width={450}
+                height={300}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="pt-10">
+        <div className="container mx-auto">
+          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-16">
+            <div className="flex">
+              <Image
+                src={zut}
+                alt="Picture of the author"
+                width={450}
+                height={300}
+              />
+            </div>
+            <div>
+              <p>France, Region, Appellation</p>
+              <p className="font-normal text-base">
+                Château Le Pin is a mini chateau in the Pomerol appellation on
+                the right bank of the Bordeaux region. It is considered a cult
+                estate and is highly sought-after by wine collectors. Its tiny
+                production, averaging just 600-700 cases a year, commands even
+                higher prices than Château Petrus, making it one of the most
+                expensive wines in Bordeaux! Madame Laubie and her family had
+                owned this small vineyard since 1924, but sold it in 1979 to the
+                Belgian Mr. Jacques Thienpont. At that time, the vineyard
+                covered just one hectare. Today, the vineyard covers 2.7
+                hectares. The name derives from the two pine trees that grow on
+                the estate, near the winery.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* About Winery Château Le Pin end */}
+      {/* You may also like start */}
+      <section className=" py-14">
+        <div className="container mx-auto">
+          <h2 className=" capitalize text-3xl font-semibold">
+            You may also like
+          </h2>
+          <div className="md:basis-3/5 basis-full z-0 pt-10">
+            <div className="container grid mx-auto gap-6 lg:grid-cols-4">
+              <div className="max-w-md bg-themegray flex items-end text-center h-[400px] pb-6 border-2 border-spacegray">
+                <div>
+                  <div className="flex justify-center pb-8">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h1 className=" text-3xl font-semibold">
+                      Vinesia Art Collections
+                    </h1>
+                  </div>
+                  <div className="flex justify-center pt-7">
+                    <button
+                      type="button"
+                      className="text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center"
+                    >
+                      Explore
+                    </button>
+                  </div>
+                </div>
+              </div>
+              {[1, 2, 3].map((d, i) => {
+                return (
+                  <div key={i} className="max-w-md flex text-center pb-6">
+                    <div>
+                      <div className="flex justify-center pb-8">
+                        <div>
+                          <div className="flex gap-3 pb-3">
+                            <Image
+                              src={productimg}
+                              alt="Picture of the author"
+                              width={300}
+                              height={20}
+                            />
+                          </div>
+                          <div className=" text-left">
+                            <h4 className=" text-base font-semibold">
+                              Brunello di Montalcino {`"Piaggione"`} | 2019
+                            </h4>
+                            <p className=" text-xs ">6 bottles collection</p>
+                            <p className=" text-xs font-semibold">OWNER</p>
+                            <p className=" text-xs bg-bgbutton w-12 text-center text-white mb-2">
+                              Vinesia
+                            </p>
+                            <hr />
+                            <button className="text-xs uppercase ">
+                              buy now
+                            </button>
+                            <h3 className=" font-semibold text-lg ">€3,600</h3>
+                            <p className=" flex gap-3">
+                              <span className=" text-xs font-medium">
+                                50 bottles
+                              </span>
+                              <span className=" text-xs">50 remaining</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* You may also like end */}
+      {/* Be the first to know start */}
+      <section>
+        <div className=" flex justify-end items-center">
+          <div className="w-1/3  bg-themegray p-3 border-y-2 border-l-2 border-spacegray  rounded-s-md">
+            <div className="flex justify-between w-full max-w-sm mx-auto">
+              <h2>Be the first to know </h2>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </div>
+            <div className=" flex pt-3 ">
+              <form className="flex gap-5 mx-auto">
+                <div>
+                  <div className="flex">
+                    <input
+                      className=" text-base w-[265px] bg-transparent outline-none border-2 px-4 py-2 rounded-lg focus:ring-0 focus:outline-none"
+                      type="text"
+                      placeholder="Add email to join newsletter"
+                      aria-label="Full name"
+                    />
+                  </div>
+                  <div className="md:flex md:items-start pt-3">
+                    <label className="block text-gray-500 font-bold  space-x-3">
+                      <input className=" leading-tight" type="checkbox" />
+                      <span className=" text-sm">I agree to...</span>
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <button
+                    type="button"
+                    className="text-white bg-spacegray focus:ring-0 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Be the first to know end */}
     </div>
   );
 }

@@ -22,7 +22,7 @@ const Header = () => {
               src={logo}
               alt="Picture of the author"
               width={80}
-              height={80}    
+              height={80}
             />
           </div>
 
@@ -53,7 +53,7 @@ const Header = () => {
               src={arrowTray}
               alt="Picture of the author"
               width={20}
-              height={20}      
+              height={20}
             />
             <button>Sign Up / Login</button>
             <div className="flex items-center space-x-2">
