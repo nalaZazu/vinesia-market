@@ -14,10 +14,10 @@ const Critics = () => {
       <h1 className="text-primary font-semibold text-3xl leading-10">
         Critics selection
       </h1>
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-2 items-center">
         <div className=" flex justify-around items-start">
-          <div className="mt-6 w-[45%]">
-            <ul className="list-decimal list-outside font-semibold leading-6">
+          <div className="mt-6 lg:w-[45%]">
+            <ul className="list-decimal list-outside font-semibold leading-6 list-inside">
               <li>Chateau La Mission Haut Brion Cru Classe 2009</li>
               <li className="mt-6">
                 Chateau La Mission Haut Brion Cru Classe 2009
@@ -44,7 +44,7 @@ const Critics = () => {
         <div className="col-span-2">
           <div className="flex">
             <div className="flex  justify-evenly">
-              <Image src={wine} alt="image"  className="mr-2"/>
+              <Image src={wine} alt="image" className="mr-2" />
 
               <ul className=" w-2/3  ">
                 <li>
@@ -66,37 +66,39 @@ const Critics = () => {
                   embrace of ripe strawberries, teasing the taste buds with
                   their luscious juiciness. A subtle citrus outhfeel that
                   enhances the overall elegance of this wine.
-                </li><div>
-                <button className="py-2.5 px-4 mt-3 border border-bgsecondary  text-bgsecondary rounded-lg text-base font-medium">
-                  Invest now
-                </button>
-              </div>
+                </li>
+                <div>
+                  <button className="py-2.5 px-4 mt-3 border border-bgsecondary  text-bgsecondary rounded-lg text-base font-medium">
+                    Invest now
+                  </button>
+                </div>
               </ul>
-              
             </div>
+          </div>
+        </div>
 
-            <div className=" w-3/4">
-              <h2 className="font-normal text-sm flex">
-                Vinesia score
-                <Image
-                  src={alert}
-                  alt="Picture of the author"
-                  width={15}
-                  height={15}
-                  quality={75}
-                  className="ml-2"
-                />
-              </h2>
-              <div className="flex flex-col ">
-                <span className="font-semibold text-4xl">5/5</span>
-                <span className="text-base font-medium mt-5">
-                  by Robert Parker
-                </span>
-              </div>
-              <span>
-                <Image src={signature} alt="signature" />
+        <div>
+          <div className=" w-3/4">
+            <h2 className="font-normal text-sm flex">
+              Vinesia score
+              <Image
+                src={alert}
+                alt="Picture of the author"
+                width={15}
+                height={15}
+                quality={75}
+                className="ml-2"
+              />
+            </h2>
+            <div className="flex flex-col ">
+              <span className="font-semibold text-4xl">5/5</span>
+              <span className="text-base font-medium mt-5">
+                by Robert Parker
               </span>
             </div>
+            <span>
+              <Image src={signature} alt="signature" />
+            </span>
           </div>
         </div>
       </div>

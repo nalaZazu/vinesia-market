@@ -19,12 +19,14 @@ import PeaceOfMind from "@/components/productDetail/PeaceOfMind";
 import ReleaseDateSection from "@/components/productDetail/ReleaseDateSection";
 import ProductCard from "@/components/cards/ProductCard";
 import { getProductDetail } from "@/services/ProductDetail";
+import { Wine } from "@/propTypes/page";
+import PTSSkelton from "@/components/productDetail/PTSSkelton";
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching
 
 export default function Product() {
   const { id } = useParams();
-  const [data, setData] = useState({});
+  const [data, setData] = useState<any>({});
   console.log("Params", id);
 
   const [show, setShow] = useState([]);
@@ -39,11 +41,11 @@ export default function Product() {
     console.log(show);
   };
   useEffect(() => {
-    axiosCall();
+    // axiosCall();
     if (id) {
       getProductDetail(id)
         .then((res) => {
-          console.log("Res from Product Detail ", res);
+          console.log("Res from Product Detail ", res?.data?.wine);
           setData(res?.data);
         })
         .catch((err) => {
@@ -54,17 +56,18 @@ export default function Product() {
 
   // this is className base strcture of style base module
   // const {brown} = orange
+  const { wine } = data;
   return (
     <div>
       <BreadCrumb />
       <div className=" container mx-auto py-5 py-md-2">
         <h1 className=" text-3xl font-bold tracking-tight text-spacegray">
-          Chateau La Mission Haut Brion Cru Classe | 2009
+          {wine?.name}
         </h1>
-        <p>With Art of Lola Designer Fun</p>
+        <p> {wine?.description} </p>
       </div>
       {/* hero section start*/}
-      <ProductTopSection />
+      {wine ? <ProductTopSection wine={wine} /> : <PTSSkelton />}
       {/* hero section end*/}
       {/* our peace of mind pledge section start */}
       <PeaceOfMind />

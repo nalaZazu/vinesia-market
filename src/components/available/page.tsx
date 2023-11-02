@@ -4,9 +4,10 @@ import bottlePic from "../../assets/image/image25.png";
 const Available = () => {
   return (
     <div className=" ">
-             
-      <h1 className="font-semibold text-primary leading-10 text-4xl">Available Soon</h1>
-      <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-4 gap-y-8 lg:max-w-none lg:grid-cols-2 h-80">
+      <h1 className="font-semibold text-primary leading-10 text-4xl">
+        Available Soon
+      </h1>
+      <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-4 gap-y-8 lg:max-w-none lg:grid-cols-2">
         <div className="bg-bgprimary  flex justify-end items-end">
           <div className="mb-8">
             <p className="font-bold">Text about drop</p>
@@ -19,19 +20,21 @@ const Available = () => {
               width={400}
               height={350}
               className="mb-3"
-            />  
+            />
           </div>
         </div>
 
         <div className="max-w-xl lg:max-w-lg">
-          
           <p className=" text-lg leading-8  font-bold w-9/12">
             Soon you will be able to invest in new wines. Sign up for the
             waiting list to get notified.
-          </p>  
-          
+          </p>
+
           <div className="mt-6  max-w-md gap-x-4">
-          <label htmlFor="email-address" className="text-black text-base font-normal">
+            <label
+              htmlFor="email-address"
+              className="text-black text-base font-normal"
+            >
               Email address <span className="text-red-600">*</span>
             </label>
             <input
