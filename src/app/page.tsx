@@ -19,7 +19,8 @@ export default function Home() {
   
   return (
     <>
-      <div className="container mx-auto max-w-2xl px-4 py-16 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="container mx-auto max-w-2xl px-4  sm:px-6 lg:max-w-7xl lg:px-8">
+        {/* py-16 sm:py-24 */}
         <Banner />
         <Heritage />
         <Available />
