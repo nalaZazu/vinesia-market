@@ -62,7 +62,7 @@ const Heritage = () => {
         
           </div>   */}
 
-          <div className="  grid lg:grid-cols-2 md:grid-cols-1 grid-cols-2 gap-4 md:gap-0">
+          <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-2 gap-4 md:gap-0">
             <div>
               <div>
                 <Slider {...sliderSettings}>

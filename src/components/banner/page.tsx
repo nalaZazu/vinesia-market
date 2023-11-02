@@ -71,6 +71,8 @@ const Banner = () => {
                     width={15}
                     height={15}
                     quality={75}
+                    style={{objectFit: "contain"}}
+                    
                   />
                 </li>
                 <div
@@ -101,6 +103,8 @@ const Banner = () => {
                     width={15}
                     height={15}
                     quality={75}
+                    style={{objectFit: "contain"}}
+                    
                   />
                 </li>
                 <div className={`relative ${isHovered ? "block" : "hidden"}`}>
@@ -122,7 +126,9 @@ const Banner = () => {
         {/* next section  */}
         <div className="grid justify-end">
           {/* // grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8 */}
-          <Image src={group1} alt="Picture of the author" />
+          <Image src={group1} alt="Picture of the author"  
+           style={{objectFit: "contain"}}
+              quality={75}/>
         </div>
       </div>
     </>

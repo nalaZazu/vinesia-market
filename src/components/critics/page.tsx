@@ -14,45 +14,45 @@ const Critics = () => {
       <h1 className="text-primary font-semibold text-3xl leading-10">
         Critics selection
       </h1>
-     
+
       <div className="grid grid-cols-4 gap-4">
         <div className=" flex">
-          <ul className=" text-black text-lg font-semibold  tracking-tight ">
-            <li className="grid grid-cols-6 gap-2">
-              <span className=" text-xxl font-semibold  tracking-tight  text-primary">1</span>
-              <span className="col-span-4 pe-3">
+          <ul className=" text-secondary text-lg font-semibold  tracking-tight ">
+            <li className=" mt-4 grid grid-cols-6 gap-2">
+              <span className=" text-xxl font-semibold  tracking-tight  text-primary">
+                1
+              </span>
+              <span className=" col-span-4 pe-3">
                 Chateau La Mission Haut Brion Cru Classe 2009
               </span>
               <button>
                 <Image src={arrowleft} alt="arrow" />
               </button>
             </li>
-            <li className="mt-6 grid grid-rows-1 grid-flow-col gap-4">
-              <span className="row-span-3 text-xxl font-semibold   tracking-tight text-primary">2</span>
-              <span className="w-3/5 row-span-2">
-                {" "}
-                Chateau La Mission Haut Brion Cru Classe 2009
-                
+            <li className=" mt-4 grid grid-cols-6 gap-2">
+              <span className=" text-xxl font-semibold  tracking-tight  text-primary">
+                2
               </span>
-              
-            </li>
-            <li className="mt-6 grid grid-rows-1 grid-flow-col gap-4">
-              <span className="row-span-3 text-xxl font-semibold  tracking-tight text-primary">3</span>
-              <span className="w-3/5 row-span-2">
-                {" "}
+              <span className="col-span-4 pe-3">
                 Chateau La Mission Haut Brion Cru Classe 2009
               </span>
             </li>
-            
-            <li className="mt-6 grid grid-rows-1 grid-flow-col gap-4">
-              <span className="row-span-3 text-xxl font-semibold  tracking-tight text-primary">4</span>
-              <span className="w-3/5 row-span-2">
-                {" "}
+            <li className=" mt-4 grid grid-cols-6 gap-2">
+              <span className=" text-xxl font-semibold  tracking-tight  text-primary">
+                3
+              </span>
+              <span className="col-span-4 pe-3">
                 Chateau La Mission Haut Brion Cru Classe 2009
               </span>
             </li>
-
-
+            <li className=" mt-4 grid grid-cols-6 gap-2">
+              <span className=" text-xxl font-semibold  tracking-tight  text-primary">
+                4
+              </span>
+              <span className="col-span-4 pe-3">
+                Chateau La Mission Haut Brion Cru Classe 2009
+              </span>
+            </li>
           </ul>
         </div>
 
@@ -60,19 +60,19 @@ const Critics = () => {
           {/* imageand text */}
           <div className="flex">
             <div>
-              {" "}
+              
               <Image src={wine} alt="image" className="mr-2" />
             </div>
-            <ul className=" w-2/3  ">
+            <ul className=" w-2/3  text-base font-medium   tracking-tight">
               <li>
-                {" "}
+                 
                 “This wine blushes in the glass like a tender, rosy dawn,
                 inviting the drinker to embrace its delicate hue. The play of
                 soft pinks and hints of coral dances under the light, hinting at
                 the allure within.
               </li>
               <li>
-                {" "}
+              
                 Nose: The first inhalation enchants with a floral bouquet
                 reminiscent of a blooming garden in spring. Notes of fresh roses
                 and lavender harmoniously intertwine, giving this wine a sweet
@@ -85,7 +85,7 @@ const Critics = () => {
                 overall elegance of this wine.
               </li>
               <div>
-                <button className="py-2.5 px-4 mt-3 border border-bgsecondary  text-bgsecondary rounded-lg text-base font-medium">
+                <button className="py-2.5 px-4 mt-3 border border-bgsecondary  text-bgsecondary rounded-lg   text-base font-medium   tracking-tight">
                   Invest now
                 </button>
               </div>
@@ -94,20 +94,21 @@ const Critics = () => {
         </div>
         {/* text portion */}
         <div className=" ">
-          <h2 className="font-normal text-sm flex">
-            Vinesia score
+          <h2 className="  flex text-secondary text-sm font-normal  tracking-tight">
+             Score
             <Image
               src={alert}
               alt="Picture of the author"
               width={15}
               height={15}
               quality={75}
+              style={{objectFit: "contain"}}
               className="ml-2"
             />
           </h2>
           <div className="flex flex-col ">
-            <span className="font-semibold text-4xl">5/5</span>
-            <span className="text-base font-medium mt-5">by Robert Parker</span>
+            <span className="font-semibold  text-secondary text-xxl  tracking-tight">5/5</span>
+            <span className="text-base font-medium mt-5   text-secondary  tracking-tigh">by Robert Parker</span>
           </div>
           <span>
             <Image src={signature} alt="signature" />
@@ -121,10 +122,10 @@ const Critics = () => {
             <Image src={img1} alt="image" />
           </div>
           <div className="shrink-0  w-3/5 ml-5">
-            <h1 className="text-primary font-semibold text-3xl leading-10">
+            <h1 className="text-primary text-xxl font-semibold tracking-tight">
               Wine & art collections
             </h1>
-            <p>
+            <p className="w-[400px] text-base font-medium   tracking-tight">
               Collections are carefully curated around specific themes,
               featuring exceptional wines from prestigious wineries worldwide.
               Each collection is a celebration of the finest vintages,
@@ -145,7 +146,9 @@ const Critics = () => {
           </div>
         </div>
         <div className=" w-2/5">
-          <Image className="mx-auto" src={img2} alt="image" />
+          <Image className="mx-auto" src={img2} alt="image"  
+           style={{objectFit: "contain"}}
+           quality={75}/>
         </div>
       </div>
     </div>

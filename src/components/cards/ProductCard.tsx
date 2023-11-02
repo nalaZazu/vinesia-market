@@ -19,6 +19,8 @@ export default function ProductCard() {
               width={15}
               height={15}
               quality={75}
+              style={{objectFit: "contain"}}
+               
             />
           </span>
         </p>
