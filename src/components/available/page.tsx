@@ -3,14 +3,15 @@ import React from "react";
 import bottlePic from "../../assets/image/image25.png";
 const Available = () => {
   return (
-    <div className=" ">
-             
-      <h1 className="font-semibold text-primary leading-10 text-4xl">Available Soon</h1>
+    <div>
+      <h1 className="text-primary font-semibold  tracking-tight text-xxl">
+        Available Soon
+      </h1>
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-4 gap-y-8 lg:max-w-none lg:grid-cols-2 h-80">
         <div className="bg-bgprimary  flex justify-end items-end">
-          <div className="mb-8">
-            <p className="font-bold">Text about drop</p>
-            <p>Date</p>
+          <div className="mb-8 text-black  tracking-tight">
+            <p className="  text-sm font-bold  ">Text about drop</p>
+            <p className=" text-base font-medium ">Date</p>
           </div>
           <div className=" flex justify-end m-4">
             <Image
@@ -19,19 +20,21 @@ const Available = () => {
               width={400}
               height={350}
               className="mb-3"
-            />  
+            />
           </div>
         </div>
 
         <div className="max-w-xl lg:max-w-lg">
-          
-          <p className=" text-lg leading-8  font-bold w-9/12">
+          <p className="  text-black text-lg font-semibold  tracking-tight  w-[74%]">
             Soon you will be able to invest in new wines. Sign up for the
             waiting list to get notified.
-          </p>  
-          
+          </p>
+
           <div className="mt-6  max-w-md gap-x-4">
-          <label htmlFor="email-address" className="text-black text-base font-normal">
+            <label
+              htmlFor="email-address"
+              className="text-black  text-base font-normal tracking-tight"
+            >
               Email address <span className="text-red-600">*</span>
             </label>
             <input
@@ -60,12 +63,18 @@ const Available = () => {
             </div>
           </div>
 
+          <div className=" mt-6 px-4 py-2.5 bg-gray-500 rounded-lg justify-center items-center gap-2 inline-flex">
+            <button className="text-white text-base font-medium tracking-tight">
+              Subscribe
+            </button>
+          </div>
+          {/* 
           <button
             type="submit"
-            className="flex-none mt-6 rounded-md bg-bgsecondary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bgsecondary cursor-pointer"
+            className="flex-none  rounded-md bg-bgsecondary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bgsecondary cursor-pointer"
           >
             Subscribe
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
