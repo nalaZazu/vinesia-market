@@ -7,8 +7,8 @@ const Available = () => {
     <h1 className="text-primary font-semibold  tracking-tight text-xxl">
       Available Soon
     </h1>
-    <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-4 gap-y-8 lg:max-w-none lg:grid-cols-2">
-        <div className="bg-bgprimary  flex justify-end items-end">
+    <div className="mx-auto gap-x-10 md:flex sm:grid sm:grid-cols-1">
+        <div className="bg-bgprimary md:py-8 py-8  flex justify-end items-end md:w-7/12">
           <div className="mb-8 text-black  tracking-tight">
             <p className="  text-sm font-bold  ">Text about drop</p>
             <p className=" text-base font-medium ">Date</p>
@@ -17,8 +17,8 @@ const Available = () => {
             <Image
               src={bottlePic}
               alt="Picture of the author"
-              width={400}
-              height={350}
+              // width={400}
+              // height={350}
               style={{objectFit: "contain"}}
               quality={75}
               className="mb-3"
@@ -27,7 +27,7 @@ const Available = () => {
           </div>
         </div>
 
-        <div className="max-w-xl lg:max-w-lg">
+        <div className="max-w-xl lg:max-w-lg md:px-5 md:py-8 py-8">
           <p className="  text-black text-lg font-semibold  tracking-tight  w-[74%]">
             Soon you will be able to invest in new wines. Sign up for the
             waiting list to get notified.
