@@ -27,23 +27,26 @@ const Banner = () => {
       <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16   lg:max-w-7xl lg:grid-cols-2  ">
         {/* // px-4   sm:px-6  */}
         <div>
-          <h1 className="font-semibold text-primary leading-10 text-4xl ">
+          <h1 className="font-semibold text-primary tracking-tight text-xxl ">
             Marketplace
           </h1>
-          <div className="mt-4 text-primary text-2xl">
+          <div className="mt-4 text-primary text-2xl  tracking-tight  ">
             <h2>appreciating your wine, guarding its emotions</h2>
             <h2>
-              something about technology, advantage of wine investments,  unique
+              something about technology, advantage of wine investments, unique
               buying and reselling experience
             </h2>
           </div>
-          <button className="py-2.5 px-4 mt-3 bg-bgsecondary text-white rounded-lg text-center">
-            Start Exploring
-          </button>
+          <div className="px-4 py-2.5 justify-center items-center gap-2 inline-flex bg-bgsecondary rounded-lg mt-3 ">
+            <button className=" text-white text-base font-medium  tracking-tight">
+              Start Exploring
+            </button>
+          </div>
+
           <div className="mt-16">
-            <ul className="flex justify-between font-normal text-xs">:
-              <li className="font-extrabold">Peace of Mind pledge</li>
-              <li className="flex">
+            <ul className="flex justify-between font-normal text-xs text-black">
+              <li className=" text-xs font-extrabold ">Peace of Mind pledge</li>
+              <li className="flex    font-normal">
                 Proof of Authenticity
                 <li className="ml-1">
                   <Image
@@ -55,14 +58,13 @@ const Banner = () => {
                   />
                 </li>
               </li>
-              <li
-                className="flex relative"
-                
-              >
+              <li className="flex relative    font-normal">
                 Proof of Ownership
-                <li className="ml-1" 
-                onMouseEnter={showTooltip}
-                onMouseLeave={hideTooltip}>
+                <li
+                  className="ml-1"
+                  onMouseEnter={showTooltip}
+                  onMouseLeave={hideTooltip}
+                >
                   <Image
                     src={alert}
                     alt="Picture of the author"
@@ -75,7 +77,7 @@ const Banner = () => {
                   className={`relative ${tooltipVisible ? "block" : "hidden"}`}
                 >
                   <div className="absolute inline-block w-40 px-4 py-3 mb-10 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[-110px] left-[29px]">
-                    <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]">
+                    <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  tracking-wide ">
                       A quick explanation of the technology used here and how it
                       differs from the {`"old word"`}. RFID explanation.
                     </span>
@@ -86,12 +88,13 @@ const Banner = () => {
                   </div>
                 </div>
               </li>
-
-              <li className="flex relative">
+              <li className="flex relative   font-normal">
                 Proof of Storage conditions
-                <li className="ml-1"   
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}>
+                <li
+                  className="ml-1"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
                   <Image
                     src={alert}
                     alt="Picture of the author"
@@ -102,7 +105,7 @@ const Banner = () => {
                 </li>
                 <div className={`relative ${isHovered ? "block" : "hidden"}`}>
                   <div className="absolute inline-block w-40 px-4 py-3 mt-2 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[14px] left-[68px]">
-                    <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]">
+                    <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  ">
                       Rating comes from world recognized critics like by either
                       Robert Parker, Jeb Dunnuck or Suckling.
                     </span>
