@@ -22,6 +22,7 @@ import productimg from "../../../assets/icon/productsimage.png";
 import Link from "next/link";
 // import orange from "../style.module.css"
 import css from "styled-jsx/css";
+import Appactivity from "@/components/charts/page";
 // client componet fetching
 
 export default function Product() {
@@ -671,7 +672,7 @@ export default function Product() {
               </div>
             </div>
             <div>
-              <Image src={pricehistory} alt="Picture of the author" />
+              <Appactivity />
             </div>
           </div>
         </div>
@@ -1202,22 +1203,52 @@ export default function Product() {
       {/* Be the first to know start */}
       <section>
         <div className=" flex justify-end items-center">
-          <div className="flex bg-themegray w-2/5 justify-between p-3">
-            <h2>Be the first to know </h2>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
+          <div className="w-1/3  bg-themegray p-3 border-y-2 border-l-2 border-spacegray  rounded-s-md">
+            <div className="flex justify-between w-full max-w-sm mx-auto">
+              <h2>Be the first to know </h2>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </div>
+            <div className=" flex pt-3 ">
+              <form className="flex gap-5 mx-auto">
+                <div>
+                  <div className="flex">
+                    <input
+                      className=" text-base w-[265px] bg-transparent outline-none border-2 px-4 py-2 rounded-lg focus:ring-0 focus:outline-none"
+                      type="text"
+                      placeholder="Add email to join newsletter"
+                      aria-label="Full name"
+                    />
+                  </div>
+                  <div className="md:flex md:items-start pt-3">
+                    <label className="block text-gray-500 font-bold  space-x-3">
+                      <input className=" leading-tight" type="checkbox" />
+                      <span className=" text-sm">I agree to...</span>
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <button
+                    type="button"
+                    className="text-white bg-spacegray focus:ring-0 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </section>
