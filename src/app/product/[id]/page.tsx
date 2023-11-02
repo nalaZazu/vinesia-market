@@ -19,6 +19,7 @@ import PeaceOfMind from "@/components/productDetail/PeaceOfMind";
 import ReleaseDateSection from "@/components/productDetail/ReleaseDateSection";
 import ProductCard from "@/components/cards/ProductCard";
 import { getProductDetail } from "@/services/ProductDetail";
+import ArtCard from "@/components/productDetail/ArtCard";
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching
 
@@ -649,6 +650,8 @@ export default function Product() {
         </div>
       </section>
       {/* Be the first to know end */}
+
+      <ArtCard />
     </div>
   );
 }
