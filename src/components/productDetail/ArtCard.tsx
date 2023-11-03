@@ -250,7 +250,7 @@ export default function ArtCard() {
                 />
               </span>
             </div>
-            <div className="flex ms-16">
+            <div className="flex justify-center">
               <div className="flex z-50 bg-white w-2/3 items-center gap-5 py-2 px-5 text-spacegray relative shadow-md rounded-md">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
