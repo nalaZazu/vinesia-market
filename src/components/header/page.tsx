@@ -1,10 +1,13 @@
+"use client"
 import React from "react";
 import Link from "next/link";
 import logo from "../../assets/img/Logo1.png";
 import arrowTray from "../../assets/icon/log-in.svg";
 import Image from "next/image";
 import { menuBar } from "@/constants/navigate";
+import { useRouter } from "next/navigation";
 const Header = () => {
+  const router = useRouter();
   return (
     <div>
       <nav className="p-4">

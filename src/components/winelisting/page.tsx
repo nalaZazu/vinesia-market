@@ -1,7 +1,4 @@
-import { productlist } from "@/constants/winelist";
-import Image from "next/image";
-import alert from "../../assets/image/alert-circle.png";
-import React from "react";
+ import React from "react";
 import ProductCard from "../cards/ProductCard";
 const Listing = ({ data }: { data: any }) => {
   return (

@@ -7,7 +7,7 @@ export const menuBar = [
   {
     id: 2,
     name: "Invest",
-    href: "#",
+    href: "/product",
   },
   {
     id: 3,

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import alert from "../../assets/image/alert-circle.png";
+import alert from "../../assets/icon/alert-circle.svg";
 
 import group4 from "../../assets/image/group4.png";
 import group3 from "../../assets/image/group3.png";
@@ -150,6 +150,10 @@ const Banner = () => {
                 quality={75}
                 className="absolute top-[-37px] left-[-94px] "
               />
+              <div>
+
+                <div className="w-full h-full bg-[#d9d9d9]"></div>
+              </div>
 
               <Image
                 src={group5}
