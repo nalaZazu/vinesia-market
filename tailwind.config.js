@@ -8,25 +8,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bordergray: '#A0A6AC',
-        tabsgray: '#C6C7C8',
-        bgbutton: '#842029',
         availableGray: "#D9D9D9",
         themegray: "#F4F4F4",
         spacegray: "#41464b",
         bordergray: "#A0A6AC",
         tabsgray: "#C6C7C8",
-
-
+        breadcrumb: '#9B9B9B',
         bgbutton: "#842029",
-
         typegray: "#6C757D",
         primary: "#41464B",
         secondary: "#000000",
         bgprimary: "#D9D9D9",
         bgsecondary: "#6C757D",
       },
-
       
       /** Font
        * FontsName:[fontSize, lineHeight]
