@@ -11,15 +11,19 @@ import frame from "@/assets/icon/Frame.svg";
 import playvideo from "@/assets/icon/Playvideo.svg";
 import logo1 from "@/assets/icon/logo1.svg";
 import infologo from "@/assets/icon/info.svg";
-import { Wine, Winery } from "@/propTypes/page";
+import { Wine, releaseDetails, rating } from "@/propTypes/page";
 
-const ProductTopSection = ({ wine }: { wine: Wine }) => {
+const ProductTopSection = ({
+  wine,
+  release,
+  rating,
+}: {
+  wine: Wine;
+  release: releaseDetails;
+  rating: any;
+}) => {
   console.log("Wine ", wine);
-
-  const { winery } = wine;
-
-  console.log("Winery ", winery);
-  // const [hello,setHello] = useState<number>()
+  console.log("rating ", rating);
   return (
     <section className="bg-themegray py-12 mt-5">
       {/* <div className="container flex grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-2"> */}
@@ -48,7 +52,7 @@ const ProductTopSection = ({ wine }: { wine: Wine }) => {
                     />
                   </svg>
                   <span className="font-bold text-base text-spacegray">
-                    Sep 29, 2023
+                    {release?.releaseDate}
                   </span>
                 </div>
               </div>
@@ -211,7 +215,7 @@ const ProductTopSection = ({ wine }: { wine: Wine }) => {
               <button className="ml-1 text-2xl font-medium text-spacegray">
                 Wine
               </button>
-              <p className=" text-xs">LWIN:123456</p>
+              <p className=" text-xs">LWIN:{`${wine?.lwinNumber}`}</p>
             </div>
             <div>
               <button className="ml-1 text-2xl font-medium text-spacegray">
@@ -257,7 +261,7 @@ const ProductTopSection = ({ wine }: { wine: Wine }) => {
                       // placeholder="blur" // Optional blur-up while loading
                     />
                     <span className="font-bold text-base text-spacegray">
-                      99 bottle case,
+                      {`${wine?.type}  ${wine?.size}`}
                     </span>
                   </div>
                   <div>
@@ -281,7 +285,7 @@ const ProductTopSection = ({ wine }: { wine: Wine }) => {
                     // placeholder="blur" // Optional blur-up while loading
                   />
                   <span className="font-bold text-base text-spacegray">
-                    Red, 14% Alc
+                    {/* Red, 14% Alc */} {wine?.type}
                   </span>
                 </div>
               </div>
@@ -294,7 +298,7 @@ const ProductTopSection = ({ wine }: { wine: Wine }) => {
                     <div>
                       <span className="text-base text-spacegray">Winery: </span>
                       <a href="#" className="border-b border-black font-bold">
-                        {winery.name}
+                        {wine?.winery?.region?.country}
                       </a>
                     </div>
                     <div>
@@ -307,7 +311,29 @@ const ProductTopSection = ({ wine }: { wine: Wine }) => {
               </div>
               <div className="p-2">
                 <div className="grid grid-cols-4 gap-4">
-                  <div className="bg-themegray col-span-1 py-6">
+                  {rating?.map((item: any) => {
+                    const {
+                      lwinNumber,
+                      critic,
+                      vintage,
+                      rating,
+                      max,
+                      description,
+                    } = item;
+                    console.log("item", item);
+                    return (
+                      <div className="bg-themegray col-span-1 py-6 rounded-sm">
+                        <p className="text-spacegray text-xs text-center">
+                          {critic}
+                        </p>
+                        <div className="flex items-end justify-center">
+                          <p className=" text-xl">{rating}/</p>
+                          <span className=" text-xs">{max}</span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                  {/* <div className="bg-themegray col-span-1 py-6">
                     <p className="text-spacegray text-xs text-center">
                       A. Critic name
                     </p>
@@ -342,7 +368,7 @@ const ProductTopSection = ({ wine }: { wine: Wine }) => {
                       <p className=" text-xl">99/</p>
                       <span className=" text-xs">100</span>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <hr className=" border-t-2" />

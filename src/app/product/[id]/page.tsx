@@ -22,7 +22,7 @@ import { getProductDetail } from "@/services/ProductDetail";
 
 import ArtCard from "@/components/productDetail/ArtCard";
 
-import { Wine } from "@/propTypes/page";
+import { Wine, releaseDetails ,rating} from "@/propTypes/page";
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
 
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
@@ -42,10 +42,10 @@ export default function Product() {
     const data = await fetch("https://fakestoreapi.com/products");
     const reposne = data.json();
     setShow(await reposne);
-    console.log(show);
+    console.log("show", show);
   };
   useEffect(() => {
-    // axiosCall();
+    axiosCall();
     if (id) {
       getProductDetail(id)
         .then((res) => {
@@ -61,28 +61,33 @@ export default function Product() {
   // this is className base strcture of style base module
   // const {brown} = orange
   const { wine } = data;
+  const { releaseDetails } = data;
+  const {ratings} = data;
   return (
     <div className=" overflow-hidden">
       <BreadCrumb />
 
       <div className="container mx-auto py-3 md:py-5 lg:py-7">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-spacegray">
-           {wine?.name}
+          {wine?.name}
         </h1>
         <p className="text-xs md:text-sm lg:text-base">
-        <p> {wine?.description} </p>
+          <p> {wine?.description} </p>
         </p>
-
       </div>
 
       {/* hero section start*/}
-      {wine ? <ProductTopSection wine={wine} /> : <PTSSkelton />}
+      {wine ? (
+        <ProductTopSection wine={wine} release={releaseDetails} rating={ratings}/>
+      ) : (
+        <PTSSkelton />
+      )}
       {/* hero section end*/}
       {/* our peace of mind pledge section start */}
       <PeaceOfMind />
       {/* our peace of mind pledge section end */}
       {/* Release details section start */}
-      <ReleaseDateSection />
+      {releaseDetails ? <ReleaseDateSection release={releaseDetails} /> : null}
       {/* Release details section end */}
       {/* All editions start */}
       <section className="container mx-auto py-24 px-4  lg:px-0">
@@ -371,11 +376,7 @@ export default function Product() {
         <div className="container  items-center grid  md:grid-cols-2 lg:grid-cols-3 mx-auto py-1 border-2 border-bordergray px-4 lg:px-6 md:px-4">
           {[1, 2, 3].map((d, i) => {
             return (
-
-             
-
               <div key={i} className=" border-e-2  py-6">
-
                 <h3 className=" text-base">
                   A. Critic name{" "}
                   <span className=" text-lg font-semibold text-black">
