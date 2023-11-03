@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import winbottle from "../../assets/image/Frame1.png";
-import alert from "../../assets/image/alert-circle.png";
+import alert from "../../assets/icon/alert-circle.svg";
 // interface Category {
 //   id: Number,
 //   bottle1,
