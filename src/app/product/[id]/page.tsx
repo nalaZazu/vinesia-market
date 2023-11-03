@@ -243,7 +243,7 @@ export default function Product() {
                 } = item;
                 return (
                   <div key={id}>
-                    <ProductCard />
+                    <ProductCard item={item} />
 
                     <Image
                       src={imageSrc}

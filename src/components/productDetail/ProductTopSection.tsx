@@ -333,42 +333,6 @@ const ProductTopSection = ({
                       </div>
                     );
                   })}
-                  {/* <div className="bg-themegray col-span-1 py-6">
-                    <p className="text-spacegray text-xs text-center">
-                      A. Critic name
-                    </p>
-                    <div className="flex items-end justify-center">
-                      <p className=" text-xl">100/</p>
-                      <span className=" text-xs">100</span>
-                    </div>
-                  </div>
-                  <div className="bg-themegray col-span-1 py-6">
-                    <p className="text-spacegray text-xs text-center">
-                      B. Critic name
-                    </p>
-                    <div className="flex items-end justify-center">
-                      <p className=" text-xl">98/</p>
-                      <span className=" text-xs">100</span>
-                    </div>
-                  </div>
-                  <div className="bg-themegray col-span-1 py-6">
-                    <p className="text-spacegray text-xs text-center">
-                      J. Critic name
-                    </p>
-                    <div className="flex items-end justify-center">
-                      <p className=" text-xl">19/</p>
-                      <span className=" text-xs">20</span>
-                    </div>
-                  </div>
-                  <div className="bg-themegray col-span-1 py-6">
-                    <p className="text-spacegray text-xs text-center">
-                      G. Critic name
-                    </p>
-                    <div className="flex items-end justify-center">
-                      <p className=" text-xl">99/</p>
-                      <span className=" text-xs">100</span>
-                    </div>
-                  </div> */}
                 </div>
               </div>
               <hr className=" border-t-2" />
