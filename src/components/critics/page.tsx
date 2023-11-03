@@ -51,7 +51,7 @@ const Critics = ({ data }: { data: any }) => {
           {/* imageand text */}
           {data?.map((detail: any, i: any) => {
             return (
-              <div>
+              <div key={i}>
                 {i == selectedTab && (
                   <div className="flex">
                     <div>
@@ -75,7 +75,7 @@ const Critics = ({ data }: { data: any }) => {
         <div className=" ">
           {data?.map((d: any, i: any) => {
             return (
-              <div>
+              <div key={i}>
                 {i == selectedTab && (
                   <div>
                     <h2 className="  flex text-secondary text-sm font-normal  tracking-tight">
