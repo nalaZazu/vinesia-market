@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import alert from "../../assets/image/alert-circle.png";
-import group1 from "../../assets/image/group1.png";
+
+import group4 from "../../assets/image/group4.png";
+import group3 from "../../assets/image/group3.png";
+import group5 from "../../assets/image/group5.png";
 
 const Banner = () => {
   const [tooltipVisible, setTooltipVisible] = useState(false);
@@ -24,7 +27,7 @@ const Banner = () => {
 
   return (
     <>
-      <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16   lg:max-w-7xl lg:grid-cols-2  ">
+      <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16   lg:max-w-7xl lg:grid-cols-2  mt-16">
         {/* // px-4   sm:px-6  */}
         <div>
           <h1 className="font-semibold text-primary tracking-tight text-xxl ">
@@ -58,7 +61,7 @@ const Banner = () => {
                   />
                 </li>
               </li>
-              <li className="flex relative    font-normal">
+              <li className="flex relative  font-normal">
                 Proof of Ownership
                 <li
                   className="ml-1"
@@ -71,8 +74,7 @@ const Banner = () => {
                     width={15}
                     height={15}
                     quality={75}
-                    style={{objectFit: "contain"}}
-                    
+                    style={{ objectFit: "contain" }}
                   />
                 </li>
                 <div
@@ -103,8 +105,7 @@ const Banner = () => {
                     width={15}
                     height={15}
                     quality={75}
-                    style={{objectFit: "contain"}}
-                    
+                    style={{ objectFit: "contain" }}
                   />
                 </li>
                 <div className={`relative ${isHovered ? "block" : "hidden"}`}>
@@ -124,11 +125,55 @@ const Banner = () => {
           </div>
         </div>
         {/* next section  */}
-        <div className="grid justify-end">
+        <div className="grid justify-center">
           {/* // grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8 */}
-          <Image src={group1} alt="Picture of the author"  
-           style={{objectFit: "contain"}}
-              quality={75}/>
+          <div>
+            <div className="relative">
+              <iframe
+                width="166"
+                height="318"
+                src="https://www.youtube.com/embed/iu2C7AeIqac?si=m_dZQecmVZYzo6MU "
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              ></iframe>
+              <Image
+                src={group4}
+                alt="Picture of the author"
+                style={{ objectFit: "contain" }}
+                quality={75}
+                className="absolute right-[-21px] bottom-[60px]"
+              />
+              <Image
+                src={group3}
+                alt="Picture of the author"
+                style={{ objectFit: "contain" }}
+                quality={75}
+                className="absolute top-[-37px] left-[-94px] "
+              />
+
+              <Image
+                src={group5}
+                alt="Picture of the author"
+                style={{ objectFit: "contain" }}
+                quality={75}
+                className="absolute  left-[-117px] bottom-0 "
+              />
+            </div>
+
+            <div className="mt-2 ps-8">
+              <p
+                className="text-secondary text-xs font-semibold  tracking-wide 
+              w-4/6"
+              >
+                Chateau La Mission Haut Brion Cru Classe 2009
+              </p>
+            </div>
+          </div>
+          <ul className="text-secondary text-xs font-normal tracking-wide flex justify-around">
+            <li>France</li>
+            <li>Vintage</li>
+            <li>Pessac-Leognan</li>
+          </ul>
         </div>
       </div>
     </>
