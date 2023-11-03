@@ -19,13 +19,18 @@ import PeaceOfMind from "@/components/productDetail/PeaceOfMind";
 import ReleaseDateSection from "@/components/productDetail/ReleaseDateSection";
 import ProductCard from "@/components/cards/ProductCard";
 import { getProductDetail } from "@/services/ProductDetail";
+
 import ArtCard from "@/components/productDetail/ArtCard";
+
+import { Wine } from "@/propTypes/page";
+import PTSSkelton from "@/components/productDetail/PTSSkelton";
+
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching
 
 export default function Product() {
   const { id } = useParams();
-  const [data, setData] = useState({});
+  const [data, setData] = useState<any>({});
   console.log("Params", id);
 
   const [show, setShow] = useState([]);
@@ -40,11 +45,11 @@ export default function Product() {
     console.log(show);
   };
   useEffect(() => {
-    axiosCall();
+    // axiosCall();
     if (id) {
       getProductDetail(id)
         .then((res) => {
-          console.log("Res from Product Detail ", res);
+          console.log("Res from Product Detail ", res?.data?.wine);
           setData(res?.data);
         })
         .catch((err) => {
@@ -55,20 +60,23 @@ export default function Product() {
 
   // this is className base strcture of style base module
   // const {brown} = orange
+  const { wine } = data;
   return (
     <div className=" overflow-hidden">
       <BreadCrumb />
+
       <div className="container mx-auto py-3 md:py-5 lg:py-7">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-spacegray">
-          Chateau La Mission Haut Brion Cru Classe | 2009
+           {wine?.name}
         </h1>
         <p className="text-xs md:text-sm lg:text-base">
-          With Art of Lola Designer Fun
+        <p> {wine?.description} </p>
         </p>
+
       </div>
 
       {/* hero section start*/}
-      <ProductTopSection wine={data?.wine} />
+      {wine ? <ProductTopSection wine={wine} /> : <PTSSkelton />}
       {/* hero section end*/}
       {/* our peace of mind pledge section start */}
       <PeaceOfMind />
@@ -230,7 +238,7 @@ export default function Product() {
                 } = item;
                 return (
                   <div key={id}>
-                    <ProductCard data={item} />
+                    <ProductCard />
 
                     <Image
                       src={imageSrc}
@@ -359,7 +367,11 @@ export default function Product() {
         <div className="container  items-center grid  md:grid-cols-2 lg:grid-cols-3 mx-auto py-1 border-2 border-bordergray px-4 lg:px-6 md:px-4">
           {[1, 2, 3].map((d, i) => {
             return (
-              <div className=" border-e-2 py-6">
+
+             
+
+              <div key={i} className=" border-e-2  py-6">
+
                 <h3 className=" text-base">
                   A. Critic name{" "}
                   <span className=" text-lg font-semibold text-black">
@@ -547,7 +559,7 @@ export default function Product() {
               </div>
               {[1, 2, 3].map((d, i) => {
                 return (
-                  <div className="max-w-md flex text-center pb-6">
+                  <div key={i} className="max-w-md flex text-center pb-6">
                     <div>
                       <div className="flex justify-center pb-8">
                         <div>
@@ -561,7 +573,7 @@ export default function Product() {
                           </div>
                           <div className=" text-left">
                             <h4 className=" text-base font-semibold">
-                              Brunello di Montalcino "Piaggione" | 2019
+                              Brunello di Montalcino {`"Piaggione"`} | 2019
                             </h4>
                             <p className=" text-xs ">6 bottles collection</p>
                             <p className=" text-xs font-semibold">OWNER</p>
