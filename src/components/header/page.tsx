@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link'
 import logo from "../../assets/img/Logo1.png";
 import arrowTray from "../../assets/icon/log-in.svg";
 import Image from "next/image";
@@ -83,7 +84,7 @@ const Header = () => {
         <div className="container mx-auto flex justify-between items-center">
           <ul className="hidden lg:flex space-x-6">
             <li>
-              <a href="/">Home Page</a>
+              <Link href="/">Home Page</Link>
             </li>
             <li>
               <a href="/invest">Invest</a>

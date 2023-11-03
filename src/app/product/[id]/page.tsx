@@ -22,7 +22,7 @@ import { getProductDetail } from "@/services/ProductDetail";
 
 import ArtCard from "@/components/productDetail/ArtCard";
 
-import { Wine } from "@/propTypes/page";
+import { Wine, releaseDetails ,rating} from "@/propTypes/page";
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
 
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
@@ -42,10 +42,10 @@ export default function Product() {
     const data = await fetch("https://fakestoreapi.com/products");
     const reposne = data.json();
     setShow(await reposne);
-    console.log(show);
+    console.log("show", show);
   };
   useEffect(() => {
-    // axiosCall();
+    axiosCall();
     if (id) {
       getProductDetail(id)
         .then((res) => {
@@ -61,6 +61,8 @@ export default function Product() {
   // this is className base strcture of style base module
   // const {brown} = orange
   const { wine } = data;
+  const { releaseDetails } = data;
+  const {ratings} = data;
   return (
     <div className=" overflow-hidden">
       <BreadCrumb />
@@ -75,13 +77,17 @@ export default function Product() {
       </div>
 
       {/* hero section start*/}
-      {wine ? <ProductTopSection wine={wine} /> : <PTSSkelton />}
+      {wine ? (
+        <ProductTopSection wine={wine} release={releaseDetails} rating={ratings}/>
+      ) : (
+        <PTSSkelton />
+      )}
       {/* hero section end*/}
       {/* our peace of mind pledge section start */}
       <PeaceOfMind />
       {/* our peace of mind pledge section end */}
       {/* Release details section start */}
-      <ReleaseDateSection />
+      {releaseDetails ? <ReleaseDateSection release={releaseDetails} /> : null}
       {/* Release details section end */}
       {/* All editions start */}
       <section className="container mx-auto py-24 px-4  lg:px-0">

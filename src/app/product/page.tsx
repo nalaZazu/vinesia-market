@@ -1,31 +1,17 @@
 "use client";
-import Link from "next/link";
+ 
 // import orange from "../style.module.css"
 import React, { useEffect, useState } from "react";
 // client componet fetching 
 function Product() {
-  const [show, setShow] = useState([]);
-
-  const axiosCall = async () => {
-    const data = await fetch("https://fakestoreapi.com/products");
-    const reposne = data.json();
-    setShow(await reposne);
-    console.log(show);
-  };
-  useEffect(() => {
-    axiosCall();
-  }, []);
+  
   // this is class base strcture of style base module
   // const {brown} = orange
   return (
     <div>
   
-      <div className="bg-white">
-        <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          {/* <h1 id={orange.orange}>product page with style </h1>
-          <h1 className={brown}>product page with style </h1>
-          <h1 >product page with style </h1>
-          <h1 >product page with style </h1> */}
+      {/* <div className="bg-white">
+        <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"> 
           <Link href={"/"}>Back to </Link>
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">
             product list
@@ -57,7 +43,7 @@ function Product() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

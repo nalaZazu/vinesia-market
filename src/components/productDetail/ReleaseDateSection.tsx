@@ -16,7 +16,12 @@ import Appactivity from "@/components/charts/page";
 import BreadCrumb from "@/common/BreadCrumb";
 import ProductTopSection from "@/components/productDetail/ProductTopSection";
 import PeaceOfMind from "@/components/productDetail/PeaceOfMind";
-export default function ReleaseDateSection() {
+import { releaseDetails } from "@/propTypes/page";
+export default function ReleaseDateSection({
+  release,
+}: {
+  release: releaseDetails;
+}) {
   return (
     <section className="container mx-auto">
       <div className="flex justify-between ">
@@ -60,14 +65,14 @@ export default function ReleaseDateSection() {
                     <h2 className=" text-sm">Release Price </h2>
                     <Image src={infologo} alt="Picture of the author" />
                   </div>
-                  <p className=" text-lg font-medium">€38,888</p>
+                  <p className=" text-lg font-medium">€{`${release?.releasePrice}`}</p>
                 </div>
                 <div className=" border-2 p-4 py-7 border-typegray">
                   <div className="flex gap-3">
                     <h2 className=" text-sm">Average MARKET PRICE</h2>
                     <Image src={infologo} alt="Picture of the author" />
                   </div>
-                  <p className=" text-lg font-medium">€48,888</p>
+                  <p className=" text-lg font-medium">€{`${release?.averagePrice}`}</p>
                 </div>
               </div>
               {/* second box */}
@@ -77,7 +82,7 @@ export default function ReleaseDateSection() {
                     <h2 className=" text-sm">Highest Price</h2>
                     <h2 className=" text-sm">ever transacted for product</h2>
                   </div>
-                  <p className=" text-lg font-medium">€68,888</p>
+                  <p className=" text-lg font-medium">€{`${release?.highPrice}`}</p>
                 </div>
                 <div className=" border-2 p-4 bg-typegray border-typegray text-white">
                   <div>
