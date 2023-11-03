@@ -311,7 +311,7 @@ const ProductTopSection = ({
               </div>
               <div className="p-2">
                 <div className="grid grid-cols-4 gap-4">
-                  {rating?.map((item: any) => {
+                  {rating?.map((item: any, i: any) => {
                     const {
                       lwinNumber,
                       critic,
@@ -322,7 +322,10 @@ const ProductTopSection = ({
                     } = item;
                     console.log("item", item);
                     return (
-                      <div className="bg-themegray col-span-1 py-6 rounded-sm">
+                      <div
+                        key={i}
+                        className="bg-themegray col-span-1 py-6 rounded-sm"
+                      >
                         <p className="text-spacegray text-xs text-center">
                           {critic}
                         </p>
