@@ -49,12 +49,12 @@ export default function ReleaseDateSection() {
       </div>
 
       <div className=" bg-themegray p-6 mt-7">
-        <div className="grid gap-5 lg:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
           <div className="text-spacegray">
             <h2 className=" text-xl font-medium">Pricing details</h2>
             <div>
               {/* first box */}
-              <div className=" grid gap-0 lg:grid-cols-2 pt-6">
+              <div className=" grid gap-0 lg:grid-cols-2 md:grid-cols-2 grid-cols-2 pt-6">
                 <div className=" border-2 p-4 py-7 border-typegray">
                   <div className="flex gap-3">
                     <h2 className=" text-sm">Release Price </h2>
@@ -71,7 +71,7 @@ export default function ReleaseDateSection() {
                 </div>
               </div>
               {/* second box */}
-              <div className=" grid gap-0 lg:grid-cols-2">
+              <div className=" grid gap-0 lg:grid-cols-2 md:grid-cols-2 grid-cols-2">
                 <div className=" border-2 p-4 border-typegray">
                   <div>
                     <h2 className=" text-sm">Highest Price</h2>

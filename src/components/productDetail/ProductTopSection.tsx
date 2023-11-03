@@ -23,7 +23,7 @@ const ProductTopSection = ({ wine }: { wine: Wine }) => {
   return (
     <section className="bg-themegray py-12 mt-5">
       {/* <div className="container flex grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-2"> */}
-      <div className="container grid max-w-screen-xl  mx-auto lg:grid-cols-3">
+      <div className="container grid max-w-screen-xl  mx-auto lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 px-4 md:px-5 gap:4 md:gap-4 lg:gap-0">
         {/* first section start */}
         <div>
           <div className="bg-white py-1">
@@ -128,9 +128,13 @@ const ProductTopSection = ({ wine }: { wine: Wine }) => {
 
         {/* slider start */}
         <div>
-          <div className="flex justify-center">
+          <div className="flex justify-center items-center">
             <span>
-              <Image src={big1} alt="Picture of the author" />
+              <Image
+                src={big1}
+                alt="Picture of the author"
+                className="lg:h-full md:h-full h-1/2"
+              />
             </span>
           </div>
           <div className="flex justify-center">

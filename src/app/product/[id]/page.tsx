@@ -19,8 +19,12 @@ import PeaceOfMind from "@/components/productDetail/PeaceOfMind";
 import ReleaseDateSection from "@/components/productDetail/ReleaseDateSection";
 import ProductCard from "@/components/cards/ProductCard";
 import { getProductDetail } from "@/services/ProductDetail";
+
+import ArtCard from "@/components/productDetail/ArtCard";
+
 import { Wine } from "@/propTypes/page";
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
+
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching
 
@@ -58,14 +62,19 @@ export default function Product() {
   // const {brown} = orange
   const { wine } = data;
   return (
-    <div>
+    <div className=" overflow-hidden">
       <BreadCrumb />
-      <div className=" container mx-auto py-5 py-md-2">
-        <h1 className=" text-3xl font-bold tracking-tight text-spacegray">
-          {wine?.name}
+
+      <div className="container mx-auto py-3 md:py-5 lg:py-7">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-spacegray">
+           {wine?.name}
         </h1>
+        <p className="text-xs md:text-sm lg:text-base">
         <p> {wine?.description} </p>
+        </p>
+
       </div>
+
       {/* hero section start*/}
       {wine ? <ProductTopSection wine={wine} /> : <PTSSkelton />}
       {/* hero section end*/}
@@ -76,12 +85,12 @@ export default function Product() {
       <ReleaseDateSection />
       {/* Release details section end */}
       {/* All editions start */}
-      <section className="container mx-auto py-24">
+      <section className="container mx-auto py-24 px-4  lg:px-0">
         <div className="flex justify-between items-center gap-5">
           <div className="basis-1/6">
             <h2 className="text-3xl font-medium">All editions</h2>
           </div>
-          <div className="basis-4/5">
+          <div className="basis-4/5 ">
             <hr className=" border-spacegray" />
           </div>
           <div className="flex text-spacegray">
@@ -101,7 +110,7 @@ export default function Product() {
             </svg>
           </div>
         </div>
-        <div className="flex justify-between items-center mx-auto pt-14 w-[1170px]">
+        <div className="flex justify-between items-center mx-auto pt-14">
           <div className="">
             <ul
               className="flex flex-wrap text-sm font-medium text-center bg-tabsgray rounded-md p-1"
@@ -214,7 +223,7 @@ export default function Product() {
           </div>
         </div>
         <div>
-          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 w-[1170px] mx-auto">
+          <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mx-auto">
             {productlist &&
               productlist.map((item) => {
                 const {
@@ -284,9 +293,9 @@ export default function Product() {
       </section>
       {/* All editions end */}
       {/* How to invest in wine start */}
-      <section className="bg-themegray shadow-lg">
-        <div className="container max-w-screen-md justify-between items-center flex mx-auto py-6">
-          <div>
+      <section className="bg-themegray shadow-lg px-4 lg:px-0 md:px-4">
+        <div className="container max-w-screen-md justify-between items-center grid-col-1  md:grid-cols-2 lg:grid-cols-2 mx-auto py-4 lg:py-6 md:py-4">
+          <div className=" pb-4 lg:pb-0 md:pb-4">
             <h3 className=" text-lg font-semibold">How to invest in wine</h3>
             <p className=" w-3/4 font-normal text-sm">
               See our video to gather new informations
@@ -312,7 +321,7 @@ export default function Product() {
       </section>
       {/* How to invest in wine end */}
       {/* About Chateau La Mission Haut Brion Cru Classe | 2009 start */}
-      <section className="pt-10">
+      <section className="pt-10 px-4 lg:px-6 md:px-4">
         <div className=" container mx-auto">
           <h2 className=" capitalize text-3xl font-semibold">
             <span className=" text-typegray text-4xl font-normal">About</span>{" "}
@@ -320,16 +329,14 @@ export default function Product() {
           </h2>
         </div>
 
-        <div className="container max-w-screen-xl items-center flex mx-auto py-6 px-16">
-          <div>
+        <div className="container max-w-screen-xl items-center grid grid-col-1  md:grid-cols-2 lg:grid-cols-2 mx-auto py-6">
+          <div className="pb-4 lg:pb-0 md:pb-4">
             <div className="flex gap-3">
               <Image
                 src={redwine}
                 alt="Picture of the author"
                 width={20}
                 height={20}
-                // blurDataURL="data:..." automatically provided
-                // placeholder="blur" // Optional blur-up while loading
               />
               <span className="font-bold text-base text-spacegray">
                 Red, 14% Alc
@@ -361,10 +368,14 @@ export default function Product() {
             ></iframe>
           </div>
         </div>
-        <div className="container  items-center flex mx-auto py-1 border-2 border-bordergray">
+        <div className="container  items-center grid  md:grid-cols-2 lg:grid-cols-3 mx-auto py-1 border-2 border-bordergray px-4 lg:px-6 md:px-4">
           {[1, 2, 3].map((d, i) => {
             return (
-              <div key={i} className=" border-e-2 p-6">
+
+             
+
+              <div key={i} className=" border-e-2  py-6">
+
                 <h3 className=" text-base">
                   A. Critic name{" "}
                   <span className=" text-lg font-semibold text-black">
@@ -385,14 +396,14 @@ export default function Product() {
       </section>
       {/* About Chateau La Mission Haut Brion Cru Classe | 2009 end */}
       {/* About artwork start */}
-      <section className="pt-10">
+      <section className="pt-10 px-4 lg:px-0 md:px-4">
         <div className="container mx-auto">
           <h2 className="capitalize text-3xl font-semibold">
             <span className="text-typegray text-4xl font-normal">About</span>{" "}
             artwork
           </h2>
-          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-16">
-            <div>
+          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-4">
+            <div className="pb-4 lg:pb-0 md:pb-4">
               <p className="text-xs text-bordergray">Original Art</p>
               <p className="text-xs font-semibold">
                 Stop Breathing, White_2Stripes_black_blue
@@ -429,7 +440,7 @@ export default function Product() {
                 viewers with new visual experiences.
               </p>
             </div>
-            <div className="flex justify-end">
+            <div className="flex lg:justify-end ">
               <Image
                 src={group}
                 alt="Picture of the author"
@@ -442,13 +453,13 @@ export default function Product() {
       </section>
       {/* About artwork end */}
       {/* About Winery Château Le Pin start */}
-      <section className="pt-10">
+      <section className="pt-10 px-4 lg:px-0 md:px-4">
         <div className="container mx-auto">
           <h2 className="capitalize text-3xl font-semibold">
             <span className="text-typegray text-4xl font-normal">About</span>{" "}
             Winery Château Le Pin
           </h2>
-          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-16">
+          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-4 pb-4 lg:pb-0 md:pb-4">
             <div>
               <p>France, Region, Appellation</p>
               <p className="font-normal text-base">
@@ -478,8 +489,8 @@ export default function Product() {
       </section>
       <section className="pt-10">
         <div className="container mx-auto">
-          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-16">
-            <div className="flex">
+          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-4 lg:px-16 md:px-4">
+            <div className="flex pb-4 lg:pb-0 md:pb-4">
               <Image
                 src={zut}
                 alt="Picture of the author"
@@ -508,14 +519,14 @@ export default function Product() {
       </section>
       {/* About Winery Château Le Pin end */}
       {/* You may also like start */}
-      <section className=" py-14">
+      <section className=" py-14 px-4 lg:px-0 md:px-4">
         <div className="container mx-auto">
           <h2 className=" capitalize text-3xl font-semibold">
             You may also like
           </h2>
-          <div className="md:basis-3/5 basis-full z-0 pt-10">
-            <div className="container grid mx-auto gap-6 lg:grid-cols-4">
-              <div className="max-w-md bg-themegray flex items-end text-center h-[400px] pb-6 border-2 border-spacegray">
+          <div className="md:basis-3/5 lg:basis-3/5 basis-full z-0 pt-10">
+            <div className="container grid mx-auto gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-2">
+              <div className="bg-themegray flex text-center items-center md:items-center lg:items-end lg:text-center h-[400px] pb-6 border-2 border-spacegray">
                 <div>
                   <div className="flex justify-center pb-8">
                     <svg
@@ -600,10 +611,10 @@ export default function Product() {
       </section>
       {/* You may also like end */}
       {/* Be the first to know start */}
-      <section>
-        <div className=" flex justify-end items-center">
-          <div className="w-1/3  bg-themegray p-3 border-y-2 border-l-2 border-spacegray  rounded-s-md">
-            <div className="flex justify-between w-full max-w-sm mx-auto">
+      <section className="px-4 lg:px-0 md:px-4">
+        <div className=" flex lg:justify-end lg:items-center">
+          <div className="lg:w-1/3 w-full bg-themegray p-3 lg:border-y-2 lg:border-l-2  border-spacegray  lg:rounded-s-md rounded">
+            <div className="flex justify-between w-full lg:max-w-sm max-w-full mx-auto">
               <h2>Be the first to know </h2>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -652,6 +663,8 @@ export default function Product() {
         </div>
       </section>
       {/* Be the first to know end */}
+
+      <ArtCard />
     </div>
   );
 }

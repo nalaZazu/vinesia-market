@@ -13,7 +13,7 @@ import logo1 from "@/assets/icon/logo1.svg";
 import infologo from "@/assets/icon/info.svg";
 export default function PeaceOfMind() {
   return (
-    <section className=" py-14">
+    <section className=" py-14 px-4 md:px-4 lg:px-0">
       <div className="container mx-auto">
         <h2 className=" capitalize text-3xl font-semibold">
           <span className=" text-typegray text-3xl font-normal">our</span> peace
@@ -25,8 +25,8 @@ export default function PeaceOfMind() {
           hassle-free investment experience. Here’s what it entails:
         </p>
 
-        <div className="md:basis-3/5 basis-full z-0 pt-10">
-          <div className="container grid mx-auto gap-6 lg:grid-cols-4">
+        <div className=" flex-wrap md:basis-3/5 basis-full z-0 pt-10">
+          <div className="container grid mx-auto gap-6 grid-cols-2 lg:grid-cols-4 md:grid-cols-2">
             <div className="max-w-md bg-themegray flex items-center justify-between p-4">
               <div>
                 <p className="text-base font-bold text-gray-900 truncate dark:text-white">
