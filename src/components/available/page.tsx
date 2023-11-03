@@ -1,17 +1,23 @@
 import Image from "next/image";
 import React from "react";
 import bottlePic from "../../assets/image/image25.png";
-const Available = () => {
+const Available = ({ data }: { data: any }) => {
   return (
     <div>
-    <h1 className="text-primary font-semibold  tracking-tight text-xxl">
-      Available Soon
-    </h1>
-    <div className="mx-auto gap-x-10 md:flex sm:grid sm:grid-cols-1">
+      <h1 className="text-primary font-semibold  tracking-tight text-xxl">
+        Available Soon
+      </h1>
+      <div className="mx-auto gap-x-10 md:flex sm:grid sm:grid-cols-1">
         <div className="bg-bgprimary md:py-8 py-8  flex justify-end items-end md:w-7/12">
           <div className="mb-8 text-black  tracking-tight">
-            <p className="  text-sm font-bold  ">Text about drop</p>
-            <p className=" text-base font-medium ">Date</p>
+            {data?.map((d: any, i: any) => {
+              return (
+                <div key={i}>
+                  <p className="  text-sm font-bold  ">Text about drop</p>
+                  <p className=" text-base font-medium ">Date</p>
+                </div>
+              );
+            })}
           </div>
           <div className=" flex justify-end m-4">
             <Image
@@ -19,10 +25,9 @@ const Available = () => {
               alt="Picture of the author"
               // width={400}
               // height={350}
-              style={{objectFit: "contain"}}
+              style={{ objectFit: "contain" }}
               quality={75}
               className="mb-3"
-
             />
           </div>
         </div>

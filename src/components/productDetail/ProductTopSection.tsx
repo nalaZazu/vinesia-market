@@ -290,7 +290,7 @@ const ProductTopSection = ({ wine }: { wine: Wine }) => {
                     <div>
                       <span className="text-base text-spacegray">Winery: </span>
                       <a href="#" className="border-b border-black font-bold">
-                        {winery.name}
+                        {winery?.name}
                       </a>
                     </div>
                     <div>
