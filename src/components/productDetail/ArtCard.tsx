@@ -10,9 +10,9 @@ import marketart from "@/assets/icon/marketart.svg";
 export default function ArtCard() {
   return (
     <div>
-      <section className="bg-themegray pb-6 mt-5">
+      <section className="bg-themegray pb-6 mt-5 px-4 lg:px-0">
         {/* <div className="container flex grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-2"> */}
-        <div className="container grid max-w-screen-xl px-10 mx-auto lg:grid-cols-2">
+        <div className="container grid max-w-screen-xl lg:px-10 mx-auto lg:grid-cols-2 md:grid-cols-1 grid-cols-1">
           {/* first section start */}
           <div>
             <div className="flex gap-5 ps-5 ps-md-3">
@@ -91,7 +91,7 @@ export default function ArtCard() {
                     </p>
                   </div>
                 </div>
-                <div className="grid grid-cols-3 py-3 gap-4 ps-3">
+                <div className="grid lg:grid-cols-3 py-3 gap-4 ps-3">
                   <div className=" text-end uppercase text-xs">
                     <span className=" text-spacegray ">Description</span>
                   </div>
@@ -107,7 +107,7 @@ export default function ArtCard() {
                   </div>
                 </div>
 
-                <div className="flex justify-end items-center gap-16 py-4 text-sm px-5 text-spacegray">
+                <div className="flex justify-end items-center lg:gap-16 md:gap-8 gap-8 py-4 text-sm px-5 text-spacegray">
                   <div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -240,19 +240,13 @@ export default function ArtCard() {
 
           {/* slider start */}
           <div>
-            <div className="flex justify-center ">
-              <span className="relative">
+            <div className="flex lg:justify-center pt-4 lg-pt-0">
+              <span>
                 <Image
                   src={big}
                   alt="Picture of the author"
                   width={490}
                   className=" flex justify-center"
-                />
-                <Image
-                  src={big1}
-                  alt="Picture of the author"
-                  width={490}
-                  className=" flex justify-center absolute top-14 right-14"
                 />
               </span>
             </div>
