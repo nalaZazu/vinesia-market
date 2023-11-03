@@ -2,16 +2,7 @@ import Image from "next/image";
 import React from "react";
 import winbottle from "../../assets/image/Frame1.png";
 import alert from "../../assets/image/alert-circle.png";
-// interface Category {
-//   id: Number,
-//   bottle1,
-//   imageAlt,
-//   imageSrc,
-//   price,
-//   name,
-//   remain,
-//   subtitle,
-// }
+  
 export default function ProductCard() {
   return (
     <div>
