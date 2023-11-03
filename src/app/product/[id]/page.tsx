@@ -74,11 +74,19 @@ export default function Product() {
     <div className=" overflow-hidden">
       <BreadCrumb />
 
+<<<<<<< HEAD
+      <div className="container mx-auto py-3 md:py-5 lg:p-7">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-primary">
+          {wine?.name}
+        </h1>
+        <p className="text-xl md:text-sm lg:text-base font-normal">
+=======
       <div className="container mx-auto py-3 md:py-5 lg:py-7">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-spacegray">
           {wine?.name}
         </h1>
         <p className="text-xs md:text-sm lg:text-base">
+>>>>>>> b003d639dfaaeef7eac383468cb2cb05ab887b8d
           <p> {wine?.description} </p>
         </p>
       </div>
