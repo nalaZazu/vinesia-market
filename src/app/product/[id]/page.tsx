@@ -65,14 +65,13 @@ export default function Product() {
     <div className=" overflow-hidden">
       <BreadCrumb />
 
-      <div className="container mx-auto py-3 md:py-5 lg:py-7">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-spacegray">
-           {wine?.name}
+      <div className="container mx-auto py-3 md:py-5 lg:p-7">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-primary">
+          {wine?.name}
         </h1>
-        <p className="text-xs md:text-sm lg:text-base">
-        <p> {wine?.description} </p>
+        <p className="text-xl md:text-sm lg:text-base font-normal">
+          <p> {wine?.description} </p>
         </p>
-
       </div>
 
       {/* hero section start*/}
@@ -367,11 +366,7 @@ export default function Product() {
         <div className="container  items-center grid  md:grid-cols-2 lg:grid-cols-3 mx-auto py-1 border-2 border-bordergray px-4 lg:px-6 md:px-4">
           {[1, 2, 3].map((d, i) => {
             return (
-
-             
-
               <div key={i} className=" border-e-2  py-6">
-
                 <h3 className=" text-base">
                   A. Critic name{" "}
                   <span className=" text-lg font-semibold text-black">

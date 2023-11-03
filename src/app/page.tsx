@@ -5,18 +5,16 @@ import Critics from "@/components/critics/page";
 import Heritage from "@/components/heritage/page";
 import Listing from "@/components/winelisting/page";
 import { useEffect } from "react";
-import {getHomePage} from '../services/Home'
+import { getHomePage } from "../services/Home";
+import ExploreRegion from "@/components/exploreRegion/page";
 export default function Home() {
-
   console.log("Process Env ", process.env.baseUrl);
   useEffect(() => {
-   getHomePage().then(res=>{
-    console.log("Response From APi ", res?.data);
-    
-   })
-  }, [])
-  
-  
+    getHomePage().then((res) => {
+      console.log("Response From APi ", res?.data);
+    });
+  }, []);
+
   return (
     <>
       <div className="container mx-auto max-w-2xl px-4  sm:px-6 lg:max-w-7xl lg:px-8">
@@ -24,8 +22,9 @@ export default function Home() {
         <Banner />
         <Heritage />
         <Available />
-        <Critics/>
+        <Critics />
         <Listing />
+        {/* <ExploreRegion /> */}
       </div>
     </>
   );
