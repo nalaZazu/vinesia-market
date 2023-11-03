@@ -6,7 +6,7 @@ import alert from "../../assets/image/alert-circle.png";
 import ProductCard from "../cards/ProductCard";
 import Slider from "react-slick";
 import { NextIcon, PrevIcon } from "@/assets/icon/Icons";
-const Heritage = () => {
+const Heritage = ({ data }: { data: any }) => {
   const sliderSettings = {
     // dots: true,
     infinite: true,
@@ -15,6 +15,7 @@ const Heritage = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+
     responsive: [
       {
         breakpoint: 1024,
@@ -55,7 +56,9 @@ const Heritage = () => {
 
   return (
     <div className="py-16 sm:py-24">
-      <h1 className="text-primary font-semibold  tracking-tight text-xxl">Invest in heritage</h1>
+      <h1 className="text-primary font-semibold  tracking-tight text-xxl">
+        Invest in heritage
+      </h1>
       <div className="mx-auto max-w-7xl px-4">
         <div className="mx-auto max-w-2xl  lg:max-w-none  ">
           {/* <div className="mt-6  grid lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0">
@@ -66,10 +69,10 @@ const Heritage = () => {
             <div className="py-8">
               <div>
                 <Slider {...sliderSettings}>
-                  {[1, 2, 3, 4]?.map((p, i) => {
+                  {data?.map((item: any, i: any) => {
                     return (
                       <div key={i}>
-                        <ProductCard />
+                        <ProductCard item={item} />
                       </div>
                     );
                   })}
@@ -77,11 +80,19 @@ const Heritage = () => {
               </div>
             </div>
             <div className="ml-4  lg:mt-0 py-8">
-              <Image
+              <iframe
+                // width="500"
+                // height="318"
+                className="w-full  h-full"
+                src="https://www.youtube.com/embed/iu2C7AeIqac?si=m_dZQecmVZYzo6MU "
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              ></iframe>
+              {/* <Image
                 src={backbg}
                 alt="Picture of the author"
                 className="mb-3 md:mb-0 "
-              />
+              /> */}
             </div>
           </div>
         </div>

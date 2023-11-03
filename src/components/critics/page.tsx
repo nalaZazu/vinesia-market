@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import img1 from "../../assets/image/image1.png";
 import img2 from "../../assets/image/image 23.png";
 import arrow from "../../assets/icon/arrow.svg";
@@ -7,7 +7,10 @@ import arrowleft from "../../assets/image/arrow slide left.png";
 import wine from "../../assets/image/group2.png";
 import signature from "../../assets/image/Zrzut ekranu 2023-10-1 o 11.17 1.png";
 import alert from "../../assets/image/alert-circle.png";
-const Critics = () => {
+const Critics = ({ data }: { data: any }) => {
+  const [selectedTab, setSelectedTab] = useState(0);
+  console.log("Critics Data ", data);
+
   return (
     <div className="py-16 sm:py-24">
       {/* critics-section */}
@@ -17,102 +20,92 @@ const Critics = () => {
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 items-center">
         <div className=" flex">
           <ul className=" text-secondary text-lg font-semibold  tracking-tight ">
-            <li className=" mt-4 grid grid-cols-6 gap-2">
-              <span className=" text-xxl font-semibold  tracking-tight  text-primary">
-                1
-              </span>
-              <span className=" col-span-4 pe-3">
-                Chateau La Mission Haut Brion Cru Classe 2009
-              </span>
-              <button>
-                <Image src={arrowleft} alt="arrow" />
-              </button>
-            </li>
-            <li className=" mt-4 grid grid-cols-6 gap-2">
-              <span className=" text-xxl font-semibold  tracking-tight  text-primary">
-                2
-              </span>
-              <span className="col-span-4 pe-3">
-                Chateau La Mission Haut Brion Cru Classe 2009
-              </span>
-            </li>
-            <li className=" mt-4 grid grid-cols-6 gap-2">
-              <span className=" text-xxl font-semibold  tracking-tight  text-primary">
-                3
-              </span>
-              <span className="col-span-4 pe-3">
-                Chateau La Mission Haut Brion Cru Classe 2009
-              </span>
-            </li>
-            <li className=" mt-4 grid grid-cols-6 gap-2">
-              <span className=" text-xxl font-semibold  tracking-tight  text-primary">
-                4
-              </span>
-              <span className="col-span-4 pe-3">
-                Chateau La Mission Haut Brion Cru Classe 2009
-              </span>
-            </li>
+            {data?.map((critics: any, i: any) => {
+              return (
+                <li
+                  key={i}
+                  onClick={() => setSelectedTab(i)}
+                  className=" mt-4 grid grid-cols-6 gap-2 items-center cursor-pointer"
+                >
+                  <span className=" text-xxl font-semibold  tracking-tight  text-primary">
+                    {i + 1}
+                  </span>
+                  <div className=" col-span-4 pe-3">
+                    <div className="">{critics?.name}</div>
+                    <div> {critics?.vintage} </div>
+                  </div>
+                  {
+                    <div>
+                      {i == selectedTab && (
+                        <Image src={arrowleft} alt="arrow" />
+                      )}
+                    </div>
+                  }
+                </li>
+              );
+            })}
           </ul>
         </div>
 
         <div className="col-span-2 ">
           {/* imageand text */}
-          <div className="flex">
-            <div>
-              <Image src={wine} alt="image" className="mr-2" />
-            </div>
-            <ul className=" md:w-2/3 px-4  text-base font-medium   tracking-tight">
-              <li>
-                “This wine blushes in the glass like a tender, rosy dawn,
-                inviting the drinker to embrace its delicate hue. The play of
-                soft pinks and hints of coral dances under the light, hinting at
-                the allure within.
-              </li>
-              <li>
-                Nose: The first inhalation enchants with a floral bouquet
-                reminiscent of a blooming garden in spring. Notes of fresh roses
-                and lavender harmoniously intertwine, giving this wine a sweet
-                and aromatic charm.
-              </li>
-              <li>
-                Taste: The initial sip caresses the palate with the gentle
-                embrace of ripe strawberries, teasing the taste buds with their
-                luscious juiciness. A subtle citrus outhfeel that enhances the
-                overall elegance of this wine.
-              </li>
-              <div className="text-center">
-                <button className="py-2.5 px-4 mt-3 border border-bgsecondary  text-bgsecondary rounded-lg   text-base font-medium   tracking-tight">
-                  Invest now
-                </button>
+          {data?.map((detail: any, i: any) => {
+            return (
+              <div key={i}>
+                {i == selectedTab && (
+                  <div className="flex">
+                    <div>
+                      <Image src={wine} alt="image" className="mr-2" />
+                    </div>
+                    <ul className=" md:w-2/3 px-4  text-base font-medium   tracking-tight">
+                      {detail?.description}
+                      <div className="text-center">
+                        <button className="py-2.5 px-4 mt-3 border border-bgsecondary  text-bgsecondary rounded-lg   text-base font-medium   tracking-tight">
+                          Invest now
+                        </button>
+                      </div>
+                    </ul>
+                  </div>
+                )}
               </div>
-            </ul>
-          </div>
+            );
+          })}
         </div>
         {/* text portion */}
         <div className=" ">
-          <h2 className="  flex text-secondary text-sm font-normal  tracking-tight">
-            Score
-            <Image
-              src={alert}
-              alt="Picture of the author"
-              width={15}
-              height={15}
-              quality={75}
-              style={{ objectFit: "contain" }}
-              className="ml-2"
-            />
-          </h2>
-          <div className="flex flex-col ">
-            <span className="font-semibold  text-secondary text-xxl  tracking-tight">
-              5/5
-            </span>
-            <span className="text-base font-medium mt-5   text-secondary  tracking-tigh">
-              by Robert Parker
-            </span>
-          </div>
-          <span>
-            <Image src={signature} alt="signature" />
-          </span>
+          {data?.map((d: any, i: any) => {
+            return (
+              <div key={i}>
+                {i == selectedTab && (
+                  <div>
+                    <h2 className="  flex text-secondary text-sm font-normal  tracking-tight">
+                      Score
+                      <Image
+                        src={alert}
+                        alt="Picture of the author"
+                        width={15}
+                        height={15}
+                        quality={75}
+                        style={{ objectFit: "contain" }}
+                        className="ml-2"
+                      />
+                    </h2>
+                    <div className="flex flex-col ">
+                      <span className="font-semibold  text-secondary text-xxl  tracking-tight">
+                        {d?.rating}/{d?.maxRating}
+                      </span>
+                      <span className="text-base font-medium mt-5   text-secondary  tracking-tigh">
+                        by {d?.ratingBy}
+                      </span>
+                    </div>
+                    <span>
+                      <Image src={signature} alt="signature" />
+                    </span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -148,7 +141,6 @@ const Critics = () => {
             <div className="md:py-16 py-4">
               <Image
                 className="mx-auto max-w-[100%] h-auto"
-                
                 src={img2}
                 alt="image"
                 style={{ objectFit: "contain" }}
