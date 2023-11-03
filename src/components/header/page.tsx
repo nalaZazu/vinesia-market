@@ -1,8 +1,9 @@
 import React from "react";
-import Link from 'next/link'
+import Link from "next/link";
 import logo from "../../assets/img/Logo1.png";
 import arrowTray from "../../assets/icon/log-in.svg";
 import Image from "next/image";
+import { menuBar } from "@/constants/navigate";
 const Header = () => {
   return (
     <div>
@@ -83,26 +84,16 @@ const Header = () => {
       <nav className="bg-themegray p-4">
         <div className="container mx-auto flex justify-between items-center">
           <ul className="hidden lg:flex space-x-6">
+            {menuBar?.map((item: any) => {
+              const { id, name, href } = item;
+              return (
+                <li key={id}>
+                  <Link href={href}>{name}</Link>
+                </li>
+              );
+            })}
             <li>
-              <Link href="/">Home Page</Link>
-            </li>
-            <li>
-              <a href="/invest">Invest</a>
-            </li>
-            <li>
-              <a href="/available-soon">Available soon</a>
-            </li>
-            <li>
-              <a href="/regions">Regions</a>
-            </li>
-            <li>
-              <a href="/wine-art-collections">Wine & Art Collections</a>
-            </li>
-            <li>
-              <a href="/limited-collections">Limited Collections</a>
-            </li>
-            <li>
-              <a href="/winery">Winery</a>
+              <Link href="/winery">Winery</Link>
             </li>
           </ul>
           {/* Mobile Navbar (Hidden on Desktop)  */}
