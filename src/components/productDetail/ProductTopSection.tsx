@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import bottle from "@/assets/icon/bottle.svg";
 import case1 from "@/assets/icon/Case.svg";
 import redwine from "@/assets/icon/redwine.svg";
@@ -11,18 +11,15 @@ import frame from "@/assets/icon/Frame.svg";
 import playvideo from "@/assets/icon/Playvideo.svg";
 import logo1 from "@/assets/icon/logo1.svg";
 import infologo from "@/assets/icon/info.svg";
+import { Wine, Winery } from "@/propTypes/page";
 
-interface Wine {
-  id?: number;
-  name: string;
-  section?: string;
-  isOpen: boolean;
-  isNestedOpen?: boolean;
-  // icon: React.ComponentType
-  // options: Option[]
-}
+const ProductTopSection = ({ wine }: { wine: Wine }) => {
+  console.log("Wine ", wine);
 
-export default function ProductTopSection({ wine }) {
+  const { winery } = wine;
+
+  console.log("Winery ", winery);
+  // const [hello,setHello] = useState<number>()
   return (
     <section className="bg-themegray py-12 mt-5">
       {/* <div className="container flex grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-2"> */}
@@ -33,7 +30,7 @@ export default function ProductTopSection({ wine }) {
             <div>
               <div className="flex py-3 border-b gap-3 items-center">
                 <div className="w-2/6 text-end uppercase text-xs">
-                  <span className=" text-spacegray ">First release DaTE</span>
+                  <span className=" text-spacegray ">First release Date</span>
                 </div>
                 <div className="flex space-x-2 border-s ps-3">
                   <svg
@@ -297,12 +294,12 @@ export default function ProductTopSection({ wine }) {
                     <div>
                       <span className="text-base text-spacegray">Winery: </span>
                       <a href="#" className="border-b border-black font-bold">
-                        Château Le Pin
+                        {winery.name}
                       </a>
                     </div>
                     <div>
                       <span className="font-bold text-base text-spacegray">
-                        France, Region, Appellation
+                        {/* France, Region, Appellation */}
                       </span>
                     </div>
                   </div>
@@ -434,4 +431,6 @@ export default function ProductTopSection({ wine }) {
       </div>
     </section>
   );
-}
+};
+
+export default ProductTopSection;
