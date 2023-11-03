@@ -73,20 +73,11 @@ export default function Product() {
   return (
     <div className=" overflow-hidden">
       <BreadCrumb />
-
-<<<<<<< HEAD
-      <div className="container mx-auto py-3 md:py-5 lg:p-7">
+      <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-primary">
           {wine?.name}
         </h1>
         <p className="text-xl md:text-sm lg:text-base font-normal">
-=======
-      <div className="container mx-auto py-3 md:py-5 lg:py-7">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-spacegray">
-          {wine?.name}
-        </h1>
-        <p className="text-xs md:text-sm lg:text-base">
->>>>>>> b003d639dfaaeef7eac383468cb2cb05ab887b8d
           <p> {wine?.description} </p>
         </p>
       </div>
@@ -112,7 +103,7 @@ export default function Product() {
       <section className="container mx-auto py-24 px-4  lg:px-0">
         <div className="flex justify-between items-center gap-5">
           <div className="basis-1/6">
-            <h2 className="text-3xl font-medium">All editions</h2>
+            <h2 className="text-2xl font-medium">All editions</h2>
           </div>
           <div className="basis-4/5 ">
             <hr className=" border-spacegray" />
@@ -124,7 +115,7 @@ export default function Product() {
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              className="w-5 h-6"
+              className="w-4 h-4"
             >
               <path
                 stroke-linecap="round"
@@ -134,8 +125,8 @@ export default function Product() {
             </svg>
           </div>
         </div>
-        <div className="flex justify-between items-center mx-auto pt-14">
-          <div className="">
+        <div className="flex justify-between mx-auto pt-14">
+          <div className=" pt-5">
             <ul
               className="flex flex-wrap text-sm font-medium text-center bg-tabsgray rounded-md p-1"
               id="default-tab"
@@ -183,32 +174,36 @@ export default function Product() {
               </li>
             </ul>
             {/* <div id="default-tab-content">
-          Name
-          <div
-            className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
-            id="profile"
-            role="tabpanel"
-            aria-labelledby="profile-tab"
-          >
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              This is some placeholder content the{" "}
-              <strong className="font-medium text-gray-800 dark:text-white">
-                Profile tab's associated content
-              </strong>
-              . Clicking another tab will toggle the visibility of this one for
-              the next. The tab JavaScript swaps classes to control the content
-              visibility and styling.
-            </p>
+              Name
+              <div
+                className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+                id="profile"
+                role="tabpanel"
+                aria-labelledby="profile-tab"
+              >
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  This is some placeholder content the{" "}
+                  <strong className="font-medium text-gray-800 dark:text-white">
+                    Profile tab's associated content
+                  </strong>
+                  . Clicking another tab will toggle the visibility of this one
+                  for the next. The tab JavaScript swaps classes to control the
+                  content visibility and styling.
+                </p>
+              </div>
+            </div> */}
+            <div className=" flex items-center py-2 gap-2">
+              <input type="checkbox" className="w-6 h-6" />
+              <label htmlFor="">First sale</label>
+            </div>
           </div>
-        </div> */}
-          </div>
-          <div className=" -mt-5">
+          <div className="">
             <p>Sort by</p>
-            <div className="relative inline-block text-left">
+            <div>
               <button
                 onClick={toggleDropdown}
                 type="button"
-                className=" gap-3 flex justify-between text-spacegray shadow-none  border focus:ring-0 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 w-full text-left items-center"
+                className="text-sm w-48 py-2 px-4 text-left items-center flex justify-between text-spacegray shadow-none  border focus:ring-0 focus:outline-none focus:ring-gray-100 font-medium rounded-lg "
               >
                 See More
                 <svg
@@ -267,24 +262,22 @@ export default function Product() {
       {/* All editions end */}
       {/* How to invest in wine start */}
       <section className="bg-themegray shadow-lg px-4 lg:px-0 md:px-4">
-
-        <div className="container max-w-screen-md justify-between items-center grid grid-col-2  md:grid-cols-2 lg:grid-cols-2 mx-auto py-4 lg:py-6 md:py-4">
-
-          <div className=" pb-4 lg:pb-0 md:pb-4">
+        <div className="container justify-between items-center grid grid-col-2  md:grid-cols-2 lg:grid-cols-2 mx-auto py-4 lg:py-6 md:py-4">
+          <div className=" lg:ps-24 pb-4 lg:pb-0 md:pb-4">
             <h3 className=" text-lg font-semibold">How to invest in wine</h3>
-            <p className=" w-3/4 font-normal text-sm">
+            <p className="font-normal text-sm">
               See our video to gather new informations
             </p>
-            <p className=" w-4/5 font-normal text-sm">
+            <p className=" font-normal text-sm">
               See our video to gather new informations See our video to gather
               new informations See our video to gather new informations See our
               video to gather new informations See our video to gather new
               informations See our video to gather new informations
             </p>
           </div>
-          <div>
+          <div className="flex lg:justify-center">
             <iframe
-              className=" rounded-md w-full md:w-full lg:w-96 h-56"
+              className=" rounded-md w-full md:w-full lg:w-80 h-56"
               src="https://www.youtube.com/embed/7gquYRxLMFI?si=S7E_iDRbr-b1dZef"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -294,24 +287,23 @@ export default function Product() {
       </section>
       {/* How to invest in wine end */}
       {/* About Chateau La Mission Haut Brion Cru Classe | 2009 start */}
-      <section className="pt-10 px-4 lg:px-6 md:px-4">
+      <section className=" pt-12 px-4 lg:px-6 md:px-4">
         <div className=" container mx-auto">
-          <h2 className=" capitalize text-3xl font-semibold">
-            <span className=" text-typegray text-4xl font-normal">About</span>{" "}
+          <h2 className=" capitalize text-4xl font-medium">
+            <span className=" text-typegray text-3xl font-normal">About</span>{" "}
             Chateau La Mission Haut Brion Cru Classe | 2009
           </h2>
         </div>
 
-        <div className="container items-center grid grid-col-1  md:grid-cols-2 lg:grid-cols-2 mx-auto py-6">
+        <div className="container items-center grid grid-col-1  md:grid-cols-2 lg:grid-cols-2 mx-auto py-8">
           <div className="pb-4 lg:pb-0 md:pb-4">
             <div className="flex gap-3">
               <Image
                 src={redwine}
                 alt="Picture of the author"
-                width={20}
-                height={20}
+                className="w-6"
               />
-              <span className="font-bold text-base text-spacegray">
+              <span className=" font-medium text-base text-black">
                 Red, 14% Alc
               </span>
             </div>
@@ -339,16 +331,16 @@ export default function Product() {
             ></iframe>
           </div>
         </div>
-        <div className="container  items-center grid  md:grid-cols-2 lg:grid-cols-3 mx-auto py-1 border-2 border-bordergray px-4 lg:px-6 md:px-4">
+        <div className="container mt-8  items-center grid  md:grid-cols-2 lg:grid-cols-3 mx-auto py-1 border-2 border-bordergray px-4 lg:px-6 md:px-4">
           {[1, 2, 3].map((d, i) => {
             return (
-              <div key={i} className=" border-e-2  py-6">
+              <div key={i} className=" border-e-2  py-2 px-4">
                 <h3 className=" text-base">
                   A. Critic name{" "}
-                  <span className=" text-lg font-semibold text-black">
+                  <span className=" text-xs font-semibold text-black">
                     100/
                   </span>
-                  <span className=" text-xs text-black">100</span>
+                  <span className=" text-xxs text-black">100</span>
                 </h3>
                 <hr />
                 <p className="text-center text-base">
@@ -371,8 +363,8 @@ export default function Product() {
           </h2>
           <div className="gap-5 container grid mx-auto lg:grid-cols-2 md:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-0">
             <div className="pb-4 lg:pb-0 md:pb-4">
-              <p className="text-xs text-bordergray">Original Art</p>
-              <p className="text-xs font-semibold">
+              <p className="text-sm text-bordergray">Original Art</p>
+              <p className="text-base font-normal">
                 Stop Breathing, White_2Stripes_black_blue
               </p>
               <p className="text-xs text-bordergray">
@@ -421,14 +413,17 @@ export default function Product() {
       {/* About Winery Château Le Pin start */}
       <section className="pt-10 px-4 lg:px-0 md:px-4">
         <div className="container mx-auto">
-          <h2 className="capitalize text-3xl font-semibold">
-            <span className="text-typegray text-4xl font-normal">About</span>{" "}
+          <h2 className="capitalize text-4xl font-semibold">
+            <span className="text-typegray text-3xl font-normal">About </span>
             Winery Château Le Pin
           </h2>
           <div className="container grid mx-auto lg:grid-cols-2 md:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-4 pb-4 lg:pb-0 md:pb-4">
             <div>
-              <p>France, Region, Appellation</p>
-              <p className="font-normal text-base">
+              <p>
+                <span className=" font-semibold">France,</span> Region,
+                Appellation
+              </p>
+              <p className="font-normal text-sm">
                 Château Le Pin is a mini chateau in the Pomerol appellation on
                 the right bank of the Bordeaux region. It is considered a cult
                 estate and is highly sought-after by wine collectors. Its tiny
@@ -464,7 +459,7 @@ export default function Product() {
             </div>
             <div>
               <p>France, Region, Appellation</p>
-              <p className="font-normal text-base">
+              <p className="font-normal text-sm">
                 Château Le Pin is a mini chateau in the Pomerol appellation on
                 the right bank of the Bordeaux region. It is considered a cult
                 estate and is highly sought-after by wine collectors. Its tiny
@@ -521,7 +516,7 @@ export default function Product() {
                   <div className="flex justify-center pt-7">
                     <button
                       type="button"
-                      className="text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center"
+                      className="text-base px-6 py-2.5 text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg  text-center"
                     >
                       Explore
                     </button>
@@ -547,21 +542,21 @@ export default function Product() {
                             <h4 className=" text-base font-semibold">
                               Brunello di Montalcino {`"Piaggione"`} | 2019
                             </h4>
-                            <p className=" text-xs ">6 bottles collection</p>
-                            <p className=" text-xs font-semibold">OWNER</p>
-                            <p className=" text-xs bg-bgbutton w-12 text-center text-white mb-2">
+                            <p className=" text-xxs ">6 bottles collection</p>
+                            <p className=" text-xxs font-semibold">OWNER</p>
+                            <p className=" text-xxs bg-bgbutton w-12 text-center text-white mb-2">
                               Vinesia
                             </p>
                             <hr />
-                            <button className="text-xs uppercase ">
+                            <button className="text-xxs uppercase ">
                               buy now
                             </button>
                             <h3 className=" font-semibold text-lg ">€3,600</h3>
                             <p className=" flex gap-3">
-                              <span className=" text-xs font-medium">
+                              <span className=" text-xxs font-medium">
                                 50 bottles
                               </span>
-                              <span className=" text-xs">50 remaining</span>
+                              <span className=" text-xxs">50 remaining</span>
                             </p>
                           </div>
                         </div>
@@ -580,7 +575,7 @@ export default function Product() {
         <div className=" flex lg:justify-end lg:items-center">
           <div className="lg:w-1/3 w-full bg-themegray p-3 lg:border-y-2 lg:border-l-2  border-spacegray  lg:rounded-s-md rounded">
             <div className="flex justify-between w-full lg:max-w-sm max-w-full mx-auto">
-              <h2>Be the first to know </h2>
+              <h2 className=" font-semibold text-2xl">Be the first to know </h2>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -617,7 +612,7 @@ export default function Product() {
                 <div>
                   <button
                     type="button"
-                    className="text-white bg-spacegray focus:ring-0 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center"
+                    className="text-white bg-spacegray focus:ring-0 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-base px-6 py-2.5 text-center"
                   >
                     Subscribe
                   </button>
