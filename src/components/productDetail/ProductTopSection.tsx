@@ -209,8 +209,8 @@ const ProductTopSection = ({
         </div>
         {/* slider end */}
         {/* second section start */}
-        <div>
-          <div className="flex gap-5 ps-5 ps-md-3">
+        <div className=" md:col-span-2 lg:col-span-1">
+          <div className="flex md-w-full gap-5 ps-5 ps-md-3">
             <div className="border-b-4 rounded border-spacegray">
               <button className="ml-1 text-2xl font-medium text-spacegray">
                 Wine

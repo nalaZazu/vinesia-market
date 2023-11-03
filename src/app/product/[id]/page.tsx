@@ -22,15 +22,18 @@ import { getProductDetail } from "@/services/ProductDetail";
 
 import ArtCard from "@/components/productDetail/ArtCard";
 
-import { Wine, releaseDetails ,rating} from "@/propTypes/page";
+import { Wine, releaseDetails, rating } from "@/propTypes/page";
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
+import { getHomePage } from "@/services/Home";
 
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching
 
 export default function Product() {
   const { id } = useParams();
-  const [data, setData] = useState<any>({});
+  const [data, setData] = useState({});
+  const [products, setProducts] = useState([]);
+
   console.log("Params", id);
 
   const [show, setShow] = useState([]);
@@ -56,13 +59,17 @@ export default function Product() {
           console.log("Err from Product Detail", err);
         });
     }
+    getHomePage().then((res) => {
+      console.log("Response From APi Home Api", res?.data);
+      setProducts(res?.data?.products);
+    });
   }, [id]);
 
   // this is className base strcture of style base module
   // const {brown} = orange
   const { wine } = data;
   const { releaseDetails } = data;
-  const {ratings} = data;
+  const { ratings } = data;
   return (
     <div className=" overflow-hidden">
       <BreadCrumb />
@@ -78,7 +85,11 @@ export default function Product() {
 
       {/* hero section start*/}
       {wine ? (
-        <ProductTopSection wine={wine} release={releaseDetails} rating={ratings}/>
+        <ProductTopSection
+          wine={wine}
+          release={releaseDetails}
+          rating={ratings}
+        />
       ) : (
         <PTSSkelton />
       )}
@@ -229,62 +240,11 @@ export default function Product() {
         </div>
         <div>
           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mx-auto">
-            {productlist &&
-              productlist.map((item) => {
-                const {
-                  bottle1,
-                  id,
-                  imageAlt,
-                  imageSrc,
-                  price,
-                  name,
-                  remain,
-                  subtitle,
-                } = item;
+            {products &&
+              products.map((item: any, i: any) => {
                 return (
-                  <div key={id}>
+                  <div key={i}>
                     <ProductCard item={item} />
-
-                    <Image
-                      src={imageSrc}
-                      alt={imageAlt}
-                      width={250}
-                      height={250}
-                      className="mb-3"
-                    />
-                    <h4 className="font-semibold  text-base	leading-6">
-                      {name}
-                    </h4>
-                    <p className="flex text-xs   items-center font-medium">
-                      {subtitle}
-                      <span className="ml-2">
-                        <Image
-                          src={frame}
-                          alt="Picture of the author"
-                          width={15}
-                          height={15}
-                          quality={75}
-                        />
-                      </span>
-                    </p>
-                    <span>
-                      <p className="font-medium text-xs leading-3">Owner</p>
-                      <span className=" mt-2 inline-flex items-center rounded-md bg-[#842029] px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-[#842029] ">
-                        Vinesia
-                      </span>
-                    </span>
-
-                    <hr className="my-4 text-[#C6C7C8] font-bold" />
-                    <span>
-                      <h3 className="font-medium text-xs  leading-3">
-                        BUY NOW
-                      </h3>
-                      <h3 className="font-medium text-lg leading-7">{price}</h3>
-                    </span>
-                    <span className="flex ">
-                      <p>{bottle1}</p>
-                      <p className="text-[#959596] ml-3">{remain} </p>
-                    </span>
                   </div>
                 );
               })}
@@ -299,7 +259,9 @@ export default function Product() {
       {/* All editions end */}
       {/* How to invest in wine start */}
       <section className="bg-themegray shadow-lg px-4 lg:px-0 md:px-4">
-        <div className="container max-w-screen-md justify-between items-center grid-col-1  md:grid-cols-2 lg:grid-cols-2 mx-auto py-4 lg:py-6 md:py-4">
+
+        <div className="container max-w-screen-md justify-between items-center grid grid-col-2  md:grid-cols-2 lg:grid-cols-2 mx-auto py-4 lg:py-6 md:py-4">
+
           <div className=" pb-4 lg:pb-0 md:pb-4">
             <h3 className=" text-lg font-semibold">How to invest in wine</h3>
             <p className=" w-3/4 font-normal text-sm">
@@ -314,9 +276,7 @@ export default function Product() {
           </div>
           <div>
             <iframe
-              width="400"
-              height="230"
-              className=" rounded-md"
+              className=" rounded-md w-full md:w-full lg:w-96 h-56"
               src="https://www.youtube.com/embed/7gquYRxLMFI?si=S7E_iDRbr-b1dZef"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -334,7 +294,7 @@ export default function Product() {
           </h2>
         </div>
 
-        <div className="container max-w-screen-xl items-center grid grid-col-1  md:grid-cols-2 lg:grid-cols-2 mx-auto py-6">
+        <div className="container items-center grid grid-col-1  md:grid-cols-2 lg:grid-cols-2 mx-auto py-6">
           <div className="pb-4 lg:pb-0 md:pb-4">
             <div className="flex gap-3">
               <Image
@@ -347,7 +307,7 @@ export default function Product() {
                 Red, 14% Alc
               </span>
             </div>
-            <p className=" w-5/6 font-normal text-base">
+            <p className=" lg:w-5/6 w-full md:w-11/12 font-normal text-base">
               An evocative nose, floral and exotic with black cherry, lychee and
               passion fruit aromas, delicate and nuanced. Svelte on the palate
               with sculpted and refined tannins – it’s confident, with sinew,
@@ -362,11 +322,9 @@ export default function Product() {
               in warm, dry vintages.
             </p>
           </div>
-          <div>
+          <div className="flex justify-end">
             <iframe
-              width="400"
-              height="230"
-              className=" rounded-md"
+              className=" rounded-md w-full h-72"
               src="https://www.youtube.com/embed/7gquYRxLMFI?si=S7E_iDRbr-b1dZef"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -403,7 +361,7 @@ export default function Product() {
             <span className="text-typegray text-4xl font-normal">About</span>{" "}
             artwork
           </h2>
-          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-4">
+          <div className="gap-5 container grid mx-auto lg:grid-cols-2 md:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-0">
             <div className="pb-4 lg:pb-0 md:pb-4">
               <p className="text-xs text-bordergray">Original Art</p>
               <p className="text-xs font-semibold">
@@ -445,8 +403,7 @@ export default function Product() {
               <Image
                 src={group}
                 alt="Picture of the author"
-                width={450}
-                height={300}
+                className=" w-full md:w-full lg:w-10/12"
               />
             </div>
           </div>
@@ -460,7 +417,7 @@ export default function Product() {
             <span className="text-typegray text-4xl font-normal">About</span>{" "}
             Winery Château Le Pin
           </h2>
-          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-4 pb-4 lg:pb-0 md:pb-4">
+          <div className="container grid mx-auto lg:grid-cols-2 md:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-4 pb-4 lg:pb-0 md:pb-4">
             <div>
               <p>France, Region, Appellation</p>
               <p className="font-normal text-base">
@@ -481,8 +438,7 @@ export default function Product() {
               <Image
                 src={kranu}
                 alt="Picture of the author"
-                width={450}
-                height={300}
+                className="w-full h-72"
               />
             </div>
           </div>
@@ -490,13 +446,12 @@ export default function Product() {
       </section>
       <section className="pt-10">
         <div className="container mx-auto">
-          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-4 lg:px-16 md:px-4">
+          <div className="container grid mx-auto lg:grid-cols-2 md:grid-cols-2 gap-5 max-w-screen-xl items-center py-6 px-4 lg:px-16 md:px-4">
             <div className="flex pb-4 lg:pb-0 md:pb-4">
               <Image
                 src={zut}
                 alt="Picture of the author"
-                width={450}
-                height={300}
+                className="w-full h-72"
               />
             </div>
             <div>
@@ -528,7 +483,7 @@ export default function Product() {
           <div className="md:basis-3/5 lg:basis-3/5 basis-full z-0 pt-10">
             <div className="container grid mx-auto gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-2">
               <div className="bg-themegray flex text-center items-center md:items-center lg:items-end lg:text-center h-[400px] pb-6 border-2 border-spacegray">
-                <div>
+                <div className="w-full">
                   <div className="flex justify-center pb-8">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -565,6 +520,7 @@ export default function Product() {
                   </div>
                 </div>
               </div>
+
               {[1, 2, 3].map((d, i) => {
                 return (
                   <div key={i} className="max-w-md flex text-center pb-6">
