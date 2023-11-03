@@ -47,11 +47,11 @@ const Banner = () => {
           </div>
 
           <div className="lg:mt-16 mt-5 my-10">
-            <ul className="flex justify-between font-normal text-xs text-black">
+            <ul className="flex gap-5 font-normal text-xs text-black">
               <li className=" text-xs font-extrabold ">Peace of Mind pledge</li>
-              <li className="flex    font-normal">
+              <li className="flex  gap-2  font-normal">
                 Proof of Authenticity
-                <li className="ml-1">
+                <li>
                   <Image
                     src={alert}
                     alt="Picture of the author"
@@ -61,10 +61,9 @@ const Banner = () => {
                   />
                 </li>
               </li>
-              <li className="flex relative  font-normal">
+              <li className="flex relative  font-normal gap-2">
                 Proof of Ownership
                 <li
-                  className="ml-1"
                   onMouseEnter={showTooltip}
                   onMouseLeave={hideTooltip}
                 >
@@ -92,10 +91,10 @@ const Banner = () => {
                   </div>
                 </div>
               </li>
-              <li className="flex relative   font-normal">
+              <li className="flex relative gap-2  font-normal">
                 Proof of Storage conditions
                 <li
-                  className="ml-1"
+                 
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -151,7 +150,7 @@ const Banner = () => {
               />
               <div>
 
-                <div className="w-full h-full bg-[#d9d9d9]"></div>
+                {/* <div className="w-full h-full rounded-full bg-[#d9d9d9] absolute left-0 -top-14">hhehe</div> */}
               </div>
 
               <Image

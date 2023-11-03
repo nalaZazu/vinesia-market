@@ -133,7 +133,7 @@ const Critics = ({ data }: { data: any }) => {
                 <button className="py-2.5 px-4 mt-3 bg-bgsecondary text-white rounded-lg  ">
                   Start Exploring
                 </button>
-                <button className="py-2.5 px-4 mt-3 ml-2  text-bgsecondary rounded-lg  font-medium text-base flex">
+                <button className="py-2.5 px-4 gap-3 ml-2  text-bgsecondary rounded-lg  font-medium text-base flex items-center ">
                   Meet the artist
                   <Image src={arrow} alt="arrow" />
                 </button>
