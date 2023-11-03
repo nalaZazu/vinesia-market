@@ -3,26 +3,14 @@ import Image from "next/image";
 import alert from "../../assets/image/alert-circle.png";
 import React from "react";
 import ProductCard from "../cards/ProductCard";
-const Listing = () => {
+const Listing = ({ data }: { data: any }) => {
   return (
     <>
       <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-        {productlist &&
-          productlist.map((item) => {
-            const {
-              bottle1,
-              id,
-              imageAlt,
-              imageSrc,
-              price,
-              name,
-              remain,
-              subtitle,
-            } = item;
+        {data &&
+          data.map((item: any) => {
             return (
-              <div key={id}>
-                <ProductCard />
-              </div>
+              <div key={item?.id}>{item && <ProductCard item={item} />}</div>
             );
           })}
       </div>

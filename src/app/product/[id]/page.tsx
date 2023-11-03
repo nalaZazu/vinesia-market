@@ -22,15 +22,18 @@ import { getProductDetail } from "@/services/ProductDetail";
 
 import ArtCard from "@/components/productDetail/ArtCard";
 
-import { Wine } from "@/propTypes/page";
+import { Wine, releaseDetails, rating } from "@/propTypes/page";
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
+import { getHomePage } from "@/services/Home";
 
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching
 
 export default function Product() {
   const { id } = useParams();
-  const [data, setData] = useState<any>({});
+  const [data, setData] = useState({});
+  const [products, setProducts] = useState([]);
+
   console.log("Params", id);
 
   const [show, setShow] = useState([]);
@@ -42,10 +45,10 @@ export default function Product() {
     const data = await fetch("https://fakestoreapi.com/products");
     const reposne = data.json();
     setShow(await reposne);
-    console.log(show);
+    console.log("show", show);
   };
   useEffect(() => {
-    // axiosCall();
+    axiosCall();
     if (id) {
       getProductDetail(id)
         .then((res) => {
@@ -56,32 +59,54 @@ export default function Product() {
           console.log("Err from Product Detail", err);
         });
     }
+    getHomePage().then((res) => {
+      console.log("Response From APi Home Api", res?.data);
+      setProducts(res?.data?.products);
+    });
   }, [id]);
 
   // this is className base strcture of style base module
   // const {brown} = orange
   const { wine } = data;
+  const { releaseDetails } = data;
+  const { ratings } = data;
   return (
     <div className=" overflow-hidden">
       <BreadCrumb />
 
+<<<<<<< HEAD
       <div className="container mx-auto py-3 md:py-5 lg:p-7">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-primary">
           {wine?.name}
         </h1>
         <p className="text-xl md:text-sm lg:text-base font-normal">
+=======
+      <div className="container mx-auto py-3 md:py-5 lg:py-7">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-spacegray">
+          {wine?.name}
+        </h1>
+        <p className="text-xs md:text-sm lg:text-base">
+>>>>>>> b003d639dfaaeef7eac383468cb2cb05ab887b8d
           <p> {wine?.description} </p>
         </p>
       </div>
 
       {/* hero section start*/}
-      {wine ? <ProductTopSection wine={wine} /> : <PTSSkelton />}
+      {wine ? (
+        <ProductTopSection
+          wine={wine}
+          release={releaseDetails}
+          rating={ratings}
+        />
+      ) : (
+        <PTSSkelton />
+      )}
       {/* hero section end*/}
       {/* our peace of mind pledge section start */}
       <PeaceOfMind />
       {/* our peace of mind pledge section end */}
       {/* Release details section start */}
-      <ReleaseDateSection />
+      {releaseDetails ? <ReleaseDateSection release={releaseDetails} /> : null}
       {/* Release details section end */}
       {/* All editions start */}
       <section className="container mx-auto py-24 px-4  lg:px-0">
@@ -223,62 +248,11 @@ export default function Product() {
         </div>
         <div>
           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mx-auto">
-            {productlist &&
-              productlist.map((item) => {
-                const {
-                  bottle1,
-                  id,
-                  imageAlt,
-                  imageSrc,
-                  price,
-                  name,
-                  remain,
-                  subtitle,
-                } = item;
+            {products &&
+              products.map((item: any, i: any) => {
                 return (
-                  <div key={id}>
-                    <ProductCard />
-
-                    <Image
-                      src={imageSrc}
-                      alt={imageAlt}
-                      width={250}
-                      height={250}
-                      className="mb-3"
-                    />
-                    <h4 className="font-semibold  text-base	leading-6">
-                      {name}
-                    </h4>
-                    <p className="flex text-xs   items-center font-medium">
-                      {subtitle}
-                      <span className="ml-2">
-                        <Image
-                          src={frame}
-                          alt="Picture of the author"
-                          width={15}
-                          height={15}
-                          quality={75}
-                        />
-                      </span>
-                    </p>
-                    <span>
-                      <p className="font-medium text-xs leading-3">Owner</p>
-                      <span className=" mt-2 inline-flex items-center rounded-md bg-[#842029] px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-[#842029] ">
-                        Vinesia
-                      </span>
-                    </span>
-
-                    <hr className="my-4 text-[#C6C7C8] font-bold" />
-                    <span>
-                      <h3 className="font-medium text-xs  leading-3">
-                        BUY NOW
-                      </h3>
-                      <h3 className="font-medium text-lg leading-7">{price}</h3>
-                    </span>
-                    <span className="flex ">
-                      <p>{bottle1}</p>
-                      <p className="text-[#959596] ml-3">{remain} </p>
-                    </span>
+                  <div key={i}>
+                    <ProductCard item={item} />
                   </div>
                 );
               })}
@@ -293,7 +267,9 @@ export default function Product() {
       {/* All editions end */}
       {/* How to invest in wine start */}
       <section className="bg-themegray shadow-lg px-4 lg:px-0 md:px-4">
+
         <div className="container max-w-screen-md justify-between items-center grid grid-col-2  md:grid-cols-2 lg:grid-cols-2 mx-auto py-4 lg:py-6 md:py-4">
+
           <div className=" pb-4 lg:pb-0 md:pb-4">
             <h3 className=" text-lg font-semibold">How to invest in wine</h3>
             <p className=" w-3/4 font-normal text-sm">
@@ -552,6 +528,7 @@ export default function Product() {
                   </div>
                 </div>
               </div>
+
               {[1, 2, 3].map((d, i) => {
                 return (
                   <div key={i} className="max-w-md flex text-center pb-6">
