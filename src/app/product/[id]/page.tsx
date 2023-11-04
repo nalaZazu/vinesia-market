@@ -65,8 +65,9 @@ export default function Product() {
     });
   }, [id]);
 
-  // this is className base strcture of style base module
-  // const {brown} = orange
+  /**
+   *Api -Data variable
+   */
   const { wine } = data;
   const { releaseDetails } = data;
   const { ratings } = data;
