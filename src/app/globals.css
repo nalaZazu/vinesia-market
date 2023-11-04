@@ -8,7 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 .slick-prev, .slick-next{
-  top: 105% !important;
+  top: 100% !important;
 }
 
 .slick-next{
@@ -17,6 +17,32 @@
 .slick-prev{
   left: 10px !important;
 }
+
+
+/* .slick-track{
+  margin-left: -20px;
+  display: flex;
+  column-gap: 25px;
+} */
+
+/* .slick-slider .slick-prev {
+  left: 50px;
+  z-index: 10;
+  position: absolute;
+} */
+.slick-next:before{
+  content: none;
+}
+.slick-prev:before{
+  content: none;
+}
+.slick-active {
+padding-right: 25px !important;
+}
+
+/* .slick-active:last-of-type{
+  padding-left: 12px !important;
+} */
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

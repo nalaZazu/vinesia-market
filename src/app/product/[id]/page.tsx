@@ -31,7 +31,7 @@ import { getHomePage } from "@/services/Home";
 
 export default function Product() {
   const { id } = useParams();
-  const [data, setData] = useState({});
+  const [data, setData] = useState<any>({});
   const [products, setProducts] = useState([]);
 
   console.log("Params", id);
@@ -65,19 +65,22 @@ export default function Product() {
     });
   }, [id]);
 
-  // this is className base strcture of style base module
-  // const {brown} = orange
+  /**
+   *Api -Data variable
+   */
   const { wine } = data;
   const { releaseDetails } = data;
   const { ratings } = data;
   return (
     <div className=" overflow-hidden">
       <BreadCrumb />
+
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-primary">
+
           {wine?.name}
         </h1>
-        <p className="text-xl md:text-sm lg:text-base font-normal">
+        <p className="text-xs md:text-sm lg:text-base">
           <p> {wine?.description} </p>
         </p>
       </div>
