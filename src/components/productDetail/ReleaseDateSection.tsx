@@ -26,13 +26,13 @@ export default function ReleaseDateSection({
     <section className="container mx-auto">
       <div className="flex justify-between ">
         <div>
-          <h2 className="text-3xl font-medium">Release details</h2>
+          <h2 className="text-4xl font-medium">Release details</h2>
         </div>
         <div className="flex text-spacegray">
           <p className="flex gap-4 items-center">
-            <span>On the market are </span>
-            <span className=" text-lg font-medium">24</span>
-            <span>editions of this product</span>
+            <span className="text-lg">On the market are </span>
+            <span className=" text-2xl font-bold">24</span>
+            <span className="text-lg">editions of this product</span>
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -56,40 +56,50 @@ export default function ReleaseDateSection({
       <div className=" bg-themegray p-6 mt-7">
         <div className="grid gap-5 lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
           <div className="text-spacegray">
-            <h2 className=" text-xl font-medium">Pricing details</h2>
+            <h2 className=" text-xl font-bold">Pricing details</h2>
             <div>
               {/* first box */}
               <div className=" grid gap-0 lg:grid-cols-2 md:grid-cols-2 grid-cols-2 pt-6">
                 <div className=" border-2 p-4 py-7 border-typegray">
-                  <div className="flex gap-3">
-                    <h2 className=" text-sm">Release Price </h2>
+                  <div className="flex gap-3 text-sm">
+                    <h2>Release Price </h2>
                     <Image src={infologo} alt="Picture of the author" />
                   </div>
-                  <p className=" text-lg font-medium">€{`${release?.releasePrice}`}</p>
+                  <p className=" text-lg font-semibold">
+                    €{`${release?.releasePrice}`}
+                  </p>
                 </div>
                 <div className=" border-2 p-4 py-7 border-typegray">
-                  <div className="flex gap-3">
-                    <h2 className=" text-sm">Average MARKET PRICE</h2>
+                  <div className="flex gap-3 text-sm">
+                    <h2>Average MARKET PRICE</h2>
                     <Image src={infologo} alt="Picture of the author" />
                   </div>
-                  <p className=" text-lg font-medium">€{`${release?.averagePrice}`}</p>
+                  <p className=" text-lg font-semibold">
+                    €{`${release?.averagePrice}`}
+                  </p>
                 </div>
               </div>
               {/* second box */}
               <div className=" grid gap-0 lg:grid-cols-2 md:grid-cols-2 grid-cols-2">
                 <div className=" border-2 p-4 border-typegray">
                   <div>
-                    <h2 className=" text-sm">Highest Price</h2>
-                    <h2 className=" text-sm">ever transacted for product</h2>
+                    <h2 className=" text-sm font-bold">Highest Price</h2>
+                    <h2 className=" text-sm font-normal">
+                      ever transacted for product
+                    </h2>
                   </div>
-                  <p className=" text-lg font-medium">€{`${release?.highPrice}`}</p>
+                  <p className=" text-lg font-semibold">
+                    €{`${release?.highPrice}`}
+                  </p>
                 </div>
                 <div className=" border-2 p-4 bg-typegray border-typegray text-white">
                   <div>
-                    <h2 className=" text-sm">Price Change</h2>
-                    <h2 className=" text-sm">since first release</h2>
+                    <h2 className=" text-sm font-bold">Price Change</h2>
+                    <h2 className=" text-sm font-normal">
+                      since first release
+                    </h2>
                   </div>
-                  <p className=" text-lg font-medium">+ 66.6%↑</p>
+                  <p className=" text-lg font-semibold">+ 66.6%↑</p>
                 </div>
               </div>
             </div>
