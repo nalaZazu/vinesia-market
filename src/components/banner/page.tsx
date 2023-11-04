@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import alert from "../../assets/icon/alert-circle.svg";
-import group4 from "../../assets/image/group4.png";
 import bold from "../../assets/icon/bold.svg";
 import message from "../../assets/icon/message.svg";
 import drop from "../../assets/icon/drop.svg";
@@ -64,16 +63,18 @@ const Banner = () => {
               <li className="flex relative font-normal gap-2">
                 Proof of Ownership
                 <li onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
-                <li onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
-                  <Image
-                    src={alert}
-                    alt="Picture of the author"
-                    width={15}
-                    height={15}
-                    quality={75}
-                    style={{ objectFit: "contain" }}
-                  />
+                  <li onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
+                    <Image
+                      src={alert}
+                      alt="Picture of the author"
+                      width={15}
+                      height={15}
+                      quality={75}
+                      style={{ objectFit: "contain" }}
+                    />
+                  </li>
                 </li>
+               
                 <div
                   className={`relative ${tooltipVisible ? "block" : "hidden"}`}
                 >
@@ -133,8 +134,10 @@ const Banner = () => {
               ></iframe>
               <div>
                 <div className="w-24 h-24 rounded-full bg-[#d9d9d9] absolute right-1/2 left-60 top-24 bottom-1/2">
-                  <p className="text-secondaary text-xs font-normal  absolute
-                    right-1/2  -left-12 top-1/3 bottom-1/2 ">
+                  <p
+                    className="text-secondaary text-xs font-normal  absolute
+                    right-1/2  -left-12 top-1/3 bottom-1/2 "
+                  >
                     Humidity
                   </p>
                   <p className="text-secondaary text-xs font-normal  absolute    -left-12 top-24 bottom-1/2 ">
@@ -147,13 +150,20 @@ const Banner = () => {
                     alt="bold-image"
                   />
                   <p className="text-secondaary text-xs font-normal  absolute     left-20 top-16 ">
-                  Hygrometrics
+                    Hygrometrics
                   </p>
                 </div>
               </div>
 
+              <div className="w-20 h-20 rounded-full bg-[#d9d9d9] absolute 
+              left-0 -top-14">
+                <Image
+                  src={bold}
+                  className="w-6 h-6 absolute inset-7 "
+                  alt="bold-image"
+                />
+              </div>
               <div>
-
                 {/* <div className="w-full h-full rounded-full bg-[#d9d9d9] absolute left-0 -top-14">hhehe</div> */}
               </div>
 
