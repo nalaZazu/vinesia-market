@@ -16,7 +16,6 @@ const Heritage = ({ data }: { data: any }) => {
     autoplay: false,
     autoplaySpeed: 3000,
     centerPadding: "100px",
-    // className: "gap-4",
     responsive: [
       {
         breakpoint: 1024,
@@ -57,17 +56,17 @@ const Heritage = ({ data }: { data: any }) => {
 
   return (
     <div className="py-16 sm:py-24">
-      <h1 className="text-primary font-semibold  tracking-tight text-xxl">
+      <h1 className="text-primary font-semibold  tracking-tight text-xxl pb-14">
         Invest in heritage
       </h1>
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto">
         <div className="mx-auto max-w-2xl  lg:max-w-none  ">
           {/* <div className="mt-6  grid lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0">
         
           </div>   */}
 
           <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-4 md:gap-0">
-            <div className="py-8 gap-6">
+            <div className=" gap-6">
               <Slider {...sliderSettings}>
                 {data?.map((item: any, i: any) => {
                   return (

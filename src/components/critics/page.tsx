@@ -2,12 +2,11 @@ import Image from "next/image";
 import React, { useState } from "react";
 import img1 from "../../assets/image/image1.png";
 import img2 from "../../assets/image/image 23.png";
-import arrow from "../../assets/icon/arrow-right.svg";
+import arrow from "../../assets/icon/arrow-right2.svg";
 import alert from "../../assets/icon/alert-circle.svg";
 import arrowleft from "../../assets/image/arrow slide left.png";
 import wine from "../../assets/image/group2.png";
 import signature from "../../assets/image/Zrzut ekranu 2023-10-1 o 11.17 1.png";
-import alert from "../../assets/image/alert-circle.png";
 import { NextIcon, PrevIcon } from "@/assets/icon/Icons";
 const Critics = ({ data }: { data: any }) => {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -123,7 +122,7 @@ const Critics = ({ data }: { data: any }) => {
 
       <div className="grid lg:grid-cols-4">
         <div className="flex-1 md:py-16 py-4">
-          <Image src={img1} alt="image" />
+          <Image src={img1} alt="image" className="w-full" />
         </div>
         <div className="col-span-3">
           <div className="grid md:grid-cols-2">
@@ -131,7 +130,7 @@ const Critics = ({ data }: { data: any }) => {
               <h1 className="text-primary text-xxl font-semibold tracking-tight">
                 Wine & art collections
               </h1>
-              <p className="w-[400px] text-base font-medium   tracking-tight">
+              <p className="max-w-[400px] text-base font-medium   tracking-tight">
                 Collections are carefully curated around specific themes,
                 featuring exceptional wines from prestigious wineries worldwide.
                 Each collection is a celebration of the finest vintages,
@@ -140,12 +139,14 @@ const Critics = ({ data }: { data: any }) => {
                 artist Reso, adding an artistic touch to the wine collections
                 you invest in.
               </p>
-              <div className="flex">
-                <button className="py-2.5 px-4 mt-3 bg-bgsecondary text-white rounded-lg  ">
+              <div className="flex items-center mt-10">
+                <button className="py-2.5 px-4 bg-bgsecondary text-white rounded-lg  ">
                   Start Exploring
                 </button>
                 <button className="py-2.5 px-4 gap-3 ml-2  text-bgsecondary rounded-lg  font-medium text-base flex items-center ">
-                  Meet the artist
+                  <div className="text-gray-500 text-base font-medium tracking-tight">
+                    Meet the artist
+                  </div>
                   <Image src={arrow} alt="arrow" />
                 </button>
               </div>

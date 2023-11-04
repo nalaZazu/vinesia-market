@@ -31,7 +31,7 @@ import { getHomePage } from "@/services/Home";
 
 export default function Product() {
   const { id } = useParams();
-  const [data, setData] = useState({});
+  const [data, setData] = useState<any>({});
   const [products, setProducts] = useState([]);
 
   console.log("Params", id);
@@ -79,7 +79,6 @@ export default function Product() {
           {wine?.name}
         </h1>
         <p className="text-xs md:text-sm lg:text-base">
-
           <p> {wine?.description} </p>
         </p>
       </div>

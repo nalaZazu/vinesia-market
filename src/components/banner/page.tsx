@@ -33,7 +33,7 @@ const Banner = () => {
           <h1 className="font-semibold text-primary tracking-tight text-xxl ">
             Marketplace
           </h1>
-          <div className="mt-4 text-primary text-2xl  tracking-tight">
+          <div className="mt-4 text-zinc-700 text-2xl  tracking-tight font-semibold leading-9 max-w-2xl">
             <h2>appreciating your wine, guarding its emotions</h2>
             <h2>
               something about technology, advantage of wine investments, unique
@@ -63,10 +63,7 @@ const Banner = () => {
               </li>
               <li className="flex relative  font-normal gap-2">
                 Proof of Ownership
-                <li
-                  onMouseEnter={showTooltip}
-                  onMouseLeave={hideTooltip}
-                >
+                <li onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
                   <Image
                     src={alert}
                     alt="Picture of the author"
@@ -94,7 +91,6 @@ const Banner = () => {
               <li className="flex relative gap-2  font-normal">
                 Proof of Storage conditions
                 <li
-                 
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -149,7 +145,6 @@ const Banner = () => {
                 className="absolute left-0 -top-14 "
               />
               <div>
-
                 {/* <div className="w-full h-full rounded-full bg-[#d9d9d9] absolute left-0 -top-14">hhehe</div> */}
               </div>
 
