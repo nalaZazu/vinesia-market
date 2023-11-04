@@ -4,7 +4,7 @@ import bottlePic from "../../assets/image/image25.png";
 import moment from "moment";
 const Available = ({ data }: { data: any }) => {
   return (
-    <div>
+    <div className="md:py-16 py-5">
       <h1 className="text-primary font-semibold  tracking-tight text-xxl pb-4">
         Available Soon
       </h1>

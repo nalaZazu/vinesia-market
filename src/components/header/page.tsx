@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Link from "next/link";
 import logo from "../../assets/img/Logo1.png";
@@ -11,27 +11,28 @@ const Header = () => {
   return (
     <div>
       <nav className="p-4">
-        <div className="container mx-auto flex justify-between items-center">
+        <div className="container mx-auto grid grid-cols-12 justify-between items-center">
           {/* topbar start */}
-          <div className="flex items-center space-x-4 lg:space-x-8">
+          <div className="md:flex  hidden items-center space-x-4 lg:space-x-8 md:col-span-5">
             <a href="#">
-              <span className=" hidden lg:block">Vinesia Story</span>
+              <span className=" hidden md:block">Vinesia Story</span>
             </a>
             <a href="#">
-              <span className=" hidden lg:block">Vinesia Marketplace</span>
+              <span className=" hidden md:block">Vinesia Marketplace</span>
             </a>
           </div>
 
-          <div className=" text-2xl lg:text-4xl font-bold">
+          <div className=" text-2xl lg:text-4xl font-bold col-span-2 md:text-center">
             <Image
               src={logo}
+              className="md:mx-auto"
               alt="Picture of the author"
               width={80}
               height={80}
             />
           </div>
 
-          <div className="flex items-center space-x-4 lg:space-x-8">
+          <div className="flex items-center space-x-4 lg:space-x-8 md:col-span-5 col-span-10 ms-auto">
             <div className="flex items-center space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -84,8 +85,8 @@ const Header = () => {
       </nav>
 
       {/* Navbar */}
-      <nav className="bg-themegray p-4">
-        <div className="container mx-auto flex justify-between items-center">
+      <nav className="bg-themegray py-5">
+        <div className="container mx-auto flex justify-between items-center px-4">
           <ul className="hidden lg:flex space-x-6">
             {menuBar?.map((item: any) => {
               const { id, name, href } = item;
@@ -95,13 +96,11 @@ const Header = () => {
                 </li>
               );
             })}
-            
           </ul>
           {/* Mobile Navbar (Hidden on Desktop)  */}
           <div className="lg:hidden">
             <div className="block lg:hidden">
-              
-             <SidePannel/>
+              <SidePannel />
             </div>
           </div>
         </div>

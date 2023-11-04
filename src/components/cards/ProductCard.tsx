@@ -18,7 +18,7 @@ export default function ProductCard({ item }: { item: any }) {
 
   return (
     <div>
-      <div>
+      <div className="">
         <Image
           src={winbottle}
           alt="Picture of the author"
@@ -27,7 +27,7 @@ export default function ProductCard({ item }: { item: any }) {
         <h4 className=" text-black text-base font-semibold  tracking-tight	">
           {item?.name} | {item?.vintage}
         </h4>
-        <p className="flex  items-center text-black text-xxs font-medium   tracking-wide">
+        <p className="flex  items-center text-black text-xxs font-medium  py-1 tracking-wide">
           {item?.packageSize} bottles collection{" "}
           <span className=" ms-1">
             <InfoIcon />
@@ -38,7 +38,11 @@ export default function ProductCard({ item }: { item: any }) {
             {item?.owners?.map((ow: any, i: any) => {
               return (
                 <span
-                  className={i > 0 ? "border-s-2 border-black px-1" : "px-1"}
+                  className={
+                    i > 0
+                      ? "border-s-2 border-black px-1 uppercase"
+                      : "px-1 uppercase"
+                  }
                   key={i}
                 >
                   {" "}
