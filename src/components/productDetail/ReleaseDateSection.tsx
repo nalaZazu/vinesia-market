@@ -24,11 +24,13 @@ export default function ReleaseDateSection({
 }) {
   return (
     <section className="container mx-auto">
-      <div className="flex justify-between ">
+      <div className="flex justify-between py-7">
         <div>
-          <h2 className="text-4xl font-medium">Release details</h2>
+          <h2 className="text-4xl font-medium text-spacegray">
+            Release details
+          </h2>
         </div>
-        <div className="flex text-spacegray">
+        <div className="flex text-bgsecondary">
           <p className="flex gap-4 items-center">
             <span className="text-lg">On the market are </span>
             <span className=" text-2xl font-bold">24</span>
@@ -55,51 +57,68 @@ export default function ReleaseDateSection({
 
       <div className=" bg-themegray p-6 mt-7">
         <div className="grid gap-5 lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
-          <div className="text-spacegray">
-            <h2 className=" text-xl font-bold">Pricing details</h2>
+          <div>
+            <h2 className="text-neutral-400 text-xl font-bold">
+              Pricing details
+            </h2>
             <div>
               {/* first box */}
               <div className=" grid gap-0 lg:grid-cols-2 md:grid-cols-2 grid-cols-2 pt-6">
-                <div className=" border-2 p-4 py-7 border-typegray">
-                  <div className="flex gap-3 text-sm">
+                <div className=" border-t-2 border-l-2 border-gray-500 items-start gap-2.5  p-4 py-7">
+                  <div className="flex gap-3 text-sm text-gray-500 font-medium uppercase tracking-tight">
                     <h2>Release Price </h2>
-                    <Image src={infologo} alt="Picture of the author" />
+                    <Image
+                      src={infologo}
+                      alt="Picture of the author"
+                      className=" w-6 h-6"
+                    />
                   </div>
-                  <p className=" text-lg font-semibold">
+                  <p className=" text-lg font-semibold text-gray-500 tracking-tight">
                     €{`${release?.releasePrice}`}
                   </p>
                 </div>
-                <div className=" border-2 p-4 py-7 border-typegray">
-                  <div className="flex gap-3 text-sm">
-                    <h2>Average MARKET PRICE</h2>
-                    <Image src={infologo} alt="Picture of the author" />
+                <div className=" border-2 border-gray-500 items-start gap-2.5  p-4 py-7">
+                  <div className="flex gap-3 text-sm text-gray-500 font-medium uppercase tracking-tight">
+                    <h2>Average MARKET PRICE </h2>
+                    <Image
+                      src={infologo}
+                      alt="Picture of the author"
+                      className=" w-6 h-6"
+                    />
                   </div>
-                  <p className=" text-lg font-semibold">
+                  <p className=" text-lg font-semibold text-gray-500 tracking-tight">
                     €{`${release?.averagePrice}`}
                   </p>
                 </div>
               </div>
               {/* second box */}
               <div className=" grid gap-0 lg:grid-cols-2 md:grid-cols-2 grid-cols-2">
-                <div className=" border-2 p-4 border-typegray">
+                <div className=" border-y-2 border-l-2 p-4 border-typegray">
                   <div>
-                    <h2 className=" text-sm font-bold">Highest Price</h2>
-                    <h2 className=" text-sm font-normal">
+                    <h2 className=" text-sm font-bold text-gray-500 uppercase tracking-tight">
+                      Highest Price
+                    </h2>
+                    <h2 className=" text-sm font-normal text-gray-500 tracking-tight">
                       ever transacted for product
                     </h2>
                   </div>
-                  <p className=" text-lg font-semibold">
+                  <p className=" text-lg font-semibold text-gray-500 tracking-tight">
                     €{`${release?.highPrice}`}
                   </p>
                 </div>
-                <div className=" border-2 p-4 bg-typegray border-typegray text-white">
+
+                <div className=" border-x-2 border-b-2 p-4 bg-typegray border-typegray text-white">
                   <div>
-                    <h2 className=" text-sm font-bold">Price Change</h2>
-                    <h2 className=" text-sm font-normal">
+                    <h2 className=" text-sm font-bold text-white  uppercase tracking-tight">
+                      Price Change
+                    </h2>
+                    <h2 className=" text-sm font-normal text-white tracking-tight">
                       since first release
                     </h2>
                   </div>
-                  <p className=" text-lg font-semibold">+ 66.6%↑</p>
+                  <p className=" text-lg font-semibold text-white  tracking-tight">
+                    + 66.6%↑
+                  </p>
                 </div>
               </div>
             </div>

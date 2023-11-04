@@ -75,8 +75,9 @@ export default function Product() {
     <div className=" overflow-hidden">
       <BreadCrumb />
 
-      <div className="container mx-auto py-3 md:py-5 lg:py-7">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-spacegray">
+      <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-primary">
+
           {wine?.name}
         </h1>
         <p className="text-xs md:text-sm lg:text-base">
@@ -105,10 +106,12 @@ export default function Product() {
       <section className="container mx-auto py-24 px-4  lg:px-0">
         <div className="flex justify-between items-center gap-5">
           <div className="basis-1/6">
-            <h2 className="text-2xl font-medium">All editions</h2>
+            <h2 className="text-2xl font-medium text-black tracking-tight">
+              All editions
+            </h2>
           </div>
           <div className="basis-4/5 ">
-            <hr className=" border-spacegray" />
+            <hr className=" border-black" />
           </div>
           <div className="flex text-spacegray">
             <svg
@@ -117,7 +120,7 @@ export default function Product() {
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              className="w-4 h-4"
+              className="w-3.5 h-3.5"
             >
               <path
                 stroke-linecap="round"
@@ -135,7 +138,10 @@ export default function Product() {
               data-tabs-toggle="#default-tab-content"
               role="tablist"
             >
-              <li className="mr-2" role="presentation">
+              <li
+                className="text-center text-zinc-700 text-xs font-normal font-['Jost'] tracking-wide"
+                role="presentation"
+              >
                 <button
                   className="px-10 py-2 rounded-md bg-white shadow-md"
                   id="profile-tab"
@@ -148,7 +154,10 @@ export default function Product() {
                   All
                 </button>
               </li>
-              <li className="mr-2" role="presentation">
+              <li
+                className="text-center text-zinc-700 text-xs font-normal font-['Jost'] tracking-wide"
+                role="presentation"
+              >
                 <button
                   className="px-9 py-2 rounded-md "
                   id="profile-tab"
@@ -161,7 +170,10 @@ export default function Product() {
                   Ask
                 </button>
               </li>
-              <li className="mr-2" role="presentation">
+              <li
+                className="text-center text-zinc-700 text-xs font-normal font-['Jost'] tracking-wide"
+                role="presentation"
+              >
                 <button
                   className="px-9 py-2 rounded-md"
                   id="profile-tab"
@@ -194,20 +206,24 @@ export default function Product() {
                 </p>
               </div>
             </div> */}
-            <div className=" flex items-center py-2 gap-2">
-              <input type="checkbox" className="w-6 h-6" />
-              <label htmlFor="">First sale</label>
+            <div className=" flex items-center py-3 gap-2">
+              <input type="checkbox" className="w-5 h-5" />
+              <div className="text-neutral-900 text-sm font-normal tracking-tight">
+                First sale
+              </div>
             </div>
           </div>
           <div className="">
-            <p>Sort by</p>
+            <p className="text-neutral-900 text-sm font-normal tracking-tight">
+              Sort by
+            </p>
             <div>
               <button
                 onClick={toggleDropdown}
                 type="button"
-                className="text-sm w-48 py-2 px-4 text-left items-center flex justify-between text-spacegray shadow-none  border focus:ring-0 focus:outline-none focus:ring-gray-100 font-medium rounded-lg "
+                className="tracking-tight text-sm w-48 py-2 px-4 text-left items-center flex justify-between text-spacegray shadow-none  border focus:ring-0 focus:outline-none focus:ring-gray-100 font-medium rounded-lg "
               >
-                See More
+                Recommended
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -291,8 +307,10 @@ export default function Product() {
       {/* About Chateau La Mission Haut Brion Cru Classe | 2009 start */}
       <section className=" pt-12 px-4 lg:px-6 md:px-4">
         <div className=" container mx-auto">
-          <h2 className=" capitalize text-4xl font-medium">
-            <span className=" text-typegray text-3xl font-normal">About</span>{" "}
+          <h2 className=" capitalize text-4xl font-medium text-zinc-700 tracking-tight">
+            <span className=" text-3xl font-normal text-neutral-400  tracking-tight">
+              About
+            </span>{" "}
             Chateau La Mission Haut Brion Cru Classe | 2009
           </h2>
         </div>
@@ -359,8 +377,10 @@ export default function Product() {
       {/* About artwork start */}
       <section className="pt-10 px-4 lg:px-0 md:px-4">
         <div className="container mx-auto">
-          <h2 className="capitalize text-3xl font-semibold">
-            <span className="text-typegray text-4xl font-normal">About</span>{" "}
+          <h2 className=" capitalize text-4xl font-medium text-zinc-700 tracking-tight">
+            <span className=" text-3xl font-normal text-neutral-400  tracking-tight">
+              About
+            </span>{" "}
             artwork
           </h2>
           <div className="gap-5 container grid mx-auto lg:grid-cols-2 md:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-0">
@@ -415,8 +435,10 @@ export default function Product() {
       {/* About Winery Château Le Pin start */}
       <section className="pt-10 px-4 lg:px-0 md:px-4">
         <div className="container mx-auto">
-          <h2 className="capitalize text-4xl font-semibold">
-            <span className="text-typegray text-3xl font-normal">About </span>
+          <h2 className=" capitalize text-4xl font-medium text-zinc-700 tracking-tight">
+            <span className=" text-3xl font-normal text-neutral-400  tracking-tight">
+              About
+            </span>{" "}
             Winery Château Le Pin
           </h2>
           <div className="container grid mx-auto lg:grid-cols-2 md:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-4 pb-4 lg:pb-0 md:pb-4">
@@ -482,9 +504,10 @@ export default function Product() {
       {/* You may also like start */}
       <section className=" py-14 px-4 lg:px-0 md:px-4">
         <div className="container mx-auto">
-          <h2 className=" capitalize text-3xl font-semibold">
+          <h2 className=" capitalize text-4xl font-medium text-zinc-700 tracking-tight">
             You may also like
           </h2>
+
           <div className="md:basis-3/5 lg:basis-3/5 basis-full z-0 pt-10">
             <div className="container grid mx-auto gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-2">
               <div className="bg-themegray flex text-center items-center md:items-center lg:items-end lg:text-center h-[400px] pb-6 border-2 border-spacegray">
