@@ -34,8 +34,6 @@ export default function Product() {
   const [data, setData] = useState<any>({});
   const [products, setProducts] = useState([]);
 
-  console.log("Params", id);
-
   const [show, setShow] = useState([]);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
