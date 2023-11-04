@@ -6,8 +6,8 @@ import arrowTray from "../../assets/icon/log-in.svg";
 import Image from "next/image";
 import { menuBar } from "@/constants/navigate";
 import { useRouter } from "next/navigation";
+import SidePannel from "./sidepannel/page";
 const Header = () => {
-  const router = useRouter();
   return (
     <div>
       <nav className="p-4">
@@ -95,29 +95,13 @@ const Header = () => {
                 </li>
               );
             })}
-            <li>
-              <Link href="/winery">Winery</Link>
-            </li>
+            
           </ul>
           {/* Mobile Navbar (Hidden on Desktop)  */}
           <div className="lg:hidden">
             <div className="block lg:hidden">
-              <button className="">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  ></path>
-                </svg>
-              </button>
+              
+             <SidePannel/>
             </div>
           </div>
         </div>

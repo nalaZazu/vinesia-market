@@ -7,7 +7,6 @@ import alert from "../../assets/icon/alert-circle.svg";
 import arrowleft from "../../assets/image/arrow slide left.png";
 import wine from "../../assets/image/group2.png";
 import signature from "../../assets/image/Zrzut ekranu 2023-10-1 o 11.17 1.png";
-import alert from "../../assets/image/alert-circle.png";
 import { NextIcon, PrevIcon } from "@/assets/icon/Icons";
 const Critics = ({ data }: { data: any }) => {
   const [selectedTab, setSelectedTab] = useState(0);
