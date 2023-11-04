@@ -13,9 +13,10 @@ const Heritage = ({ data }: { data: any }) => {
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
-
+    centerPadding: "100px",
+    // className: "gap-4",
     responsive: [
       {
         breakpoint: 1024,
@@ -59,25 +60,23 @@ const Heritage = ({ data }: { data: any }) => {
       <h1 className="text-primary font-semibold  tracking-tight text-xxl">
         Invest in heritage
       </h1>
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl  lg:max-w-none  ">
           {/* <div className="mt-6  grid lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0">
         
           </div>   */}
 
           <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-4 md:gap-0">
-            <div className="py-8">
-              <div>
-                <Slider {...sliderSettings}>
-                  {data?.map((item: any, i: any) => {
-                    return (
-                      <div key={i}>
-                        <ProductCard item={item} />
-                      </div>
-                    );
-                  })}
-                </Slider>
-              </div>
+            <div className="py-8 gap-6">
+              <Slider {...sliderSettings}>
+                {data?.map((item: any, i: any) => {
+                  return (
+                    <div key={i}>
+                      <ProductCard item={item} />
+                    </div>
+                  );
+                })}
+              </Slider>
             </div>
             <div className="ml-4  lg:mt-0 py-8">
               <iframe
