@@ -20,7 +20,7 @@ export default function Home() {
   const [data, setData] = useState({});
   const [criticsSelection, setCriticsSelection] = useState([]);
   const [products, setProducts] = useState([]);
-  const [drops, setDrops] = useState([])
+  const [drops, setDrops] = useState([]);
   console.log("Process Env ", process.env.baseUrl);
   useEffect(() => {
     getHomePage().then((res) => {
@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="container mx-auto max-w-2xl px-4  sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="container mx-auto px-4  sm:px-6  lg:px-8">
         {/* py-16 sm:py-24 */}
         <Banner />
 <<<<<<< HEAD
@@ -46,7 +46,7 @@ export default function Home() {
 =======
         <Heritage  data={products} />
         <Available data={drops} />
-        <Critics data={criticsSelection}  />
+        <Critics data={criticsSelection} />
         {products && <Listing data={products} />}
 >>>>>>> b003d639dfaaeef7eac383468cb2cb05ab887b8d
       </div>
