@@ -26,16 +26,18 @@ const ProductTopSection = ({
   console.log("Wine ", wine);
   console.log("rating ", rating);
   return (
-    <section className="bg-themegray py-12 mt-5">
+    <section className="bg-themegray py-12 mt-5 px-4">
       {/* <div className="container flex grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-2"> */}
-      <div className="container grid max-w-screen-xl  mx-auto lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 px-4 md:px-5 gap:4 md:gap-4 lg:gap-0">
+      <div className="container grid  mx-auto lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 px-4 md:px-0 gap:4 md:gap-4 lg:gap-0">
         {/* first section start */}
         <div>
           <div className="bg-white py-1">
             <div>
               <div className="flex py-3 border-b border-bordergray gap-2 items-center">
                 <div className="w-2/6 text-end uppercase text-xs font-normal">
-                  <span className=" text-spacegray ">First release Date</span>
+                  <span className=" opacity-60 text-black">
+                    First release Date
+                  </span>
                 </div>
                 <div className="flex space-x-2 border-s border-bordergray ps-2">
                   <svg
@@ -52,14 +54,16 @@ const ProductTopSection = ({
                       d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
                     />
                   </svg>
-                  <span className=" font-medium text-base text-spacegray">
+                  <span className=" font-medium text-base">
                     {release?.releaseDate}
                   </span>
                 </div>
               </div>
               <div className="flex py-3 gap-2 items-center">
                 <div className="w-2/6 text-end text-xs">
-                  <span className=" text-spacegray font-normal">OWNER</span>
+                  <span className=" opacity-60 text-black font-normal">
+                    OWNER
+                  </span>
                 </div>
                 <div className="flex space-x-2 border-b border-bordergray">
                   <Image
@@ -79,7 +83,7 @@ const ProductTopSection = ({
               </div>
               <div className="flex py-3 gap-2 items-center">
                 <div className="w-2/6 text-end uppercase text-xs font-normal">
-                  <span className=" text-spacegray ">Edition</span>
+                  <span className=" opacity-60 text-black ">Edition</span>
                 </div>
                 <div className="flex space-x-2 border-s border-bordergray ps-2">
                   <span className=" font-medium text-base text-spacegray">
@@ -89,7 +93,7 @@ const ProductTopSection = ({
               </div>
               <div className="flex py-3 gap-2 items-center">
                 <div className="w-2/6 text-end uppercase text-xs font-normal">
-                  <span className=" text-spacegray ">Wine asset ID</span>
+                  <span className=" opacity-60 text-black ">Wine asset ID</span>
                 </div>
                 <div className="flex space-x-2 border-s border-bordergray ps-2">
                   <span className=" font-medium text-base text-spacegray">
@@ -106,7 +110,7 @@ const ProductTopSection = ({
                   />
                 </div>
                 <div className="flex">
-                  <span className=" font-medium text-xs text-black">
+                  <span className=" font-medium text-xs border-b-2 border-bordergray text-black">
                     Product integrity certificates
                   </span>
                 </div>
@@ -292,7 +296,9 @@ const ProductTopSection = ({
               </div>
               <div className="flex pb-6 gap-2 items-center">
                 <div className="w-2/6 text-end uppercase text-xs font">
-                  <span className=" text-spacegray ">Case & bottle size</span>
+                  <span className=" opacity-60 text-black ">
+                    Case & bottle size
+                  </span>
                 </div>
                 <div className=" border-s border-bordergray gap-2">
                   <div className="flex space-x-2 ps-2">
@@ -306,7 +312,7 @@ const ProductTopSection = ({
                     </span>
                   </div>
                   <div>
-                    <span className=" ps-10 font-normal text-base text-spacegray">
+                    <span className=" ps-10 font-normal text-base text-black">
                       Double Magnum (1,5l)
                     </span>
                   </div>
@@ -314,7 +320,7 @@ const ProductTopSection = ({
               </div>
               <div className="flex pb-6 gap-2 ">
                 <div className="w-2/6 text-end uppercase text-xs">
-                  <span className=" text-spacegray ">type</span>
+                  <span className=" opacity-60 text-black ">type</span>
                 </div>
                 <div className="flex space-x-2 border-s border-bordergray ps-2">
                   <Image
@@ -322,14 +328,14 @@ const ProductTopSection = ({
                     alt="Picture of the author"
                     className="w-5 h-5"
                   />
-                  <span className=" font-medium text-base text-spacegray">
+                  <span className=" font-medium text-base text-black">
                     {/* Red, 14% Alc */} {wine?.type}
                   </span>
                 </div>
               </div>
               <div className="flex pb-6 gap-2">
                 <div className=" flex justify-end items-center w-2/6 text-end uppercase text-xs">
-                  <span className=" text-spacegray ">Origin</span>
+                  <span className=" opacity-60 text-black ">Origin</span>
                 </div>
                 <div className="flex space-x-2 border-s border-bordergray ps-2">
                   <div>
@@ -337,13 +343,13 @@ const ProductTopSection = ({
                       <span className="text-base text-spacegray">Winery: </span>
                       <a
                         href="#"
-                        className=" text-sm border-b border-black font-medium"
+                        className=" text-sm text-black border-b border-black font-medium"
                       >
                         {wine?.winery?.region?.country}
                       </a>
                     </div>
                     <div>
-                      <span className="font-bold text-base text-spacegray">
+                      <span className="font-bold text-base text-black">
                         {/* France, Region, Appellation */}
                       </span>
                     </div>
@@ -367,12 +373,12 @@ const ProductTopSection = ({
                         key={i}
                         className="bg-themegray col-span-1 py-5 rounded-sm"
                       >
-                        <p className="text-spacegray text-xs text-center">
+                        <p className="opacity-60 text-black text-xs text-center">
                           {critic}
                         </p>
                         <div className="flex items-end justify-center">
-                          <p className=" text-lg">{rating}/</p>
-                          <span className=" text-xs">{max}</span>
+                          <p className=" text-lg text-black">{rating}/</p>
+                          <span className=" text-xs text-black">{max}</span>
                         </div>
                       </div>
                     );
@@ -380,7 +386,7 @@ const ProductTopSection = ({
                 </div>
               </div>
               <hr className=" border-t-2" />
-              <div className="flex justify-end items-center gap-6 py-2 px-5 text-spacegray">
+              <div className="flex justify-end items-center gap-6 py-2 px-5 text-bgsecondary">
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -439,7 +445,7 @@ const ProductTopSection = ({
                 </div>
                 <button
                   type="button"
-                  className="rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center text-spacegray bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium dark:focus:ring-gray-600 dark:bg-gray-800 mr-2"
+                  className="rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center text-bgsecondary bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium dark:focus:ring-gray-600 dark:bg-gray-800 mr-2"
                 >
                   See More
                   <svg
@@ -448,7 +454,7 @@ const ProductTopSection = ({
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    className="w-5 h-5 ms-2 text-spacegray"
+                    className="w-5 h-5 ms-2 text-bgsecondary"
                   >
                     <path
                       stroke-linecap="round"

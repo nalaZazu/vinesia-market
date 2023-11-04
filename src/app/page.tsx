@@ -6,6 +6,7 @@ import Heritage from "@/components/heritage/page";
 import Listing from "@/components/winelisting/page";
 import { useEffect, useState } from "react";
 import { getHomePage } from "../services/Home";
+import Popup from "@/components/popup/page";
 export default function Home() {
   const [data, setData] = useState({});
   const [criticsSelection, setCriticsSelection] = useState([]);
@@ -30,6 +31,9 @@ export default function Home() {
         <Available data={drops} />
         <Critics data={criticsSelection}  />
         {products && <Listing data={products} />}
+
+
+        <Popup />
       </div>
     </>
   );

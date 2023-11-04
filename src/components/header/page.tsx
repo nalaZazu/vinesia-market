@@ -1,5 +1,5 @@
 import React from "react";
-import Link from 'next/link'
+import Link from "next/link";
 import logo from "../../assets/img/Logo1.png";
 import arrowTray from "../../assets/icon/log-in.svg";
 import Image from "next/image";
