@@ -17,6 +17,13 @@
 .slick-prev{
   left: 10px !important;
 }
+
+
+/* .slick-track{
+  margin-left: -20px;
+  display: flex;
+  column-gap: 25px;
+} */
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

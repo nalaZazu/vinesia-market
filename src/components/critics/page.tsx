@@ -7,6 +7,8 @@ import arrowleft from "../../assets/image/arrow slide left.png";
 import wine from "../../assets/image/group2.png";
 import signature from "../../assets/image/Zrzut ekranu 2023-10-1 o 11.17 1.png";
 import alert from "../../assets/image/alert-circle.png";
+import { NextIcon, PrevIcon } from "@/assets/icon/Icons";
+
 const Critics = ({ data }: { data: any }) => {
   const [selectedTab, setSelectedTab] = useState(0);
   console.log("Critics Data ", data);
@@ -37,7 +39,11 @@ const Critics = ({ data }: { data: any }) => {
                   {
                     <div>
                       {i == selectedTab && (
-                        <Image src={arrowleft} alt="arrow" />
+                        <div className="w-8 h-8 flex mx-auto bg-neutral-200 rounded-full border-2 border-black text-center items-center">
+                          <span className="mx-auto">
+                            <NextIcon />
+                          </span>
+                        </div>
                       )}
                     </div>
                   }
@@ -57,11 +63,17 @@ const Critics = ({ data }: { data: any }) => {
                     <div>
                       <Image src={wine} alt="image" className="mr-2" />
                     </div>
-                    <ul className=" md:w-2/3 px-4  text-base font-medium   tracking-tight">
+                    <ul className=" md:w-2/3 px-4  text-base font-medium   tracking-tight flex flex-col justify-between">
                       {detail?.description}
                       <div className="text-center">
-                        <button className="py-2.5 px-4 mt-3 border border-bgsecondary  text-bgsecondary rounded-lg   text-base font-medium   tracking-tight">
+                        {/* <button className="py-2.5 px-4 mt-3 border border-bgsecondary  text-bgsecondary rounded-lg   text-base font-medium   tracking-tight">
                           Invest now
+                        </button> */}
+
+                        <button className="w-[108px] h-10 px-4 py-2.5 rounded-lg border border-gray-500 justify-center items-center gap-2 inline-flex">
+                          <div className="text-gray-500 text-base font-medium tracking-tight">
+                            Invest now
+                          </div>
                         </button>
                       </div>
                     </ul>
