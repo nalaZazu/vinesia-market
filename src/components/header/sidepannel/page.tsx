@@ -14,7 +14,6 @@ const SidePannel = () => {
   };
   return (
     <>
-    
       <div className="flex">
         <button
           onClick={toggleSidebar}
@@ -41,8 +40,7 @@ const SidePannel = () => {
         {isSidebarOpen && (
           <div
             id="default-sidebar"
-            className="fixed top-0 left-0 z-40 w-40 h-screen 
-            transition-transform -translate-x-full sm:translate-x-0 bg-themegray dark:bg-secondary"
+            className="fixed top-0 left-0 z-40 w-40 h-screen transition-transform  sm:translate-x-0 bg-themegray dark:bg-secondary"
             aria-label="Sidebar"
           >
             <ul className="space-y-4  font-medium">
@@ -63,13 +61,12 @@ const SidePannel = () => {
               </li>
               <hr className="my-4  mx-2 text-[#C6C7C8] font-bold" />
               {menuBar?.map((item: any) => {
-                const { id, name, href , icon } = item;
+                const { id, name, href, icon } = item;
                 return (
                   <li key={id}>
                     <Link href={href} className="ml-3  flex gap-2 text-xxs">
-                        <Image src={icon} alt="icon" width={10} height={10}/>
+                      <Image src={icon} alt="icon" width={10} height={10} />
                       {name}
-                    
                     </Link>
                   </li>
                 );

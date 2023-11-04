@@ -16,7 +16,6 @@ const Heritage = ({ data }: { data: any }) => {
     autoplay: false,
     autoplaySpeed: 3000,
     centerPadding: "100px",
-    // className: "gap-4",
     responsive: [
       {
         breakpoint: 1024,
@@ -24,13 +23,13 @@ const Heritage = ({ data }: { data: any }) => {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
+          // dots: true,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -56,18 +55,18 @@ const Heritage = ({ data }: { data: any }) => {
   };
 
   return (
-    <div className="py-16 sm:py-24">
+    <div className="">
       <h1 className="text-primary font-semibold  tracking-tight text-xxl">
         Invest in heritage
       </h1>
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto">
         <div className="mx-auto max-w-2xl  lg:max-w-none  ">
           {/* <div className="mt-6  grid lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0">
         
           </div>   */}
 
           <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-4 md:gap-0">
-            <div className="py-8 gap-6">
+            <div className="gap-6 md:py-16 py-5">
               <Slider {...sliderSettings}>
                 {data?.map((item: any, i: any) => {
                   return (
@@ -78,10 +77,10 @@ const Heritage = ({ data }: { data: any }) => {
                 })}
               </Slider>
             </div>
-            <div className="ml-4  lg:mt-0 py-8">
+            <div className="ml-4  lg:mt-0 md:py-16 py-5">
               <iframe
-                // width="500"
-                // height="318"
+                width="480"
+                height="520"
                 className="w-full  h-full"
                 src="https://www.youtube.com/embed/iu2C7AeIqac?si=m_dZQecmVZYzo6MU "
                 title="YouTube video player"

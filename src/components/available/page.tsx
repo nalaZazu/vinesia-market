@@ -1,38 +1,42 @@
 import Image from "next/image";
 import React from "react";
 import bottlePic from "../../assets/image/image25.png";
+import moment from "moment";
 const Available = ({ data }: { data: any }) => {
   return (
-    <div>
-      <h1 className="text-primary font-semibold  tracking-tight text-xxl">
+    <div className="md:py-16 py-5">
+      <h1 className="text-primary font-semibold  tracking-tight text-xxl pb-4">
         Available Soon
       </h1>
       <div className="mx-auto gap-x-10 md:flex sm:grid sm:grid-cols-1">
-        <div className="bg-bgprimary md:py-8 py-8  flex justify-end items-end md:w-7/12">
-          <div className="mb-8 text-black  tracking-tight">
+        <div className="bg-bgprimary md:py-8 py-8 text-end grid grid-cols-5 md:w-7/12">
+          <div className="mb-8 text-black  tracking-tight flex flex-col justify-end">
             {data?.map((d: any, i: any) => {
               return (
                 <div key={i}>
-                  <p className="  text-sm font-bold  ">Text about drop</p>
-                  <p className=" text-base font-medium ">Date</p>
+                  <p className="  text-sm font-bold  ">{d?.name}</p>
+                  <p className=" text-base font-medium ">
+                    {" "}
+                    {moment(d?.date).format("DD MMM YYYY")}{" "}
+                  </p>
                 </div>
               );
             })}
           </div>
-          <div className=" flex justify-end m-4">
+          <div className=" flex justify-end m-4 col-span-4">
             <Image
               src={bottlePic}
               alt="Picture of the author"
               // width={400}
               // height={350}
-              style={{ objectFit: "contain" }}
+              // style={{ objectFit: "contain" }}
               quality={75}
-              className="mb-3"
+              className="mb-3 w-full"
             />
           </div>
         </div>
 
-        <div className="max-w-xl lg:max-w-lg md:px-5 md:py-8 py-8">
+        <div className="max-w-xl lg:max-w-lg md:px-5 ">
           <p className="  text-black text-lg font-semibold  tracking-tight  w-[74%]">
             Soon you will be able to invest in new wines. Sign up for the
             waiting list to get notified.

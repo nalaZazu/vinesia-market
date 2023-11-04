@@ -1,4 +1,4 @@
- import React from "react";
+import React from "react";
 import ProductCard from "../cards/ProductCard";
 const Listing = ({ data }: { data: any }) => {
   return (
@@ -12,8 +12,10 @@ const Listing = ({ data }: { data: any }) => {
           })}
       </div>
       <div className="grid justify-center mt-8">
-        <button className="py-2.5 px-4 bg-bgsecondary text-white rounded-lg text-center">
-          Explore
+        <button className="w-[87px] h-10 px-4 py-2.5 bg-gray-500 rounded-lg justify-center items-center gap-2 inline-flex">
+          <div className="text-white text-base font-medium tracking-tight">
+            Explore
+          </div>
         </button>
       </div>
     </>

@@ -33,7 +33,7 @@ const Banner = () => {
           <h1 className="font-semibold text-primary tracking-tight text-xxl ">
             Marketplace
           </h1>
-          <div className="mt-4 text-primary text-2xl  tracking-tight">
+          <div className="mt-4 text-zinc-700 text-2xl  tracking-tight font-semibold leading-9 max-w-2xl">
             <h2>appreciating your wine, guarding its emotions</h2>
             <h2>
               something about technology, advantage of wine investments, unique
@@ -61,8 +61,9 @@ const Banner = () => {
                   />
                 </li>
               </li>
-              <li className="flex relative  font-normal gap-2">
+              <li className="flex relative font-normal gap-2">
                 Proof of Ownership
+                <li onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
                 <li onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
                   <Image
                     src={alert}
@@ -152,20 +153,8 @@ const Banner = () => {
               </div>
 
               <div>
-                <div className="w-14 h-14 rounded-full bg-[#d9d9d9] absolute left-4 -top-8">
-                  <Image
-                    src={bold}
-                    className="w-6 h-6 absolute inset-4 "
-                    alt="bold-image"
-                  />
-                  {/* <p className="text-center text-secondary text-xs font-normal tracking-wide  absolute  top-20"> 
-                  Proof of Authenticy
-                  </p>
-                  <p className="text-center text-secondary text-xs font-normal tracking-wide  absolute  top-24">
-                   
-                  thank to Blockchain
-                  </p> */}
-                </div>
+
+                {/* <div className="w-full h-full rounded-full bg-[#d9d9d9] absolute left-0 -top-14">hhehe</div> */}
               </div>
 
               <div className="w-24 h-24 rounded-full bg-[#d9d9d9] absolute -bottom-8 -left-12">
