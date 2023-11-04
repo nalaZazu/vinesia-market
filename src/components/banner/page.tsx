@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import alert from "../../assets/image/alert-circle.png";
+import alert from "../../assets/icon/alert-circle.svg";
 
 import group4 from "../../assets/image/group4.png";
 import group3 from "../../assets/image/group3.png";
@@ -27,13 +27,13 @@ const Banner = () => {
 
   return (
     <>
-      <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16   lg:max-w-7xl lg:grid-cols-2  mt-16">
+      <div className=" container mx-auto grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 items-center mt-10 md:mt-10 lg:mt-16">
         {/* // px-4   sm:px-6  */}
         <div>
           <h1 className="font-semibold text-primary tracking-tight text-xxl ">
             Marketplace
           </h1>
-          <div className="mt-4 text-primary text-2xl  tracking-tight  ">
+          <div className="mt-4 text-primary text-2xl  tracking-tight">
             <h2>appreciating your wine, guarding its emotions</h2>
             <h2>
               something about technology, advantage of wine investments, unique
@@ -46,7 +46,7 @@ const Banner = () => {
             </button>
           </div>
 
-          <div className="mt-16">
+          <div className="lg:mt-16 mt-5 my-10">
             <ul className="flex justify-between font-normal text-xs text-black">
               <li className=" text-xs font-extrabold ">Peace of Mind pledge</li>
               <li className="flex    font-normal">
@@ -125,13 +125,12 @@ const Banner = () => {
           </div>
         </div>
         {/* next section  */}
-        <div className="grid justify-center">
+        <div className="grid justify-center mt-10 md:mt-10 lg:mt-16">
           {/* // grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8 */}
           <div>
-            <div className="relative">
+            <div className="relative flex justify-center">
               <iframe
-                width="166"
-                height="318"
+                className=" h-80 w-40 "
                 src="https://www.youtube.com/embed/iu2C7AeIqac?si=m_dZQecmVZYzo6MU "
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -141,39 +140,43 @@ const Banner = () => {
                 alt="Picture of the author"
                 style={{ objectFit: "contain" }}
                 quality={75}
-                className="absolute right-[-21px] bottom-[60px]"
+                className="absolute right-1/2 left-1/2 top-1/3 bottom-1/2"
               />
               <Image
                 src={group3}
                 alt="Picture of the author"
                 style={{ objectFit: "contain" }}
                 quality={75}
-                className="absolute top-[-37px] left-[-94px] "
+                className="absolute left-0 -top-14 "
               />
+              <div>
+
+                <div className="w-full h-full bg-[#d9d9d9]"></div>
+              </div>
 
               <Image
                 src={group5}
                 alt="Picture of the author"
                 style={{ objectFit: "contain" }}
                 quality={75}
-                className="absolute  left-[-117px] bottom-0 "
+                className="absolute -bottom-8 -left-16"
               />
             </div>
-
-            <div className="mt-2 ps-8">
-              <p
-                className="text-secondary text-xs font-semibold  tracking-wide 
-              w-4/6"
-              >
+          </div>
+          <div>
+            <div className="w-full flex justify-end">
+              <p className="text-secondary text-xs font-semibold  tracking-wide  w-4/6">
                 Chateau La Mission Haut Brion Cru Classe 2009
               </p>
             </div>
           </div>
-          <ul className="text-secondary text-xs font-normal tracking-wide flex justify-around">
-            <li>France</li>
-            <li>Vintage</li>
-            <li>Pessac-Leognan</li>
-          </ul>
+          <div className="pt-5">
+            <ul className="text-secondary text-xs font-normal tracking-wide  flex justify-between">
+              <li>France</li>
+              <li>Vintage</li>
+              <li>Pessac-Leognan</li>
+            </ul>
+          </div>
         </div>
       </div>
     </>

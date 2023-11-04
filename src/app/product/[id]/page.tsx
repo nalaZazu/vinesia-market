@@ -74,11 +74,19 @@ export default function Product() {
     <div className=" overflow-hidden">
       <BreadCrumb />
 
+<<<<<<< HEAD
+      <div className="container mx-auto py-3 md:py-5 lg:p-7">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-primary">
+          {wine?.name}
+        </h1>
+        <p className="text-xl md:text-sm lg:text-base font-normal">
+=======
       <div className="container mx-auto py-3 md:py-5 lg:py-7">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-spacegray">
           {wine?.name}
         </h1>
         <p className="text-xs md:text-sm lg:text-base">
+>>>>>>> b003d639dfaaeef7eac383468cb2cb05ab887b8d
           <p> {wine?.description} </p>
         </p>
       </div>
@@ -259,7 +267,9 @@ export default function Product() {
       {/* All editions end */}
       {/* How to invest in wine start */}
       <section className="bg-themegray shadow-lg px-4 lg:px-0 md:px-4">
-        <div className="container max-w-screen-md justify-between items-center grid grid-col-1  md:grid-cols-2 lg:grid-cols-2 mx-auto py-4 lg:py-6 md:py-4">
+
+        <div className="container max-w-screen-md justify-between items-center grid grid-col-2  md:grid-cols-2 lg:grid-cols-2 mx-auto py-4 lg:py-6 md:py-4">
+
           <div className=" pb-4 lg:pb-0 md:pb-4">
             <h3 className=" text-lg font-semibold">How to invest in wine</h3>
             <p className=" w-3/4 font-normal text-sm">
@@ -274,9 +284,7 @@ export default function Product() {
           </div>
           <div>
             <iframe
-              width="400"
-              height="230"
-              className=" rounded-md"
+              className=" rounded-md w-full md:w-full lg:w-96 h-56"
               src="https://www.youtube.com/embed/7gquYRxLMFI?si=S7E_iDRbr-b1dZef"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -294,7 +302,7 @@ export default function Product() {
           </h2>
         </div>
 
-        <div className="container max-w-screen-xl items-center grid grid-col-1  md:grid-cols-2 lg:grid-cols-2 mx-auto py-6">
+        <div className="container items-center grid grid-col-1  md:grid-cols-2 lg:grid-cols-2 mx-auto py-6">
           <div className="pb-4 lg:pb-0 md:pb-4">
             <div className="flex gap-3">
               <Image
@@ -307,7 +315,7 @@ export default function Product() {
                 Red, 14% Alc
               </span>
             </div>
-            <p className=" w-5/6 font-normal text-base">
+            <p className=" lg:w-5/6 w-full md:w-11/12 font-normal text-base">
               An evocative nose, floral and exotic with black cherry, lychee and
               passion fruit aromas, delicate and nuanced. Svelte on the palate
               with sculpted and refined tannins – it’s confident, with sinew,
@@ -322,11 +330,9 @@ export default function Product() {
               in warm, dry vintages.
             </p>
           </div>
-          <div>
+          <div className="flex justify-end">
             <iframe
-              width="400"
-              height="230"
-              className=" rounded-md"
+              className=" rounded-md w-full h-72"
               src="https://www.youtube.com/embed/7gquYRxLMFI?si=S7E_iDRbr-b1dZef"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -363,7 +369,7 @@ export default function Product() {
             <span className="text-typegray text-4xl font-normal">About</span>{" "}
             artwork
           </h2>
-          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-4">
+          <div className="gap-5 container grid mx-auto lg:grid-cols-2 md:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-0">
             <div className="pb-4 lg:pb-0 md:pb-4">
               <p className="text-xs text-bordergray">Original Art</p>
               <p className="text-xs font-semibold">
@@ -405,8 +411,7 @@ export default function Product() {
               <Image
                 src={group}
                 alt="Picture of the author"
-                width={450}
-                height={300}
+                className=" w-full md:w-full lg:w-10/12"
               />
             </div>
           </div>
@@ -420,7 +425,7 @@ export default function Product() {
             <span className="text-typegray text-4xl font-normal">About</span>{" "}
             Winery Château Le Pin
           </h2>
-          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-4 pb-4 lg:pb-0 md:pb-4">
+          <div className="container grid mx-auto lg:grid-cols-2 md:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-4 pb-4 lg:pb-0 md:pb-4">
             <div>
               <p>France, Region, Appellation</p>
               <p className="font-normal text-base">
@@ -441,8 +446,7 @@ export default function Product() {
               <Image
                 src={kranu}
                 alt="Picture of the author"
-                width={450}
-                height={300}
+                className="w-full h-72"
               />
             </div>
           </div>
@@ -450,13 +454,12 @@ export default function Product() {
       </section>
       <section className="pt-10">
         <div className="container mx-auto">
-          <div className="container grid mx-auto lg:grid-cols-2 max-w-screen-xl items-center py-6 px-4 lg:px-16 md:px-4">
+          <div className="container grid mx-auto lg:grid-cols-2 md:grid-cols-2 gap-5 max-w-screen-xl items-center py-6 px-4 lg:px-16 md:px-4">
             <div className="flex pb-4 lg:pb-0 md:pb-4">
               <Image
                 src={zut}
                 alt="Picture of the author"
-                width={450}
-                height={300}
+                className="w-full h-72"
               />
             </div>
             <div>
@@ -488,7 +491,7 @@ export default function Product() {
           <div className="md:basis-3/5 lg:basis-3/5 basis-full z-0 pt-10">
             <div className="container grid mx-auto gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-2">
               <div className="bg-themegray flex text-center items-center md:items-center lg:items-end lg:text-center h-[400px] pb-6 border-2 border-spacegray">
-                <div>
+                <div className="w-full">
                   <div className="flex justify-center pb-8">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
