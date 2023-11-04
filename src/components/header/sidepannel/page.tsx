@@ -41,7 +41,8 @@ const SidePannel = () => {
         {isSidebarOpen && (
           <div
             id="default-sidebar"
-            className="fixed top-0 left-0 z-40 w-40 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-themegray dark:bg-secondary"
+            className="fixed top-0 left-0 z-40 w-40 h-screen 
+            transition-transform -translate-x-full sm:translate-x-0 bg-themegray dark:bg-secondary"
             aria-label="Sidebar"
           >
             <ul className="space-y-4  font-medium">

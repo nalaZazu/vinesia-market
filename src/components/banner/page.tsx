@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import alert from "../../assets/icon/alert-circle.svg";
-
 import group4 from "../../assets/image/group4.png";
-import group3 from "../../assets/image/group3.png";
-import group5 from "../../assets/image/group5.png";
+import bold from "../../assets/icon/bold.svg";
+import message from "../../assets/icon/message.svg";
+import drop from "../../assets/icon/drop.svg";
 
 const Banner = () => {
   const [tooltipVisible, setTooltipVisible] = useState(false);
@@ -63,10 +63,7 @@ const Banner = () => {
               </li>
               <li className="flex relative  font-normal gap-2">
                 Proof of Ownership
-                <li
-                  onMouseEnter={showTooltip}
-                  onMouseLeave={hideTooltip}
-                >
+                <li onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
                   <Image
                     src={alert}
                     alt="Picture of the author"
@@ -94,7 +91,6 @@ const Banner = () => {
               <li className="flex relative gap-2  font-normal">
                 Proof of Storage conditions
                 <li
-                 
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -134,32 +130,51 @@ const Banner = () => {
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               ></iframe>
-              <Image
-                src={group4}
-                alt="Picture of the author"
-                style={{ objectFit: "contain" }}
-                quality={75}
-                className="absolute right-1/2 left-1/2 top-1/3 bottom-1/2"
-              />
-              <Image
-                src={group3}
-                alt="Picture of the author"
-                style={{ objectFit: "contain" }}
-                quality={75}
-                className="absolute left-0 -top-14 "
-              />
               <div>
+                <div className="w-24 h-24 rounded-full bg-[#d9d9d9] absolute right-1/2 left-60 top-24 bottom-1/2">
+                  <p className="text-secondaary text-xs font-normal  absolute
+                    right-1/2  -left-12 top-1/3 bottom-1/2 ">
+                    Humidity
+                  </p>
+                  <p className="text-secondaary text-xs font-normal  absolute    -left-12 top-24 bottom-1/2 ">
+                    History of temperatures
+                  </p>
 
-                {/* <div className="w-full h-full rounded-full bg-[#d9d9d9] absolute left-0 -top-14">hhehe</div> */}
+                  <Image
+                    src={drop}
+                    className="w-6 h-6 absolute left-24 top-7 "
+                    alt="bold-image"
+                  />
+                  <p className="text-secondaary text-xs font-normal  absolute     left-20 top-16 ">
+                  Hygrometrics
+                  </p>
+                </div>
               </div>
 
-              <Image
-                src={group5}
-                alt="Picture of the author"
-                style={{ objectFit: "contain" }}
-                quality={75}
-                className="absolute -bottom-8 -left-16"
-              />
+              <div>
+                <div className="w-14 h-14 rounded-full bg-[#d9d9d9] absolute left-4 -top-8">
+                  <Image
+                    src={bold}
+                    className="w-6 h-6 absolute inset-4 "
+                    alt="bold-image"
+                  />
+                  {/* <p className="text-center text-secondary text-xs font-normal tracking-wide  absolute  top-20"> 
+                  Proof of Authenticy
+                  </p>
+                  <p className="text-center text-secondary text-xs font-normal tracking-wide  absolute  top-24">
+                   
+                  thank to Blockchain
+                  </p> */}
+                </div>
+              </div>
+
+              <div className="w-24 h-24 rounded-full bg-[#d9d9d9] absolute -bottom-8 -left-12">
+                <Image
+                  src={message}
+                  className="w-6 h-6 absolute inset-7 "
+                  alt="bold-image"
+                />
+              </div>
             </div>
           </div>
           <div>
@@ -170,7 +185,7 @@ const Banner = () => {
             </div>
           </div>
           <div className="pt-5">
-            <ul className="text-secondary text-xs font-normal tracking-wide  flex justify-between">
+            <ul className="text-secondary text-xs font-normal tracking-wide  flex gap-4">
               <li>France</li>
               <li>Vintage</li>
               <li>Pessac-Leognan</li>

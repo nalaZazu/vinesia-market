@@ -100,7 +100,6 @@ const Header = () => {
           {/* Mobile Navbar (Hidden on Desktop)  */}
           <div className="lg:hidden">
             <div className="block lg:hidden">
-              
              <SidePannel/>
             </div>
           </div>
