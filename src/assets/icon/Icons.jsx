@@ -100,3 +100,29 @@ export function InfoIcon() {
     </div>
   );
 }
+
+export const TextIcon = ({ label , width,letter ,startOffset}) => {
+  return (
+    <>
+      <svg viewBox="0 0 300 300" width={width} height='100%' xmlns="http://www.w3.org/2000/svg">
+        <path
+          id="SunCatcherStudio"
+          fill="none"
+          stroke="none"
+          d="M 32.550491,148.48008 A -108.15144,-108.15144 0 0 1 140.70194,40.328644 -108.15144,-108.15144 0 0 1 248.85338,148.48008 -108.15144,-108.15144 0 0 1 140.70194,256.63153 -108.15144,-108.15144 0 0 1 32.550491,148.48008 Z"
+        />
+        <text
+          font-size="35"
+          fill="text-secondary"
+          letter-spacing={letter}
+          font-family="sans-serif"
+          font-weight="normal"
+        >
+          <textPath href="#SunCatcherStudio" side="left" startOffset={startOffset}>
+            {/* Secure Ownership */} {label}
+          </textPath>
+        </text>
+      </svg>
+    </>
+  );
+};

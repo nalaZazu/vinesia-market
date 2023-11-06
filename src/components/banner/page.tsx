@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import alert from "../../assets/icon/alert-circle.svg";
-
-import group4 from "../../assets/image/group4.png";
-import group3 from "../../assets/image/group3.png";
-import group5 from "../../assets/image/group5.png";
-
+import bold from "../../assets/icon/bold.svg";
+import message from "../../assets/icon/message.svg";
+import drop from "../../assets/icon/drop.svg";
+ import { TextIcon } from "@/assets/icon/Icons";
+import frame from "@/assets/image/01 Images.png"
+import Popup from "../popup/page";
 const Banner = () => {
   const [tooltipVisible, setTooltipVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [open, setOpen] = useState(false);
   const showTooltip = () => {
     setTooltipVisible(true);
   };
@@ -24,11 +26,14 @@ const Banner = () => {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-
+const handleOpen=()=>{
+  setOpen(!open)
+}
   return (
     <>
+    <Popup open={open} setOpen={handleOpen} />
       <div className=" container mx-auto grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 items-center mt-10 md:mt-10 lg:mt-16">
-        {/* // px-4   sm:px-6  */}
+       
         <div>
           <h1 className="font-semibold text-primary tracking-tight text-xxl ">
             Marketplace
@@ -61,17 +66,19 @@ const Banner = () => {
                   />
                 </li>
               </li>
-              <li className="flex relative  font-normal gap-2">
+              <li className="flex relative font-normal gap-2">
                 Proof of Ownership
                 <li onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
-                  <Image
-                    src={alert}
-                    alt="Picture of the author"
-                    width={15}
-                    height={15}
-                    quality={75}
-                    style={{ objectFit: "contain" }}
-                  />
+                  <li onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
+                    <Image
+                      src={alert}
+                      alt="Picture of the author"
+                      width={15}
+                      height={15}
+                      quality={75}
+                      style={{ objectFit: "contain" }}
+                    />
+                  </li>
                 </li>
                 <div
                   className={`relative ${tooltipVisible ? "block" : "hidden"}`}
@@ -119,42 +126,79 @@ const Banner = () => {
             </ul>
           </div>
         </div>
-        {/* next section  */}
-        <div className="grid justify-center mt-10 md:mt-10 lg:mt-16">
-          {/* // grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8 */}
+        {/* next section  */} 
+
+        <div className="grid justify-center mt-10 md:mt-10 lg:mt-16">         
           <div>
             <div className="relative flex justify-center">
-              <iframe
-                className=" h-80 w-40 "
-                src="https://www.youtube.com/embed/iu2C7AeIqac?si=m_dZQecmVZYzo6MU "
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              ></iframe>
-              <Image
-                src={group4}
-                alt="Picture of the author"
-                style={{ objectFit: "contain" }}
-                quality={75}
-                className="absolute right-1/2 left-1/2 top-1/3 bottom-1/2"
-              />
-              <Image
-                src={group3}
-                alt="Picture of the author"
-                style={{ objectFit: "contain" }}
-                quality={75}
-                className="absolute left-0 -top-14 "
-              />
+              <Image src={frame} alt="frame"  onClick={handleOpen} className="cursor-pointer"/>           
               <div>
-                {/* <div className="w-full h-full rounded-full bg-[#d9d9d9] absolute left-0 -top-14">hhehe</div> */}
+                <div className="w-24 h-24 rounded-full bg-[#d9d9d9] absolute right-1/2 left-60 top-24 bottom-1/2">
+                  <p
+                    className="text-secondaary text-xs font-normal  absolute
+                    right-1/2  -left-12 top-1/3 bottom-1/2 "
+                  >
+                    Humidity
+                  </p>
+                  <p className="text-secondaary text-xs font-normal  absolute    -left-12 top-24 bottom-1/2 ">
+                    History of temperatures
+                  </p>
+
+                  <Image
+                    src={drop}
+                    className="w-6 h-6 absolute left-24 top-7 "
+                    alt="bold-image"
+                  />
+                  <p className="text-secondaary text-xs font-normal  absolute     left-20 top-16 ">
+                    Hygrometrics
+                  </p>
+                  <div className="relative w-28">
+                 
+                  <div
+                    className=" absolute 
+                   -left-4 -top-7 z-10"
+                  >
+                    <TextIcon label="IOT Sensors" width='110%' letter={5} startOffset="75"/>
+                  </div>
+                </div>
+                </div>
               </div>
 
-              <Image
-                src={group5}
-                alt="Picture of the author"
-                style={{ objectFit: "contain" }}
-                quality={75}
-                className="absolute -bottom-8 -left-16"
-              />
+              <div
+                className="w-20 h-20 rounded-full bg-[#d9d9d9] absolute 
+                left-0 -top-14"
+              >
+                <div className="relative w-[105px]">
+                  <Image
+                    src={bold}
+                    className="w-6 h-6 absolute inset-7 "
+                    alt="bold-image"
+                  />
+                  <div
+                    className=" absolute 
+                   -left-4 -top-5"
+                  >
+                    <TextIcon label="Secure Ownership"  width='100%' letter={5} startOffset="5"/>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-24 h-24 rounded-full bg-[#d9d9d9] absolute -bottom-8 -left-11">
+                <div className="relative w-28">
+                  <Image
+                    src={message}
+                    className="w-6 h-6 absolute inset-9 "
+                    alt="bold-image"
+                  />
+
+                  <div
+                    className=" absolute 
+                   -left-4 -top-7 z-10"
+                  >
+                    <TextIcon label="Critic score" width='110%' letter={20} startOffset="-15"/>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div>
@@ -165,7 +209,7 @@ const Banner = () => {
             </div>
           </div>
           <div className="pt-5">
-            <ul className="text-secondary text-xs font-normal tracking-wide  flex justify-between">
+            <ul className="text-secondary text-xs font-normal tracking-wide  flex gap-4">
               <li>France</li>
               <li>Vintage</li>
               <li>Pessac-Leognan</li>

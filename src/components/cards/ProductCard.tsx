@@ -1,21 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import winbottle from "../../assets/image/Frame1.png";
-import alert from "../../assets/icon/alert-circle.svg";
+import winbottle from "../../assets/image/Frame1.png"; 
 import { InfoIcon } from "@/assets/icon/Icons";
-// interface Category {
-//   id: Number,
-//   bottle1,
-//   imageAlt,
-//   imageSrc,
-//   price,
-//   name,
-//   remain,
-//   subtitle,
-// }
+ 
 export default function ProductCard({ item }: { item: any }) {
-  // const {name} = item
-
+    
   return (
     <div>
       <div className="">
@@ -51,7 +40,7 @@ export default function ProductCard({ item }: { item: any }) {
               );
             })}
           </p>
-          <span className="inline-flex items-center rounded bg-[#842029] px-2 py-1   font-medium text-white ring-1 ring-inset ring-[#842029]      text-xxs  tracking-wide">
+          <span className="inline-flex items-center rounded bg-[#842029] px-2 py-1   font-medium text-white ring-1 ring-inset ring-[#842029]  text-xxs  tracking-wide">
             Vinesia
           </span>
         </span>

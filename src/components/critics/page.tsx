@@ -64,11 +64,7 @@ const Critics = ({ data }: { data: any }) => {
                     </div>
                     <ul className=" md:w-2/3 px-4  text-base font-medium   tracking-tight flex flex-col justify-between">
                       {detail?.description}
-                      <div className="text-center">
-                        {/* <button className="py-2.5 px-4 mt-3 border border-bgsecondary  text-bgsecondary rounded-lg   text-base font-medium   tracking-tight">
-                          Invest now
-                        </button> */}
-
+                      <div className="text-center"> 
                         <button className="w-[108px] h-10 px-4 py-2.5 rounded-lg border border-gray-500 justify-center items-center gap-2 inline-flex">
                           <div className="text-gray-500 text-base font-medium tracking-tight">
                             Invest now
