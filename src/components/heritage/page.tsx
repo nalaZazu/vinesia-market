@@ -1,8 +1,4 @@
-import Image from "next/image";
 import React from "react";
-import winbottle from "../../assets/image/Frame1.png";
-import backbg from "../../assets/image/bg.png";
-import alert from "../../assets/image/alert-circle.png";
 import ProductCard from "../cards/ProductCard";
 import Slider from "react-slick";
 import { NextIcon, PrevIcon } from "@/assets/icon/Icons";
