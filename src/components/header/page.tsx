@@ -80,8 +80,8 @@ const Header = () => {
       </nav>
 
       {/* Navbar */}
-      <nav className="bg-themegray p-4">
-        <div className="container mx-auto flex justify-between items-center">
+      <nav className="bg-themegray py-4">
+        <div className="container mx-auto flex justify-between items-center px-4">
           <ul className="hidden lg:flex space-x-6">
             <li>
               <Link href="/">Home Page</Link>

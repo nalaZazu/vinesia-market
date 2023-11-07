@@ -20,6 +20,7 @@ module.exports = {
         secondary: "#000000",
         bgprimary: "#D9D9D9",
         bgsecondary: "#6C757D",
+        iconcolor: '#7A7C7F',
         
       },
       
