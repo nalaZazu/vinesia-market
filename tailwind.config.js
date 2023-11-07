@@ -23,6 +23,8 @@ module.exports = {
         bgtertiary:"#484848",
       
        
+        iconcolor: '#7A7C7F',
+        
       },
       
       /** Font
