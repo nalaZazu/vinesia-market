@@ -3,15 +3,11 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import redwine from "@/assets/icon/redwine.svg";
-import frame from "@/assets/icon/Frame.svg";
 import { productlist } from "@/constants/winelist";
 import group from "@/assets/icon/Group.png";
 import kranu from "@/assets/icon/kranu.png";
 import zut from "@/assets/icon/zut.png";
 import productimg from "@/assets/icon/productsimage.png";
-
-// import Link from "next/link";
-// import css from "styled-jsx/css";
 import Appactivity from "@/components/charts/page";
 import BreadCrumb from "@/common/BreadCrumb";
 import ProductTopSection from "@/components/productDetail/ProductTopSection";
@@ -19,15 +15,11 @@ import PeaceOfMind from "@/components/productDetail/PeaceOfMind";
 import ReleaseDateSection from "@/components/productDetail/ReleaseDateSection";
 import ProductCard from "@/components/cards/ProductCard";
 import { getProductDetail } from "@/services/ProductDetail";
-
 import ArtCard from "@/components/productDetail/ArtCard";
-
 import { Wine, releaseDetails, rating } from "@/propTypes/page";
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
 import { getHomePage } from "@/services/Home";
-
-// import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
-// client componet fetching
+import AllEditions from "@/components/productDetail/AllEditions";
 
 export default function Product() {
   const { id } = useParams();
@@ -74,8 +66,8 @@ export default function Product() {
     <div className=" overflow-hidden">
       <BreadCrumb />
 
-      <div className="container mx-auto py-3 md:py-5 lg:py-7">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-spacegray">
+      <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-primary">
           {wine?.name}
         </h1>
         <p className="text-xs md:text-sm lg:text-base">
@@ -101,165 +93,8 @@ export default function Product() {
       {releaseDetails ? <ReleaseDateSection release={releaseDetails} /> : null}
       {/* Release details section end */}
       {/* All editions start */}
-      <section className="container mx-auto py-24 px-4  lg:px-0">
-        <div className="flex justify-between items-center gap-5">
-          <div className="basis-1/6">
-            <h2 className="text-2xl font-medium">All editions</h2>
-          </div>
-          <div className="basis-4/5 ">
-            <hr className=" border-spacegray" />
-          </div>
-          <div className="flex text-spacegray">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              className="w-4 h-4"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
-              />
-            </svg>
-          </div>
-        </div>
-        <div className="flex justify-between mx-auto pt-14">
-          <div className=" pt-5">
-            <ul
-              className="flex flex-wrap text-sm font-medium text-center bg-tabsgray rounded-md p-1"
-              id="default-tab"
-              data-tabs-toggle="#default-tab-content"
-              role="tablist"
-            >
-              <li className="mr-2" role="presentation">
-                <button
-                  className="px-10 py-2 rounded-md bg-white shadow-md"
-                  id="profile-tab"
-                  data-tabs-target="#profile"
-                  type="button"
-                  role="tab"
-                  aria-controls="profile"
-                  aria-selected="false"
-                >
-                  All
-                </button>
-              </li>
-              <li className="mr-2" role="presentation">
-                <button
-                  className="px-9 py-2 rounded-md "
-                  id="profile-tab"
-                  data-tabs-target="#profile"
-                  type="button"
-                  role="tab"
-                  aria-controls="profile"
-                  aria-selected="false"
-                >
-                  Ask
-                </button>
-              </li>
-              <li className="mr-2" role="presentation">
-                <button
-                  className="px-9 py-2 rounded-md"
-                  id="profile-tab"
-                  data-tabs-target="#profile"
-                  type="button"
-                  role="tab"
-                  aria-controls="profile"
-                  aria-selected="false"
-                >
-                  Bid
-                </button>
-              </li>
-            </ul>
-            {/* <div id="default-tab-content">
-              Name
-              <div
-                className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
-                id="profile"
-                role="tabpanel"
-                aria-labelledby="profile-tab"
-              >
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  This is some placeholder content the{" "}
-                  <strong className="font-medium text-gray-800 dark:text-white">
-                    Profile tab's associated content
-                  </strong>
-                  . Clicking another tab will toggle the visibility of this one
-                  for the next. The tab JavaScript swaps classes to control the
-                  content visibility and styling.
-                </p>
-              </div>
-            </div> */}
-            <div className=" flex items-center py-2 gap-2">
-              <input type="checkbox" className="w-6 h-6" />
-              <label htmlFor="">First sale</label>
-            </div>
-          </div>
-          <div className="">
-            <p>Sort by</p>
-            <div>
-              <button
-                onClick={toggleDropdown}
-                type="button"
-                className="text-sm w-48 py-2 px-4 text-left items-center flex justify-between text-spacegray shadow-none  border focus:ring-0 focus:outline-none focus:ring-gray-100 font-medium rounded-lg "
-              >
-                See More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="w-4 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                  />
-                </svg>
-              </button>
 
-              {isOpen && (
-                <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                  {/* Dropdown content here */}
-                  <ul className="py-2">
-                    <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                      Item 1
-                    </li>
-                    <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                      Item 2
-                    </li>
-                    <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                      Item 3
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-        <div>
-          <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mx-auto">
-            {products &&
-              products.map((item: any, i: any) => {
-                return (
-                  <div key={i}>
-                    <ProductCard item={item} />
-                  </div>
-                );
-              })}
-          </div>
-          <div className="flex justify-center mt-8">
-            <button className="py-2.5 px-4 bg-bgsecondary text-white rounded-lg text-center">
-              Explore
-            </button>
-          </div>
-        </div>
-      </section>
+      <AllEditions products={products} />
       {/* All editions end */}
       {/* How to invest in wine start */}
       <section className="bg-themegray shadow-lg px-4 lg:px-0 md:px-4">
