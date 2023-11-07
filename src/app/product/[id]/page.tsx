@@ -25,6 +25,7 @@ import ArtCard from "@/components/productDetail/ArtCard";
 import { Wine, releaseDetails, rating } from "@/propTypes/page";
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
 import { getHomePage } from "@/services/Home";
+import DropdownMain from "./dropdown";
 
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching
@@ -62,6 +63,7 @@ export default function Product() {
       setProducts(res?.data?.products);
     });
   }, [id]);
+  console.log("rerender");
 
   /**
    *Api -Data variable
@@ -75,7 +77,6 @@ export default function Product() {
 
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-primary">
-
           {wine?.name}
         </h1>
         <p className="text-xs md:text-sm lg:text-base">
@@ -211,51 +212,7 @@ export default function Product() {
               </div>
             </div>
           </div>
-          <div className="">
-            <p className="text-neutral-900 text-sm font-normal tracking-tight">
-              Sort by
-            </p>
-            <div>
-              <button
-                onClick={toggleDropdown}
-                type="button"
-                className="tracking-tight text-sm w-48 py-2 px-4 text-left items-center flex justify-between text-spacegray shadow-none  border focus:ring-0 focus:outline-none focus:ring-gray-100 font-medium rounded-lg "
-              >
-                Recommended
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="w-4 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                  />
-                </svg>
-              </button>
-
-              {isOpen && (
-                <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                  {/* Dropdown content here */}
-                  <ul className="py-2">
-                    <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                      Item 1
-                    </li>
-                    <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                      Item 2
-                    </li>
-                    <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                      Item 3
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </div>
-          </div>
+          <DropdownMain />
         </div>
         <div>
           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mx-auto">
