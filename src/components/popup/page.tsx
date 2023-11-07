@@ -1,18 +1,16 @@
 import React from "react";
-import { Fragment, useRef, useState } from "react";
+import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
-export default function Popup() {
-  const [open, setOpen] = useState(true);
-  const cancelButtonRef = useRef(null);
-
+export default function Popup({ open = false, setOpen}:{open:any, setOpen:any}) {
+   
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as="div"
         className="relative z-10"
-        initialFocus={cancelButtonRef}
+        // initialFocus={cancelButtonRef}
         onClose={setOpen}
       >
         <Transition.Child
