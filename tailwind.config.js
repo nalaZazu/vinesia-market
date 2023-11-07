@@ -20,7 +20,9 @@ module.exports = {
         secondary: "#000000",
         bgprimary: "#D9D9D9",
         bgsecondary: "#6C757D",
-        
+        bgtertiary:"#484848",
+      
+       
       },
       
       /** Font

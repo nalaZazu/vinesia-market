@@ -6,8 +6,8 @@ import { InfoIcon } from "@/assets/icon/Icons";
 export default function ProductCard({ item }: { item: any }) {
     
   return (
-    <div>
-      <div className="">
+    <>
+      <div>
         <Image
           src={winbottle}
           alt="Picture of the author"
@@ -60,6 +60,6 @@ export default function ProductCard({ item }: { item: any }) {
           </p>
         </span>
       </div>
-    </div>
+    </>
   );
 }
