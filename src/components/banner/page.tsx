@@ -158,7 +158,7 @@ const handleOpen=()=>{
                     className=" absolute 
                    -left-4 -top-7 z-10"
                   >
-                    <TextIcon label="IOT Sensors" width='110%' letter={5} startOffset="75"/>
+                    <TextIcon label="IOT Sensors" width='110%' letter={5}  fontSize={25}startOffset="75"/>
                   </div>
                 </div>
                 </div>
@@ -178,7 +178,7 @@ const handleOpen=()=>{
                     className=" absolute 
                    -left-4 -top-5"
                   >
-                    <TextIcon label="Secure Ownership"  width='100%' letter={5} startOffset="5"/>
+                    <TextIcon label="Secure Ownership"  width='100%' letter={5} fontSize={35} startOffset="5"/>
                   </div>
                 </div>
               </div>
@@ -195,7 +195,7 @@ const handleOpen=()=>{
                     className=" absolute 
                    -left-4 -top-7 z-10"
                   >
-                    <TextIcon label="Critic score" width='110%' letter={20} startOffset="-15"/>
+                    <TextIcon label="Critic score" width='110%' letter={20}  fontSize={35} startOffset="-15"/>
                   </div>
                 </div>
               </div>

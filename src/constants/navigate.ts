@@ -14,7 +14,7 @@ export const menuBar = [
   {
     id: 2,
     name: "Invest",
-    href: "/product",
+    href: "/invest",
     icon: investicon,
   },
   {
@@ -26,7 +26,7 @@ export const menuBar = [
   {
     id: 4,
     name: "Regions",
-    href: "/",
+    href: "/region",
     icon: regionicon
   },
   {
