@@ -8,7 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 .slick-prev, .slick-next{
-  top: 105% !important;
+  top: 100% !important;
 }
 
 .slick-next{

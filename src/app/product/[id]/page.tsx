@@ -3,11 +3,15 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import redwine from "@/assets/icon/redwine.svg";
+import frame from "@/assets/icon/Frame.svg";
 import { productlist } from "@/constants/winelist";
 import group from "@/assets/icon/Group.png";
 import kranu from "@/assets/icon/kranu.png";
 import zut from "@/assets/icon/zut.png";
 import productimg from "@/assets/icon/productsimage.png";
+
+// import Link from "next/link";
+// import css from "styled-jsx/css";
 import Appactivity from "@/components/charts/page";
 import BreadCrumb from "@/common/BreadCrumb";
 import ProductTopSection from "@/components/productDetail/ProductTopSection";
@@ -15,18 +19,20 @@ import PeaceOfMind from "@/components/productDetail/PeaceOfMind";
 import ReleaseDateSection from "@/components/productDetail/ReleaseDateSection";
 import ProductCard from "@/components/cards/ProductCard";
 import { getProductDetail } from "@/services/ProductDetail";
+
 import ArtCard from "@/components/productDetail/ArtCard";
+
 import { Wine, releaseDetails, rating } from "@/propTypes/page";
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
 import { getHomePage } from "@/services/Home";
-import AllEditions from "@/components/productDetail/AllEditions";
+
+// import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
+// client componet fetching
 
 export default function Product() {
   const { id } = useParams();
   const [data, setData] = useState<any>({});
   const [products, setProducts] = useState([]);
-
-  console.log("Params", id);
 
   const [show, setShow] = useState([]);
   const toggleDropdown = () => {
@@ -57,8 +63,9 @@ export default function Product() {
     });
   }, [id]);
 
-  // this is className base strcture of style base module
-  // const {brown} = orange
+  /**
+   *Api -Data variable
+   */
   const { wine } = data;
   const { releaseDetails } = data;
   const { ratings } = data;
@@ -68,6 +75,7 @@ export default function Product() {
 
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-primary">
+
           {wine?.name}
         </h1>
         <p className="text-xs md:text-sm lg:text-base">
@@ -93,8 +101,180 @@ export default function Product() {
       {releaseDetails ? <ReleaseDateSection release={releaseDetails} /> : null}
       {/* Release details section end */}
       {/* All editions start */}
+      <section className="container mx-auto py-24 px-4  lg:px-0">
+        <div className="flex justify-between items-center gap-5">
+          <div className="basis-1/6">
+            <h2 className="text-2xl font-medium text-black tracking-tight">
+              All editions
+            </h2>
+          </div>
+          <div className="basis-4/5 ">
+            <hr className=" border-black" />
+          </div>
+          <div className="flex text-spacegray">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-3.5 h-3.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
+              />
+            </svg>
+          </div>
+        </div>
+        <div className="flex justify-between mx-auto pt-14">
+          <div className=" pt-5">
+            <ul
+              className="flex flex-wrap text-sm font-medium text-center bg-tabsgray rounded-md p-1"
+              id="default-tab"
+              data-tabs-toggle="#default-tab-content"
+              role="tablist"
+            >
+              <li
+                className="text-center text-zinc-700 text-xs font-normal font-['Jost'] tracking-wide"
+                role="presentation"
+              >
+                <button
+                  className="px-10 py-2 rounded-md bg-white shadow-md"
+                  id="profile-tab"
+                  data-tabs-target="#profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                >
+                  All
+                </button>
+              </li>
+              <li
+                className="text-center text-zinc-700 text-xs font-normal font-['Jost'] tracking-wide"
+                role="presentation"
+              >
+                <button
+                  className="px-9 py-2 rounded-md "
+                  id="profile-tab"
+                  data-tabs-target="#profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                >
+                  Ask
+                </button>
+              </li>
+              <li
+                className="text-center text-zinc-700 text-xs font-normal font-['Jost'] tracking-wide"
+                role="presentation"
+              >
+                <button
+                  className="px-9 py-2 rounded-md"
+                  id="profile-tab"
+                  data-tabs-target="#profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                >
+                  Bid
+                </button>
+              </li>
+            </ul>
+            {/* <div id="default-tab-content">
+              Name
+              <div
+                className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+                id="profile"
+                role="tabpanel"
+                aria-labelledby="profile-tab"
+              >
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  This is some placeholder content the{" "}
+                  <strong className="font-medium text-gray-800 dark:text-white">
+                    Profile tab's associated content
+                  </strong>
+                  . Clicking another tab will toggle the visibility of this one
+                  for the next. The tab JavaScript swaps classes to control the
+                  content visibility and styling.
+                </p>
+              </div>
+            </div> */}
+            <div className=" flex items-center py-3 gap-2">
+              <input type="checkbox" className="w-5 h-5" />
+              <div className="text-neutral-900 text-sm font-normal tracking-tight">
+                First sale
+              </div>
+            </div>
+          </div>
+          <div className="">
+            <p className="text-neutral-900 text-sm font-normal tracking-tight">
+              Sort by
+            </p>
+            <div>
+              <button
+                onClick={toggleDropdown}
+                type="button"
+                className="tracking-tight text-sm w-48 py-2 px-4 text-left items-center flex justify-between text-spacegray shadow-none  border focus:ring-0 focus:outline-none focus:ring-gray-100 font-medium rounded-lg "
+              >
+                Recommended
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="w-4 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </button>
 
-      <AllEditions products={products} />
+              {isOpen && (
+                <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                  {/* Dropdown content here */}
+                  <ul className="py-2">
+                    <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                      Item 1
+                    </li>
+                    <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                      Item 2
+                    </li>
+                    <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                      Item 3
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mx-auto">
+            {products &&
+              products.map((item: any, i: any) => {
+                return (
+                  <div key={i}>
+                    <ProductCard item={item} />
+                  </div>
+                );
+              })}
+          </div>
+          <div className="flex justify-center mt-8">
+            <button className="py-2.5 px-4 bg-bgsecondary text-white rounded-lg text-center">
+              Explore
+            </button>
+          </div>
+        </div>
+      </section>
       {/* All editions end */}
       {/* How to invest in wine start */}
       <section className="bg-themegray shadow-lg px-4 lg:px-0 md:px-4">
@@ -125,8 +305,10 @@ export default function Product() {
       {/* About Chateau La Mission Haut Brion Cru Classe | 2009 start */}
       <section className=" pt-12 px-4 lg:px-6 md:px-4">
         <div className=" container mx-auto">
-          <h2 className=" capitalize text-4xl font-medium">
-            <span className=" text-typegray text-3xl font-normal">About</span>{" "}
+          <h2 className=" capitalize text-4xl font-medium text-zinc-700 tracking-tight">
+            <span className=" text-3xl font-normal text-neutral-400  tracking-tight">
+              About
+            </span>{" "}
             Chateau La Mission Haut Brion Cru Classe | 2009
           </h2>
         </div>
@@ -193,8 +375,10 @@ export default function Product() {
       {/* About artwork start */}
       <section className="pt-10 px-4 lg:px-0 md:px-4">
         <div className="container mx-auto">
-          <h2 className="capitalize text-3xl font-semibold">
-            <span className="text-typegray text-4xl font-normal">About</span>{" "}
+          <h2 className=" capitalize text-4xl font-medium text-zinc-700 tracking-tight">
+            <span className=" text-3xl font-normal text-neutral-400  tracking-tight">
+              About
+            </span>{" "}
             artwork
           </h2>
           <div className="gap-5 container grid mx-auto lg:grid-cols-2 md:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-0">
@@ -249,8 +433,10 @@ export default function Product() {
       {/* About Winery Château Le Pin start */}
       <section className="pt-10 px-4 lg:px-0 md:px-4">
         <div className="container mx-auto">
-          <h2 className="capitalize text-4xl font-semibold">
-            <span className="text-typegray text-3xl font-normal">About </span>
+          <h2 className=" capitalize text-4xl font-medium text-zinc-700 tracking-tight">
+            <span className=" text-3xl font-normal text-neutral-400  tracking-tight">
+              About
+            </span>{" "}
             Winery Château Le Pin
           </h2>
           <div className="container grid mx-auto lg:grid-cols-2 md:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-4 pb-4 lg:pb-0 md:pb-4">
@@ -316,9 +502,10 @@ export default function Product() {
       {/* You may also like start */}
       <section className=" py-14 px-4 lg:px-0 md:px-4">
         <div className="container mx-auto">
-          <h2 className=" capitalize text-3xl font-semibold">
+          <h2 className=" capitalize text-4xl font-medium text-zinc-700 tracking-tight">
             You may also like
           </h2>
+
           <div className="md:basis-3/5 lg:basis-3/5 basis-full z-0 pt-10">
             <div className="container grid mx-auto gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-2">
               <div className="bg-themegray flex text-center items-center md:items-center lg:items-end lg:text-center h-[400px] pb-6 border-2 border-spacegray">

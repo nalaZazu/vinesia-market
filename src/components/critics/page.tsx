@@ -13,14 +13,14 @@ const Critics = ({ data }: { data: any }) => {
   console.log("Critics Data ", data);
 
   return (
-    <div className="py-16 sm:py-24">
+    <div className="pt-16 pb-5 sm:py-8">
       {/* critics-section */}
       <h1 className="text-primary font-semibold text-3xl leading-10">
         Critics selection
       </h1>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 items-center">
         <div className=" flex">
-          <ul className=" text-secondary text-lg font-semibold  tracking-tight ">
+          <ul className=" text-secondary text-lg font-semibold  tracking-tight w-4/5">
             {data?.map((critics: any, i: any) => {
               return (
                 <li
@@ -64,11 +64,7 @@ const Critics = ({ data }: { data: any }) => {
                     </div>
                     <ul className=" md:w-2/3 px-4  text-base font-medium   tracking-tight flex flex-col justify-between">
                       {detail?.description}
-                      <div className="text-center">
-                        {/* <button className="py-2.5 px-4 mt-3 border border-bgsecondary  text-bgsecondary rounded-lg   text-base font-medium   tracking-tight">
-                          Invest now
-                        </button> */}
-
+                      <div className="text-center"> 
                         <button className="w-[108px] h-10 px-4 py-2.5 rounded-lg border border-gray-500 justify-center items-center gap-2 inline-flex">
                           <div className="text-gray-500 text-base font-medium tracking-tight">
                             Invest now
@@ -120,14 +116,14 @@ const Critics = ({ data }: { data: any }) => {
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-4">
-        <div className="flex-1 md:py-16 py-4">
+      <div className="grid lg:grid-cols-4 pt-28">
+        <div className="flex-1 md:pt-16 py-4">
           <Image src={img1} alt="image" className="w-full" />
         </div>
         <div className="col-span-3">
           <div className="grid md:grid-cols-2">
-            <div className=" pl-5 md:py-16 py-4">
-              <h1 className="text-primary text-xxl font-semibold tracking-tight">
+            <div className=" pl-5 md:pt-16 py-4">
+              <h1 className="text-primary text-[32px] font-semibold tracking-tight">
                 Wine & art collections
               </h1>
               <p className="max-w-[400px] text-base font-medium   tracking-tight">

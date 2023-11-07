@@ -15,11 +15,18 @@ export default function PeaceOfMind() {
   return (
     <section className=" py-14 px-4 md:px-4 lg:px-0">
       <div className="container mx-auto">
-        <h2 className=" capitalize text-2xl font-medium">
-          <span className=" text-typegray font-normal">our</span> peace of mind
-          pledge
-        </h2>
-        <p className=" text-base w-11/12 pt-4">
+        <div className="flex justify-between items-center gap-5">
+          <div className=" basis-1/5">
+            <h2 className=" capitalize text-2xl font-medium">
+              <span className=" text-typegray font-normal">our </span> peace of
+              mind pledge
+            </h2>
+          </div>
+          <div className="basis-4/5">
+            <hr className=" border-black" />
+          </div>
+        </div>
+        <p className=" text-base lg:w-4/6 pt-4">
           “Investor Peace of Mind” is a core principle at Vinesia. It
           encapsulates our commitment to providing a secure, transparent, and
           hassle-free investment experience. Here’s what it entails:

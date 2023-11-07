@@ -3,7 +3,7 @@ import React from "react";
 export default function BreadCrumb() {
   return (
     <nav className="flex pt-5" aria-label="Breadcrumb">
-      <ol className="container mx-auto flex flex-wrap items-center gap-3">
+      <ol className="container mx-auto flex flex-wrap items-center gap-3 px-4">
         <li className="inline-flex items-center">
           <a href="#" className="text-xxs font-normal text-breadcrumb">
             Vinesia Marketplace
