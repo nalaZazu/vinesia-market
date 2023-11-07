@@ -31,8 +31,7 @@ export default function Home() {
         <Available data={drops} />
         <Critics data={criticsSelection} />
         {products && <Listing data={products} />}
-
-
+        
         <Popup />
       </div>
     </>

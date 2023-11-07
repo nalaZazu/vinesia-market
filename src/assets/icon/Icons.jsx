@@ -101,7 +101,7 @@ export function InfoIcon() {
   );
 }
 
-export const TextIcon = ({ label , width,letter ,startOffset}) => {
+export const TextIcon = ({ label , width,letter ,startOffset , fontSize}) => {
   return (
     <>
       <svg viewBox="0 0 300 300" width={width} height='100%' xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +112,7 @@ export const TextIcon = ({ label , width,letter ,startOffset}) => {
           d="M 32.550491,148.48008 A -108.15144,-108.15144 0 0 1 140.70194,40.328644 -108.15144,-108.15144 0 0 1 248.85338,148.48008 -108.15144,-108.15144 0 0 1 140.70194,256.63153 -108.15144,-108.15144 0 0 1 32.550491,148.48008 Z"
         />
         <text
-          font-size="35"
+          font-size={fontSize}
           fill="text-secondary"
           letter-spacing={letter}
           font-family="sans-serif"

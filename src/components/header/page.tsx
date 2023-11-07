@@ -85,7 +85,7 @@ const Header = () => {
       </nav>
 
       {/* Navbar */}
-      <nav className="bg-themegray py-5">
+      <nav className="bg-themegray py-4">
         <div className="container mx-auto flex justify-between items-center px-4">
           <ul className="hidden lg:flex space-x-6">
             {menuBar?.map((item: any) => {
