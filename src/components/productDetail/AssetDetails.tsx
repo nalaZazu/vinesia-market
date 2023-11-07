@@ -8,7 +8,7 @@ import logo2 from "@/assets/icon/img2.png";
 import logo3 from "@/assets/icon/img3.png";
 import logo4 from "@/assets/icon/img4.svg";
 
-export default function () {
+export default function AssetDetails() {
   return (
     <section className="container mx-auto">
       <div className="flex justify-between py-7">
