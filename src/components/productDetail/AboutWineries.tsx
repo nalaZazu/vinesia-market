@@ -17,7 +17,7 @@ export default function AboutWineries() {
             <div className=" space-y-7">
               {[1, 2, 3].map((d, i) => {
                 return (
-                  <div>
+                  <div key={i}>
                     <div className="pb-2">
                       <p className="text-black text-sm font-bold underline tracking-tight">
                         Château Le Pin
