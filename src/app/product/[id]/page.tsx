@@ -33,6 +33,7 @@ import CriticsDetailCards from "@/components/productDetail/CriticsDetailCards";
 import AboutArtWork from "@/components/productDetail/AboutArtWork";
 import AboutWinerySection from "@/components/productDetail/AboutWinerySection";
 import YouMayAlso from "@/components/productDetail/YouMayAlso";
+import OverviweTopSection from "@/components/productDetail/overviewTopSection";
 
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching
@@ -93,7 +94,7 @@ export default function Product() {
 
       {/* hero section start*/}
       {wine ? (
-        <ProductTopSection
+        <OverviweTopSection
           wine={wine}
           release={releaseDetails}
           rating={ratings}
