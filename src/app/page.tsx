@@ -18,7 +18,7 @@ export default function Home() {
       console.log("Response From APi Home Api", res?.data);
       setProducts(res?.data?.products);
       setCriticsSelection(res?.data?.selection);
-      setDrops(res?.data?.drops)
+      setDrops(res?.data?.drops);
     });
   }, []);
 
@@ -27,12 +27,12 @@ export default function Home() {
       <div className="container mx-auto px-4  sm:px-6  lg:px-8">
         {/* py-16 sm:py-24 */}
         <Banner />
-        <Heritage  data={products} />
+        <Heritage data={products} />
         <Available data={drops} />
         <Critics data={criticsSelection} />
         {products && <Listing data={products} />}
-        
-        <Popup />
+
+        <Popup open={false} setOpen={false} />
       </div>
     </>
   );

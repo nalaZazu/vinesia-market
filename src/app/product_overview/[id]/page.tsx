@@ -35,7 +35,7 @@ import WineryVideo from "@/components/productDetail/WineryVideo";
 
 export default function Product() {
   const { id } = useParams();
-  const [data, setData] = useState({});
+  const [data, setData] = useState<any>({});
   const [products, setProducts] = useState([]);
 
   console.log("Params", id);

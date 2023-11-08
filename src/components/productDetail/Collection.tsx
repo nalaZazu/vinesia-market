@@ -20,7 +20,7 @@ export default function Collection() {
         <div className=" grid grid-col-1 md:grid-cols-4 mx-auto max-xl:w-4/5">
           {[1, 2, 3, 4].map((d, i) => {
             return (
-              <div className="relative">
+              <div key={i} className="relative">
                 <Image
                   src={collection}
                   alt="Picture of the author"
