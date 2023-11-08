@@ -28,6 +28,7 @@ import { getHomePage } from "@/services/Home";
 import OverviweTopSection from "@/components/productDetail/overviewTopSection";
 import AssetDetails from "@/components/productDetail/AssetDetails";
 import Collection from "@/components/productDetail/Collection";
+import WineryVideo from "@/components/productDetail/WineryVideo";
 
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching
@@ -653,6 +654,7 @@ export default function Product() {
       <ArtCard />
 
       <AssetDetails />
+      <WineryVideo />
     </div>
   );
 }
