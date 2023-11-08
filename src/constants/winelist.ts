@@ -82,3 +82,40 @@ export const productlist = [
     remain: "14 ",
   },
 ];
+
+export const wineCountry = [
+  {
+    id: 1,
+    countryName: "Germany",
+    regionName1:'Jérôme Galeyrand',
+    regionName2:'Jérôme Galeyrand',
+    regionName3:'Chandon de Briailles',
+    regionName4:'Claude and François de Nicolay',
+    regionName5:'Domaine Belle',
+    regionName6:'Belle father and sons',
+    explor:''
+  },
+  {
+    id: 2,
+    countryName: "Italy",
+    regionName1:'Jérôme Galeyrand',
+    regionName2:'Jérôme Galeyrand',
+    regionName3:'Chandon de Briailles',
+    regionName4:'Claude and François de Nicolay',
+    regionName5:'Domaine Belle',
+    regionName6:'Belle father and sons',
+    explor:''
+  },
+  {
+    id: 3,
+    countryName: "USA",
+    regionName1:'Jérôme Galeyrand',
+    regionName2:'Jérôme Galeyrand',
+    regionName3:'Chandon de Briailles',
+    regionName4:'Claude and François de Nicolay',
+    regionName5:'Domaine Belle',
+    regionName6:'Belle father and sons',
+    explor:''
+  },
+ 
+];
