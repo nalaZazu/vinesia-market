@@ -89,7 +89,7 @@ export default function Product() {
 
       {/* hero section start*/}
       {wine ? (
-        <OverviweTopSection
+        <ProductTopSection
           wine={wine}
           release={releaseDetails}
           rating={ratings}
