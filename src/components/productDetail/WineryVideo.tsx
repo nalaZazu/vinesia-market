@@ -13,7 +13,10 @@ export default function WineryVideo() {
         <div className="container mt-5  items-center grid  gap-5 grid-cols-1 md:grid-cols-3 mx-auto py-1 border-bordergray px-4 lg:px-6 md:px-4">
           {[1, 2, 3].map((d, i) => {
             return (
-              <div className=" h-[276px] bg-gray-50 border-2 border-zinc-500 items-center ps-6 relative ">
+              <div
+                key={i}
+                className=" h-[276px] bg-gray-50 border-2 border-zinc-500 items-center ps-6 relative "
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
