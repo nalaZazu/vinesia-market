@@ -131,7 +131,7 @@ const handleOpen=()=>{
         <div className="grid justify-center mt-10 md:mt-10 lg:mt-16">         
           <div>
             <div className="relative flex justify-center">
-              <Image src={frame} alt="frame"  onClick={handleOpen} className="cursor-pointer"/>           
+              <Image src={frame} alt="frame"  onClick={handleOpen}  className="cursor-pointer"/>           
               <div>
                 <div className="w-24 h-24 rounded-full bg-[#d9d9d9] absolute right-1/2 left-60 top-24 bottom-1/2">
                   <p

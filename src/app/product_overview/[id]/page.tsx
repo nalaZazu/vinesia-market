@@ -30,6 +30,7 @@ import AssetDetails from "@/components/productDetail/AssetDetails";
 import Collection from "@/components/productDetail/Collection";
 import WineryVideo from "@/components/productDetail/WineryVideo";
 import AboutWineries from "@/components/productDetail/AboutWineries";
+import CollectionPopup from "@/components/collectionPopup/page";
 
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching
@@ -657,6 +658,7 @@ export default function Product() {
       <AssetDetails />
       <WineryVideo />
       <AboutWineries />
+      {/* <CollectionPopup /> */}
     </div>
   );
 }
