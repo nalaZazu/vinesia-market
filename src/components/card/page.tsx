@@ -9,7 +9,7 @@ const Card = () => {
           const { id, name, image } = reg;
           return (
             <div
-              className="max-w-sm rounded overflow-hidden shadow-lg"
+              className="min-w-sm rounded overflow-hidden shadow-lg"
               key={id}
             >
               <Image

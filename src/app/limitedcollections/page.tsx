@@ -1,5 +1,4 @@
 "use client";
-import ProductCard from "@/components/cards/ProductCard";
 import React from "react";
 import { usePathname } from "next/navigation";
 import { productlist } from "@/constants/winelist";
@@ -16,66 +15,78 @@ import {
   other,
 } from "@/constants/invesdropdown";
 import Recomend from "@/components/dropdown/recomend/page";
-function Invest() {
+import resoImage from "@/assets/image/reso-image.png";
+import RegionCountry from "@/components/regioncountry/page";
+const LimitedCollections = () => {
   const pathname = usePathname();
+  const regionparagraph = `Bordeaux, a renowned wine region, is acclaimed for its bold red blends, predominantly featuring Merlot, Cabernet Sauvignon, and Cabernet Franc. The wines exhibit rich flavors and a superb balance, making Bordeaux a global wine capital. Burgundy, in eastern France, is famous for its exquisite Pinot Noir and Chardonnay wines. The terroir of Burgundy imparts a unique character, resulting in elegant, nuanced, and often complex flavors, highly sought after by wine connoisseurs. Champagne, located in northeastern France, is synonymous with sparkling wine. Using the traditional méthode champenoise, this region crafts the world's most celebrated bubbly. Champagne is known  `;
+  const regionparagraphs = `for its effervescence, finesse, and celebratory nature.`;
   return (
     <>
       <div className="container mx-auto  pt-3 md:pt-5  px-4 flex gap-4">
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           Vinesia Marketplace
         </p>
+        <p className="text-xxs font-normal text-breadcrumb tracking-wide">
+          / Home Page
+        </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide">
           / {pathname.split("/")}
         </p>
       </div>
-      <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4">
+      <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">
         <h1 className="text-primary text-xxl font-semibold  tracking-tight">
-          Invest
+          Limited collections
         </h1>
+        <RegionCountry
+          regionparagraph={regionparagraph}
+          regionparagraphs={regionparagraphs}
+          image={resoImage}
+        />
         {/* dropdown  */}
-        <div className="flex justify-between md:pt-5 md:pb-14 flex-wrap">
-           <div className="flex gap-2">
-          <div>
-            <DropDown option={bottleSize} />
+        <div className="flex justify-between md:pt-7 md:pb-7 flex-wrap">
+          <div className="flex gap-2">
+            <div>
+              <DropDown option={bottleSize} />
+            </div>
+            <div>
+              <DropDown />
+            </div>
+            <div>
+              <DropDown option={casing} />
+            </div>
+            <div>
+              <DropDown option={ratingCritics} />
+            </div>
+            <div>
+              <DropDown option={regions} />
+            </div>
+            <div>
+              <DropDown option={winary} />
+            </div>
+            <div>
+              <DropDown />
+            </div>
+            <div>
+              <DropDown option={color} />
+            </div>
+            <div>
+              <DropDown />
+            </div>
+            <div>
+              <DropDown option={artCollect} />
+            </div>
+            <div>
+              <DropDown option={other} />
+            </div>
           </div>
-          <div>
-            <DropDown />
-          </div>
-          <div>
-            <DropDown option={casing} />
-          </div>
-          <div>
-            <DropDown option={ratingCritics} />
-          </div>
-          <div>
-            <DropDown option={regions} />
-          </div>
-          <div>
-            <DropDown option={winary} />
-          </div>
-          <div>
-            <DropDown />
-          </div>
-          <div>
-            <DropDown option={color} />
-          </div>
-          <div>
-            <DropDown />
-          </div>
-          <div>
-            <DropDown option={artCollect} />
-          </div>
-          <div>
-            <DropDown option={other} />
-          </div>
-          
-        </div>
-        <div className="flex items-center gap-2 pe-2 flex-wrap">
-           <p className="text-primary text-xs font-normal  tracking-wide">Sort by</p>
+          <div className="flex items-center gap-2 pe-2 flex-wrap">
+            <p className="text-primary text-xs font-normal  tracking-wide">
+              Sort by
+            </p>
             <Recomend />
           </div>
         </div>
-       
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {productlist?.map((item) => {
@@ -126,6 +137,6 @@ function Invest() {
       </div>
     </>
   );
-}
+};
 
-export default Invest;
+export default LimitedCollections;

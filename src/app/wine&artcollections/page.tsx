@@ -1,23 +1,27 @@
-"use client"; 
+"use client";
 import React from "react";
-import { usePathname } from "next/navigation";
-import { productlist } from "@/constants/winelist";
 import Image from "next/image";
 import DropDown from "@/components/dropdown/page";
 import {
-  winary,
+  artCollect,
   bottleSize,
   casing,
+  color,
+  other,
   ratingCritics,
   regions,
-  color,
-  artCollect,
-  other,
+  winary,
 } from "@/constants/invesdropdown";
 import Recomend from "@/components/dropdown/recomend/page";
-import Card from "@/components/card/page";
-function Region() {
+import { productlist } from "@/constants/winelist";
+import { usePathname } from "next/navigation";
+import RegionCountry from "@/components/regioncountry/page";
+import countryregion from "@/assets/image/france.jpeg";
+
+const WineArt = () => {
   const pathname = usePathname();
+  const regionparagraph = `Thanks to our Chief Wine Officer’s 30 years’ experience in the world of wine as a sommelier and wine distributor, we enjoy privileged relationships with the world’s`;
+  const regionparagraphs = `leading wineries, who place their trust in us by supplying their wines directly from their cellars. Likewise, our close relationships with the wine world enable us to identify the most talented young winemakers, whose sublime wines will be among tomorrow’s most sought-after.`;
   return (
     <>
       <div className="container mx-auto  pt-3 md:pt-5  px-4 flex gap-4">
@@ -25,7 +29,10 @@ function Region() {
           Vinesia Marketplace
         </p>
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
-         / Home Page
+          / Home Page
+        </p>
+        <p className="text-xxs font-normal text-breadcrumb tracking-wide">
+          / Wine & art collections
         </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide">
           / {pathname.split("/")}
@@ -33,53 +40,72 @@ function Region() {
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">
         <h1 className="text-primary text-xxl font-semibold  tracking-tight">
-        Regions
+          Wine & art collections
         </h1>
-        <Card/>
-        {/* dropdown  */}
-        <div className="flex justify-between md:pt-7 md:pb-7 flex-wrape ">
-           <div className="flex gap-2">
-          <div>
-            <DropDown option={bottleSize} />
+        <RegionCountry
+          regionparagraph={regionparagraph}
+          regionparagraphs={regionparagraphs}
+          image={countryregion}
+        />
+
+        {/* card */}
+        <div className=" rounded-tl-lg rounded-tr-lg shadow-lg ">
+          <div className="w-full h-20 bg-violet-300"> 
+          </div> 
+          <div className="rounded-bl-lg rounded-br-lg px-4 py-2.5 ">
+            <div className="text-primary  text-sm font-normal  tracking-tight">
+              {/* <Link href={"/wine&artcollections/[id]"}> */}
+              Reso
+              {/* </Link> */}
+             
+              </div>
           </div>
-          <div>
-            <DropDown />
-          </div>
-          <div>
-            <DropDown option={casing} />
-          </div>
-          <div>
-            <DropDown option={ratingCritics} />
-          </div>
-          <div>
-            <DropDown option={regions} />
-          </div>
-          <div>
-            <DropDown option={winary} />
-          </div>
-          <div>
-            <DropDown />
-          </div>
-          <div>
-            <DropDown option={color} />
-          </div>
-          <div>
-            <DropDown />
-          </div>
-          <div>
-            <DropDown option={artCollect} />
-          </div>
-          <div>
-            <DropDown option={other} />
-          </div>
-          
         </div>
-        <div className="flex items-center gap-2 pe-2 flex-wrap">
-           <p className="text-primary text-xs font-normal  tracking-wide">Sort by</p>
+
+        {/* dropdown  */}
+        <div className="flex justify-between md:pt-7 md:pb-7 flex-wrap">
+          <div className="flex gap-2 flex-wrap">
+            <div>
+              <DropDown option={bottleSize} />
+            </div>
+            <div>
+              <DropDown />
+            </div>
+            <div>
+              <DropDown option={casing} />
+            </div>
+            <div>
+              <DropDown option={ratingCritics} />
+            </div>
+            <div>
+              <DropDown option={regions} />
+            </div>
+            <div>
+              <DropDown option={winary} />
+            </div>
+            <div>
+              <DropDown />
+            </div>
+            <div>
+              <DropDown option={color} />
+            </div>
+            <div>
+              <DropDown />
+            </div>
+            <div>
+              <DropDown option={artCollect} />
+            </div>
+            <div>
+              <DropDown option={other} />
+            </div>
+          </div>
+          <div className="flex items-center gap-2 pe-2 flex-wrap">
+            <p className="text-primary text-xs font-normal  tracking-wide">
+              Sort by
+            </p>
             <Recomend />
           </div>
         </div>
-       
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {productlist?.map((item) => {
@@ -130,6 +156,6 @@ function Region() {
       </div>
     </>
   );
-}
+};
 
-export default Region;
+export default WineArt;
