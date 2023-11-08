@@ -1,11 +1,11 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from "next/image";
+import React from "react";
 import kranu from "@/assets/icon/kranu.png";
 import zut from "@/assets/icon/zut.png";
 export default function AboutWinerySection() {
   return (
     <div>
-         <section className="pt-10 px-4 lg:px-0 md:px-4">
+      <section className="pt-10 px-4 lg:px-0 md:px-4">
         <div className="container mx-auto">
           <h2 className=" capitalize text-4xl font-medium text-zinc-700 tracking-tight">
             <span className=" text-3xl font-normal text-neutral-400  tracking-tight">
@@ -73,5 +73,5 @@ export default function AboutWinerySection() {
         </div>
       </section>
     </div>
-  )
+  );
 }

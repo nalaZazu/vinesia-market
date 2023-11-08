@@ -7,15 +7,23 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-.slick-prev, .slick-next{
+ .heritage_carousel .slick-prev, .heritage_carousel .slick-next{
   top: 100% !important;
 }
 
-.slick-next{
+.heritage_carousel .slick-next{
   right: 10px !important;
 }
-.slick-prev{
+.heritage_carousel .slick-prev{
   left: 10px !important;
+}
+
+.collection_carousel .slick-next {
+  right: -3px !important;
+}
+
+.collection_carousel .slick-prev {
+  left: -40px !important;
 }
 
 

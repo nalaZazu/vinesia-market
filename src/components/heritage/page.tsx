@@ -62,7 +62,7 @@ const Heritage = ({ data }: { data: any }) => {
           </div>   */}
 
           <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-4 md:gap-0">
-            <div className="gap-6 md:py-16 py-5">
+            <div className="gap-6 md:py-16 py-5 heritage_carousel">
               <Slider {...sliderSettings}>
                 {data?.map((item: any, i: any) => {
                   return (
