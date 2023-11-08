@@ -7,7 +7,7 @@ import winericon from "../assets/icon/redwine.svg";
 export const menuBar = [
   {
     id: 1,
-    name: "Home Page",
+    name: "Marketplace",
     href: "/",
     icon: homeicon,
   },
@@ -32,13 +32,19 @@ export const menuBar = [
   {
     id: 5,
     name: "Wine & Art Collections",
-    href: "/",
+    href: "/wine&artcollections",
     icon:wineicon
   },
   {
     id: 6,
-    name: "Winery",
-    href: "/winery",
+    name: "Limited collections",
+    href: "/limitedcollections",
+    icon: winericon
+  },
+  {
+    id: 7,
+    name: "Wineries",
+    href: "/wineries",
     icon: winericon
   },
 ];
