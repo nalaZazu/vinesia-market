@@ -37,6 +37,7 @@ import OverviweTopSection from "@/components/productDetail/overviewTopSection";
 import Collection from "@/components/productDetail/Collection";
 import { useSelector } from "react-redux";
 import WineryVideo from "@/components/productDetail/WineryVideo";
+import AboutWineries from "@/components/productDetail/AboutWineries";
 
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching
@@ -184,6 +185,8 @@ export default function Product() {
       {isAuthenticted ? (
         <>
           <WineryVideo />
+          <AboutWineries />
+          {/* <AboutWinerySection /> */}
         </>
       ) : (
         <></>
@@ -193,7 +196,7 @@ export default function Product() {
       <AboutArtWork />
       {/* About artwork end */}
       {/* About Winery Château Le Pin start */}
-      <AboutWinerySection />
+      {isAuthenticted ? <></> : <AboutWinerySection />}
       {/* About Winery Château Le Pin end */}
       {/* You may also like start */}
       <YouMayAlso products={products} />
@@ -252,7 +255,7 @@ export default function Product() {
       </section>
       {/* Be the first to know end */}
 
-      <ArtCard />
+      {/* <ArtCard /> */}
     </div>
   );
 }
