@@ -15,7 +15,7 @@ const DropDownButton = () => {
           <button
             onClick={toggleDropdown}
             type="button"
-            className="tracking-tight text-sm w-48 py-2 px-4 text-left items-center flex justify-between text-spacegray shadow-none  border focus:ring-0 focus:outline-none focus:ring-gray-100 font-medium rounded-lg "
+            className="tracking-tight text-sm w-48 py-2 px-4 text-left items-center flex justify-between text-gray-400 shadow-none  border focus:ring-0 focus:outline-none focus:ring-gray-100 font-medium rounded-lg "
           >
             Recommended
             <svg
