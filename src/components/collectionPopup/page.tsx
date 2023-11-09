@@ -9,9 +9,11 @@ import Image from "next/image";
 export default function CollectionPopup({
   open = false,
   setOpen,
+  handleNext
 }: {
   open: any;
   setOpen: any;
+  handleNext?:any
 }) {
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -44,7 +46,7 @@ export default function CollectionPopup({
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative w-[1244px] lg:h-[997px] md:h-[400px] sm:h-[400px] transform overflow-hidden bg-white text-left shadow-xl transition-all">
+              <Dialog.Panel className="relative w-[1244px] lg:h-[997px] md:h-[600px] sm:h-full transform overflow-hidden bg-white text-left shadow-xl transition-all">
                 <div className="px-20 py-7">
                   <div className=" container mx-auto flex justify-between ">
                     <h1 className="text-zinc-700 text-2xl font-medium tracking-tight">
@@ -67,21 +69,22 @@ export default function CollectionPopup({
                       </svg>
                     </button>
                   </div>
-                  <div className="pb-8 pt-16 justify-center items-start gap-7 inline-flex">
-                    <div className="grow shrink basis-0 h-[440px] flex-col justify-start items-start gap-5 inline-flex">
-                      <div className="self-stretch h-[93px] flex-col justify-center items-start gap-2.5 flex">
-                        <div className="self-stretch h-[26px] opacity-60 text-neutral-900 text-lg font-semibold  tracking-tight">
+                  
+                  <div className="pb-8 pt-16 grid grid-cols-1 md:grid-cols-3 gap-7">
+                    <div className=" col-span-2">
+                      <div className="flex-col justify-center items-start gap-2.5 flex">
+                        <div className=" opacity-60 text-neutral-900 text-lg font-semibold  tracking-tight">
                           About this wine
                         </div>
                         <div className=" w-1/4 justify-start items-start gap-1 inline-flex">
                           <div className="w-6 h-6 relative" />
-                          <div className="w-1/2 flex-col justify-start items-start inline-flex">
-                            <div className="self-stretch text-black text-base font-medium  tracking-tight">
+                          <div className="w-full flex-col justify-start items-start inline-flex">
+                            <div className=" text-black text-base font-medium  tracking-tight">
                               Red, 14% Alc
                             </div>
                           </div>
                         </div>
-                        <div className="w-[571px] h-[23px]">
+                        <div className="w-full ">
                           <span className="text-black text-base font-semibold  underline tracking-tight">
                             France
                           </span>
@@ -90,7 +93,7 @@ export default function CollectionPopup({
                           </span>
                         </div>
                       </div>
-                      <div className="self-stretch text-black text-base font-normal tracking-tight">
+                      <div className="text-black text-base font-normal tracking-tight flex-wrap py-5">
                         An evocative nose, floral and exotic with black cherry,
                         lychee and passion fruit aromas, delicate and nuanced.
                         Svelte on the palate with sculpted and refined tannins –
@@ -106,7 +109,7 @@ export default function CollectionPopup({
                         clay, which no doubt helps to explain how this wine can
                         perform so well in warm, dry vintages.
                       </div>
-                      <div className="self-stretch h-7 pt-4 justify-start items-center gap-1 inline-flex">
+                      <div className=" h-7 pt-4 justify-start items-center gap-1 inline-flex">
                         <div className="text-zinc-700 text-base font-medium  tracking-tight">
                           Winery:
                         </div>
@@ -116,7 +119,7 @@ export default function CollectionPopup({
                       </div>
                     </div>
                     <div>
-                      <div className="relative">
+                      <div className="relative col-span-1">
                         <Image
                           src={collection}
                           alt="Picture of the author"
@@ -189,7 +192,7 @@ export default function CollectionPopup({
                         Back
                       </span>
                     </button>
-                    <button className=" px-10 py-2.5 bg-gray-500 rounded-lg justify-center items-center gap-2 inline-flex">
+                    <button onClick={handleNext} className=" px-10 py-2.5 bg-gray-500 rounded-lg justify-center items-center gap-2 inline-flex">
                       <span className="text-white text-base font-medium tracking-tight">
                         Next wine
                       </span>

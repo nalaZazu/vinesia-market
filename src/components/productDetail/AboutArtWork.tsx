@@ -1,11 +1,11 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from "next/image";
+import React from "react";
 import group from "@/assets/icon/Group.png";
 
 export default function AboutArtWork() {
   return (
     <div>
-         <section className="pt-10 px-4 lg:px-0 md:px-4">
+      <section className="pt-10 px-4 lg:px-0 md:px-4">
         <div className="container mx-auto">
           <h2 className=" capitalize text-4xl font-medium text-zinc-700 tracking-tight">
             <span className=" text-3xl font-normal text-neutral-400  tracking-tight">
@@ -13,8 +13,8 @@ export default function AboutArtWork() {
             </span>{" "}
             artwork
           </h2>
-          <div className="gap-5 container grid mx-auto lg:grid-cols-2 md:grid-cols-2 max-w-screen-xl items-center py-6 px-0 lg:px-16 md:px-0">
-            <div className="pb-4 lg:pb-0 md:pb-4">
+          <div className="max-w-[1100px] items-center grid grid-col-1  md:grid-cols-5 lg:grid-cols-5 mx-auto py-8">
+            <div className="pb-4 lg:pb-0 md:pb-4 md:col-span-3 col-span-1 ">
               <p className="text-sm text-bordergray">Original Art</p>
               <p className="text-base font-normal">
                 Stop Breathing, White_2Stripes_black_blue
@@ -51,7 +51,7 @@ export default function AboutArtWork() {
                 viewers with new visual experiences.
               </p>
             </div>
-            <div className="flex lg:justify-end ">
+            <div className="flex lg:justify-end  md:col-span-2 col-span-1">
               <Image
                 src={group}
                 alt="Picture of the author"
@@ -62,5 +62,5 @@ export default function AboutArtWork() {
         </div>
       </section>
     </div>
-  )
+  );
 }
