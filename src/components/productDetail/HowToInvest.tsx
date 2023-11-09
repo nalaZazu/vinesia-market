@@ -4,8 +4,8 @@ export default function HowToInvest() {
   return (
     <div>
       <section className="bg-themegray shadow-lg px-4 lg:px-0 md:px-4">
-        <div className="container justify-between items-center grid grid-col-2  md:grid-cols-2 lg:grid-cols-2 mx-auto py-4 lg:py-6 md:py-4">
-          <div className=" lg:ps-24 pb-4 lg:pb-0 md:pb-4">
+        <div className="max-w-[847px] justify-between items-center grid grid-col-2 gap-16  md:grid-cols-5 lg:grid-cols-5 mx-auto py-4 lg:py-6 md:py-4">
+          <div className=" pb-4 lg:pb-0 md:pb-4 col-span-3">
             <h3 className=" text-lg font-semibold">How to invest in wine</h3>
             <p className="font-normal text-sm">
               See our video to gather new informations
@@ -17,9 +17,9 @@ export default function HowToInvest() {
               informations See our video to gather new informations
             </p>
           </div>
-          <div className="flex lg:justify-center">
+          <div className="flex lg:justify-center col-span-2">
             <iframe
-              className=" rounded-md w-full md:w-full lg:w-80 h-56"
+              className=" rounded-md w-full h-44"
               src="https://www.youtube.com/embed/7gquYRxLMFI?si=S7E_iDRbr-b1dZef"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

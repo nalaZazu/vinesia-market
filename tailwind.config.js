@@ -6,6 +6,12 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+    },
     extend: {
       colors: {
         availableGray: "#D9D9D9",
@@ -13,20 +19,18 @@ module.exports = {
         spacegray: "#41464b",
         bordergray: "#A0A6AC",
         tabsgray: "#C6C7C8",
-        breadcrumb: '#9B9B9B',
+        breadcrumb: "#9B9B9B",
         bgbutton: "#842029",
         typegray: "#6C757D",
         primary: "#41464B",
         secondary: "#000000",
         bgprimary: "#D9D9D9",
         bgsecondary: "#6C757D",
-        bgtertiary:"#484848",
-      
-       
-        iconcolor: '#7A7C7F',
-        
+        bgtertiary: "#484848",
+
+        iconcolor: "#7A7C7F",
       },
-      
+
       /** Font
        * FontsName:[fontSize, lineHeight]
        */
@@ -34,7 +38,11 @@ module.exports = {
         xxs: ["10px", " 14.45px"],
         xxl: ["32px", "46.24px"],
       },
-
+      container: {
+        maxWidth: {
+          "2xl": "1280px",
+        },
+      },
     },
   },
   plugins: [],

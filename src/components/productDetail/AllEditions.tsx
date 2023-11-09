@@ -39,7 +39,7 @@ export default function AllEditions({ products }: { products: any }) {
               </svg>
             </div>
           </div>
-          <div className="flex justify-between mx-auto pt-14">
+          <div className="flex justify-between mx-auto pt-14 max-w-[1170px]">
             <div className=" pt-5">
               <TabButton />
               <div className=" flex items-center py-3 gap-2">
@@ -52,7 +52,7 @@ export default function AllEditions({ products }: { products: any }) {
             <DropDownButton />
           </div>
         </div>
-        <div>
+        <div className=" max-w-[1170px] mx-auto" >
           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mx-auto">
             {products &&
               products.map((item: any, i: any) => {
