@@ -1,12 +1,12 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import img1 from "../../assets/image/image1.png";
-import img2 from "../../assets/image/image 23.png";
-import arrow from "../../assets/icon/arrow-right2.svg";
-import alert from "../../assets/icon/alert-circle.svg";
-import arrowleft from "../../assets/image/arrow slide left.png";
-import wine from "../../assets/image/group2.png";
-import signature from "../../assets/image/Zrzut ekranu 2023-10-1 o 11.17 1.png";
+import img1 from "@/assets/image/image1.png";
+import img2 from "@/assets/image/image 23.png";
+import arrow from "@/assets/icon/arrow-right2.svg";
+import alert from "@/assets/icon/alert-circle.svg";
+import arrowleft from "@/assets/image/arrow slide left.png";
+import wine from "@/assets/image/group2.png";
+import signature from "@/assets/image/Zrzut ekranu 2023-10-1 o 11.17 1.png";
 import { NextIcon, PrevIcon } from "@/assets/icon/Icons";
 const Critics = ({ data }: { data: any }) => {
   const [selectedTab, setSelectedTab] = useState(0);

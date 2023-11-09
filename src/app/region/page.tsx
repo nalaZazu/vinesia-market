@@ -37,8 +37,8 @@ function Region() {
         </h1>
         <Card/>
         {/* dropdown  */}
-        <div className="flex justify-between md:pt-7 md:pb-7 flex-wrape ">
-           <div className="flex gap-2">
+        <div className="flex justify-between md:pt-5 md:pb-14 flex-wrap">
+           <div className="flex gap-2 flex-wrap">
           <div>
             <DropDown option={bottleSize} />
           </div>
@@ -74,7 +74,7 @@ function Region() {
           </div>
           
         </div>
-        <div className="flex items-center gap-2 pe-2 flex-wrap">
+        <div className="flex items-center gap-2 pe-2 flex-wrap pt-2 md:pt-0">
            <p className="text-primary text-xs font-normal  tracking-wide">Sort by</p>
             <Recomend />
           </div>
