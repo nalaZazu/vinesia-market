@@ -25,6 +25,7 @@ export default function Appactivity() {
   const previous = [1, 200, 3000, 200, 299];
 
   const options: any = {
+    innerHeight: 200,
     responsive: true,
     interaction: {
       mode: "index" as const,
@@ -149,7 +150,9 @@ export default function Appactivity() {
       </div>
       <div className="mt-2 ml-5  text-2xl ">{/* <p>$1677787</p> */}</div>
 
-      <Line className="mx-2 mb-10 w-20 h-20" options={options} data={data} />
+      <div className="max-h-60">
+        <Line className="mx-2 mb-10 w-20 h-20" options={options} data={data} />
+      </div>
     </>
   );
 }

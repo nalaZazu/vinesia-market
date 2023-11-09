@@ -29,6 +29,7 @@ import OverviweTopSection from "@/components/productDetail/overviewTopSection";
 import AssetDetails from "@/components/productDetail/AssetDetails";
 import Collection from "@/components/productDetail/Collection";
 import WineryVideo from "@/components/productDetail/WineryVideo";
+import AboutWineries from "@/components/productDetail/AboutWineries";
 
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching
@@ -88,7 +89,7 @@ export default function Product() {
 
       {/* hero section start*/}
       {wine ? (
-        <OverviweTopSection
+        <ProductTopSection
           wine={wine}
           release={releaseDetails}
           rating={ratings}
@@ -655,6 +656,7 @@ export default function Product() {
 
       <AssetDetails />
       <WineryVideo />
+      <AboutWineries />
     </div>
   );
 }
