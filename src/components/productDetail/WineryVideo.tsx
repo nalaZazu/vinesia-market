@@ -10,7 +10,7 @@ export default function WineryVideo() {
           </h2>
         </div>
 
-        <div className="container mt-5  items-center grid  gap-5 grid-cols-1 md:grid-cols-3 mx-auto py-1 border-bordergray px-4 lg:px-6 md:px-4">
+        <div className="container mt-5  items-center grid  gap-5 grid-cols-1 md:grid-cols-3 mx-auto py-1 border-bordergray px-0 lg:px-6 md:px-4">
           {[1, 2, 3].map((d, i) => {
             return (
               <div

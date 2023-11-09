@@ -127,7 +127,7 @@ export default function Product() {
           </h2>
         </div>
 
-        <div className="max-w-[1065px] gap-7 items-center grid grid-col-1  md:grid-cols-5 lg:grid-cols-5 mx-auto py-8">
+        <div className="max-w-[1100px] gap-7 items-center grid grid-col-1  md:grid-cols-5 lg:grid-cols-5 mx-auto py-8">
           <div className="pb-4 lg:pb-0 md:pb-4 md:col-span-2 col-span-1 ">
             <div className="flex gap-3">
               <Image
@@ -166,6 +166,7 @@ export default function Product() {
 
         <CriticsDetailCards />
       </section>
+
       {/* About Chateau La Mission Haut Brion Cru Classe | 2009 end */}
       {/* About artwork start */}
       <AboutArtWork />
