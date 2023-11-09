@@ -17,10 +17,25 @@ import { productlist } from "@/constants/winelist";
 import { usePathname } from "next/navigation";
 import RegionCountry from "@/components/regioncountry/page";
 import resoImage from "@/assets/image/reso-image.png";
+import ExploreCountry from "@/components/explorecountry/page";
 const Rao = () => {
   const pathname = usePathname();
   const regionparagraph = `Reso’s deep engagement with informal art and abstract expressionism led him to continuously seek new avenues for expanding his artistic expression. It wasn’t until 2011 that he ventured into the abstract series, marking a pivotal moment in his artistic journey.`;
   const regionparagraphs = `In Reso’s artworks, one senses a powerful dynamism and speed, a direct reflection of his energetic approach. This approach draws parallels to K.O. Goetz’s experimental painting technique, blending quick, impulsive squeegee gestures with moments of contemplation and reflection, creating a dance-like choreography on the canvas.`;
+
+  const explorParagraph = ` Reso acts with intuition and physicality, much like the renowned
+  painter Jackson Pollock, positioning the canvas flat on the floor
+  and working with sweeping movements, even extending beyond the
+  canvas. An intriguing element in Reso’s works is the use of torn
+  paper strips, applied to the canvas to reveal alternating and
+  interacting forms and patterns. This interplay of positive and
+  negative shapes creates a captivating depth and sophistication in
+  his pieces.`;
+  const explorParagraphs = ` Reso’s unique handling of color, form, and movement imbues his
+  artworks with an extraordinary energy and vitality.`;
+
+  const explor1 = ` Each abstract painting becomes a dance on canvas, a fascinating world of colors and shapes captured through his expressive gestures and dynamic working style, captivating the viewer. His experimentation, combined with control and spontaneity, along with the refined use of paper strips, results in an engaging interplay of forms, colors, and textures.`;
+  const explor2 = ` Ultimately, Reso’s abstract paintings invite viewers to immerse themselves in a realm of imagination, offering diverse ways to interpret and experience his captivating creations.`;
   return (
     <>
       <div className="container mx-auto  pt-3 md:pt-5  px-4 flex gap-4">
@@ -47,43 +62,12 @@ const Rao = () => {
           image={resoImage}
         />
 
-        {/* card */}
-        <div className=" grid md:grid-cols-5 gap-7 grid-cols-1 md:max-w-[62rem] mx-auto pt-8 pb-16 ">
-          <div className="col-span-3">
-            <Image src={resoImage} alt="image-region" />
-          </div>
-          <div className="col-span-2 text-secondary text-base font-medium tracking-tight">
-            <p>
-              Reso acts with intuition and physicality, much like the renowned
-              painter Jackson Pollock, positioning the canvas flat on the floor
-              and working with sweeping movements, even extending beyond the
-              canvas. An intriguing element in Reso’s works is the use of torn
-              paper strips, applied to the canvas to reveal alternating and
-              interacting forms and patterns. This interplay of positive and
-              negative shapes creates a captivating depth and sophistication in
-              his pieces.{" "}
-            </p>
-            <p>
-              Reso’s unique handling of color, form, and movement imbues his
-              artworks with an extraordinary energy and vitality.
-            </p>
-          </div>
-        </div>
-        {/* second -part */}
-        <div className=" grid md:grid-cols-5 gap-7 grid-cols-1 md:max-w-[62rem] mx-auto pt-8 pb-16 ">
-          
-          <div className="col-span-2 text-secondary text-base font-medium tracking-tight">
-            <p>
-            Each abstract painting becomes a dance on canvas, a fascinating world of colors and shapes captured through his expressive gestures and dynamic working style, captivating the viewer. His experimentation, combined with control and spontaneity, along with the refined use of paper strips, results in an engaging interplay of forms, colors, and textures.
-            </p>
-            <p>
-            Ultimately, Reso’s abstract paintings invite viewers to immerse themselves in a realm of imagination, offering diverse ways to interpret and experience his captivating creations.
-            </p>
-          </div>
-          <div className="col-span-3">
-            <Image src={resoImage} alt="image-region" />
-          </div>
-        </div>
+        <ExploreCountry
+          explorParagraph={explorParagraph}
+          explorParagraphs={explorParagraphs}
+          explor1={explor1}
+          explor2={explor2}
+        />
 
         {/* dropdown  */}
         <div className="flex justify-between md:pt-7 md:pb-7 flex-wrap">
