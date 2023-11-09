@@ -7,7 +7,15 @@ import Image from "next/image";
 import { menuBar } from "@/constants/navigate";
 import { useRouter } from "next/navigation";
 import SidePannel from "./sidepannel/page";
-const Header = () => {
+import { useDispatch } from "react-redux";
+import { handleAllModals } from "@/redux/modalVisibility";
+import LoginModal from "../auth/LoginModal";
+import UserDropDown from "@/common/UserDropDown";
+export default function Header() {
+  const dispatch = useDispatch();
+  const handleModal = () => {
+    dispatch(handleAllModals({ loginModal: { isVisible: true } }));
+  };
   return (
     <div>
       <nav className="p-4">
@@ -55,13 +63,7 @@ const Header = () => {
                 placeholder="Search"
               />
             </div>
-            <Image
-              src={arrowTray}
-              alt="Picture of the author"
-              width={20}
-              height={20}
-            />
-            <button>Sign Up / Login</button>
+            <UserDropDown />
             <div className="flex items-center space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -107,6 +109,4 @@ const Header = () => {
       </nav>
     </div>
   );
-};
-
-export default Header;
+}

@@ -1,10 +1,35 @@
-import Image from 'next/image'
-import React from 'react'
+import React from "react";
+import Image from "next/image";
+import bottle from "@/assets/icon/bottle.svg";
+import big from "@/assets/icon/big.png";
+import big1 from "@/assets/icon/big1.png";
+import case1 from "@/assets/icon/Case.svg";
+import redwine from "@/assets/icon/redwine.svg";
 import marketart from "@/assets/icon/marketart.svg";
+
 export default function ArtCard() {
   return (
     <div>
-          <div className="bg-white py-1">
+      <section className="bg-themegray pb-6 mt-5 px-4 lg:px-0">
+        {/* <div className="container flex grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-2"> */}
+        <div className="container grid max-w-screen-xl lg:px-10 mx-auto lg:grid-cols-2 md:grid-cols-1 grid-cols-1">
+          {/* first section start */}
+          <div>
+            <div className="flex gap-5 ps-5 ps-md-3">
+              <div>
+                <button className="ml-1 text-2xl font-medium text-spacegray">
+                  Wine
+                </button>
+                <p className=" text-xs">LWIN:123456</p>
+              </div>
+              <div className="border-b-4 rounded border-spacegray">
+                <button className="ml-1 text-2xl font-medium text-spacegray">
+                  Art
+                </button>
+                <p className=" text-xs">Artist: Lola Designer Funny</p>
+              </div>
+            </div>
+            <div className="bg-white py-1">
               <div>
                 <div className="flex py-3 gap-3">
                   <div className="w-2/6 text-end uppercase text-xs">
@@ -210,6 +235,90 @@ export default function ArtCard() {
                 </div>
               </div>
             </div>
+          </div>
+          {/* first section end */}
+
+          {/* slider start */}
+          <div>
+            <div className="flex lg:justify-center pt-4 lg-pt-0">
+              <span>
+                <Image
+                  src={big}
+                  alt="Picture of the author"
+                  width={490}
+                  className=" flex justify-center"
+                />
+              </span>
+            </div>
+            <div className="flex justify-center">
+              <div className="flex z-50 bg-white w-2/3 items-center gap-5 py-2 px-5 text-spacegray relative shadow-md rounded-md">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 19.5L8.25 12l7.5-7.5"
+                  />
+                </svg>
+
+                <div>
+                  <Image
+                    src={big1}
+                    alt="Picture of the author"
+                    width={55}
+                    className=" flex justify-center rounded-sm shadow-sm border border-spacegray"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src={big}
+                    alt="Picture of the author"
+                    width={55}
+                    className=" flex justify-center rounded-sm shadow-sm border border-spacegray"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src={big1}
+                    alt="Picture of the author"
+                    width={55}
+                    className=" flex justify-center rounded-sm shadow-sm border border-spacegray"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src={big}
+                    alt="Picture of the author"
+                    width={55}
+                    className=" flex justify-center rounded-sm shadow-sm border border-spacegray"
+                  />
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* hero section end*/}
     </div>
-  )
+  );
 }

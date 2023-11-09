@@ -5,6 +5,7 @@ import resoImage from "@/assets/image/reso-image.png";
 import RegionCountry from "@/components/regioncountry/page";
 import { NextIcon } from "@/assets/icon/Icons";
 import { wineCountry } from "@/constants/winelist";
+import Link from "next/link";
 // import arrowdown from "@/assets/icon/arrow-down.svg";
 // import Image from "next/image";
 const Wineries = () => {
@@ -46,6 +47,9 @@ const Wineries = () => {
             regionName4,
             regionName5,
             regionName6,
+            explor,
+            explor1,
+            explor2,
           } = item;
           return (
             <div className="max-w-[1172px] ms-auto" key={id}>
@@ -68,11 +72,12 @@ const Wineries = () => {
                       Winery name
                     </p>
                     <h3 className=" text-secondary text-2xl font-semibold tracking-tight pt-3">
-                     {regionName1}
+                      {regionName1}
                     </h3>
+                    <Link href={`${explor}`}>
                     <span className="flex gap-3 pt-11">
                       <p className="text-secondary text-lg font-semibold tracking-tight">
-                        Explore{" "}
+                      Explore
                       </p>
                       <div className="w-8 h-8 flex   bg-neutral-200 rounded-full border-2 border-black text-center items-center">
                         <span className="mx-auto">
@@ -80,6 +85,7 @@ const Wineries = () => {
                         </span>
                       </div>
                     </span>
+                    </Link>
                   </div>
 
                   <div>
@@ -98,18 +104,20 @@ const Wineries = () => {
                       Winery name
                     </p>
                     <h3 className=" text-secondary text-2xl font-semibold tracking-tight pt-3">
-                    {regionName3}
+                      {regionName3}
                     </h3>
-                    <span className="flex gap-3 pt-11">
-                      <p className="text-secondary text-lg font-semibold tracking-tight">
-                        Explore{" "}
-                      </p>
-                      <div className="w-8 h-8 flex   bg-neutral-200 rounded-full border-2 border-black text-center items-center">
-                        <span className="mx-auto">
-                          <NextIcon />
-                        </span>
-                      </div>
-                    </span>
+                    <Link href={`${explor1}`}>
+                      <span className="flex gap-3 pt-11">
+                        <p className="text-secondary text-lg font-semibold tracking-tight">
+                          Explore
+                        </p>
+                        <div className="w-8 h-8 flex   bg-neutral-200 rounded-full border-2 border-black text-center items-center">
+                          <span className="mx-auto">
+                            <NextIcon />
+                          </span>
+                        </div>
+                      </span>
+                    </Link>
                   </div>
 
                   <div>
@@ -117,9 +125,8 @@ const Wineries = () => {
                       Winery name
                     </p>
                     <h3 className=" text-secondary text-2xl font-semibold tracking-tight pt-3">
-                     {regionName4}
+                      {regionName4}
                     </h3>
-                    
                   </div>
                 </div>
                 {/* 3rd div */}
@@ -129,18 +136,20 @@ const Wineries = () => {
                       Winery name
                     </p>
                     <h3 className=" text-secondary text-2xl font-semibold tracking-tight pt-3">
-                     {regionName5}
+                      {regionName5}
                     </h3>
-                    <span className="flex gap-3 pt-11">
-                      <p className="text-secondary text-lg font-semibold tracking-tight">
-                        Explore{" "}
-                      </p>
-                      <div className="w-8 h-8 flex   bg-neutral-200 rounded-full border-2 border-black text-center items-center">
-                        <span className="mx-auto">
-                          <NextIcon />
-                        </span>
-                      </div>
-                    </span>
+                    <Link href={`${explor2}`}>
+                      <span className="flex gap-3 pt-11">
+                        <p className="text-secondary text-lg font-semibold tracking-tight">
+                          Explore
+                        </p>
+                        <div className="w-8 h-8 flex   bg-neutral-200 rounded-full border-2 border-black text-center items-center">
+                          <span className="mx-auto">
+                            <NextIcon />
+                          </span>
+                        </div>
+                      </span>
+                    </Link>
                   </div>
 
                   <div>
@@ -148,7 +157,7 @@ const Wineries = () => {
                       Winery name
                     </p>
                     <h3 className=" text-secondary text-2xl font-semibold tracking-tight pt-3">
-                    {regionName6}
+                      {regionName6}
                     </h3>
                   </div>
                 </div>

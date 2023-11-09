@@ -16,7 +16,7 @@ import Recomend from "@/components/dropdown/recomend/page";
 import { productlist } from "@/constants/winelist";
 import { usePathname } from "next/navigation";
 import RegionCountry from "@/components/regioncountry/page";
-import countryregion from "@/assets/image/france1.jpg";
+import countryregion from "@/assets/image/frame-1.png";
 const France = () => {
   const pathname = usePathname();
   const regionparagraph = `France is renowned worldwide for its exquisite wines, each region offering a unique and  distinct flavor profile. Bordeaux, in the

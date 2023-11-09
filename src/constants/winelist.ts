@@ -93,7 +93,9 @@ export const wineCountry = [
     regionName4:'Claude and François de Nicolay',
     regionName5:'Domaine Belle',
     regionName6:'Belle father and sons',
-    explor:''
+    explor:'/wineries/JeromeGaleyrand',
+    explor1:'/wineries/ChandondeBriailles',
+    explor2:'/wineries/DomaineBelle',
   },
   {
     id: 2,
@@ -104,7 +106,9 @@ export const wineCountry = [
     regionName4:'Claude and François de Nicolay',
     regionName5:'Domaine Belle',
     regionName6:'Belle father and sons',
-    explor:''
+    explor:'/wineries/JeromeGaleyrand',
+    explor1:'/wineries/ChandondeBriailles',
+    explor2:'/wineries/Domaine Belle'
   },
   {
     id: 3,
@@ -115,7 +119,9 @@ export const wineCountry = [
     regionName4:'Claude and François de Nicolay',
     regionName5:'Domaine Belle',
     regionName6:'Belle father and sons',
-    explor:''
+    explor:'/wineries/JeromeGaleyrand',
+    explor1:'/wineries/ChandondeBriailles',
+    explor2:'/wineries/DomaineBelle',
   },
  
 ];

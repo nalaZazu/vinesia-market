@@ -20,7 +20,7 @@ import ReleaseDateSection from "@/components/productDetail/ReleaseDateSection";
 import ProductCard from "@/components/cards/ProductCard";
 import { getProductDetail } from "@/services/ProductDetail";
 
-import ArtCard from "@/components/productDetail/ArtCard";
+import ArtCard from "@/components/productDetail/ArtCard-ex";
 
 import { Wine, releaseDetails, rating } from "@/propTypes/page";
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
