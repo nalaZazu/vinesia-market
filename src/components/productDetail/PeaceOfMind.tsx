@@ -16,15 +16,13 @@ export default function PeaceOfMind() {
     <section className=" py-14 px-4 md:px-4 lg:px-0">
       <div className="container mx-auto">
         <div className="flex justify-between items-center gap-5">
-          <div className="basis-3/12">
+          <div className="basis-full md:basis-3/12">
             <h2 className=" capitalize text-2xl font-medium">
               <span className=" text-typegray font-normal">our </span> peace of
               mind pledge
             </h2>
           </div>
-          <div className="basis-9/12 border">
-           
-          </div>
+          <div className="basis-9/12 border"></div>
         </div>
         <p className=" text-base lg:w-4/6 pt-4">
           “Investor Peace of Mind” is a core principle at Vinesia. It
@@ -33,7 +31,7 @@ export default function PeaceOfMind() {
         </p>
 
         <div className=" flex-wrap md:basis-3/5 basis-full z-0 pt-10">
-          <div className="container grid mx-auto gap-6 grid-cols-2 lg:grid-cols-4 md:grid-cols-2">
+          <div className="container grid mx-auto gap-6 grid-cols-1 lg:grid-cols-4 md:grid-cols-2">
             <div className="max-w-md bg-themegray flex items-center justify-between px-5  py-2">
               <div className="flex-1">
                 <p className="text-base font-semibold text-gray-900 truncate dark:text-white">
@@ -48,7 +46,7 @@ export default function PeaceOfMind() {
                 <Image src={Vector} alt="Picture of the author" width={80} />
               </div>
             </div>
-            <div className="max-w-md bg-themegray flex items-center justify-between px-5 py-2">
+            <div className=" bg-themegray flex items-center justify-between px-5 py-2">
               <div className="flex-1">
                 <p className="text-base font-semibold text-gray-900 truncate dark:text-white">
                   Proof
@@ -63,7 +61,7 @@ export default function PeaceOfMind() {
               </div>
             </div>
 
-            <div className="max-w-md bg-themegray flex items-center justify-between px-5 py-2">
+            <div className=" bg-themegray flex items-center justify-between px-5 py-2">
               <div className="flex-1">
                 <p className="text-base font-semibold text-gray-900 truncate dark:text-white">
                   Proof of
@@ -83,7 +81,7 @@ export default function PeaceOfMind() {
               </div>
             </div>
 
-            <div className="max-w-md bg-themegray flex items-center justify-between px-5 py-2">
+            <div className=" bg-themegray flex items-center justify-between px-5 py-2">
               <div className="flex-1">
                 <p className="text-base font-semibold text-gray-900 truncate dark:text-white pb-3">
                   See our video

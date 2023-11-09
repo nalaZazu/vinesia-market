@@ -24,13 +24,13 @@ export default function ReleaseDateSection({
 }) {
   return (
     <section className="container mx-auto">
-      <div className="flex justify-between py-7">
+      <div className="flex flex-wrap justify-between py-7 px-4 md:px-0">
         <div>
           <h2 className="text-4xl font-medium text-spacegray">
             Release details
           </h2>
         </div>
-        <div className="flex text-bgsecondary">
+        <div className="flex flex-wrap text-bgsecondary">
           <p className="flex gap-4 items-center">
             <span className="text-lg">On the market are </span>
             <span className=" text-2xl font-bold">24</span>
@@ -63,8 +63,8 @@ export default function ReleaseDateSection({
             </h2>
             <div>
               {/* first box */}
-              <div className=" grid gap-0 lg:grid-cols-2 md:grid-cols-2 grid-cols-2 pt-6">
-                <div className=" border-t-2 border-l-2 border-gray-500 items-start gap-2.5  p-4 py-7">
+              <div className=" grid gap-0 lg:grid-cols-2 md:grid-cols-1 grid-cols-1 pt-6">
+                <div className=" border-t-2 border-l-2 md:border-2 border-2 border-gray-500 items-start gap-2.5  p-4 py-7">
                   <div className="flex gap-3 text-sm text-gray-500 font-medium uppercase tracking-tight">
                     <h2>Release Price </h2>
                     <Image
@@ -92,8 +92,8 @@ export default function ReleaseDateSection({
                 </div>
               </div>
               {/* second box */}
-              <div className=" grid gap-0 lg:grid-cols-2 md:grid-cols-2 grid-cols-2">
-                <div className=" border-y-2 border-l-2 p-4 border-typegray">
+              <div className=" grid gap-0 lg:grid-cols-2 md:grid-cols-1 grid-cols-1">
+                <div className=" border-y-2 border-l-2 md:border-2 border-2 p-4 border-typegray">
                   <div>
                     <h2 className=" text-sm font-bold text-gray-500 uppercase tracking-tight">
                       Highest Price

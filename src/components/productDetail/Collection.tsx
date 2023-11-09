@@ -7,9 +7,12 @@ import ProductCard from "../cards/ProductCard";
 import Slider from "react-slick";
 import { NextIcon, PrevIcon } from "@/assets/icon/Icons";
 import CollectionPopup from "../collectionPopup/page";
+import CollectionPopup2 from "@/components/collectionPopup2/page";
 
 export default function Collection() {
   const [open, setOpen] = useState(false);
+  const [openModal2, setOpenModal2] = useState(false);
+
   const handleOpen = () => {
     setOpen(!open);
   };
@@ -35,7 +38,7 @@ export default function Collection() {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
@@ -60,10 +63,23 @@ export default function Collection() {
     ),
   };
 
+  const handleNext = () => {
+    setOpenModal2(!openModal2);
+    setOpen(!open);
+  };
   return (
     <div>
-      <CollectionPopup open={open} setOpen={handleOpen} />
-      <div className=" container mx-auto pt-7">
+      <CollectionPopup
+        open={open}
+        setOpen={handleOpen}
+        handleNext={handleNext}
+      />
+
+      <CollectionPopup2
+        open={openModal2}
+        setOpen={() => setOpenModal2(!openModal2)}
+      />
+      <div className=" container mx-auto pt-7 px-4 md:px-0">
         <div className="flex justify-between items-center gap-5">
           <h2 className="basis-1/4 capitalize text-2xl font-medium">
             <span className=" text-typegray font-normal">Included </span>
