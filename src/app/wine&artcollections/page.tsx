@@ -16,7 +16,7 @@ import Recomend from "@/components/dropdown/recomend/page";
 import { productlist } from "@/constants/winelist";
 import { usePathname } from "next/navigation";
 import RegionCountry from "@/components/regioncountry/page";
-import countryregion from "@/assets/image/france.jpeg";
+import countryregion from "@/assets/image/frame-1.png";
 
 const WineArt = () => {
   const pathname = usePathname();
@@ -30,9 +30,6 @@ const WineArt = () => {
         </p>
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           / Home Page
-        </p>
-        <p className="text-xxs font-normal text-breadcrumb tracking-wide">
-          / Wine & art collections
         </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide">
           / {pathname.split("/")}
@@ -49,7 +46,7 @@ const WineArt = () => {
         />
 
         {/* card */}
-        <div className=" rounded-tl-lg rounded-tr-lg shadow-lg ">
+        <div className=" rounded-tl-lg rounded-tr-lg shadow-lg pb-7 md:pb-7">
           <div className="w-full h-20 bg-violet-300"> 
           </div> 
           <div className="rounded-bl-lg rounded-br-lg px-4 py-2.5 ">
@@ -63,7 +60,7 @@ const WineArt = () => {
         </div>
 
         {/* dropdown  */}
-        <div className="flex justify-between md:pt-7 md:pb-7 flex-wrap">
+        <div className="flex  justify-between md:pt-5 md:pb-14 flex-wrap">
           <div className="flex gap-2 flex-wrap">
             <div>
               <DropDown option={bottleSize} />
@@ -99,7 +96,7 @@ const WineArt = () => {
               <DropDown option={other} />
             </div>
           </div>
-          <div className="flex items-center gap-2 pe-2 flex-wrap">
+          <div className="flex items-center gap-2 pe-2 flex-wrap pt-2 md:pt-0">
             <p className="text-primary text-xs font-normal  tracking-wide">
               Sort by
             </p>

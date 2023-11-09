@@ -15,7 +15,7 @@ import {
   other,
 } from "@/constants/invesdropdown";
 import Recomend from "@/components/dropdown/recomend/page";
-import resoImage from "@/assets/image/reso-image.png";
+import resoImage from "@/assets/image/frame-1.png";
 import RegionCountry from "@/components/regioncountry/page";
 const LimitedCollections = () => {
   const pathname = usePathname();

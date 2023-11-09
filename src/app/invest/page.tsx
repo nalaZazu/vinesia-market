@@ -1,5 +1,4 @@
-"use client";
-import ProductCard from "@/components/cards/ProductCard";
+"use client"; 
 import React from "react";
 import { usePathname } from "next/navigation";
 import { productlist } from "@/constants/winelist";
@@ -34,7 +33,7 @@ function Invest() {
         </h1>
         {/* dropdown  */}
         <div className="flex justify-between md:pt-5 md:pb-14 flex-wrap">
-           <div className="flex gap-2">
+           <div className="flex gap-2 flex-wrap">
           <div>
             <DropDown option={bottleSize} />
           </div>
@@ -70,7 +69,7 @@ function Invest() {
           </div>
           
         </div>
-        <div className="flex items-center gap-2 pe-2 flex-wrap">
+        <div className="flex items-center gap-2 pe-2 flex-wrap pt-2 md:pt-0 ">
            <p className="text-primary text-xs font-normal  tracking-wide">Sort by</p>
             <Recomend />
           </div>

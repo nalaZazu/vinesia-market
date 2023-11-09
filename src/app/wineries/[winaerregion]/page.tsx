@@ -15,7 +15,7 @@ import {
 import Recomend from "@/components/dropdown/recomend/page";
 import { productlist } from "@/constants/winelist";
 import RegionCountry from "@/components/regioncountry/page";
-import resoImage from "@/assets/image/reso-image.png";
+import resoImage from "@/assets/image/frame-1.png";
 import ExploreCountry from "@/components/explorecountry/page";
 import { usePathname } from "next/navigation";
 
