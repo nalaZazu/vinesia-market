@@ -49,7 +49,13 @@ export default function AllEditions({ products }: { products: any }) {
                 </div>
               </div>
             </div>
-            <DropDownButton />
+
+            <div className=" w-44">
+              <p className="text-neutral-900 text-sm font-normal tracking-tight">
+                Sort by
+              </p>
+              <DropDownButton />
+            </div>
           </div>
         </div>
         <div className=" max-w-[1170px] mx-auto">

@@ -23,10 +23,14 @@ export default function Header() {
           {/* topbar start */}
           <div className="md:flex  hidden items-center space-x-4 lg:space-x-8 md:col-span-5">
             <a href="#">
-              <span className=" hidden md:block">Vinesia Story</span>
+              <span className=" hidden md:block    text-primary text-2xl font-semibold  tracking-tight">
+                Vinesia Story
+              </span>
             </a>
             <a href="#">
-              <span className=" hidden md:block">Vinesia Marketplace</span>
+              <span className=" hidden md:block    text-primary text-2xl font-semibold   tracking-tight">
+                Vinesia Marketplace
+              </span>
             </a>
           </div>
 
@@ -58,7 +62,7 @@ export default function Header() {
               </svg>
               <input
                 type="text"
-                className="bg-white px-0 focus:outline-none hover:cursor-pointer w-12"
+                className="bg-white px-0 focus:outline-none hover:cursor-pointer w-12   text-neutral-900 text-base font-medium  leading-7"
                 name=""
                 placeholder="Search"
               />
@@ -80,7 +84,7 @@ export default function Header() {
                 />
               </svg>
 
-              <span className="">Cart</span>
+              <span className="text-neutral-900 text-lg font-medium leading-7">Cart</span>
             </div>
           </div>
         </div>
@@ -89,7 +93,7 @@ export default function Header() {
       {/* Navbar */}
       <nav className="bg-themegray py-4">
         <div className="container mx-auto flex justify-between items-center px-4">
-          <ul className="hidden lg:flex space-x-6">
+          <ul className="hidden lg:flex gap-14">
             {menuBar?.map((item: any) => {
               const { id, name, href } = item;
               return (

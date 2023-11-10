@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { productlist } from "@/constants/winelist";
 import Image from "next/image";
@@ -17,8 +17,24 @@ import {
 import Recomend from "@/components/dropdown/recomend/page";
 import Card from "@/components/card/page";
 import { Popover } from "@headlessui/react";
+import { getFilters } from "@/services/Common";
+import { useQuery } from "@tanstack/react-query";
+import DropDownButton from "@/common/DropDownButton";
 function Region() {
   const pathname = usePathname();
+  useState;
+
+  const {
+    isLoading: filtersLoading,
+    error: filtersError,
+    data: filtersData,
+  } = useQuery({
+    queryKey: ["getAllFilters"],
+    queryFn: getFilters,
+  });
+
+  console.log("Filters Data ", filtersData?.data);
+  const filtersList = filtersData?.data;
   return (
     <>
       <div className="container mx-auto  pt-3 md:pt-5  px-4 flex gap-4">
@@ -28,7 +44,7 @@ function Region() {
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           / Home Page
         </p>
-        <p className="text-bgtertiary text-xxs font-normal  tracking-wide">
+        <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
           / {pathname.split("/")}
         </p>
       </div>
@@ -38,47 +54,23 @@ function Region() {
         </h1>
         <Card />
         {/* dropdown  */}
-        <div className="flex justify-between md:pt-5 md:pb-14 flex-wrap">
+        <div className="flex justify-between md:pt-5 md:pb-14 flex-wrap gap-2">
           <div className="flex gap-2 flex-wrap">
-            <div>
-              <DropDown option={bottleSize} />
-            </div>
-            <div>
-              <DropDown />
-            </div>
-            <div>
-              <DropDown option={casing} />
-            </div>
-            <div>
-              <DropDown option={ratingCritics} />
-            </div>
-            <div>
-              <DropDown option={regions} />
-            </div>
-            <div>
-              <DropDown option={winary} />
-            </div>
-            <div>
-              <DropDown />
-            </div>
-            <div>
-              <DropDown option={color} />
-            </div>
-            <div>
-              <DropDown />
-            </div>
-            <div>
-              <DropDown option={artCollect} />
-            </div>
-            <div>
-              <DropDown option={other} />
-            </div>
+            {filtersList?.map((list: any, i: any) => {
+              return (
+                <div key={i}>
+                  <DropDown data={list} />
+                </div>
+              );
+            })}
           </div>
           <div className="flex items-center gap-2 pe-2 flex-wrap pt-2 md:pt-0">
             <p className="text-primary text-xs font-normal  tracking-wide">
               Sort by
             </p>
-            <Recomend />
+            <div className="w-44">
+              <DropDownButton />
+            </div>
           </div>
         </div>
 

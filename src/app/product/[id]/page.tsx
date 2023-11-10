@@ -3,18 +3,19 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import redwine from "@/assets/icon/redwine.svg";
-// import Link from "next/link";
-// import css from "styled-jsx/css";
+
+
+
 import BreadCrumb from "@/common/BreadCrumb";
+
 import PeaceOfMind from "@/components/productDetail/PeaceOfMind";
 import ReleaseDateSection from "@/components/productDetail/ReleaseDateSection";
+
 import { getProductDetail } from "@/services/ProductDetail";
 
-import ArtCard from "@/components/productDetail/ArtCard-ex";
-
-import { Wine, releaseDetails, rating } from "@/propTypes/page";
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
 import { getHomePage } from "@/services/Home";
+
 import AllEditions from "@/components/productDetail/AllEditions";
 import HowToInvest from "@/components/productDetail/HowToInvest";
 import CriticsDetailCards from "@/components/productDetail/CriticsDetailCards";
