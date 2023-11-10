@@ -5,7 +5,7 @@ import Link from "next/link";
 const Card = () => {
   return (
     <>
-      <div className="grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-5  pt-7 pb-7">
+      <div className="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-2 lg:grid-cols-5  pt-7 pb-7">
         {CaradRegion?.map((reg: any) => {
           const { id, name, image, href } = reg;
           return (
