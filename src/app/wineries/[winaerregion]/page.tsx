@@ -14,14 +14,26 @@ import {
 } from "@/constants/invesdropdown";
 import Recomend from "@/components/dropdown/recomend/page";
 import { productlist } from "@/constants/winelist";
-import { usePathname } from "next/navigation";
 import RegionCountry from "@/components/regioncountry/page";
-import countryregion from "@/assets/image/frame-1.png";
+import resoImage from "@/assets/image/frame-1.png";
+import ExploreCountry from "@/components/explorecountry/page";
+import { usePathname } from "next/navigation";
 
-const WineArt = () => {
+const WinerRegion = ({ params }: { params: any }) => {
+  console.log("param", params);
+  const { winaerregion } = params;
   const pathname = usePathname();
-  const regionparagraph = `Thanks to our Chief Wine Officer’s 30 years’ experience in the world of wine as a sommelier and wine distributor, we enjoy privileged relationships with the world’s`;
-  const regionparagraphs = `leading wineries, who place their trust in us by supplying their wines directly from their cellars. Likewise, our close relationships with the wine world enable us to identify the most talented young winemakers, whose sublime wines will be among tomorrow’s most sought-after.`;
+  const regionparagraph = `Not all great wine producers come from traditional families or have a long history in winemaking. A notable example is Jérôme Galeyrand, whose journey in the world of wine began when he purchased his first half-hectare vineyard in 2002.`;
+  const regionparagraphs = `Up until then, Jérôme Galeyrand worked in the food industry, and his first immersion into the Burgundy world happened during two harvests at Domaine Alain Burguet in Gevrey-Chambertin.
+  `;
+
+  const explorParagraph = ` This encounter sparked an overwhelming passion for wine in him, leading him to enroll in the renowned wine school in Beaune and decide to completely change direction.`;
+  const explorParagraphs = `
+  Despite not owning vineyards in the prestigious terroirs of Grand Cru or Premier Cru in Burgundy, Jérôme Galeyrand produces regional-level wines that surprisingly managed to break the barriers of Burgundy’s appellation system, achieving a quality and recognition far beyond expectations.`;
+  const winaryOwner=`Winery owner`;
+  const authorName = `Yann Charlopin`;
+  const explor1 = `The cultivation of Jérôme Galeyrand’s vineyards is based on sustainable organic practices. Additionally, some biodynamic techniques are applied, seeking harmony between nature and wine. This careful and respectful approach to the environment results in grapes of exceptional quality.`;
+  const explor2 = `Jérôme Galeyrand is a true phenomenon in the Burgundy region, earning recognition and acclaim for his tireless dedication to producing exceptional wines. Each glass of his wines reveals the passionate soul of a producer who challenges conventions and exceeds all expectations.`;
   return (
     <>
       <div className="container mx-auto  pt-3 md:pt-5  px-4 flex gap-4">
@@ -31,36 +43,34 @@ const WineArt = () => {
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           / Home Page
         </p>
+        <p className="text-xxs font-normal text-breadcrumb tracking-wide">
+          / Winery
+        </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide">
-          / {pathname.split("/")}
+          / {winaerregion}
         </p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">
         <h1 className="text-primary text-xxl font-semibold  tracking-tight">
-          Wine & art collections
+          {winaerregion}
         </h1>
         <RegionCountry
           regionparagraph={regionparagraph}
           regionparagraphs={regionparagraphs}
-          image={countryregion}
+          image={resoImage}
+          winaryOwner={winaryOwner}
+          authorName={authorName}
         />
 
-        {/* card */}
-        <div className=" rounded-tl-lg rounded-tr-lg shadow-lg pb-7 md:pb-7">
-          <div className="w-full h-20 bg-violet-300"> 
-          </div> 
-          <div className="rounded-bl-lg rounded-br-lg px-4 py-2.5 ">
-            <div className="text-primary  text-sm font-normal  tracking-tight">
-              {/* <Link href={"/wine&artcollections/[id]"}> */}
-              Reso
-              {/* </Link> */}
-             
-              </div>
-          </div>
-        </div>
+        <ExploreCountry
+          explorParagraph={explorParagraph}
+          explorParagraphs={explorParagraphs}
+          explor1={explor1}
+          explor2={explor2}
+        />
 
         {/* dropdown  */}
-        <div className="flex  justify-between md:pt-5 md:pb-14 flex-wrap">
+        <div className="flex justify-between md:pt-7 md:pb-7 flex-wrap">
           <div className="flex gap-2 flex-wrap">
             <div>
               <DropDown option={bottleSize} />
@@ -96,7 +106,7 @@ const WineArt = () => {
               <DropDown option={other} />
             </div>
           </div>
-          <div className="flex items-center gap-2 pe-2 flex-wrap pt-2 md:pt-0">
+          <div className="flex items-center gap-2 pe-2 flex-wrap">
             <p className="text-primary text-xs font-normal  tracking-wide">
               Sort by
             </p>
@@ -155,4 +165,4 @@ const WineArt = () => {
   );
 };
 
-export default WineArt;
+export default WinerRegion;
