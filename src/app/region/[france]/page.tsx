@@ -17,8 +17,11 @@ import { productlist } from "@/constants/winelist";
 import { usePathname } from "next/navigation";
 import RegionCountry from "@/components/regioncountry/page";
 import countryregion from "@/assets/image/frame-1.png";
-const France = () => {
+const France = ({ params }:{ params: any }) => {
+  console.log("param" , params);
   const pathname = usePathname();
+  const {france} = params;
+  
   const regionparagraph = `France is renowned worldwide for its exquisite wines, each region offering a unique and  distinct flavor profile. Bordeaux, in the
     southwest, is celebrated for its robust reds, notably blends of
     Merlot, Cabernet Sauvignon, and Cabernet Franc. Burgundy, in the
@@ -42,13 +45,13 @@ const France = () => {
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           / Regions
         </p>
-        <p className="text-bgtertiary text-xxs font-normal  tracking-wide">
-          / {pathname.split("/")}
+        <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
+          / { france}
         </p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">
-        <h1 className="text-primary text-xxl font-semibold  tracking-tight">
-          France
+        <h1 className="text-primary text-xxl font-semibold  tracking-tight capitalize">
+          {france}
         </h1>
         <RegionCountry regionparagraph={regionparagraph} regionparagraphs={regionparagraphs} image={countryregion}/>
         {/* dropdown  */}

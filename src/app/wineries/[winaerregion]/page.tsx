@@ -46,12 +46,12 @@ const WinerRegion = ({ params }: { params: any }) => {
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           / Winery
         </p>
-        <p className="text-bgtertiary text-xxs font-normal  tracking-wide">
+        <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
           / {winaerregion}
         </p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">
-        <h1 className="text-primary text-xxl font-semibold  tracking-tight">
+        <h1 className="text-primary text-xxl font-semibold  tracking-tight capitalize">
           {winaerregion}
         </h1>
         <RegionCountry

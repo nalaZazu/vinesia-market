@@ -18,8 +18,11 @@ import { usePathname } from "next/navigation";
 import RegionCountry from "@/components/regioncountry/page";
 import resoImage from "@/assets/image/reso-image.png";
 import ExploreCountry from "@/components/explorecountry/page";
-const Rao = () => {
+import { resolve } from "path/win32";
+const Rao = ({ params }: { params: any }) => {
+  console.log("paramRes", params);
   const pathname = usePathname();
+  const { reso } = params;
   const regionparagraph = `Reso’s deep engagement with informal art and abstract expressionism led him to continuously seek new avenues for expanding his artistic expression. It wasn’t until 2011 that he ventured into the abstract series, marking a pivotal moment in his artistic journey.`;
   const regionparagraphs = `In Reso’s artworks, one senses a powerful dynamism and speed, a direct reflection of his energetic approach. This approach draws parallels to K.O. Goetz’s experimental painting technique, blending quick, impulsive squeegee gestures with moments of contemplation and reflection, creating a dance-like choreography on the canvas.`;
 
@@ -48,13 +51,13 @@ const Rao = () => {
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           / Wine & art collections
         </p>
-        <p className="text-bgtertiary text-xxs font-normal  tracking-wide">
-          / {pathname.split("/")}
+        <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
+          / {reso}
         </p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">
-        <h1 className="text-primary text-xxl font-semibold  tracking-tight">
-          Meet the artist: Reso
+        <h1 className="text-primary text-xxl font-semibold  tracking-tight ">
+          Meet the artist: <span className="capitalize">{reso}</span> 
         </h1>
         <RegionCountry
           regionparagraph={regionparagraph}

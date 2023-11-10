@@ -1,8 +1,8 @@
 import React from "react";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
-
+import Image from "next/image";
+import { Xmark } from "@/assets/icon/Icons";
 export default function Popup({
   open = false,
   setOpen,
@@ -41,8 +41,20 @@ export default function Popup({
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative w-full max-w-3xl xl:max-w-7xl lg:max-w-5xl md:max-w-2xl sm:max-w-xl lg:h-[600px] md:h-[400px] sm:h-[400px] transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all">
-                <div className="bg-white">
+              <Dialog.Panel className="relative w-full max-w-3xl xl:max-w-7xl lg:max-w-5xl md:max-w-2xl sm:max-w-xl lg:h-[600px] md:h-[400px] sm:h-[400px] transform overflow-hidden rounded-lg bg-transparent text-left shadow-xl transition-all">
+                <div className="">
+                  <div
+                    className="flex justify-end items-center cursor-pointer"
+                    onClick={setOpen}
+                  >
+                    <div></div>
+                    <div className="w-8 h-8  rounded-full  border-2 border-primary">
+                      <span className="mx-auto">
+                        <Xmark />
+                      </span>
+                    </div>
+                  </div>
+
                   <div className="sm:flex sm:items-start">
                     <iframe
                       className=" w-full lg:h-[600px] md:h-[400px] sm:h-[400px]"
