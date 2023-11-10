@@ -28,7 +28,7 @@ const OverviweTopSection = ({
   return (
     <section className="bg-themegray mt-5 px-4">
       <div className="container grid md:max-w-6xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-2">
-        {/* second section start */}
+        {/* first section start */}
         <div className=" md:col-span-2 lg:col-span-1">
           <div className="flex md-w-full gap-5 ps-5 ps-md-3">
             <div className="border-b-4 rounded border-gray-500">
@@ -181,7 +181,7 @@ const OverviweTopSection = ({
                 </div>
               </div>
               <hr className=" border-t-2" />
-              <div className="flex  px-11 py-2 bg-white justify-between items-start gap-6 text-bgsecondary shadow">
+              <div className="flex  px-6 py-2 bg-white justify-between items-start gap-6 text-bgfirstary shadow">
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -201,7 +201,7 @@ const OverviweTopSection = ({
                     Favorite
                   </p>
                 </div>
-                <div>
+                <div className=" text-center mx-auto">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -265,7 +265,7 @@ const OverviweTopSection = ({
                 </div>
                 <button
                   type="button"
-                  className="text-gray-500 text-base font-medium tracking-tight rounded-lg px-4 py-2.5 text-center inline-flex items-center bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100  dark:focus:ring-gray-600 dark:bg-gray-800 mr-2"
+                  className="text-gray-500 text-base font-medium tracking-tight rounded-lg w-44 px-4 py-2.5 text-center flex justify-center items-center bg-white border border-gray-200 focus:ring-0 focus:outline-none focus:ring-gray-100 mr-2"
                 >
                   See More
                   <svg
@@ -284,7 +284,7 @@ const OverviweTopSection = ({
                   </svg>
                 </button>
               </div>
-              <div className="flex justify-between items-center pt-4 py-1 px-5">
+              <div className="flex justify-between items-center pt-4 py-1 px-6">
                 <div className=" uppercase items-center flex gap-3 ps-3">
                   <p className="opacity-60 text-right text-black text-xs font-normal uppercase tracking-tight">
                     Vinesia price
@@ -310,7 +310,7 @@ const OverviweTopSection = ({
                 <div>
                   <button
                     type="button"
-                    className="text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-base px-10 py-2.5 text-center inline-flex items-center mr-2 mb-2"
+                    className="text-white bg-gray-500 focus:ring-0 focus:outline-none font-medium rounded-lg text-base w-48 px-4 py-2.5 text-center items-center mr-2 mb-2"
                   >
                     Invest now
                   </button>
@@ -319,7 +319,7 @@ const OverviweTopSection = ({
             </div>
           </div>
         </div>
-        {/* second section end */}
+        {/* first section end */}
         {/* slider start */}
         <div>
           <div className=" justify-center items-center">

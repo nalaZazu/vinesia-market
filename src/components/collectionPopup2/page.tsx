@@ -1,5 +1,8 @@
 import React from "react";
 import { Fragment } from "react";
+import Image from "next/image";
+import Vector from "@/assets/icon/Vector.svg";
+
 import { Dialog, Transition } from "@headlessui/react";
 
 export default function CollectionPopup2({
@@ -66,7 +69,7 @@ export default function CollectionPopup2({
                       </svg>
                     </button>
                   </div>
-                  <div className="bg-white py-1">
+                  <div className="bg-white py-10">
                     <div className=" grid grid-cols-2 py-3 gap-2 items-center">
                       <div className="text-xs text-end">
                         <span className=" opacity-60 text-black font-normal">
@@ -121,6 +124,90 @@ export default function CollectionPopup2({
                             link to the document
                           </span>
                         </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-black text-lg font-semibold tracking-tight">
+                      How we secure your wine?
+                    </h4>
+                    <p className="text-black text-lg font-normal tracking-tight">
+                      Your wine asset is connected with additional security
+                      data:
+                    </p>
+                  </div>
+                  <div className="mt-5 bg-gray-500 px-4 py-2 border-b border-black border-opacity-10 gap-2">
+                    <div className="items-center gap-2.5 flex">
+                      <h6 className="text-right text-white text-base font-normal tracking-tight">
+                        NFC ID
+                      </h6>
+                      <p className="text-white text-base font-medium underline tracking-tight">
+                        123456
+                      </p>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        className="w-5 text-white"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="bg-zinc-100 px-6 py-6 border-b border-black border-opacity-10 gap-2">
+                    <div className=" grid grid-cols-1 md:grid-cols-5 gap-9">
+                      <div className=" flex justify-between col-span-2">
+                        <h4>
+                          <span className="text-gray-500 text-lg font-normal tracking-tight">
+                            Our
+                          </span>
+                          <span className="text-black text-lg font-semibold tracking-tight">
+                            Proof of authenticity
+                          </span>
+                        </h4>
+                        <Image
+                          src={Vector}
+                          alt="Picture of the author"
+                          width={80}
+                        />
+                      </div>
+                      <div className=" col-span-3">
+                        <div className="py-2.5 bg-white rounded gap-4">
+                          <div className=" grid grid-cols-2 py-3 gap-2 items-center">
+                            <div className="text-xs text-end">
+                              <span className=" opacity-60 text-right text-black text-xs font-normal uppercase tracking-tight">
+                                STICKER APPLIED on:
+                              </span>
+                            </div>
+                            <div className="flex space-x-2 border-s ps-2 border-bordergray">
+                              <a href="#">
+                                <span className=" text-zinc-700 text-base font-medium tracking-tight">
+                                  23.08.2023, 12:36 PM
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                          <div className=" grid grid-cols-2 py-3 gap-2 items-center">
+                            <div className="text-xs text-end">
+                              <span className=" opacity-60 text-right text-black text-xs font-normal uppercase tracking-tight">
+                                seal STATUS
+                              </span>
+                            </div>
+                            <div className="flex space-x-2 border-s ps-2 border-bordergray">
+                              <a href="#">
+                                <span className=" text-right text-gray-600 text-base font-medium tracking-tight">
+                                  Integrity...
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

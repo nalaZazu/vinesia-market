@@ -11,7 +11,7 @@ export default function AllEditions({ products }: { products: any }) {
 
   return (
     <div>
-      <section className="container mx-auto py-24 px-4  lg:px-0">
+      <section className="container mx-auto pt-24 px-4  lg:px-0">
         <div>
           <div className="flex justify-between items-center gap-5">
             <div className="basis-1/6">
@@ -52,7 +52,7 @@ export default function AllEditions({ products }: { products: any }) {
             <DropDownButton />
           </div>
         </div>
-        <div className=" max-w-[1170px] mx-auto" >
+        <div className=" max-w-[1170px] mx-auto">
           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mx-auto">
             {products &&
               products.map((item: any, i: any) => {

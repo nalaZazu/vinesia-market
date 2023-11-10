@@ -3,30 +3,16 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import redwine from "@/assets/icon/redwine.svg";
-import frame from "@/assets/icon/Frame.svg";
-import { productlist } from "@/constants/winelist";
-import group from "@/assets/icon/Group.png";
-import kranu from "@/assets/icon/kranu.png";
-import zut from "@/assets/icon/zut.png";
-import productimg from "@/assets/icon/productsimage.png";
 
 // import Link from "next/link";
 // import css from "styled-jsx/css";
-import Appactivity from "@/components/charts/page";
 import BreadCrumb from "@/common/BreadCrumb";
-import ProductTopSection from "@/components/productDetail/ProductTopSection";
 import PeaceOfMind from "@/components/productDetail/PeaceOfMind";
 import ReleaseDateSection from "@/components/productDetail/ReleaseDateSection";
-import ProductCard from "@/components/cards/ProductCard";
 import { getProductDetail } from "@/services/ProductDetail";
-
 import ArtCard from "@/components/productDetail/ArtCard";
-
-import { Wine, releaseDetails, rating } from "@/propTypes/page";
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
 import { getHomePage } from "@/services/Home";
-import DropdownMain from "../../../common/DropDownButton";
-import TabButton from "@/common/TabButton";
 import AllEditions from "@/components/productDetail/AllEditions";
 import HowToInvest from "@/components/productDetail/HowToInvest";
 import CriticsDetailCards from "@/components/productDetail/CriticsDetailCards";
