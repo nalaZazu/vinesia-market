@@ -17,6 +17,7 @@ import { productlist } from "@/constants/winelist";
 import { usePathname } from "next/navigation";
 import RegionCountry from "@/components/regioncountry/page";
 import countryregion from "@/assets/image/frame-1.png";
+import Link from "next/link";
 
 const WineArt = () => {
   const pathname = usePathname();
@@ -31,7 +32,7 @@ const WineArt = () => {
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           / Home Page
         </p>
-        <p className="text-bgtertiary text-xxs font-normal  tracking-wide">
+        <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize ">
           / {pathname.split("/")}
         </p>
       </div>
@@ -47,16 +48,14 @@ const WineArt = () => {
 
         {/* card */}
         <div className=" rounded-tl-lg rounded-tr-lg shadow-lg pb-7 md:pb-7">
-          <div className="w-full h-20 bg-violet-300"> 
-          </div> 
+          <Link href="/wine&artcollections/reso">
+          <div className="w-full h-20 bg-violet-300"></div>
           <div className="rounded-bl-lg rounded-br-lg px-4 py-2.5 ">
             <div className="text-primary  text-sm font-normal  tracking-tight">
-              {/* <Link href={"/wine&artcollections/[id]"}> */}
               Reso
-              {/* </Link> */}
-             
-              </div>
+            </div>
           </div>
+          </Link>
         </div>
 
         {/* dropdown  */}

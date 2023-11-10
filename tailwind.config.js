@@ -27,7 +27,7 @@ module.exports = {
         bgprimary: "#D9D9D9",
         bgsecondary: "#6C757D",
         bgtertiary: "#484848",
-
+// #41464B
         iconcolor: "#7A7C7F",
       },
 
