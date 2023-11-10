@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 import React from "react";
 import { usePathname } from "next/navigation";
 import { productlist } from "@/constants/winelist";
@@ -16,6 +16,7 @@ import {
 } from "@/constants/invesdropdown";
 import Recomend from "@/components/dropdown/recomend/page";
 import Card from "@/components/card/page";
+import { Popover } from "@headlessui/react";
 function Region() {
   const pathname = usePathname();
   return (
@@ -25,7 +26,7 @@ function Region() {
           Vinesia Marketplace
         </p>
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
-         / Home Page
+          / Home Page
         </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide">
           / {pathname.split("/")}
@@ -33,53 +34,53 @@ function Region() {
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">
         <h1 className="text-primary text-xxl font-semibold  tracking-tight">
-        Regions
+          Regions
         </h1>
-        <Card/>
+        <Card />
         {/* dropdown  */}
         <div className="flex justify-between md:pt-5 md:pb-14 flex-wrap">
-           <div className="flex gap-2 flex-wrap">
-          <div>
-            <DropDown option={bottleSize} />
+          <div className="flex gap-2 flex-wrap">
+            <div>
+              <DropDown option={bottleSize} />
+            </div>
+            <div>
+              <DropDown />
+            </div>
+            <div>
+              <DropDown option={casing} />
+            </div>
+            <div>
+              <DropDown option={ratingCritics} />
+            </div>
+            <div>
+              <DropDown option={regions} />
+            </div>
+            <div>
+              <DropDown option={winary} />
+            </div>
+            <div>
+              <DropDown />
+            </div>
+            <div>
+              <DropDown option={color} />
+            </div>
+            <div>
+              <DropDown />
+            </div>
+            <div>
+              <DropDown option={artCollect} />
+            </div>
+            <div>
+              <DropDown option={other} />
+            </div>
           </div>
-          <div>
-            <DropDown />
-          </div>
-          <div>
-            <DropDown option={casing} />
-          </div>
-          <div>
-            <DropDown option={ratingCritics} />
-          </div>
-          <div>
-            <DropDown option={regions} />
-          </div>
-          <div>
-            <DropDown option={winary} />
-          </div>
-          <div>
-            <DropDown />
-          </div>
-          <div>
-            <DropDown option={color} />
-          </div>
-          <div>
-            <DropDown />
-          </div>
-          <div>
-            <DropDown option={artCollect} />
-          </div>
-          <div>
-            <DropDown option={other} />
-          </div>
-          
-        </div>
-        <div className="flex items-center gap-2 pe-2 flex-wrap pt-2 md:pt-0">
-           <p className="text-primary text-xs font-normal  tracking-wide">Sort by</p>
+          <div className="flex items-center gap-2 pe-2 flex-wrap pt-2 md:pt-0">
+            <p className="text-primary text-xs font-normal  tracking-wide">
+              Sort by
+            </p>
             <Recomend />
           </div>
         </div>
-       
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {productlist?.map((item) => {
