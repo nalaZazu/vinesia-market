@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import redwine from "@/assets/icon/redwine.svg";
-
 // import Link from "next/link";
 // import css from "styled-jsx/css";
 import BreadCrumb from "@/common/BreadCrumb";
@@ -164,8 +163,6 @@ export default function Product() {
           </div>
         </div>
       </section>
-
-
 
       {isAuthenticted ? <></> : <CriticsDetailCards />}
 
