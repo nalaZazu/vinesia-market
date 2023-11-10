@@ -4,11 +4,15 @@ import React from "react";
 const RegionCountry = ({
   regionparagraph,
   regionparagraphs,
-  image
+  image,
+  authorName,
+  winaryOwner,
 }: {
   regionparagraph: String;
   regionparagraphs: String;
-  image:any;
+  image: any;
+  authorName?: String;
+  winaryOwner?:String
 }) => {
   return (
     <>
@@ -16,6 +20,8 @@ const RegionCountry = ({
         <div className="col-span-2 text-secondary text-base font-medium tracking-tight">
           <p>{regionparagraph}</p>
           <p>{regionparagraphs}</p>
+          <p className="text-secondary text-base font-normal tracking-tight">{winaryOwner}</p>
+          <p className="text-secondary text-base font-bold   tracking-tight">{authorName}</p>
         </div>
         <div className="col-span-3">
           <Image src={image} alt="image-region" />

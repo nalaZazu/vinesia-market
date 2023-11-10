@@ -15,7 +15,7 @@ const DropDownButton = () => {
           <button
             onClick={toggleDropdown}
             type="button"
-            className="tracking-tight text-sm w-48 py-2 px-4 text-left items-center flex justify-between text-spacegray shadow-none  border focus:ring-0 focus:outline-none focus:ring-gray-100 font-medium rounded-lg "
+            className="tracking-tight text-sm w-48 py-2 px-4 text-left items-center flex justify-between text-gray-400 shadow-none  border focus:ring-0 focus:outline-none focus:ring-gray-100 font-medium rounded-lg "
           >
             Recommended
             <svg
@@ -35,7 +35,7 @@ const DropDownButton = () => {
           </button>
 
           {isOpen && (
-            <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+            <div className="origin-top-right absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
               {/* Dropdown content here */}
               <ul className="py-2">
                 <li className="block px-4 py-2 text-gray-700 hover:bg-gray-100">

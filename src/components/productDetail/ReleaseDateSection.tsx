@@ -77,7 +77,7 @@ export default function ReleaseDateSection({
                     €{`${release?.releasePrice}`}
                   </p>
                 </div>
-                <div className=" border-2 border-gray-500 items-start gap-2.5  p-4 py-7">
+                <div className=" border-2 md:border-b-0 border-gray-500 items-start gap-2.5  p-4 py-7">
                   <div className="flex gap-3 text-sm text-gray-500 font-medium uppercase tracking-tight">
                     <h2>Average MARKET PRICE </h2>
                     <Image

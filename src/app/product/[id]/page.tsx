@@ -10,7 +10,10 @@ import BreadCrumb from "@/common/BreadCrumb";
 import PeaceOfMind from "@/components/productDetail/PeaceOfMind";
 import ReleaseDateSection from "@/components/productDetail/ReleaseDateSection";
 import { getProductDetail } from "@/services/ProductDetail";
-import ArtCard from "@/components/productDetail/ArtCard";
+
+import ArtCard from "@/components/productDetail/ArtCard-ex";
+
+import { Wine, releaseDetails, rating } from "@/propTypes/page";
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
 import { getHomePage } from "@/services/Home";
 import AllEditions from "@/components/productDetail/AllEditions";
@@ -20,6 +23,10 @@ import AboutArtWork from "@/components/productDetail/AboutArtWork";
 import AboutWinerySection from "@/components/productDetail/AboutWinerySection";
 import YouMayAlso from "@/components/productDetail/YouMayAlso";
 import OverviweTopSection from "@/components/productDetail/overviewTopSection";
+import Collection from "@/components/productDetail/Collection";
+import { useSelector } from "react-redux";
+import WineryVideo from "@/components/productDetail/WineryVideo";
+import AboutWineries from "@/components/productDetail/AboutWineries";
 
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching
@@ -59,6 +66,9 @@ export default function Product() {
   }, [id]);
   console.log("rerender");
 
+  const isAuthenticted = useSelector<any>(
+    (state) => state?.account?.isAuthenticated
+  );
   /**
    *Api -Data variable
    */
@@ -89,7 +99,11 @@ export default function Product() {
         <PTSSkelton />
       )}
       {/* hero section end*/}
+
+      {isAuthenticted ? <Collection /> : <></>}
+
       {/* our peace of mind pledge section start */}
+
       <PeaceOfMind />
       {/* our peace of mind pledge section end */}
       {/* Release details section start */}
@@ -149,16 +163,29 @@ export default function Product() {
             ></iframe>
           </div>
         </div>
-
-        <CriticsDetailCards />
       </section>
 
+
+
+      {isAuthenticted ? <></> : <CriticsDetailCards />}
+
       {/* About Chateau La Mission Haut Brion Cru Classe | 2009 end */}
+
+      {isAuthenticted ? (
+        <>
+          <WineryVideo />
+          <AboutWineries />
+          {/* <AboutWinerySection /> */}
+        </>
+      ) : (
+        <></>
+      )}
+
       {/* About artwork start */}
       <AboutArtWork />
       {/* About artwork end */}
       {/* About Winery Château Le Pin start */}
-      <AboutWinerySection />
+      {isAuthenticted ? <></> : <AboutWinerySection />}
       {/* About Winery Château Le Pin end */}
       {/* You may also like start */}
       <YouMayAlso products={products} />
@@ -217,7 +244,7 @@ export default function Product() {
       </section>
       {/* Be the first to know end */}
 
-      <ArtCard />
+      {/* <ArtCard /> */}
     </div>
   );
 }
