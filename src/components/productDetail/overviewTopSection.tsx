@@ -25,13 +25,13 @@ const OverviweTopSection = ({
   release: releaseDetails;
   rating: any;
 }) => {
-  const [selectedTab, setSelectedTab] = useState(0);
   console.log("Wine ", wine);
   console.log("rating ", rating);
+  const [selectedTab, setSelectedTab] = useState(0);
   return (
     <section className="bg-themegray mt-5 px-4">
-      <div className="container grid md:max-w-6xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-2">
-        {/* second section start */}
+      <div className="container grid md:max-w-6xl px-4 pb-16 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-2">
+        {/* first section start */}
         <div className=" md:col-span-2 lg:col-span-1">
           <div className="flex md-w-full gap-5 ps-5 ps-md-3">
             <div
@@ -71,7 +71,7 @@ const OverviweTopSection = ({
             </>
           )}
         </div>
-        {/* second section end */}
+        {/* first section end */}
         {/* slider start */}
         <div>
           <div className=" justify-center items-center">

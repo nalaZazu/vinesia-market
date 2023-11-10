@@ -1,16 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import bottle from "@/assets/icon/bottle.svg";
-import case1 from "@/assets/icon/Case.svg";
-import redwine from "@/assets/icon/redwine.svg";
-import big from "@/assets/icon/big.png";
-import big1 from "@/assets/icon/big1.png";
 import Vector from "@/assets/icon/Vector.svg";
 import ownership from "@/assets/icon/ownership.svg";
 import frame from "@/assets/icon/Frame.svg";
 import playvideo from "@/assets/icon/Playvideo.svg";
-import logo1 from "@/assets/icon/logo1.svg";
-import infologo from "@/assets/icon/info.svg";
 export default function PeaceOfMind() {
   return (
     <section className=" py-14 px-4 md:px-4 lg:px-0">
@@ -32,7 +25,7 @@ export default function PeaceOfMind() {
 
         <div className=" flex-wrap md:basis-3/5 basis-full z-0 pt-10">
           <div className="container grid mx-auto gap-6 grid-cols-1 lg:grid-cols-4 md:grid-cols-2">
-            <div className="max-w-md bg-themegray flex items-center justify-between px-5  py-2">
+            <div className="bg-themegray flex items-center justify-between px-5  py-2">
               <div className="flex-1">
                 <p className="text-base font-semibold text-gray-900 truncate dark:text-white">
                   Proof

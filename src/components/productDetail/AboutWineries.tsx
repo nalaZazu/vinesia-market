@@ -5,7 +5,7 @@ import kranu from "@/assets/icon/kranu.png";
 export default function AboutWineries() {
   return (
     <div>
-      <section className="pt-10 px-4 lg:px-0 md:px-4">
+      <section className="py-24 px-4 lg:px-0 md:px-4">
         <div className="container mx-auto ">
           <h2 className=" capitalize text-4xl font-medium text-zinc-700 tracking-tight">
             <span className=" text-3xl font-normal text-neutral-400  tracking-tight">

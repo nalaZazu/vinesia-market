@@ -4,7 +4,7 @@ import case1 from "@/assets/icon/Case.svg";
 import redwine from "@/assets/icon/redwine.svg";
 import bottle from "@/assets/icon/bottle.svg";
 
-export default function WineCard({
+export default function WineCard1({
   release,
   wine,
   rating,
@@ -150,7 +150,7 @@ export default function WineCard({
             </div>
           </div>
           <hr className=" border-t-2" />
-          <div className="flex  px-11 py-2 bg-white justify-between items-start gap-6 text-bgsecondary shadow">
+          <div className="flex  px-6 py-2 bg-white justify-between items-start gap-6 text-bgfirstary shadow">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +158,7 @@ export default function WineCard({
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                className="w-5 h-5 text-iconcolor"
+                className="w-5 h-5 text-iconcolor mx-auto"
               >
                 <path
                   stroke-linecap="round"
@@ -177,7 +177,7 @@ export default function WineCard({
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                className="w-5 h-5 text-iconcolor"
+                className="w-5 h-5 text-iconcolor mx-auto"
               >
                 <path
                   stroke-linecap="round"
@@ -196,7 +196,7 @@ export default function WineCard({
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                className="w-5 h-5 text-iconcolor"
+                className="w-5 h-5 text-iconcolor mx-auto"
               >
                 <path
                   stroke-linecap="round"
@@ -220,7 +220,7 @@ export default function WineCard({
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                className="w-5 h-5 text-iconcolor"
+                className="w-5 h-5 text-iconcolor mx-auto"
               >
                 <path
                   stroke-linecap="round"
@@ -234,7 +234,7 @@ export default function WineCard({
             </div>
             <button
               type="button"
-              className="text-gray-500 text-base font-medium tracking-tight rounded-lg px-4 py-2.5 text-center inline-flex items-center bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100  dark:focus:ring-gray-600 dark:bg-gray-800 mr-2"
+              className="text-gray-500 text-base font-medium tracking-tight rounded-lg w-44 px-4 py-2.5 text-center flex justify-center items-center bg-white border border-gray-200 focus:ring-0 focus:outline-none focus:ring-gray-100 mr-2"
             >
               See More
               <svg
@@ -277,7 +277,7 @@ export default function WineCard({
             <div>
               <button
                 type="button"
-                className="text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-base px-10 py-2.5 text-center inline-flex items-center mr-2 mb-2"
+                className="text-white bg-gray-500 focus:ring-0 focus:outline-none font-medium rounded-lg text-base w-48 px-4 py-2.5 text-center items-center mr-2 mb-2"
               >
                 Invest now
               </button>

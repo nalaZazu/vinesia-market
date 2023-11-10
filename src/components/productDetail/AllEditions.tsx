@@ -11,7 +11,7 @@ export default function AllEditions({ products }: { products: any }) {
 
   return (
     <div>
-      <section className="container mx-auto py-24 px-4  lg:px-0">
+      <section className="container mx-auto pt-24 px-4  lg:px-0">
         <div>
           <div className="flex justify-between items-center gap-5">
             <div className="basis-1/6">
