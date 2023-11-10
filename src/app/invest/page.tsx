@@ -23,7 +23,7 @@ function Invest() {
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           Vinesia Marketplace
         </p>
-        <p className="text-bgtertiary text-xxs font-normal  tracking-wide">
+        <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
           / {pathname.split("/")}
         </p>
       </div>

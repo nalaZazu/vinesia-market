@@ -1,16 +1,26 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import alert from "../../assets/icon/alert-circle.svg";
-import bold from "../../assets/icon/bold.svg";
-import message from "../../assets/icon/message.svg";
-import drop from "../../assets/icon/drop.svg";
- import { TextIcon } from "@/assets/icon/Icons";
-import frame from "@/assets/image/01 Images.png"
+import alert from "@/assets/icon/alert-circle.svg";
+import bold from "@/assets/icon/bold.svg";
+import message from "@/assets/icon/message.svg";
+import drop from "@/assets/icon/drop.svg";
+import { TextIcon } from "@/assets/icon/Icons";
+import frame from "@/assets/image/01 Images.png";
 import Popup from "../popup/page";
 const Banner = () => {
+  const [tooltipExtraVisible, setTooltipExtraVisible] = useState(false);
   const [tooltipVisible, setTooltipVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const showTooltipExtra = () => {
+    setTooltipExtraVisible(true);
+  };
+
+  const hideTooltipExtra = () => {
+    setTooltipExtraVisible(false);
+  };
+
   const showTooltip = () => {
     setTooltipVisible(true);
   };
@@ -26,14 +36,13 @@ const Banner = () => {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-const handleOpen=()=>{
-  setOpen(!open)
-}
+  const handleOpen = () => {
+    setOpen(!open);
+  };
   return (
     <>
-    <Popup open={open} setOpen={handleOpen} />
+      <Popup open={open} setOpen={handleOpen} />
       <div className=" container mx-auto grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 items-center mt-10 md:mt-10 lg:mt-16">
-       
         <div>
           <h1 className="font-semibold text-primary tracking-tight text-xxl ">
             Marketplace
@@ -54,46 +63,68 @@ const handleOpen=()=>{
           <div className="lg:mt-16 mt-5 my-10">
             <ul className="flex gap-5 font-normal text-xs text-black">
               <li className=" text-xs font-extrabold ">Peace of Mind pledge</li>
-              <li className="flex  gap-2  font-normal">
+              <li className="flex relative font-normal gap-2">
                 Proof of Authenticity
-                <li>
+                <li
+                  onMouseEnter={showTooltipExtra}
+                  onMouseLeave={hideTooltipExtra}
+                >
                   <Image
                     src={alert}
                     alt="Picture of the author"
                     width={15}
                     height={15}
                     quality={75}
+                    style={{ objectFit: "contain" }}
                   />
+                  <div
+                    className={`relative ${
+                      tooltipExtraVisible ? "block" : "hidden"
+                    }`}
+                  >
+                    <div className="absolute inline-block w-40 px-4 py-3 mb-10 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[-125px] left-12">
+                      <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  tracking-wide ">
+                        A quick explanation of the technology used here and how
+                        it differs from the {`"old word"`}. RFID explanation.
+                      </span>
+                      <span
+                        className="absolute bottom-0 right-0 w-2 h-2 -mb-1 transform rotate-45 bg-[#959596] z-0"
+                        style={{ left: "50%" }}
+                      ></span>
+                    </div>
+                  </div>
                 </li>
               </li>
+
               <li className="flex relative font-normal gap-2">
                 Proof of Ownership
                 <li onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
-                  <li onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
-                    <Image
-                      src={alert}
-                      alt="Picture of the author"
-                      width={15}
-                      height={15}
-                      quality={75}
-                      style={{ objectFit: "contain" }}
-                    />
-                  </li>
-                </li>
-                <div
-                  className={`relative ${tooltipVisible ? "block" : "hidden"}`}
-                >
-                  <div className="absolute inline-block w-40 px-4 py-3 mb-10 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[-110px] left-[29px]">
-                    <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  tracking-wide ">
-                      A quick explanation of the technology used here and how it
-                      differs from the {`"old word"`}. RFID explanation.
-                    </span>
-                    <span
-                      className="absolute bottom-0 right-0 w-2 h-2 -mb-1 transform rotate-45 bg-[#959596] z-0"
-                      style={{ left: "52%" }}
-                    ></span>
+                  <Image
+                    src={alert}
+                    alt="Picture of the author"
+                    width={15}
+                    height={15}
+                    quality={75}
+                    style={{ objectFit: "contain" }}
+                  />
+
+                  <div
+                    className={`relative ${
+                      tooltipVisible ? "block" : "hidden"
+                    }`}
+                  >
+                    <div className="absolute inline-block w-40 px-4 py-3 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[-125px] left-12">
+                      <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  tracking-wide ">
+                        A quick explanation of the technology used here and how
+                        it differs from the {`"old word"`}. RFID explanation.
+                      </span>
+                      <span
+                        className="absolute bottom-0 right-0 w-2 h-2 -mb-1 transform rotate-45 bg-[#959596] z-0"
+                        style={{ left: "50%" }}
+                      ></span>
+                    </div>
                   </div>
-                </div>
+                </li>
               </li>
               <li className="flex relative gap-2  font-normal">
                 Proof of Storage conditions
@@ -109,29 +140,34 @@ const handleOpen=()=>{
                     quality={75}
                     style={{ objectFit: "contain" }}
                   />
-                </li>
-                <div className={`relative ${isHovered ? "block" : "hidden"}`}>
-                  <div className="absolute inline-block w-40 px-4 py-3 mt-2 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[14px] left-[68px]">
-                    <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  ">
-                      Rating comes from world recognized critics like by either
-                      Robert Parker, Jeb Dunnuck or Suckling.
-                    </span>
-                    <span
-                      className="absolute w-2 h-2 -mb-1 transform rotate-45 bg-[#959596] z-30"
-                      style={{ left: "31%", top: "-4%" }}
-                    ></span>
+                  <div className={`relative ${isHovered ? "block" : "hidden"}`}>
+                    <div className="absolute inline-block w-40 px-4 py-3 -ml-32 text-white bg-[#959596] rounded-lg z-10 top-[14px] left-[68px]">
+                      <span className="inline-block text-xs text-center font-normal leading-tight text-[#141619]  ">
+                        Rating comes from world recognized critics like by
+                        either Robert Parker, Jeb Dunnuck or Suckling.
+                      </span>
+                      <span
+                        className="absolute w-2 h-2 -mb-1 transform rotate-45 bg-[#959596] z-30"
+                        style={{ left: "40%", top: "-4%" }}
+                      ></span>
+                    </div>
                   </div>
-                </div>
+                </li>
               </li>
             </ul>
           </div>
         </div>
-        {/* next section  */} 
+        {/* next section  */}
 
-        <div className="grid justify-center mt-10 md:mt-10 lg:mt-16">         
+        <div className="grid justify-center mt-10 md:mt-10 lg:mt-16">
           <div>
             <div className="relative flex justify-center">
-              <Image src={frame} alt="frame"  onClick={handleOpen}  className="cursor-pointer"/>           
+              <Image
+                src={frame}
+                alt="frame"
+                onClick={handleOpen}
+                className="cursor-pointer"
+              />
               <div>
                 <div className="w-24 h-24 rounded-full bg-[#d9d9d9] absolute right-1/2 left-60 top-24 bottom-1/2">
                   <p
@@ -153,14 +189,19 @@ const handleOpen=()=>{
                     Hygrometrics
                   </p>
                   <div className="relative w-28">
-                 
-                  <div
-                    className=" absolute 
+                    <div
+                      className=" absolute 
                    -left-4 -top-7 z-10"
-                  >
-                    <TextIcon label="IOT Sensors" width='110%' letter={5}  fontSize={25}startOffset="75"/>
+                    >
+                      <TextIcon
+                        label="IOT Sensors"
+                        width="110%"
+                        letter={5}
+                        fontSize={25}
+                        startOffset="75"
+                      />
+                    </div>
                   </div>
-                </div>
                 </div>
               </div>
 
@@ -175,11 +216,21 @@ const handleOpen=()=>{
                     alt="bold-image"
                   />
                   <div
-                    className=" absolute 
-                   -left-4 -top-5"
+                    className=" absolute w-[135px] 
+                   -left-6 -top-7"
                   >
-                    <TextIcon label="Secure Ownership"  width='100%' letter={5} fontSize={35} startOffset="5"/>
+                    <TextIcon
+                      label="Secure ownership"
+                      width="100%"
+                      letter={4}
+                      fontSize={40}
+                      startOffset="-15"
+                    />
                   </div>
+                </div>
+                <div className="absolute top-24 text-center text-secondary text-xs font-normal  tracking-wide w-[104px] right-1">
+                  <p>Proof of Authenticy</p>
+                  <p>thank to Blockchain</p>
                 </div>
               </div>
 
@@ -193,9 +244,15 @@ const handleOpen=()=>{
 
                   <div
                     className=" absolute 
-                   -left-4 -top-7 z-10"
+                   -left-5 -top-7 z-10"
                   >
-                    <TextIcon label="Critic score" width='110%' letter={20}  fontSize={35} startOffset="-15"/>
+                    <TextIcon
+                      label="Critic score"
+                      width="110%"
+                      letter={20}
+                      fontSize={35}
+                      startOffset="-15"
+                    />
                   </div>
                 </div>
               </div>

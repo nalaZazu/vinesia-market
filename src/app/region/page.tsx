@@ -28,7 +28,7 @@ function Region() {
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           / Home Page
         </p>
-        <p className="text-bgtertiary text-xxs font-normal  tracking-wide">
+        <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
           / {pathname.split("/")}
         </p>
       </div>
