@@ -6,11 +6,13 @@ export default function TabButton() {
   return (
     <div>
       <ul
-        className="flex flex-wrap text-sm font-medium text-center bg-tabsgray rounded-md p-1"
+        className="flex flex-wrap text-sm font-medium text-center rounded-md p-1 
+        bg-stone-500"
         id="default-tab"
         data-tabs-toggle="#default-tab-content"
         role="tablist"
       >
+        {/* bg-tabsgray  */}
         {list?.map((l, i) => {
           return (
             <li

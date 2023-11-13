@@ -1,16 +1,10 @@
 import { Fragment, useState } from "react";
 import { Menu, Transition, Popover } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { log } from "console";
 
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(" ");
-}
-
-const DropDown = ({ data }: any) => {
+const DropDown = ({ data }: any, { onSelectionChange }: any) => {
   const [show, setShow] = useState("");
   console.log("data , ", data);
-  const [open, setOpen] = useState(true);
 
   return (
     <>
@@ -47,9 +41,8 @@ const DropDown = ({ data }: any) => {
                               <Menu.Item key={itemId}>
                                 <p
                                   className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-xxs font-normal  tracking-wide flex gap-3"
-                                  // onClick={() => setShow(name)}
                                 >
-                                  <input type="checkbox" />
+                                  <input type="checkbox"/>
                                   {item}
                                 </p>
                               </Menu.Item>
@@ -57,21 +50,7 @@ const DropDown = ({ data }: any) => {
                           })}
                         </div>
                       </div>
-                      <div className="bg-gray-50 p-4">
-                        <a
-                          href="##"
-                          className="flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500/50"
-                        >
-                          <span className="flex items-center">
-                            <span className="text-sm font-medium text-gray-900">
-                              Documentation
-                            </span>
-                          </span>
-                          <span className="block text-sm text-gray-500">
-                            Start integrating products and tools
-                          </span>
-                        </a>
-                      </div>
+                      
                     </div>
                   </Popover.Panel>
                 </Transition>

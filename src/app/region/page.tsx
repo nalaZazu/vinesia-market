@@ -20,9 +20,10 @@ import { Popover } from "@headlessui/react";
 import { getFilters } from "@/services/Common";
 import { useQuery } from "@tanstack/react-query";
 import DropDownButton from "@/common/DropDownButton";
+import PriceSlider from "@/components/dropdown/priceslider/page";
+import Badges from "@/components/badage/page";
 function Region() {
   const pathname = usePathname();
-  useState;
 
   const {
     isLoading: filtersLoading,
@@ -35,6 +36,8 @@ function Region() {
 
   console.log("Filters Data ", filtersData?.data);
   const filtersList = filtersData?.data;
+  
+
   return (
     <>
       <div className="container mx-auto  pt-3 md:pt-5  px-4 flex gap-4">
@@ -73,7 +76,10 @@ function Region() {
             </div>
           </div>
         </div>
-
+        {/* badge */}
+        <Badges/>
+        {/* new data show  */}
+        {/* <PriceSlider /> */}
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {productlist?.map((item) => {
             const {

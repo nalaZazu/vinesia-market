@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 import React from "react";
 import { usePathname } from "next/navigation";
 import { productlist } from "@/constants/winelist";
@@ -15,8 +15,23 @@ import {
   other,
 } from "@/constants/invesdropdown";
 import Recomend from "@/components/dropdown/recomend/page";
+import { getFilters } from "@/services/Common";
+import { useQuery } from "@tanstack/react-query";
+import DropDownButton from "@/common/DropDownButton";
 function Invest() {
   const pathname = usePathname();
+
+  const {
+    isLoading: filtersLoading,
+    error: filtersError,
+    data: filtersData,
+  } = useQuery({
+    queryKey: ["getAllFilters"],
+    queryFn: getFilters,
+  });
+
+  console.log("Filters Data ", filtersData?.data);
+  const filtersList = filtersData?.data;
   return (
     <>
       <div className="container mx-auto  pt-3 md:pt-5  px-4 flex gap-4">
@@ -33,48 +48,22 @@ function Invest() {
         </h1>
         {/* dropdown  */}
         <div className="flex justify-between md:pt-5 md:pb-14 flex-wrap">
-           <div className="flex gap-2 flex-wrap">
-          <div>
-            <DropDown option={bottleSize} />
+          <div className="flex gap-2 flex-wrap">
+            {filtersList?.map((list: any, i: any) => {
+              return (
+                <div key={i}>
+                  <DropDown data={list} />
+                </div>
+              );
+            })}
           </div>
-          <div>
-            <DropDown />
-          </div>
-          <div>
-            <DropDown option={casing} />
-          </div>
-          <div>
-            <DropDown option={ratingCritics} />
-          </div>
-          <div>
-            <DropDown option={regions} />
-          </div>
-          <div>
-            <DropDown option={winary} />
-          </div>
-          <div>
-            <DropDown />
-          </div>
-          <div>
-            <DropDown option={color} />
-          </div>
-          <div>
-            <DropDown />
-          </div>
-          <div>
-            <DropDown option={artCollect} />
-          </div>
-          <div>
-            <DropDown option={other} />
-          </div>
-          
-        </div>
-        <div className="flex items-center gap-2 pe-2 flex-wrap pt-2 md:pt-0 ">
-           <p className="text-primary text-xs font-normal  tracking-wide">Sort by</p>
+          <div className="flex items-center gap-2 pe-2 flex-wrap pt-2 md:pt-0 ">
+            <p className="text-primary text-xs font-normal  tracking-wide">
+              Sort by
+            </p>
             <Recomend />
           </div>
         </div>
-       
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {productlist?.map((item) => {

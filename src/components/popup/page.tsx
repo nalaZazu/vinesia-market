@@ -15,7 +15,7 @@ export default function Popup({
       <Dialog
         as="div"
         className="relative z-10"
-        // initialFocus={cancelButtonRef}
+      
         onClose={setOpen}
       >
         <Transition.Child
@@ -44,7 +44,7 @@ export default function Popup({
               <Dialog.Panel className="relative w-full max-w-3xl xl:max-w-7xl lg:max-w-5xl md:max-w-2xl sm:max-w-xl lg:h-[600px] md:h-[400px] sm:h-[400px] transform overflow-hidden rounded-lg bg-transparent text-left shadow-xl transition-all">
                 <div className="">
                   <div
-                    className="flex justify-end items-center cursor-pointer"
+                    className="flex justify-end items-center cursor-pointer p-4"
                     onClick={setOpen}
                   >
                     <div></div>

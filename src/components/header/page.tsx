@@ -22,26 +22,29 @@ export default function Header() {
         <div className="container mx-auto grid grid-cols-12 justify-between items-center">
           {/* topbar start */}
           <div className="md:flex  hidden items-center space-x-4 lg:space-x-8 md:col-span-5">
-            <a href="#">
+            <Link href="#">
               <span className=" hidden md:block    text-primary text-2xl font-semibold  tracking-tight">
                 Vinesia Story
               </span>
-            </a>
-            <a href="#">
-              <span className=" hidden md:block    text-primary text-2xl font-semibold   tracking-tight">
+            </Link>
+            <Link href="/">
+              <span className=" hidden md:block    text-primary text-2xl font-semibold   tracking-tight  border-b-2 border-secondary">
                 Vinesia Marketplace
               </span>
-            </a>
+            </Link>
           </div>
 
           <div className=" text-2xl lg:text-4xl font-bold col-span-2 md:text-center">
-            <Image
+           <Link href="/">
+           <Image
               src={logo}
               className="md:mx-auto"
               alt="Picture of the author"
               width={80}
               height={80}
             />
+           </Link>
+            
           </div>
 
           <div className="flex items-center space-x-4 lg:space-x-8 md:col-span-5 col-span-10 ms-auto">

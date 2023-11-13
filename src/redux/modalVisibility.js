@@ -19,9 +19,9 @@ export const modalReducer = createSlice({
     handleAllModals: (state, action) => {
       return { ...state, ...action?.payload };
     },
-    deleteConsigneeModal: (state, action) => {
-      console.log(action.payload);
-    },
+    // deleteConsigneeModal: (state, action) => {
+    //   console.log(action.payload);
+    // },
   },
 });
 

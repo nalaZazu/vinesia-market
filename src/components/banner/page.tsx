@@ -244,11 +244,11 @@ const Banner = () => {
 
                   <div
                     className=" absolute 
-                   -left-5 -top-7 z-10"
+                   -left-7 -top-8 z-10"
                   >
                     <TextIcon
                       label="Critic score"
-                      width="110%"
+                      width="115%"
                       letter={20}
                       fontSize={35}
                       startOffset="-15"
