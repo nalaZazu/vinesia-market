@@ -1,5 +1,13 @@
 import React from "react";
+import Image from "next/image";
 import { Fragment } from "react";
+import Appactivity from "@/components/charts/page";
+import logo from "@/assets/icon/logonew.png";
+import logo1 from "@/assets/icon/img1.png";
+import logo2 from "@/assets/icon/img2.png";
+import logo3 from "@/assets/icon/img3.png";
+import logo4 from "@/assets/icon/img4.svg";
+import itemsCollection from "@/assets/icon/itemscollection.png";
 
 import { Dialog, Transition } from "@headlessui/react";
 
@@ -573,16 +581,409 @@ export default function CollectionPopup2({
                           <div className=" grid grid-cols-2 py-3 gap-2 items-center">
                             <div className="text-xs text-end">
                               <span className=" opacity-60 text-right text-black text-xs font-normal uppercase tracking-tight">
-                                LAst audit
+                                Date of last check
                               </span>
                             </div>
                             <div className="flex space-x-2 border-s ps-2 border-bordergray">
                               <a href="#">
-                                <span className=" text-zinc-700 text-base font-medium tracking-tight">
-                                  30.06.2023
+                                <span className=" text-right text-gray-600 text-base font-medium tracking-tight">
+                                  19.10.2023, 12:45 PM
                                 </span>
                               </a>
                             </div>
+                          </div>
+                          <div className="text-center text-black text-xs font-medium tracking-tight pt-5 pb-2">
+                            History of storage conditions
+                          </div>
+                          <div className="flex justify-center mx-auto w-96 px-8 py-6 bg-white rounded border border-gray-400">
+                            <div>
+                              <Appactivity />
+                            </div>
+                          </div>
+                          <div className=" flex justify-evenly bg-white py-5 w-[451px] text-bgsecondary mx-auto">
+                            <span className="text-right text-black text-xs font-normal tracking-tight">
+                              Recommended temperature: 12°C
+                            </span>
+                            <span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                className="w-5 h-5"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+                                />
+                              </svg>
+                            </span>
+                            <span className="text-right text-black text-xs font-normal tracking-tight">
+                              Recommended humidity: 70%
+                            </span>
+                            <span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                className="w-5 h-5"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* column four */}
+                  <div className="flex justify-between items-center gap-5 mt-10">
+                    <div className="basis-1/4">
+                      <h2 className="text-black text-lg font-semibold tracking-tight">
+                        Items in this collection (4)
+                      </h2>
+                    </div>
+                    <div className="basis-4/5 ">
+                      <hr className=" border-black" />
+                    </div>
+                    <div className="flex basis-10 justify-end text-spacegray">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        className="w-3.5 h-3.5"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  {[1, 2, 3, 4].map((d, i) => {
+                    return (
+                      <div
+                        key={i}
+                        className="flex mx-auto justify-center space-y-5 items-end"
+                      >
+                        <div className=" basis-14">
+                          <Image
+                            src={itemsCollection}
+                            alt="Picture of the author"
+                            className="w-8 h-10"
+                          />
+                        </div>
+                        <div className="">
+                          <p className="text-justify text-black text-base font-semibold tracking-tight">
+                            Chateau La Mission Haut Brion Cru Classe | 2009
+                          </p>
+                          <p className="flex gap-1 text-zinc-700 text-sm font-medium tracking-tight">
+                            <span>Winery:</span>
+                            <a
+                              href=""
+                              className="text-justify text-black text-sm font-medium underline tracking-wide"
+                            >
+                              Château Le Pin
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  {/* column five */}
+                  <div className="flex justify-between items-center gap-5 mt-10">
+                    <div className="basis-1/4">
+                      <h2 className="text-black text-lg font-semibold tracking-tight">
+                        Transactions history
+                      </h2>
+                    </div>
+                    <div className="basis-4/5 ">
+                      <hr className=" border-black" />
+                    </div>
+                    <div className="flex basis-10 justify-end text-spacegray">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        className="w-3.5 h-3.5"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className=" mx-auto flex">
+                    <div className="flex justify-between mx-auto py-5">
+                      <div className="">
+                        <ul
+                          className="flex flex-wrap font-medium text-center bg-zinc-100 rounded-lg"
+                          id="default-tab"
+                          data-tabs-toggle="#default-tab-content"
+                          role="tablist"
+                        >
+                          <li
+                            className="text-center text-zinc-700 text-xxs font-medium"
+                            role="presentation"
+                          >
+                            <button
+                              className="px-8 py-1.5 rounded-lg bg-white shadow-md"
+                              id="profile-tab"
+                              data-tabs-target="#profile"
+                              type="button"
+                              role="tab"
+                              aria-controls="profile"
+                              aria-selected="false"
+                            >
+                              All
+                            </button>
+                          </li>
+                          <li
+                            className="text-center text-zinc-700 text-xxs font-medium"
+                            role="presentation"
+                          >
+                            <button
+                              className="px-9 py-1.5 rounded-md "
+                              id="profile-tab"
+                              data-tabs-target="#profile"
+                              type="button"
+                              role="tab"
+                              aria-controls="profile"
+                              aria-selected="false"
+                            >
+                              Transactions
+                            </button>
+                          </li>
+                          <li
+                            className="text-center text-zinc-700 text-xxs font-medium"
+                            role="presentation"
+                          >
+                            <button
+                              className="px-9 py-1.5 rounded-md"
+                              id="profile-tab"
+                              data-tabs-target="#profile"
+                              type="button"
+                              role="tab"
+                              aria-controls="profile"
+                              aria-selected="false"
+                            >
+                              Bids
+                            </button>
+                          </li>
+                        </ul>
+                        {/* <div id="default-tab-content">
+              Name
+              <div
+                className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+                id="profile"
+                role="tabpanel"
+                aria-labelledby="profile-tab"
+              >
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  This is some placeholder content the{" "}
+                  <strong className="font-medium text-gray-800 dark:text-white">
+                    Profile tab's associated content
+                  </strong>
+                  . Clicking another tab will toggle the visibility of this one
+                  for the next. The tab JavaScript swaps classes to control the
+                  content visibility and styling.
+                </p>
+              </div>
+            </div> */}
+                        <div className="pt-6">
+                          <div className="flow-root">
+                            <ul role="list" className=" space-y-3">
+                              <li className="flex justify-between ">
+                                <div className="flex-col inline-flex">
+                                  <p className="text-neutral-900 text-xs font-medium ">
+                                    @Marta
+                                  </p>
+                                  <div className="pl-2.5 border-l border-black border-opacity-30 justify-start items-center gap-2 inline-flex">
+                                    <p className="opacity-60 text-right text-black text-xs font-normal uppercase tracking-tight">
+                                      place a Bid
+                                    </p>
+                                    <div className="border-l justify-start items-start gap-2.5 flex">
+                                      <p className="text-justify text-neutral-900 text-xs font-medium ">
+                                        50 560 EUR
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="px-2.5 pb-1 border-l border-black border-opacity-40 justify-start items-center gap-2 inline-flex">
+                                    <p className="text-justify text-neutral-400 text-xxs font-normal ">
+                                      5 minutes ago
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="flex-shrink-0">
+                                  <Image
+                                    src={logo}
+                                    alt="Picture of the author"
+                                    className="w-5"
+                                  />
+                                </div>
+                              </li>
+                              <li className="flex justify-between ">
+                                <div className="flex-col inline-flex">
+                                  <p className="text-neutral-900 text-xs font-medium ">
+                                    @Jo_azja
+                                  </p>
+                                  <div className="pl-2.5 border-l border-black border-opacity-30 justify-start items-center gap-2 inline-flex">
+                                    <p className="opacity-60 text-right text-black text-xs font-normal uppercase tracking-tight">
+                                      buy for
+                                    </p>
+                                    <div className="border-l justify-start items-start gap-2.5 flex">
+                                      <p className="text-justify text-neutral-900 text-xs font-medium ">
+                                        €49,550
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="px-2.5 pb-1 border-l border-black border-opacity-40 justify-start items-center gap-2 inline-flex">
+                                    <p className="text-justify text-neutral-400 text-xxs font-normal ">
+                                      Yesterday | 3:45 AM
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="flex-shrink-0">
+                                  <Image
+                                    src={logo1}
+                                    alt="Picture of the author"
+                                    className=" w-7"
+                                  />
+                                </div>
+                              </li>
+                              <li className="flex justify-between ">
+                                <div className="flex-col inline-flex">
+                                  <p className="text-neutral-900 text-base font-medium">
+                                    @buyer_1234_5432
+                                  </p>
+                                  <div className="pl-2.5 border-l border-black border-opacity-30 justify-start items-center gap-2 inline-flex">
+                                    <p className="opacity-60 text-right text-black text-xs font-normal uppercase">
+                                      buy for
+                                    </p>
+                                    <div className="border-l justify-start items-start gap-2.5 flex">
+                                      <p className="text-neutral-900 text-xs font-medium">
+                                        €46,560
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="px-2.5 pb-1 border-l border-black border-opacity-40 justify-start items-center gap-2 inline-flex">
+                                    <p className="text-justify text-neutral-400 text-xxs font-normal">
+                                      Yesterday | 3:45 AM
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="flex-shrink-0">
+                                  <Image
+                                    src={logo2}
+                                    alt="Picture of the author"
+                                    className=" w-12"
+                                  />
+                                </div>
+                              </li>
+                              <li className="flex justify-between ">
+                                <div className="flex-col inline-flex">
+                                  <p className="text-neutral-900 text-xs font-medium">
+                                    @buyer_1234_5432
+                                  </p>
+                                  <div className="pl-2.5 border-l border-black border-opacity-30 justify-start items-center gap-2 inline-flex">
+                                    <p className="opacity-60 text-right text-black text-xs font-normal uppercase">
+                                      place a Bid
+                                    </p>
+                                    <div className="border-l justify-start items-start gap-2.5 flex">
+                                      <p className="text-neutral-900 text-xs font-medium">
+                                        €46,560
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="px-2.5 pb-1 border-l border-black border-opacity-40 justify-start items-center gap-2 inline-flex">
+                                    <p className="text-justify text-neutral-400 text-xxs font-normal">
+                                      Sep 30, 2023 | 2:45 AM
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="flex-shrink-0">
+                                  <Image
+                                    src={logo2}
+                                    alt="Picture of the author"
+                                    className=" w-7"
+                                  />
+                                </div>
+                              </li>
+                              <li className="flex justify-between ">
+                                <div className="flex-col inline-flex">
+                                  <p className="text-neutral-900 text-xs font-medium">
+                                    @Victorian
+                                  </p>
+                                  <div className="pl-2.5 border-l border-black border-opacity-30 justify-start items-center gap-2 inline-flex">
+                                    <p className="opacity-60 text-right text-black text-xs font-normal uppercase">
+                                      place a Bid
+                                    </p>
+                                    <div className="border-l justify-start items-start gap-2.5 flex">
+                                      <p className="text-neutral-900 text-xs font-medium">
+                                        46 360 EUR
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="px-2.5 pb-1 border-l border-black border-opacity-40 justify-start items-center gap-2 inline-flex">
+                                    <p className="text-justify text-neutral-400 text-xxs font-normal">
+                                      Sep 24, 2023 | 3:45 PM
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="flex-shrink-0">
+                                  <Image
+                                    src={logo3}
+                                    alt="Picture of the author"
+                                    className=" w-7"
+                                  />
+                                </div>
+                              </li>
+                              <li className="flex justify-between ">
+                                <div className="flex-col inline-flex">
+                                  <p className="text-neutral-900 text-xs font-medium">
+                                    @Victorian
+                                  </p>
+                                  <div className="pl-2.5 border-l border-black border-opacity-30 justify-start items-center gap-2 inline-flex">
+                                    <p className="opacity-60 text-right text-black text-xs font-normal uppercase">
+                                      Ask for
+                                    </p>
+                                    <div className="border-l justify-start items-start gap-2.5 flex">
+                                      <p className="text-neutral-900 text-xs font-medium">
+                                        €46,560
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="px-2.5 pb-1 border-l border-black border-opacity-40 justify-start items-center gap-2 inline-flex">
+                                    <p className="text-justify text-neutral-400 text-xxs font-normal">
+                                      Sep 23, 2023 | 3:45 PM
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="flex-shrink-0">
+                                  <Image
+                                    src={logo4}
+                                    alt="Picture of the author"
+                                    className=" w-7 border rounded-2xl p-1"
+                                  />
+                                </div>
+                              </li>
+                            </ul>
                           </div>
                         </div>
                       </div>
