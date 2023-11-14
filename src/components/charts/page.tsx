@@ -9,8 +9,9 @@ import {
   Tooltip,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import moment from "moment";
 
-export default function Appactivity() {
+export default function Appactivity({ data }: { data: any }) {
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -19,6 +20,9 @@ export default function Appactivity() {
     Title,
     Tooltip
   );
+
+  console.log("Data ", data);
+
   const daysLeft = 10;
 
   const current = [1, 200, 3000, 20000, 29009, 39009, 79009];
@@ -32,34 +36,34 @@ export default function Appactivity() {
       intersect: false,
     },
     stacked: false,
-    tooltips: {
-      callbacks: {
-        label: function (tooltipItem: any) {
-          console.log("tooltipItemtooltipItem", tooltipItem);
-          return tooltipItem.yLabel
-            .toFixed(2)
-            .replace(/\d(?=(\d{3})+\.)/g, "$&,");
-        },
-      },
-    },
+    // tooltips: {
+    //   callbacks: {
+    //     label: function (tooltipItem: any) {
+    //       console.log("tooltipItemtooltipItem", tooltipItem);
+    //       return tooltipItem.yLabel
+    //         .toFixed(2)
+    //         .replace(/\d(?=(\d{3})+\.)/g, "$&,");
+    //     },
+    //   },
+    // },
     plugins: {
-      tooltip: {
-        callbacks: {
-          label: function (context: any) {
-            let label = context.dataset.label || "";
+      // tooltip: {
+      //   callbacks: {
+      //     label: function (context: any) {
+      //       let label = context.dataset.label || "";
 
-            if (label) {
-              label += ": ";
-            }
-            if (context.parsed.y !== null) {
-              label += "$" + context.parsed.y.toString().split(".")[0];
-              // .format(context.parsed.y)
-              // .split('.')[0]
-            }
-            return label;
-          },
-        },
-      },
+      //       if (label) {
+      //         label += ": ";
+      //       }
+      //       if (context.parsed.y !== null) {
+      //         label += "$" + context.parsed.y.toString().split(".")[0];
+      //         // .format(context.parsed.y)
+      //         // .split('.')[0]
+      //       }
+      //       return label;
+      //     },
+      //   },
+      // },
       legend: {
         display: false, // Hide the legend
       },
@@ -82,54 +86,34 @@ export default function Appactivity() {
         grid: {
           display: false,
         },
-        max: 100000,
+        // max: 100000,
         ticks: {
           beginAtZero: true,
           callback: function (value: number, index: number) {
-            return index % 2 === 0 ? `$` + value : "";
+            return index % 2 === 0 ? value + `` : "";
           },
         },
       },
-      y1: {
-        type: "linear" as const,
-        display: false,
-        ticks: {
-          beginAtZero: true,
-        },
-        position: "right" as const,
-        grid: {
-          drawOnChartArea: false,
-          display: false,
-        },
-        min: 0,
-        max: 100000,
-      },
     },
   };
-  const labels = Array.from({ length: daysLeft + 1 }).map((_v, i) => {
-    const date = new Date();
-    date.setDate(date.getDate() + i);
-    return `${date.getDate()}d`;
-  });
-  const data = {
+  const labels =
+    data &&
+    data?.map((_v: any, i: any) => {
+      const date = new Date();
+      date.setDate(date.getDate() + i);
+      return `${moment(_v[0]).format("MMM")}`;
+    });
+  const dataa = {
     labels: labels,
     datasets: [
       {
         label: "Current",
-        data: current,
+        data: data?.map((d: any) => {
+          return d[1];
+        }),
         borderColor: "#0088F5",
         backgroundColor: "#0088F5",
         yAxisID: "y",
-        borderWidth: 2,
-        tension: 0.4,
-        pointRadius: 4,
-      },
-      {
-        label: "Previous",
-        data: previous,
-        borderColor: "#ff0100",
-        backgroundColor: "#ff0100",
-        yAxisID: "y1",
         borderWidth: 2,
         tension: 0.4,
         pointRadius: 4,
@@ -151,7 +135,13 @@ export default function Appactivity() {
       <div className="mt-2 ml-5  text-2xl ">{/* <p>$1677787</p> */}</div>
 
       <div className="max-h-60">
-        <Line className="mx-2 mb-10 w-20 h-20" options={options} data={data} />
+        {data && (
+          <Line
+            className="mx-2 mb-10 w-20 h-20"
+            options={options}
+            data={dataa || []}
+          />
+        )}
       </div>
     </>
   );
