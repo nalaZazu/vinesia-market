@@ -1,11 +1,14 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { Menu, Transition, Popover } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-
-const DropDown = ({ data }: any, { onSelectionChange }: any) => {
-  const [show, setShow] = useState("");
-  console.log("data , ", data);
-
+import { useDispatch } from "react-redux";
+import { handleSelected } from "@/redux/dropdownselected";
+const DropDown = ({ data }: any) => {
+  const dispatch = useDispatch();
+  const handleSelect = (selectedValue: any) => {
+    console.log("selected", selectedValue);
+    dispatch(handleSelected(selectedValue));
+  };
   return (
     <>
       {data?.options?.length > 0 && (
@@ -41,16 +44,26 @@ const DropDown = ({ data }: any, { onSelectionChange }: any) => {
                               <Menu.Item key={itemId}>
                                 <p
                                   className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-xxs font-normal  tracking-wide flex gap-3"
+                                  // onClick={() => handleSelect(item)}
                                 >
-                                  <input type="checkbox"/>
-                                  {item}
+                                  <input
+                                    id={`${item}-${itemId}`}
+                                    name="checkbox"
+                                    onChange={(e) =>
+                                      handleSelect(e.target.value)
+                                    }
+                                    type="checkbox"
+                                    value={item}
+                                  />
+                                  <label htmlFor={`${item}-${itemId}`}>
+                                    {item}
+                                  </label>
                                 </p>
                               </Menu.Item>
                             );
                           })}
                         </div>
                       </div>
-                      
                     </div>
                   </Popover.Panel>
                 </Transition>

@@ -1,29 +1,17 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { productlist } from "@/constants/winelist";
-import Image from "next/image";
 import DropDown from "@/components/dropdown/page";
-import {
-  winary,
-  bottleSize,
-  casing,
-  ratingCritics,
-  regions,
-  color,
-  artCollect,
-  other,
-} from "@/constants/invesdropdown";
-import Recomend from "@/components/dropdown/recomend/page";
 import Card from "@/components/card/page";
-import { Popover } from "@headlessui/react";
 import { getFilters } from "@/services/Common";
 import { useQuery } from "@tanstack/react-query";
 import DropDownButton from "@/common/DropDownButton";
-import PriceSlider from "@/components/dropdown/priceslider/page";
 import Badges from "@/components/badage/page";
+import ProductCard from "@/components/cards/ProductCard";
+import { getProductSearch } from "@/services/ProductSerach";
 function Region() {
   const pathname = usePathname();
+  const [products, setProducts] = useState<any>([]);
 
   const {
     isLoading: filtersLoading,
@@ -33,10 +21,16 @@ function Region() {
     queryKey: ["getAllFilters"],
     queryFn: getFilters,
   });
-
-  console.log("Filters Data ", filtersData?.data);
   const filtersList = filtersData?.data;
-  
+
+  useEffect(() => {
+    getProductSearch().then((res) => {
+      setProducts(res?.data);
+      console.log("resposne ", res?.data);
+      console.log("resposne setProduct", setProducts(res?.data));
+    });
+  }, []);
+  console.log("products-data", products?.data);
 
   return (
     <>
@@ -77,54 +71,17 @@ function Region() {
           </div>
         </div>
         {/* badge */}
-        <Badges/>
-        {/* new data show  */}
+        <Badges />
+
         {/* <PriceSlider /> */}
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {productlist?.map((item) => {
-            const {
-              bottle1,
-              id,
-              imageAlt,
-              imageSrc,
-              name,
-              price,
-              remain,
-              subtitle,
-            } = item;
-            return (
-              <div key={id} className="group relative">
-                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md ">
-                  <Image
-                    src={imageSrc}
-                    alt={imageAlt}
-                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                  />
-                </div>
-                <div className=" text-left">
-                  <h4 className=" text-base font-semibold">{name}</h4>
-                  <p className=" text-xxs ">{subtitle}</p>
-                  <p className=" text-xxs font-semibold">OWNER</p>
-                  <span className="justify-center items-center gap-0.5 inline-flex  mb-2  text-white text-xxs">
-                    <p className="   bg-bgbutton w-12 text-center   p-0.5 rounded-sm">
-                      Vinesia
-                    </p>
-                    <p className="  bg-[#6c757e] font-medium tracking-wide p-0.5 rounded-sm">
-                      Private investors
-                    </p>
-                  </span>
-
-                  <hr />
-                  <button className="text-xxs uppercase ">buy now</button>
-                  <h3 className=" font-semibold text-lg ">€{price}</h3>
-                  <p className=" flex gap-3">
-                    <span className=" text-xxs font-medium">{bottle1}</span>
-                    <span className=" text-xxs">{remain} remaining</span>
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+          {products?.data &&
+            products?.data?.map((item: any) => {
+              console.log("productItem", item);
+              return (
+                <div key={item?.id}>{item && <ProductCard item={item} />}</div>
+              );
+            })}
         </div>
       </div>
     </>

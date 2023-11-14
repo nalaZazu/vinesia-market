@@ -62,8 +62,12 @@ export default function Product() {
     getHomePage().then((res) => {
       console.log("Response From APi Home Api", res?.data);
       setProducts(res?.data?.products);
+      console.log("id-page" ,   setProducts(res?.data?.products));
+      
     });
   }, [id]);
+  console.log("productssss" , products);
+  
   console.log("rerender");
 
   const isAuthenticted = useSelector<any>(
