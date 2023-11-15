@@ -9,6 +9,7 @@ import DropDownButton from "@/common/DropDownButton";
 import Badges from "@/components/badage/page";
 import ProductCard from "@/components/cards/ProductCard";
 import { getProductSearch } from "@/services/ProductSerach";
+import { useSelector } from "react-redux";
 function Region() {
   const pathname = usePathname();
   const [products, setProducts] = useState<any>([]);
@@ -22,9 +23,19 @@ function Region() {
     queryFn: getFilters,
   });
   const filtersList = filtersData?.data;
-
+  const datadropdown = useSelector<any>(
+    (state) => state?.dropdown?.dropdownData
+  );
+  
   useEffect(() => {
-    getProductSearch().then((res) => {
+    let postData = {
+      filters: datadropdown,
+      // "sort": "string",
+      first: 0,
+    };
+    console.log("postData" , postData);
+    
+    getProductSearch(postData).then((res) => {
       setProducts(res?.data);
       console.log("resposne ", res?.data);
       console.log("resposne setProduct", setProducts(res?.data));

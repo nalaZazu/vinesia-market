@@ -6,9 +6,10 @@ export const dropdownReducer = createSlice({
   initialState :{dropdownData:<any>[]},
   reducers: {
     handleSelected: (state, action: PayloadAction<any>) => {
+      console.log("from action",action.payload)
       const  selectedValue  = action.payload;
       if (!state.dropdownData.includes(selectedValue)) {
-        state.dropdownData = [...state.dropdownData, action.payload];
+        state.dropdownData = [...state.dropdownData, ...action.payload];
       } else {
         state.dropdownData = state.dropdownData.filter((data:any) => data !== action.payload
         );

@@ -1,14 +1,60 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Menu, Transition, Popover } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { handleSelected } from "@/redux/dropdownselected";
+import { getProductSearch } from "@/services/ProductSerach";
 const DropDown = ({ data }: any) => {
   const dispatch = useDispatch();
-  const handleSelect = (selectedValue: any) => {
-    console.log("selected", selectedValue);
-    dispatch(handleSelected(selectedValue));
+  const [products, setProducts] = useState<any>([]);
+  const [tempSelected, setTempSelected] = useState([]);
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const handleChange = (e:any) => {
+    console.log("handle Change ", e);
+    
+    if (!tempSelected.includes(e:any)) {
+      let selected2= tempSelected;
+      selected2.push(e);
+      setTempSelected(selected2);
+    } else {  
+  }};
+  // const handleSelect = (selectedValue: any) => {
+  //   console.log("selected", selectedValue);
+  //   dispatch(handleSelected(selectedValue));
+  // };
+  const datadropdown = useSelector<any>(
+    (state: any) => state?.dropdown?.dropdownData
+  );
+  const filteredOptions = data?.options?.filter((item: any) =>
+    item.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const handleApply = () => {
+    // Handle the application of selected items, you can dispatch an action or perform any other logic
+    console.log("Selected Items:", datadropdown);
+    console.log("Search Term:", searchTerm);
+    dispatch(handleSelected(tempSelected));
+    console.log("dispatch-data", dispatch(handleSelected(datadropdown)));
   };
+  const handleClear = () => {
+    console.log(searchTerm);
+    setSearchTerm("");
+  };
+  useEffect(() => {
+    let postData = {
+      filters: datadropdown,
+      // "sort": "string",
+      first: 0,
+    };
+    console.log("postData", postData);
+
+    getProductSearch(postData).then((res) => {
+      setProducts(res?.data);
+      console.log("resposne ", res?.data);
+      console.log("resposne setProduct", dispatch(res?.data));
+    });
+  }, []);
+  console.log("products-data", products?.data);
   return (
     <>
       {data?.options?.length > 0 && (
@@ -36,24 +82,42 @@ const DropDown = ({ data }: any) => {
                   <Popover.Panel className="absolute z-10 mt-2 w-[200px] origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black/5">
                       <div className="relative gap-8 bg-white p-4">
+                        <form>
+                          <label
+                            htmlFor="default-search"
+                            className="text-zinc-800 text-xs font-normal  tracking-wide "
+                          >
+                            Search
+                          </label>
+                          <div className="relative">
+                            <input
+                              value={searchTerm}
+                              onChange={(e) => setSearchTerm(e.target.value)}
+                              type="search"
+                              id="default-search"
+                              autoComplete="off"
+                              className="block w-full p-2 pl-4    border border-gray-300 rounded-lg bg-gray-50 text-neutral-400   text-sm font-normal   leading-tight  focus:ring-gry-300 focus:border-gray-300"
+                            />
+                          </div>
+                        </form>
+
                         <div className="py-1">
-                          {data?.options?.map((item: any, itemId: any) => {
+                          {filteredOptions?.map((item: any, itemId: any) => {
                             console.log("item", item);
 
                             return (
                               <Menu.Item key={itemId}>
-                                <p
-                                  className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-xxs font-normal  tracking-wide flex gap-3"
-                                  // onClick={() => handleSelect(item)}
-                                >
+                                <p className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-xxs font-normal  tracking-wide flex gap-3">
                                   <input
                                     id={`${item}-${itemId}`}
                                     name="checkbox"
                                     onChange={(e) =>
-                                      handleSelect(e.target.value)
+                                      handleChange(item)
                                     }
                                     type="checkbox"
-                                    value={item}
+                                    // value={searchTerm}
+                                    // onChange={(e) => setSearchTerm(e.target.value)}
+                                    // value={item}
                                   />
                                   <label htmlFor={`${item}-${itemId}`}>
                                     {item}
@@ -63,6 +127,22 @@ const DropDown = ({ data }: any) => {
                             );
                           })}
                         </div>
+                      </div>
+
+                      <div className=" pt-4 pb-4  border-t-2 justify-center items-center gap-1 inline-flex cursor-pointer pl-1">
+                        <button
+                          className="text-center text-zinc-400 text-xs font-normal  tracking-wide    px-8 py-3 rounded-full border border-zinc-400 "
+                          onClick={handleClear}
+                        >
+                          Clear
+                        </button>
+
+                        <button
+                          className="text-center text-white text-xs font-normal tracking-wide   px-8 py-3 bg-zinc-800 rounded-full"
+                          onClick={handleApply}
+                        >
+                          Apply
+                        </button>
                       </div>
                     </div>
                   </Popover.Panel>
