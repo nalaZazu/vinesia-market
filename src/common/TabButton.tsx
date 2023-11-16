@@ -5,8 +5,8 @@ export default function TabButton() {
   const list = ["All", "Ask", "Bid"];
   return (
     <div>
-      <ul
-        className="flex flex-wrap text-sm font-medium text-center rounded-md p-1 
+
+      <ul className="flex flex-wrap text-sm font-medium text-center bg-gray-300 rounded-md p-1">
         bg-stone-500"
         id="default-tab"
         data-tabs-toggle="#default-tab-content"

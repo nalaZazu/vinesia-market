@@ -27,10 +27,10 @@ export default function PeaceOfMind() {
           <div className="container grid mx-auto gap-6 grid-cols-1 lg:grid-cols-4 md:grid-cols-2">
             <div className="bg-themegray flex items-center justify-between px-5  py-2">
               <div className="flex-1">
-                <p className="text-base font-semibold text-gray-900 truncate dark:text-white">
+                <p className="text-base font-semibold text-gray-900 truncate">
                   Proof
                 </p>
-                <p className="text-base font-semibold text-gray-900 truncate dark:text-white pb-3">
+                <p className="text-base font-semibold text-gray-900 truncate  pb-3">
                   of authenticity
                 </p>
                 <hr className=" border-t-2" />
@@ -41,10 +41,10 @@ export default function PeaceOfMind() {
             </div>
             <div className=" bg-themegray flex items-center justify-between px-5 py-2">
               <div className="flex-1">
-                <p className="text-base font-semibold text-gray-900 truncate dark:text-white">
+                <p className="text-base font-semibold text-gray-900 truncate ">
                   Proof
                 </p>
-                <p className="text-base font-semibold text-gray-900 truncate dark:text-white pb-3">
+                <p className="text-base font-semibold text-gray-900 truncate  pb-3">
                   of ownership
                 </p>
                 <hr className=" border-t-2" />
@@ -56,10 +56,10 @@ export default function PeaceOfMind() {
 
             <div className=" bg-themegray flex items-center justify-between px-5 py-2">
               <div className="flex-1">
-                <p className="text-base font-semibold text-gray-900 truncate dark:text-white">
+                <p className="text-base font-semibold text-gray-900 truncate ">
                   Proof of
                 </p>
-                <p className="text-base font-semibold text-gray-900 truncate dark:text-white pb-3">
+                <p className="text-base font-semibold text-gray-900 truncate  pb-3">
                   storage conditions
                 </p>
                 <hr className=" border-t-2" />
@@ -76,7 +76,7 @@ export default function PeaceOfMind() {
 
             <div className=" bg-themegray flex items-center justify-between px-5 py-2">
               <div className="flex-1">
-                <p className="text-base font-semibold text-gray-900 truncate dark:text-white pb-3">
+                <p className="text-base font-semibold text-gray-900 truncate  pb-3">
                   See our video
                 </p>
                 <hr className=" border-t-2" />

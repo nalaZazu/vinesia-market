@@ -5,8 +5,8 @@ import React, { useEffect, useState } from "react";
 import redwine from "@/assets/icon/redwine.svg";
 import BreadCrumb from "@/common/BreadCrumb";
 import PeaceOfMind from "@/components/productDetail/PeaceOfMind";
+import { getPriceHistory, getProductDetail } from "@/services/ProductDetail";
 import ReleaseDateSection from "@/components/productDetail/ReleaseDateSection";
-import { getProductDetail } from "@/services/ProductDetail";
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
 import { getHomePage } from "@/services/Home";
 import AllEditions from "@/components/productDetail/AllEditions";
@@ -20,10 +20,18 @@ import Collection from "@/components/productDetail/Collection";
 import { useSelector } from "react-redux";
 import WineryVideo from "@/components/productDetail/WineryVideo";
 import AboutWineries from "@/components/productDetail/AboutWineries";
+import PricingDetail from "@/components/productDetail/PricingDetails";
+import Appactivity from "@/components/charts/page";
+
+// import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
+// client componet fetching
+
 import UpperFooter from "@/components/upperfooter/page";
+
 export default function Product() {
   const { id } = useParams();
   const [data, setData] = useState<any>({});
+  const [priceHistory, setPriceHistory] = useState<any>([]);
   const [products, setProducts] = useState([]);
 
   const [show, setShow] = useState([]);
@@ -37,15 +45,16 @@ export default function Product() {
     if (id) {
       getProductDetail(id)
         .then((res) => {
-          console.log("Res from Product Detail ", res?.data?.wine);
           setData(res?.data);
         })
-        .catch((err) => {
-          console.log("Err from Product Detail", err);
-        });
+        .catch((err) => {});
+      getPriceHistory(id)
+        .then((res) => {
+          setPriceHistory(res?.data);
+        })
+        .catch((err) => {});
     }
     getHomePage().then((res) => {
-      console.log("Response From APi Home Api", res?.data);
       setProducts(res?.data?.products);
       console.log("id-page", setProducts(res?.data?.products));
     });
@@ -56,6 +65,9 @@ export default function Product() {
   /**
    *Api -Data variable
    */
+
+  console.log("data ", priceHistory);
+
   const { wine } = data;
   const { releaseDetails } = data;
   const { ratings } = data;
@@ -91,7 +103,48 @@ export default function Product() {
       <PeaceOfMind />
       {/* our peace of mind pledge section end */}
       {/* Release details section start */}
-      {releaseDetails ? <ReleaseDateSection release={releaseDetails} /> : null}
+      {/* {releaseDetails ? <ReleaseDateSection release={releaseDetails} /> : null} */}
+      <section className="container mx-auto">
+        <div className="flex flex-wrap justify-between py-7 px-4 md:px-0">
+          <div>
+            <h2 className="text-4xl font-medium text-spacegray">
+              Release details
+            </h2>
+          </div>
+          <div className="flex flex-wrap text-bgsecondary">
+            <p className="flex gap-4 items-center">
+              <span className="text-lg">On the market are </span>
+              <span className=" text-2xl font-bold">24</span>
+              <span className="text-lg">editions of this product</span>
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+                  />
+                </svg>
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className=" bg-themegray p-6 mt-7">
+          <div className="grid gap-5 lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
+            <PricingDetail release={releaseDetails} />
+            <div>
+              <Appactivity data={priceHistory} />
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Release details section end */}
       {/* All editions start */}
 
