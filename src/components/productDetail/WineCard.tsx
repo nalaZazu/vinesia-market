@@ -234,7 +234,7 @@ export default function WineCard1({
             </div>
             <button
               type="button"
-              className="text-gray-500 text-base font-medium tracking-tight rounded-lg w-44 px-4 py-2.5 text-center flex justify-center items-center bg-white border border-gray-200 focus:ring-0 focus:outline-none focus:ring-gray-100 mr-2"
+              className="text-gray-500 text-base font-medium tracking-tight rounded-lg w-32 px-4 py-2.5 text-center flex justify-center items-center bg-white border border-gray-200 focus:ring-0 focus:outline-none focus:ring-gray-100 mr-2"
             >
               See More
               <svg
