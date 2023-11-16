@@ -1,15 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import DropDown from "@/components/dropdown/page";
 import Card from "@/components/card/page";
 import { getFilters } from "@/services/Common";
 import { useQuery } from "@tanstack/react-query";
-import DropDownButton from "@/common/DropDownButton";
-import Badges from "@/components/badage/page";
 import ProductCard from "@/components/cards/ProductCard";
 import { getProductSearch } from "@/services/ProductSerach";
-import { useSelector } from "react-redux";
+import DropDownBadge from "@/common/dropdownbadge/page";
 function Region() {
   const pathname = usePathname();
   const [products, setProducts] = useState<any>([]);
@@ -24,9 +21,10 @@ function Region() {
     queryFn: getFilters,
   });
   const filtersList = filtersData?.data;
-  const datadropdown = useSelector<any>(
-    (state) => state?.dropdown?.dropdownData
-  );
+
+  // const datadropdown = useSelector<any>(
+  //   (state) => state?.dropdown?.dropdownData
+  // );
 
   useEffect(() => {
     let postData = {
@@ -61,40 +59,15 @@ function Region() {
         <h1 className="text-primary text-xxl font-semibold  tracking-tight">
           Regions
         </h1>
+        {/* defined card */}
         <Card />
-        {/* dropdown  */}
-        <div className="flex justify-between md:pt-5 md:pb-14 flex-wrap gap-2">
-          <div className="flex gap-2 flex-wrap">
-            {filtersList?.map((list: any, i: any) => {
-              return (
-                <div key={i}>
-                  <DropDown
-                    data={list}
-                    selectedFilters={selectedFilters}
-                    setSelectedFilters={setSelectedFilters}
-                  />
-                </div>
-              );
-            })}
-          </div>
-          <div className="flex items-center gap-2 pe-2 flex-wrap pt-2 md:pt-0">
-            <p className="text-primary text-xs font-normal  tracking-wide">
-              Sort by
-            </p>
-            <div className="w-44">
-              <DropDownButton />
-            </div>
-          </div>
-        </div>
-        {/* badge */}
-        {
-          <Badges
-            data={selectedFilters}
-            setSelectedFilters={setSelectedFilters}
-          />
-        }
+        {/* defined dropdown */}
+        <DropDownBadge
+          filtersList={filtersList}
+          selectedFilters={selectedFilters}
+          setSelectedFilters={setSelectedFilters}
+        />
 
-        {/* <PriceSlider /> */}
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products?.data &&
             products?.data?.map((item: any) => {

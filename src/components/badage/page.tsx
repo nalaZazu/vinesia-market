@@ -56,6 +56,11 @@ const Badges = ({
               </div>
             );
           })}
+        {/* {selectedData && (
+          <button className="text-center text-zinc-800 text-xxs font-medium  tracking-wide">
+            Clear filters
+          </button>
+        )} */}
       </div>
     </>
   );
