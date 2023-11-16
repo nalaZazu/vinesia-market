@@ -7,6 +7,8 @@ import drop from "@/assets/icon/drop.svg";
 import { TextIcon } from "@/assets/icon/Icons";
 import frame from "@/assets/image/01 Images.png";
 import Popup from "../popup/page";
+import { useDispatch } from "react-redux";
+import { isModel } from "@/redux/modalVisibility";
 const Banner = () => {
   const [tooltipExtraVisible, setTooltipExtraVisible] = useState(false);
   const [tooltipVisible, setTooltipVisible] = useState(false);
@@ -39,9 +41,19 @@ const Banner = () => {
   const handleOpen = () => {
     setOpen(!open);
   };
+  const dispatch = useDispatch();
+  const hideModal = () => {
+    dispatch(
+      isModel({
+        isLoading: false,
+        loginModal: { isVisible: false },
+      })
+    );
+  };
   return (
     <>
-      <Popup open={open} setOpen={handleOpen} />
+    
+      <Popup open={open} setOpen={hideModal} />
       <div className=" container mx-auto grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 items-center mt-10 md:mt-10 lg:mt-16">
         <div>
           <h1 className="font-semibold text-primary tracking-tight text-xxl ">
@@ -244,11 +256,11 @@ const Banner = () => {
 
                   <div
                     className=" absolute 
-                   -left-5 -top-7 z-10"
+                   -left-7 -top-8 z-10"
                   >
                     <TextIcon
                       label="Critic score"
-                      width="110%"
+                      width="115%"
                       letter={20}
                       fontSize={35}
                       startOffset="-15"

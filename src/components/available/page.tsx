@@ -27,9 +27,6 @@ const Available = ({ data }: { data: any }) => {
             <Image
               src={bottlePic}
               alt="Picture of the author"
-              // width={400}
-              // height={350}
-              // style={{ objectFit: "contain" }}
               quality={75}
               className="mb-3 w-full"
             />
@@ -70,7 +67,7 @@ const Available = ({ data }: { data: any }) => {
             </div>
             <div className="text-sm leading-6">
               <label htmlFor="offers" className="font-medium text-gray-900">
-                Label
+                Subscribe
               </label>
             </div>
           </div>
@@ -80,13 +77,6 @@ const Available = ({ data }: { data: any }) => {
               Subscribe
             </button>
           </div>
-          {/* 
-          <button
-            type="submit"
-            className="flex-none  rounded-md bg-bgsecondary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bgsecondary cursor-pointer"
-          >
-            Subscribe
-          </button> */}
         </div>
       </div>
     </div>

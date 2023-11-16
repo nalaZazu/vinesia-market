@@ -18,7 +18,7 @@ module.exports = {
         themegray: "#F4F4F4",
         spacegray: "#41464b",
         bordergray: "#A0A6AC",
-        tabsgray: "#C6C7C8",
+        tabgray: "#C6C7C8",
         breadcrumb: "#9B9B9B",
         bgbutton: "#842029",
         typegray: "#6C757D",
@@ -27,13 +27,8 @@ module.exports = {
         bgprimary: "#D9D9D9",
         bgsecondary: "#6C757D",
         bgtertiary: "#484848",
-// #41464B
         iconcolor: "#7A7C7F",
       },
-
-      /** Font
-       * FontsName:[fontSize, lineHeight]
-       */
       fontSize: {
         xxs: ["10px", " 14.45px"],
         xxl: ["32px", "46.24px"],
