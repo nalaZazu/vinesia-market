@@ -2,10 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { getFilters } from "@/services/Common";
-import { useQuery } from "@tanstack/react-query"; 
+import { useQuery } from "@tanstack/react-query";
 import DropDownBadge from "@/common/dropdownbadge/page";
 import { getProductSearch } from "@/services/ProductSerach";
 import ProductCard from "@/components/cards/ProductCard";
+import Link from "next/link";
 function Invest() {
   const pathname = usePathname();
   const [products, setProducts] = useState<any>([]);
@@ -57,10 +58,14 @@ function Invest() {
         />
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-        {products?.data &&
-            products?.data?.map((item: any) => {
+          {products?.data &&
+            products?.data?.map((item: any, index: any) => {
               return (
-                <div key={item?.id}>{item && <ProductCard item={item} />}</div>
+                <Link href={`product/${index + 1}`}>
+                  <div key={item?.id}>
+                    {item && <ProductCard item={item} />}
+                  </div>
+                </Link>
               );
             })}
         </div>

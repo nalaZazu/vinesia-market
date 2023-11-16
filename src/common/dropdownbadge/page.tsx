@@ -5,10 +5,6 @@ import DropDown from "@/components/dropdown/page";
 
 const DropDownBadge = ({ filtersList, setSelectedFilters, selectedFilters }:{ filtersList:any, setSelectedFilters: any, selectedFilters: any }
 ) => {
-  // const filtersList = filtersData?.data;
-  console.log("filtersList", filtersList);
-
-  // const [selectedFilters, setSelectedFilters] = useState<any>([]);
   return (
     <>
       <div className="flex justify-between md:pt-5 md:pb-14 flex-wrap gap-2">

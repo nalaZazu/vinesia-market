@@ -39,7 +39,7 @@ const ExploreRegion = () => {
           <div className=" h-[21rem] items-end justify-left p-3">
             <div>
               <ul className="text-secondary text-sm font-normal   leading-[49px] tracking-tight">
-                <Link href="/">
+                <Link href="/region/france">
                   <li className="flex items-center justify-between">
                     <span>Bordeaux</span>
                     <span>

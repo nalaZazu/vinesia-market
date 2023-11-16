@@ -1,9 +1,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import xDelete from "@/assets/icon/X-delete.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { handleSelected } from "@/redux/dropdownselected";
-
+import { useSelector } from "react-redux";
 const Badges = ({
   data,
   setSelectedFilters,
@@ -23,7 +21,6 @@ const Badges = ({
   );
   console.log("datadropdown", datadropdown);
 
-  const dispatch = useDispatch();
   const handleRemoved = (item: any) => {
     let index = data?.findIndex((d: any) => d == item);
     if (index == -1) {
@@ -34,6 +31,9 @@ const Badges = ({
       setSelectedFilters(tempArr);
     }
     console.log("handle Change ", item);
+  };
+  const handleClear = () => {
+    setSelectedFilters([]);
   };
   return (
     <>
@@ -56,11 +56,14 @@ const Badges = ({
               </div>
             );
           })}
-        {/* {selectedData && (
-          <button className="text-center text-zinc-800 text-xxs font-medium  tracking-wide">
+        {selectedData && selectedData.length > 0 && (
+          <button
+            className="text-center text-zinc-800 text-xxs font-medium  tracking-wide"
+            onClick={handleClear}
+          >
             Clear filters
           </button>
-        )} */}
+        )}
       </div>
     </>
   );

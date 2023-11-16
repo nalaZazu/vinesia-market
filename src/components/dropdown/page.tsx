@@ -2,9 +2,8 @@
 import { Fragment, useEffect, useState } from "react";
 import { Menu, Transition, Popover } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { handleSelected } from "@/redux/dropdownselected";
-import { getProductSearch } from "@/services/ProductSerach";
 const DropDown = ({
   data,
   selectedFilters,
@@ -40,9 +39,9 @@ const DropDown = ({
     close();
   };
   const handleClear = (close: any) => {
+    setSearchTerm("");
     console.log(searchTerm);
-    // setSearchTerm("");
-    setSelectedFilters([]);
+    // setSelectedFilters([]);
     close();
   };
 

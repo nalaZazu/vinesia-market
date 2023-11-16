@@ -7,11 +7,11 @@ import { useQuery } from "@tanstack/react-query";
 import ProductCard from "@/components/cards/ProductCard";
 import { getProductSearch } from "@/services/ProductSerach";
 import DropDownBadge from "@/common/dropdownbadge/page";
+import Link from "next/link";
 function Region() {
   const pathname = usePathname();
   const [products, setProducts] = useState<any>([]);
   const [selectedFilters, setSelectedFilters] = useState<any>([]);
-
   const {
     isLoading: filtersLoading,
     error: filtersError,
@@ -21,11 +21,6 @@ function Region() {
     queryFn: getFilters,
   });
   const filtersList = filtersData?.data;
-
-  // const datadropdown = useSelector<any>(
-  //   (state) => state?.dropdown?.dropdownData
-  // );
-
   useEffect(() => {
     let postData = {
       filters: selectedFilters,
@@ -36,11 +31,8 @@ function Region() {
 
     getProductSearch(postData).then((res) => {
       setProducts(res?.data);
-      console.log("resposne ", res?.data);
-      console.log("resposne setProduct", setProducts(res?.data));
     });
   }, [selectedFilters]);
-  console.log("Selected-data", selectedFilters);
 
   return (
     <>
@@ -70,9 +62,13 @@ function Region() {
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products?.data &&
-            products?.data?.map((item: any) => {
+            products?.data?.map((item: any , index:any) => {
               return (
-                <div key={item?.id}>{item && <ProductCard item={item} />}</div>
+                <Link href={`/product/${index + 1}`}>
+                  <div key={item?.id}>
+                    {item && <ProductCard item={item} />}
+                  </div>
+                </Link>
               );
             })}
         </div>

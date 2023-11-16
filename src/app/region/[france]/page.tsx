@@ -1,22 +1,17 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import DropDown from "@/components/dropdown/page";
-import {
-  artCollect,
-  bottleSize,
-  casing,
-  color,
-  other,
-  ratingCritics,
-  regions,
-  winary,
-} from "@/constants/invesdropdown";
+
 import Recomend from "@/components/dropdown/recomend/page";
 import { productlist } from "@/constants/winelist";
 import { usePathname } from "next/navigation";
 import RegionCountry from "@/components/regioncountry/page";
 import countryregion from "@/assets/image/frame-1.png";
+import DropDownBadge from "@/common/dropdownbadge/page";
+import { useQuery } from "@tanstack/react-query";
+import { getFilters } from "@/services/Common";
+import { getProductSearch } from "@/services/ProductSerach";
 const France = ({ params }:{ params: any }) => {
   console.log("param" , params);
   const pathname = usePathname();
@@ -32,6 +27,30 @@ const France = ({ params }:{ params: any }) => {
     iconic bubbly. The Loire Valley is diverse, boasting a range of
     white, red, rosé, and sparkling wines, with Sauvignon Blanc and
     Cabernet Franc being prominent.`;
+    const [selectedFilters, setSelectedFilters] = useState<any>([]);
+    const [products, setProducts] = useState<any>([]);
+
+  const {
+    isLoading: filtersLoading,
+    error: filtersError,
+    data: filtersData,
+  } = useQuery({
+    queryKey: ["getAllFilters"],
+    queryFn: getFilters,
+  });
+  const filtersList = filtersData?.data;
+  useEffect(() => {
+    let postData = {
+      filters: selectedFilters,
+      // "sort": "string",
+      first: 0,
+    };
+    console.log("postData", postData);
+
+    getProductSearch(postData).then((res) => {
+      setProducts(res?.data);  
+    });
+  }, [selectedFilters]);
     
   return (
     <>
@@ -55,50 +74,12 @@ const France = ({ params }:{ params: any }) => {
         </h1>
         <RegionCountry regionparagraph={regionparagraph} regionparagraphs={regionparagraphs} image={countryregion}/>
         {/* dropdown  */}
-        <div className="flex justify-between md:pt-7 md:pb-7 flex-wrap">
-          <div className="flex gap-2 flex-wrap">
-            <div>
-              <DropDown option={bottleSize} />
-            </div>
-            <div>
-              <DropDown />
-            </div>
-            <div>
-              <DropDown option={casing} />
-            </div>
-            <div>
-              <DropDown option={ratingCritics} />
-            </div>
-            <div>
-              <DropDown option={regions} />
-            </div>
-            <div>
-              <DropDown option={winary} />
-            </div>
-            <div>
-              <DropDown />
-            </div>
-            <div>
-              <DropDown option={color} />
-            </div>
-            <div>
-              <DropDown />
-            </div>
-            <div>
-              <DropDown option={artCollect} />
-            </div>
-            <div>
-              <DropDown option={other} />
-            </div>
-          </div>
-          <div className="flex items-center gap-2 pe-2 flex-wrap">
-            <p className="text-primary text-xs font-normal  tracking-wide">
-              Sort by
-            </p>
-            <Recomend />
-          </div>
-        </div>
-
+       
+        <DropDownBadge
+          filtersList={filtersList}
+          selectedFilters={selectedFilters}
+          setSelectedFilters={setSelectedFilters}
+        />
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {productlist?.map((item) => {
             const {

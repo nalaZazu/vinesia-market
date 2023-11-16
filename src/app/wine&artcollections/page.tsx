@@ -38,11 +38,8 @@ const WineArt = () => {
 
     getProductSearch(postData).then((res) => {
       setProducts(res?.data);
-      console.log("resposne ", res?.data);
-      console.log("resposne setProduct", setProducts(res?.data));
     });
   }, [selectedFilters]);
-  console.log("Selected-data", selectedFilters);
 
   return (
     <>
@@ -89,9 +86,13 @@ const WineArt = () => {
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products?.data &&
-            products?.data?.map((item: any) => {
+            products?.data?.map((item: any, index: any) => {
               return (
-                <div key={item?.id}>{item && <ProductCard item={item} />}</div>
+                <Link href={`/product/${index + 1}`}>
+                  <div key={item?.id}>
+                    {item && <ProductCard item={item} />}
+                  </div>
+                </Link>
               );
             })}
         </div>

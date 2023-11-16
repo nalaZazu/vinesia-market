@@ -22,6 +22,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getFilters } from "@/services/Common";
 import DropDownBadge from "@/common/dropdownbadge/page";
 import ProductCard from "@/components/cards/ProductCard";
+import Link from "next/link";
 const LimitedCollections = () => {
   const pathname = usePathname();
   const regionparagraph = `Bordeaux, a renowned wine region, is acclaimed for its bold red blends, predominantly featuring Merlot, Cabernet Sauvignon, and Cabernet Franc. The wines exhibit rich flavors and a superb balance, making Bordeaux a global wine capital. Burgundy, in eastern France, is famous for its exquisite Pinot Noir and Chardonnay wines. The terroir of Burgundy imparts a unique character, resulting in elegant, nuanced, and often complex flavors, highly sought after by wine connoisseurs. Champagne, located in northeastern France, is synonymous with sparkling wine. Using the traditional méthode champenoise, this region crafts the world's most celebrated bubbly. Champagne is known  `;
@@ -83,10 +84,14 @@ const LimitedCollections = () => {
         />
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-        {products?.data &&
-            products?.data?.map((item: any) => {
+          {products?.data &&
+            products?.data?.map((item: any, index: any) => {
               return (
-                <div key={item?.id}>{item && <ProductCard item={item} />}</div>
+                <Link href={`/product/${index + 1}`}>
+                  <div key={item?.id}>
+                    {item && <ProductCard item={item} />}
+                  </div>
+                </Link>
               );
             })}
         </div>

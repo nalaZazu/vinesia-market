@@ -75,16 +75,16 @@ const Wineries = () => {
                       {regionName1}
                     </h3>
                     <Link href={`${explor}`}>
-                    <span className="flex gap-3 pt-11">
-                      <p className="text-secondary text-lg font-semibold tracking-tight">
-                      Explore
-                      </p>
-                      <div className="w-8 h-8 flex   bg-neutral-200 rounded-full border-2 border-black text-center items-center">
-                        <span className="mx-auto">
-                          <NextIcon />
-                        </span>
-                      </div>
-                    </span>
+                      <span className="flex gap-3 pt-11">
+                        <p className="text-secondary text-lg font-semibold tracking-tight">
+                          Explore
+                        </p>
+                        <div className="w-8 h-8 flex   bg-neutral-200 rounded-full border-2 border-black text-center items-center">
+                          <span className="mx-auto">
+                            <NextIcon />
+                          </span>
+                        </div>
+                      </span>
                     </Link>
                   </div>
 
