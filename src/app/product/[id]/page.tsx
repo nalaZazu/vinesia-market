@@ -3,19 +3,12 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import redwine from "@/assets/icon/redwine.svg";
-
-
-
 import BreadCrumb from "@/common/BreadCrumb";
-
 import PeaceOfMind from "@/components/productDetail/PeaceOfMind";
 import ReleaseDateSection from "@/components/productDetail/ReleaseDateSection";
-
 import { getProductDetail } from "@/services/ProductDetail";
-
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
 import { getHomePage } from "@/services/Home";
-
 import AllEditions from "@/components/productDetail/AllEditions";
 import HowToInvest from "@/components/productDetail/HowToInvest";
 import CriticsDetailCards from "@/components/productDetail/CriticsDetailCards";
@@ -27,10 +20,7 @@ import Collection from "@/components/productDetail/Collection";
 import { useSelector } from "react-redux";
 import WineryVideo from "@/components/productDetail/WineryVideo";
 import AboutWineries from "@/components/productDetail/AboutWineries";
-
-// import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
-// client componet fetching
-
+import UpperFooter from "@/components/upperfooter/page";
 export default function Product() {
   const { id } = useParams();
   const [data, setData] = useState<any>({});
@@ -41,14 +31,9 @@ export default function Product() {
     setIsOpen(!isOpen);
   };
   const [isOpen, setIsOpen] = useState(false);
-  const axiosCall = async () => {
-    const data = await fetch("https://fakestoreapi.com/products");
-    const reposne = data.json();
-    setShow(await reposne);
-    console.log("show", show);
-  };
+ 
   useEffect(() => {
-    axiosCall();
+   
     if (id) {
       getProductDetail(id)
         .then((res) => {
@@ -62,10 +47,9 @@ export default function Product() {
     getHomePage().then((res) => {
       console.log("Response From APi Home Api", res?.data);
       setProducts(res?.data?.products);
+      console.log("id-page", setProducts(res?.data?.products));
     });
   }, [id]);
-  console.log("rerender");
-
   const isAuthenticted = useSelector<any>(
     (state) => state?.account?.isAuthenticated
   );
@@ -184,65 +168,13 @@ export default function Product() {
       {/* About artwork end */}
       {/* About Winery Château Le Pin start */}
       {isAuthenticted ? <></> : <AboutWinerySection />}
-      {/* About Winery Château Le Pin end */}
+
       {/* You may also like start */}
       <YouMayAlso products={products} />
-      {/* You may also like end */}
-      {/* Be the first to know start */}
-      <section className="px-4 lg:px-0 md:px-4">
-        <div className=" flex lg:justify-end lg:items-center">
-          <div className="lg:w-1/3 w-full bg-themegray p-3 lg:border-y-2 lg:border-l-2  border-spacegray  lg:rounded-s-md rounded">
-            <div className="flex justify-between w-full lg:max-w-sm max-w-full mx-auto">
-              <h2 className=" font-semibold text-2xl">Be the first to know </h2>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </div>
-            <div className=" flex pt-3 ">
-              <form className="flex gap-5 mx-auto">
-                <div>
-                  <div className="flex">
-                    <input
-                      className=" text-base w-[265px] bg-transparent outline-none border-2 px-4 py-2 rounded-lg focus:ring-0 focus:outline-none"
-                      type="text"
-                      placeholder="Add email to join newsletter"
-                      aria-label="Full name"
-                    />
-                  </div>
-                  <div className="md:flex md:items-start pt-3">
-                    <label className="block text-gray-500 font-bold  space-x-3">
-                      <input className=" leading-tight" type="checkbox" />
-                      <span className=" text-sm">I agree to...</span>
-                    </label>
-                  </div>
-                </div>
-                <div>
-                  <button
-                    type="button"
-                    className="text-white bg-spacegray focus:ring-0 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-base px-6 py-2.5 text-center"
-                  >
-                    Subscribe
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Be the first to know end */}
 
-      {/* <ArtCard /> */}
+      {/* Be the first to know start */}
+      <UpperFooter />
+      {/* Be the first to know end */}
     </div>
   );
 }

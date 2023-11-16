@@ -9,12 +9,11 @@ import { getHomePage } from "../services/Home";
 import Popup from "@/components/popup/page";
 import ExploreRegion from "@/components/exploreRegion/page";
 import UpperFooter from "@/components/upperfooter/page";
+import { getProductSearch } from "@/services/ProductSerach";
 export default function Home() {
-  const [data, setData] = useState({});
   const [criticsSelection, setCriticsSelection] = useState([]);
   const [products, setProducts] = useState([]);
   const [drops, setDrops] = useState([]);
-  console.log("Process Env ", process.env.baseUrl);
   useEffect(() => {
     getHomePage().then((res) => {
       console.log("Response From APi Home Api", res?.data);
@@ -34,7 +33,6 @@ export default function Home() {
         <Critics data={criticsSelection} />
         {products && <Listing data={products} />}
         <ExploreRegion />
-    
         <Popup open={false} setOpen={false} />
       </div>
       <UpperFooter/>

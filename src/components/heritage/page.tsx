@@ -82,16 +82,10 @@ const Heritage = ({ data }: { data: any }) => {
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               ></iframe>
-              {/* <Image
-                src={backbg}
-                alt="Picture of the author"
-                className="mb-3 md:mb-0 "
-              /> */}
             </div>
           </div>
         </div>
       </div>
-      {/* <HeritageTab/> */}
     </div>
   );
 };

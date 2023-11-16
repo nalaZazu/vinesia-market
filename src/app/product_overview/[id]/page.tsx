@@ -3,35 +3,22 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import redwine from "@/assets/icon/redwine.svg";
-
-// import Link from "next/link";
-// import css from "styled-jsx/css";
-
 import BreadCrumb from "@/common/BreadCrumb";
 import ProductTopSection from "@/components/productDetail/ProductTopSection";
 import PeaceOfMind from "@/components/productDetail/PeaceOfMind";
-import ReleaseDateSection from "@/components/productDetail/ReleaseDateSection";
-
 import { getProductDetail } from "@/services/ProductDetail";
-
-import ArtCard from "@/components/productDetail/ArtCard-ex";
-
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
 import { getHomePage } from "@/services/Home";
-
 import AssetDetails from "@/components/productDetail/AssetDetails";
 import Collection from "@/components/productDetail/Collection";
-import WineryVideo from "@/components/productDetail/WineryVideo";
 import AboutWineries from "@/components/productDetail/AboutWineries";
-
 import AllEditions from "@/components/productDetail/AllEditions";
 import HowToInvest from "@/components/productDetail/HowToInvest";
 import CriticsDetailCards from "@/components/productDetail/CriticsDetailCards";
 import AboutArtWork from "@/components/productDetail/AboutArtWork";
 import AboutWinerySection from "@/components/productDetail/AboutWinerySection";
 import YouMayAlso from "@/components/productDetail/YouMayAlso";
-// import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
-// client componet fetching
+
 
 export default function Product() {
   const { id } = useParams();
@@ -45,14 +32,7 @@ export default function Product() {
     setIsOpen(!isOpen);
   };
   const [isOpen, setIsOpen] = useState(false);
-  // const axiosCall = async () => {
-  //   const data = await fetch("https://fakestoreapi.com/products");
-  //   const reposne = data.json();
-  //   setShow(await reposne);
-  //   console.log("show", show);
-  // };
   useEffect(() => {
-    // axiosCall();
     if (id) {
       getProductDetail(id)
         .then((res) => {
@@ -68,9 +48,6 @@ export default function Product() {
       setProducts(res?.data?.products);
     });
   }, [id]);
-
-  // this is className base strcture of style base module
-  // const {brown} = orange
   const wine = data?.wine;
   const releaseDetails = data?.releaseDetails;
   const ratings = data?.ratings;
