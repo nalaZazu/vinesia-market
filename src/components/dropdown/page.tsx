@@ -1,66 +1,63 @@
+"use client";
 import { Fragment, useEffect, useState } from "react";
 import { Menu, Transition, Popover } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useDispatch, useSelector } from "react-redux";
 import { handleSelected } from "@/redux/dropdownselected";
 import { getProductSearch } from "@/services/ProductSerach";
-const DropDown = ({ data }: any) => {
+const DropDown = ({
+  data,
+  selectedFilters,
+  setSelectedFilters,
+}: {
+  data: any;
+  selectedFilters: any;
+  setSelectedFilters: any;
+}) => {
   const dispatch = useDispatch();
   const [products, setProducts] = useState<any>([]);
-  const [tempSelected, setTempSelected] = useState([]);
+  const [tempSelected, setTempSelected] = useState<any>([]);
 
   const [searchTerm, setSearchTerm] = useState("");
-  const handleChange = (e:any) => {
+  const handleChange = (e: any) => {
+    let index = tempSelected?.findIndex((d: any) => d == e);
+    if (index == -1) {
+      setTempSelected([...tempSelected, e]);
+    } else {
+      let tempArr = [...tempSelected];
+      tempArr.splice(index, 1);
+      setTempSelected(tempArr);
+    }
     console.log("handle Change ", e);
-    
-    if (!tempSelected.includes(e:any)) {
-      let selected2= tempSelected;
-      selected2.push(e);
-      setTempSelected(selected2);
-    } else {  
-  }};
-  // const handleSelect = (selectedValue: any) => {
-  //   console.log("selected", selectedValue);
-  //   dispatch(handleSelected(selectedValue));
-  // };
-  const datadropdown = useSelector<any>(
-    (state: any) => state?.dropdown?.dropdownData
-  );
+  };
   const filteredOptions = data?.options?.filter((item: any) =>
     item.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  const handleApply = () => {
-    // Handle the application of selected items, you can dispatch an action or perform any other logic
-    console.log("Selected Items:", datadropdown);
-    console.log("Search Term:", searchTerm);
-    dispatch(handleSelected(tempSelected));
-    console.log("dispatch-data", dispatch(handleSelected(datadropdown)));
+  const handleApply = (close: any) => {
+    console.log("Temp List ", tempSelected);
+    setSelectedFilters(tempSelected);
+    close();
   };
-  const handleClear = () => {
+  const handleClear = (close: any) => {
     console.log(searchTerm);
-    setSearchTerm("");
+    // setSearchTerm("");
+    setSelectedFilters([]);
+    close();
   };
-  useEffect(() => {
-    let postData = {
-      filters: datadropdown,
-      // "sort": "string",
-      first: 0,
-    };
-    console.log("postData", postData);
 
-    getProductSearch(postData).then((res) => {
-      setProducts(res?.data);
-      console.log("resposne ", res?.data);
-      console.log("resposne setProduct", dispatch(res?.data));
-    });
-  }, []);
+  useEffect(() => {
+    if (selectedFilters) {
+      setTempSelected(selectedFilters);
+    }
+  }, [selectedFilters]);
+
   console.log("products-data", products?.data);
   return (
     <>
       {data?.options?.length > 0 && (
         <Menu>
           <Popover className="relative">
-            {({ open }) => (
+            {({ open, close }) => (
               <>
                 <Popover.Button className=" w-full relative  gap-x-1.5  bg-white px-3 py-2  shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50    text-zinc-800 text-xxs font-normal  tracking-wide   p-2 rounded-lg border border-neutral-400 justify-center items-center gap-1 inline-flex">
                   <span>{data?.name}</span>
@@ -103,18 +100,15 @@ const DropDown = ({ data }: any) => {
 
                         <div className="py-1">
                           {filteredOptions?.map((item: any, itemId: any) => {
-                            console.log("item", item);
-
                             return (
                               <Menu.Item key={itemId}>
                                 <p className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-xxs font-normal  tracking-wide flex gap-3">
                                   <input
                                     id={`${item}-${itemId}`}
                                     name="checkbox"
-                                    onChange={(e) =>
-                                      handleChange(item)
-                                    }
+                                    onChange={(e) => handleChange(item)}
                                     type="checkbox"
+                                    checked={tempSelected?.includes(item)}
                                     // value={searchTerm}
                                     // onChange={(e) => setSearchTerm(e.target.value)}
                                     // value={item}
@@ -132,14 +126,14 @@ const DropDown = ({ data }: any) => {
                       <div className=" pt-4 pb-4  border-t-2 justify-center items-center gap-1 inline-flex cursor-pointer pl-1">
                         <button
                           className="text-center text-zinc-400 text-xs font-normal  tracking-wide    px-8 py-3 rounded-full border border-zinc-400 "
-                          onClick={handleClear}
+                          onClick={() => handleClear(close)}
                         >
                           Clear
                         </button>
 
                         <button
                           className="text-center text-white text-xs font-normal tracking-wide   px-8 py-3 bg-zinc-800 rounded-full"
-                          onClick={handleApply}
+                          onClick={() => handleApply(close)}
                         >
                           Apply
                         </button>

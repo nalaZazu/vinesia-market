@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 function Region() {
   const pathname = usePathname();
   const [products, setProducts] = useState<any>([]);
+  const [selectedFilters, setSelectedFilters] = useState<any>([]);
 
   const {
     isLoading: filtersLoading,
@@ -26,22 +27,22 @@ function Region() {
   const datadropdown = useSelector<any>(
     (state) => state?.dropdown?.dropdownData
   );
-  
+
   useEffect(() => {
     let postData = {
-      filters: datadropdown,
+      filters: selectedFilters,
       // "sort": "string",
       first: 0,
     };
-    console.log("postData" , postData);
-    
+    console.log("postData", postData);
+
     getProductSearch(postData).then((res) => {
       setProducts(res?.data);
       console.log("resposne ", res?.data);
       console.log("resposne setProduct", setProducts(res?.data));
     });
-  }, []);
-  console.log("products-data", products?.data);
+  }, [selectedFilters]);
+  console.log("Selected-data", selectedFilters);
 
   return (
     <>
@@ -67,7 +68,11 @@ function Region() {
             {filtersList?.map((list: any, i: any) => {
               return (
                 <div key={i}>
-                  <DropDown data={list} />
+                  <DropDown
+                    data={list}
+                    selectedFilters={selectedFilters}
+                    setSelectedFilters={setSelectedFilters}
+                  />
                 </div>
               );
             })}
@@ -82,13 +87,17 @@ function Region() {
           </div>
         </div>
         {/* badge */}
-        <Badges />
+        {
+          <Badges
+            data={selectedFilters}
+            setSelectedFilters={setSelectedFilters}
+          />
+        }
 
         {/* <PriceSlider /> */}
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products?.data &&
             products?.data?.map((item: any) => {
-              console.log("productItem", item);
               return (
                 <div key={item?.id}>{item && <ProductCard item={item} />}</div>
               );
