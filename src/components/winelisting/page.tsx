@@ -8,10 +8,12 @@ const Listing = ({ data }: { data: any }) => {
     <>
       <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
         {data &&
-          data.map((item: any, index : any) => {
+          data.map((item: any, index: any) => {
             return (
-              <Link href={`product/${index+1}`}>
-                <div key={item?.id}>{item && <ProductCard item={item} />}</div>
+              <Link href={`product/${index + 1}`}>
+                <div key={item?.id}>
+                  {item && <ProductCard item={item}  />}
+                </div>
               </Link>
             );
           })}
