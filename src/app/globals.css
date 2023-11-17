@@ -31,28 +31,25 @@
   left: -40px !important;
 }
 
-
-/* .slick-track{
-  margin-left: -20px;
-  display: flex;
-  column-gap: 25px;
-} */
-
-/* .slick-slider .slick-prev {
-  left: 50px;
-  z-index: 10;
-  position: absolute;
-} */
-.slick-next:before {
-  content: none;
+.slick-arrow {
+  margin-top: 16px;
 }
 
-.slick-prev:before {
-  content: none;
+.slick-prev::before, .slick-next::before {
+  content: ' ';
+  display: none;
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+
+  color: rgb(122, 119, 119);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .slick-active {
-  padding-right: 25px !important;
+  padding-right: 2px !important;
+  /* margin-right: 16px !important; */
 }
 
 
@@ -94,47 +91,11 @@
   box-sizing: border-box;
 }
 
-/* Styles for the slider component */
-.slider {
-  height: 10px;
-  width: 100%;
-  background-color: #ddd;
-  border-radius: 5px;
-  margin-top: 10px;
-}
 
-/* Styles for the slider thumb */
-.slider .thumb {
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background-color: #007bff;
-  cursor: grab;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Styles for the slider active state */
-.slider .thumb.active {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-/* .slick-active:last-of-type{
-  padding-left: 12px !important;
-} */
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
-
-body {
-  /* color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
 }

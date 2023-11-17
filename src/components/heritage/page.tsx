@@ -57,16 +57,12 @@ const Heritage = ({ data }: { data: any }) => {
       </h1>
       <div className="mx-auto">
         <div className="mx-auto max-w-2xl  lg:max-w-none  ">
-          {/* <div className="mt-6  grid lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0">
-        
-          </div>   */}
-
           <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-4 md:gap-0">
             <div className="gap-6 md:py-16 py-5 heritage_carousel">
               <Slider {...sliderSettings}>
                 {data?.map((item: any, i: any) => {
                   return (
-                    <div key={i}>
+                    <div key={i} >
                       <ProductCard item={item} />
                     </div>
                   );
