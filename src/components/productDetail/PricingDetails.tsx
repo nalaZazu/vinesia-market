@@ -65,8 +65,8 @@ export default function PricingDetail({ release }: { release: any }) {
               </h2>
             </div>
             <p className=" text-lg font-semibold text-white  tracking-tight">
-              €
-              {`${(
+              + 
+              {`  ${(
                 ((release?.highPrice - release?.releasePrice) /
                   release?.releasePrice) *
                 100
