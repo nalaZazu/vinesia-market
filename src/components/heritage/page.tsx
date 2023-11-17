@@ -69,8 +69,8 @@ console.log("current" , currentSlide);
               <Slider {...sliderSettings}>
                 {data?.map((item: any, index: any) => {
                   return (
-                    <Link href={`/product/${index + 1}`}>
-                      <div key={index}>
+                    <Link href={`/product/${index + 1}`} key={index}>
+                      <div>
                         <ProductCard item={item} />
                       </div>
                     </Link>

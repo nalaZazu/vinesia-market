@@ -88,8 +88,8 @@ const WineArt = () => {
           {products?.data &&
             products?.data?.map((item: any, index: any) => {
               return (
-                <Link href={`/product/${index + 1}`}>
-                  <div key={item?.id}>
+                <Link href={`/product/${index + 1}`} key={item?.id}>
+                  <div >
                     {item && <ProductCard item={item} />}
                   </div>
                 </Link>
