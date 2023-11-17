@@ -30,7 +30,7 @@ export default function ProductCarousel() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
           // dots: true,
@@ -46,8 +46,8 @@ export default function ProductCarousel() {
     ],
     prevArrow: (
       <div className=" productcarousel z-50">
-        <div className=" text-black rounded-lg w-8 h-8 text-center flex items-center absolute top-[308px] left-[90px]">
-          <div className="mx-auto">
+        <div className=" text-black rounded-lg w-8 h-8 text-center flex items-center absolute lg:top-[290px] lg:left-[90px] md:top-[0px] md:left-[0px] top-0 left-0">
+          <div className="">
             <PrevIcon2 />
           </div>
         </div>
@@ -55,8 +55,8 @@ export default function ProductCarousel() {
     ),
     nextArrow: (
       <div className="productcarousel  z-50">
-        <div className=" text-black rounded-lg w-8 h-8 text-center flex items-center absolute top-[308px] right-[150px]">
-          <div className="mx-auto">
+        <div className=" text-black rounded-lg w-8 h-8 text-center flex items-center absolute lg:top-[290px] lg:right-[150px]">
+          <div className="">
             <NextIcon2 />
           </div>
         </div>

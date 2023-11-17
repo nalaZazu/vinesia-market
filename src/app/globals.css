@@ -46,6 +46,31 @@
   z-index: 10;
 }
 
+.slick-next:before {
+  content: none;
+}
+.slick-arrow {
+  margin-top: 16px;
+
+}
+
+.slick-track {
+  display: flex !important;
+  gap: 1rem;
+}
+
+.slick-prev::before, .slick-next::before {
+  content: ' ';
+  display: none;
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  color: rgb(122, 119, 119);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
   .slick-arrow {
     margin-top: 16px;
   }
@@ -119,10 +144,17 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
 
+
+.slick-active {
+  padding-right: 0 !important;
+}
+
+
   /* Styles for the slider active state */
   .slider .thumb.active {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   }
+
 
   .product_slider .slick-dots li {
     width: 56px;
@@ -146,6 +178,34 @@
   }
 
 
+/* Default styles for buttons */
+.productcarousel div {
+  margin: auto;
+}
+
+/* Styles for buttons at large screens */
+@media screen and (max-width: 768px) {
+  .product_slider ul {
+      display: flex !important;
+      justify-content: center;
+      width: 360px;
+      margin-left: 52px;
+      height: 91px;
+      padding: 10px 0px;
+      background-color: white;
+      border-radius: 10px;
+      z-index: 0;
+    }
+}
+
+/* Styles for buttons at medium screens */
+@media screen and (max-width: 768px) {
+  .productcarousel {
+    top: 0;
+    left: 0;
+  }
+}
+
   @media (prefers-color-scheme: dark) {
     :root {
       --foreground-rgb: 255, 255, 255;
@@ -154,3 +214,4 @@
     }
 
   }
+
