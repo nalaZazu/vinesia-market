@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ProductCard from "../cards/ProductCard";
 import TabButton from "@/common/TabButton";
 import DropDownButton from "@/common/DropDownButton";
+import Link from "next/link";
 
 export default function AllEditions({ products }: { products: any }) {
   const toggleDropdown = () => {
@@ -61,11 +62,13 @@ export default function AllEditions({ products }: { products: any }) {
         <div className=" max-w-[1170px] mx-auto">
           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mx-auto">
             {products &&
-              products.map((item: any, i: any) => {
+              products.map((item: any, index: any) => {
                 return (
-                  <div key={i}>
-                    <ProductCard item={item} />
-                  </div>
+                  <Link href={`/product/${index + 1}`}>
+                    <div key={index}>
+                      <ProductCard item={item} />
+                    </div>
+                  </Link>
                 );
               })}
           </div>

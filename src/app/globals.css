@@ -8,9 +8,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-/* .container{
-  max-width: 1280px !important;
-} */
 .heritage_carousel .slick-prev, .heritage_carousel .slick-next {
   top: 100% !important;
 }
@@ -24,12 +21,14 @@
 }
 
 .collection_carousel .slick-next {
-  right: -3px !important;
+  /* right: -3px !important; */
+  right: -29px !important;
 }
 
 .collection_carousel .slick-prev {
   left: -40px !important;
 }
+
 
 
 /* .slick-track{
@@ -50,14 +49,26 @@
 }
 .slick-next:before {
   content: none;
+
+.slick-arrow {
+  margin-top: 16px;
+
 }
 
-.slick-prev:before {
-  content: none;
+.slick-track {
+  display: flex !important;
+  gap: 1rem;
 }
 
-.slick-active {
-  padding-right: 25px !important;
+.slick-prev::before, .slick-next::before {
+  content: ' ';
+  display: none;
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  color: rgb(122, 119, 119);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -98,6 +109,7 @@
   border: 5px solid gray;
   box-sizing: border-box;
 }
+
 
 /* Styles for the slider component */
 .slider {
@@ -141,16 +153,16 @@
 .slick-active {
   padding-right: 0 !important;
 }
+=======
 
-/* .slick-active:last-of-type{
-  padding-left: 12px !important;
-} */
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+
 }
 
 body {
@@ -162,3 +174,6 @@ body {
     )
     rgb(var(--background-start-rgb)); */
 }
+
+}
+

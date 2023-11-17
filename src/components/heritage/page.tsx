@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import ProductCard from "../cards/ProductCard";
 import Slider from "react-slick";
 import { NextIcon, PrevIcon } from "@/assets/icon/Icons";
+import Link from "next/link";
 const Heritage = ({ data }: { data: any }) => {
+ 
+
+
   const sliderSettings = {
     // dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 3000,
     centerPadding: "100px",
+  
     responsive: [
       {
         breakpoint: 1024,
@@ -19,7 +24,6 @@ const Heritage = ({ data }: { data: any }) => {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          // dots: true,
         },
       },
       {
@@ -31,7 +35,7 @@ const Heritage = ({ data }: { data: any }) => {
       },
     ],
     prevArrow: (
-      <div className="slick-custom-arrow slick-prev top-full ">
+      <div className="slick-custom-arrow slick-prev top-full " >
         <div className="border border-gray-600 rounded-lg w-8 h-8 text-center flex items-center">
           <div className="mx-auto">
             <PrevIcon />
@@ -40,7 +44,7 @@ const Heritage = ({ data }: { data: any }) => {
       </div>
     ),
     nextArrow: (
-      <div className="slick-custom-arrow slick-next top-full">
+      <div className="slick-custom-arrow slick-next top-full" >
         <div className="border border-gray-600 rounded-lg w-8 h-8 text-center flex items-center">
           <div className="mx-auto">
             <NextIcon />
@@ -49,7 +53,6 @@ const Heritage = ({ data }: { data: any }) => {
       </div>
     ),
   };
-
   return (
     <div className="">
       <h1 className="text-primary font-semibold  tracking-tight text-xxl">
@@ -57,18 +60,16 @@ const Heritage = ({ data }: { data: any }) => {
       </h1>
       <div className="mx-auto">
         <div className="mx-auto max-w-2xl  lg:max-w-none  ">
-          {/* <div className="mt-6  grid lg:grid lg:grid-cols-2 lg:gap-x-6 lg:space-y-0">
-        
-          </div>   */}
-
           <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-4 md:gap-0">
             <div className="gap-6 md:py-16 py-5 heritage_carousel">
               <Slider {...sliderSettings}>
-                {data?.map((item: any, i: any) => {
+                {data?.map((item: any, index: any) => {
                   return (
-                    <div key={i}>
-                      <ProductCard item={item} />
-                    </div>
+                    <Link href={`/product/${index + 1}`}>
+                      <div key={index}>
+                        <ProductCard item={item} />
+                      </div>
+                    </Link>
                   );
                 })}
               </Slider>

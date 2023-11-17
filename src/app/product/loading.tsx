@@ -1,8 +1,11 @@
+import PTSSkelton from '@/components/productDetail/PTSSkelton'
 import React from 'react'
 
 const Loading = () => {
   return (
-    <div>Loading....</div>
+    <>
+    <PTSSkelton/>
+    </>
   )
 }
 
