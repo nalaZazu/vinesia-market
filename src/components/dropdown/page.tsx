@@ -2,9 +2,8 @@
 import { Fragment, useEffect, useState } from "react";
 import { Menu, Transition, Popover } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { handleSelected } from "@/redux/dropdownselected";
-import { getProductSearch } from "@/services/ProductSerach";
 const DropDown = ({
   data,
   selectedFilters,
@@ -36,12 +35,13 @@ const DropDown = ({
   const handleApply = (close: any) => {
     console.log("Temp List ", tempSelected);
     setSelectedFilters(tempSelected);
+    dispatch(handleSelected(tempSelected))
     close();
   };
   const handleClear = (close: any) => {
+    setSearchTerm("");
     console.log(searchTerm);
-    // setSearchTerm("");
-    setSelectedFilters([]);
+    // setSelectedFilters([]);
     close();
   };
 
@@ -76,13 +76,13 @@ const DropDown = ({
                   leaveFrom="opacity-100 translate-y-0"
                   leaveTo="opacity-0 translate-y-1"
                 >
-                  <Popover.Panel className="absolute z-10 mt-2 w-[200px] origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Popover.Panel className="absolute z-10 mt-2  w-52 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black/5">
                       <div className="relative gap-8 bg-white p-4">
                         <form>
                           <label
                             htmlFor="default-search"
-                            className="text-zinc-800 text-xs font-normal  tracking-wide "
+                            className="text-zinc-800 text-xs font-normal  tracking-wide"
                           >
                             Search
                           </label>
@@ -108,10 +108,7 @@ const DropDown = ({
                                     name="checkbox"
                                     onChange={(e) => handleChange(item)}
                                     type="checkbox"
-                                    checked={tempSelected?.includes(item)}
-                                    // value={searchTerm}
-                                    // onChange={(e) => setSearchTerm(e.target.value)}
-                                    // value={item}
+                                    checked={tempSelected?.includes(item)}  
                                   />
                                   <label htmlFor={`${item}-${itemId}`}>
                                     {item}
@@ -123,7 +120,7 @@ const DropDown = ({
                         </div>
                       </div>
 
-                      <div className=" pt-4 pb-4  border-t-2 justify-center items-center gap-1 inline-flex cursor-pointer pl-1">
+                      <div className=" pt-4 pb-4  border-t-2 justify-center items-center gap-3 inline-flex cursor-pointer pl-1">
                         <button
                           className="text-center text-zinc-400 text-xs font-normal  tracking-wide    px-8 py-3 rounded-full border border-zinc-400 "
                           onClick={() => handleClear(close)}

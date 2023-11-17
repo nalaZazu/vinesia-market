@@ -35,16 +35,15 @@ export default function Header() {
           </div>
 
           <div className=" text-2xl lg:text-4xl font-bold col-span-2 md:text-center">
-           <Link href="/">
-           <Image
-              src={logo}
-              className="md:mx-auto"
-              alt="Picture of the author"
-              width={80}
-              height={80}
-            />
-           </Link>
-            
+            <Link href="/">
+              <Image
+                src={logo}
+                className="md:mx-auto"
+                alt="Picture of the author"
+                width={80}
+                height={80}
+              />
+            </Link>
           </div>
 
           <div className="flex items-center space-x-4 lg:space-x-8 md:col-span-5 col-span-10 ms-auto">
@@ -87,7 +86,9 @@ export default function Header() {
                 />
               </svg>
 
-              <span className="text-neutral-900 text-lg font-medium leading-7">Cart</span>
+              <span className="text-neutral-900 text-lg font-medium leading-7">
+                Cart
+              </span>
             </div>
           </div>
         </div>
@@ -100,9 +101,9 @@ export default function Header() {
             {menuBar?.map((item: any) => {
               const { id, name, href } = item;
               return (
-                <li key={id}>
-                  <Link href={href}>{name}</Link>
-                </li>
+                <Link href={href} key={id}>
+                  <li>{name}</li>
+                </Link>
               );
             })}
           </ul>

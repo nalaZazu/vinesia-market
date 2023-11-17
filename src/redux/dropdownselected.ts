@@ -8,12 +8,13 @@ export const dropdownReducer = createSlice({
     handleSelected: (state, action: PayloadAction<any>) => {
       console.log("from action",action.payload)
       const  selectedValue  = action.payload;
-      if (!state.dropdownData.includes(selectedValue)) {
-        state.dropdownData = [...state.dropdownData, ...action.payload];
-      } else {
-        state.dropdownData = state.dropdownData.filter((data:any) => data !== action.payload
-        );
-      }
+      return {dropdownData : action.payload }
+      // if (!state.dropdownData.includes(selectedValue)) {
+      //   state.dropdownData = [...state.dropdownData, ...action.payload];
+      // } else {
+      //   state.dropdownData = state.dropdownData.filter((data:any) => data !== action.payload
+      //   );
+      // }
     },
 
   

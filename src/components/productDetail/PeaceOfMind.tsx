@@ -4,7 +4,13 @@ import Vector from "@/assets/icon/Vector.svg";
 import ownership from "@/assets/icon/ownership.svg";
 import frame from "@/assets/icon/Frame.svg";
 import playvideo from "@/assets/icon/Playvideo.svg";
+import { useSelector } from "react-redux";
+import arrow from "@/assets/icon/arrow-white.svg";
+
 export default function PeaceOfMind() {
+  const isAuthenticted = useSelector<any>(
+    (state) => state?.account?.isAuthenticated
+  );
   return (
     <section className=" py-14 px-4 md:px-4 lg:px-0">
       <div className="container mx-auto">
@@ -92,12 +98,17 @@ export default function PeaceOfMind() {
             </div>
           </div>
           <div className="flex justify-center pt-7">
-            <button
-              type="button"
-              className="text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center"
-            >
-              Invest now
-            </button>
+            {isAuthenticted ? (
+              <div className="text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center flex gap-1 items-center">
+                <button type="button">See all certificates</button>
+                <Image src={arrow} alt="arrow" />
+              </div>
+            ) : (
+              <div className="text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center flex gap-1 items-center">
+                <button type="button"> Read more</button>
+                <Image src={arrow} alt="arrow" />
+              </div>
+            )}
           </div>
         </div>
       </div>
