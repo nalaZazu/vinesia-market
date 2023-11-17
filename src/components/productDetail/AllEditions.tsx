@@ -64,8 +64,8 @@ export default function AllEditions({ products }: { products: any }) {
             {products &&
               products.map((item: any, index: any) => {
                 return (
-                  <Link href={`/product/${index + 1}`}>
-                    <div key={index}>
+                  <Link href={`/product/${index + 1}`} key={index}>
+                    <div >
                       <ProductCard item={item} />
                     </div>
                   </Link>
