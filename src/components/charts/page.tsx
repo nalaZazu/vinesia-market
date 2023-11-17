@@ -11,7 +11,7 @@ import {
 import { Line } from "react-chartjs-2";
 import moment from "moment";
 
-export default function Appactivity({ data }: { data: any }) {
+export default function Appactivity({ data }: { data?: any }) {
   ChartJS.register(
     CategoryScale,
     LinearScale,
