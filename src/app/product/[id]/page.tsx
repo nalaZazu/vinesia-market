@@ -21,7 +21,6 @@ import WineryVideo from "@/components/productDetail/WineryVideo";
 import AboutWineries from "@/components/productDetail/AboutWineries";
 import PricingDetail from "@/components/productDetail/PricingDetails";
 import Appactivity from "@/components/charts/page";
-import Footer from "@/components/footer/page";
 
 // import ReleaseDateSection from '@/components/productDetail/ReleaseDateSection'
 // client componet fetching

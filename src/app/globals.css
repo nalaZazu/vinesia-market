@@ -43,6 +43,11 @@
   z-index: 10;
   position: absolute;
 } */
+
+
+.slick-arrow {
+  z-index: 10;
+}
 .slick-next:before {
   content: none;
 }
@@ -116,6 +121,25 @@
 /* Styles for the slider active state */
 .slider .thumb.active {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.product_slider .slick-dots li{
+  width: 56px;
+  height:0;
+}
+.product_slider ul{
+  display: flex !important;
+  justify-content: center;
+  width: 411px;
+  margin-left: 45px;
+  height: 92px;
+  padding: 10px 0px;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.slick-active {
+  padding-right: 0 !important;
 }
 
 /* .slick-active:last-of-type{
