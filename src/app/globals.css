@@ -174,3 +174,31 @@ body {
     )
     rgb(var(--background-start-rgb)); */
 }
+
+/* Default styles for buttons */
+.productcarousel div {
+  margin: auto;
+}
+
+/* Styles for buttons at large screens */
+@media screen and (max-width: 768px) {
+  .product_slider ul {
+      display: flex !important;
+      justify-content: center;
+      width: 360px;
+      margin-left: 52px;
+      height: 91px;
+      padding: 10px 0px;
+      background-color: white;
+      border-radius: 10px;
+      z-index: 0;
+    }
+}
+
+/* Styles for buttons at medium screens */
+@media screen and (max-width: 768px) {
+  .productcarousel {
+    top: 0;
+    left: 0;
+  }
+}
