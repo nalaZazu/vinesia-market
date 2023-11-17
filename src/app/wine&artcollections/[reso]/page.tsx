@@ -1,27 +1,42 @@
 "use client";
-import React from "react";
-import Image from "next/image";
-import DropDown from "@/components/dropdown/page";
-import {
-  artCollect,
-  bottleSize,
-  casing,
-  color,
-  other,
-  ratingCritics,
-  regions,
-  winary,
-} from "@/constants/invesdropdown";
-import Recomend from "@/components/dropdown/recomend/page";
-import { productlist } from "@/constants/winelist";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import RegionCountry from "@/components/regioncountry/page";
 import resoImage from "@/assets/image/reso-image.png";
 import ExploreCountry from "@/components/explorecountry/page";
-import { resolve } from "path/win32";
+
+import DropDownBadge from "@/common/dropdownbadge/page";
+import { useQuery } from "@tanstack/react-query";
+import { getFilters } from "@/services/Common";
+import { getProductSearch } from "@/services/ProductSerach";
+import Link from "next/link";
+import ProductCard from "@/components/cards/ProductCard";
 const Rao = ({ params }: { params: any }) => {
   console.log("paramRes", params);
   const pathname = usePathname();
+  const [products, setProducts] = useState<any>([]);
+  const [selectedFilters, setSelectedFilters] = useState<any>([]);
+  const {
+    isLoading: filtersLoading,
+    error: filtersError,
+    data: filtersData,
+  } = useQuery({
+    queryKey: ["getAllFilters"],
+    queryFn: getFilters,
+  });
+  const filtersList = filtersData?.data;
+  useEffect(() => {
+    let postData = {
+      filters: selectedFilters,
+      // "sort": "string",
+      first: 0,
+    };
+    console.log("postData", postData);
+
+    getProductSearch(postData).then((res) => {
+      setProducts(res?.data);
+    });
+  }, [selectedFilters]);
   const { reso } = params;
   const regionparagraph = `Reso’s deep engagement with informal art and abstract expressionism led him to continuously seek new avenues for expanding his artistic expression. It wasn’t until 2011 that he ventured into the abstract series, marking a pivotal moment in his artistic journey.`;
   const regionparagraphs = `In Reso’s artworks, one senses a powerful dynamism and speed, a direct reflection of his energetic approach. This approach draws parallels to K.O. Goetz’s experimental painting technique, blending quick, impulsive squeegee gestures with moments of contemplation and reflection, creating a dance-like choreography on the canvas.`;
@@ -57,7 +72,7 @@ const Rao = ({ params }: { params: any }) => {
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">
         <h1 className="text-primary text-xxl font-semibold  tracking-tight ">
-          Meet the artist: <span className="capitalize">{reso}</span> 
+          Meet the artist: <span className="capitalize">{reso}</span>
         </h1>
         <RegionCountry
           regionparagraph={regionparagraph}
@@ -73,95 +88,21 @@ const Rao = ({ params }: { params: any }) => {
         />
 
         {/* dropdown  */}
-        <div className="flex justify-between md:pt-7 md:pb-7 flex-wrap">
-          <div className="flex gap-2 flex-wrap">
-            <div>
-              <DropDown option={bottleSize} />
-            </div>
-            <div>
-              <DropDown />
-            </div>
-            <div>
-              <DropDown option={casing} />
-            </div>
-            <div>
-              <DropDown option={ratingCritics} />
-            </div>
-            <div>
-              <DropDown option={regions} />
-            </div>
-            <div>
-              <DropDown option={winary} />
-            </div>
-            <div>
-              <DropDown />
-            </div>
-            <div>
-              <DropDown option={color} />
-            </div>
-            <div>
-              <DropDown />
-            </div>
-            <div>
-              <DropDown option={artCollect} />
-            </div>
-            <div>
-              <DropDown option={other} />
-            </div>
-          </div>
-          <div className="flex items-center gap-2 pe-2 flex-wrap">
-            <p className="text-primary text-xs font-normal  tracking-wide">
-              Sort by
-            </p>
-            <Recomend />
-          </div>
-        </div>
+        <DropDownBadge
+          filtersList={filtersList}
+          selectedFilters={selectedFilters}
+          setSelectedFilters={setSelectedFilters}
+        />
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {productlist?.map((item) => {
-            const {
-              bottle1,
-              id,
-              imageAlt,
-              imageSrc,
-              name,
-              price,
-              remain,
-              subtitle,
-            } = item;
-            return (
-              <div key={id} className="group relative">
-                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md ">
-                  <Image
-                    src={imageSrc}
-                    alt={imageAlt}
-                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                  />
-                </div>
-                <div className=" text-left">
-                  <h4 className=" text-base font-semibold">{name}</h4>
-                  <p className=" text-xxs ">{subtitle}</p>
-                  <p className=" text-xxs font-semibold">OWNER</p>
-                  <span className="justify-center items-center gap-0.5 inline-flex  mb-2  text-white text-xxs">
-                    <p className="   bg-bgbutton w-12 text-center   p-0.5 rounded-sm">
-                      Vinesia
-                    </p>
-                    <p className="  bg-[#6c757e] font-medium tracking-wide p-0.5 rounded-sm">
-                      Private investors
-                    </p>
-                  </span>
-
-                  <hr />
-                  <button className="text-xxs uppercase ">buy now</button>
-                  <h3 className=" font-semibold text-lg ">€{price}</h3>
-                  <p className=" flex gap-3">
-                    <span className=" text-xxs font-medium">{bottle1}</span>
-                    <span className=" text-xxs">{remain} remaining</span>
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+          {products?.data &&
+            products?.data?.map((item: any, index: any) => {
+              return (
+                <Link href={`/product/${index + 1}`} key={item?.id}>
+                  <div>{item && <ProductCard item={item} />}</div>
+                </Link>
+              );
+            })}
         </div>
       </div>
     </>
