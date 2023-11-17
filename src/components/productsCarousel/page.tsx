@@ -46,7 +46,7 @@ export default function ProductCarousel() {
     ],
     prevArrow: (
       <div className=" productcarousel z-50">
-        <div className=" text-black rounded-lg w-8 h-8 text-center flex items-center absolute lg:top-[290px] lg:left-[90px] md:top-[0px] md:left-[0px] top-0 left-0">
+        <div className=" text-black rounded-lg w-8 h-8 text-center flex items-center absolute lg:top-[290px] lg:left-[90px] md:top-[290px] md:left-[90px] top-[250px] left-[90px] ">
           <div className="">
             <PrevIcon2 />
           </div>
@@ -55,7 +55,7 @@ export default function ProductCarousel() {
     ),
     nextArrow: (
       <div className="productcarousel  z-50">
-        <div className=" text-black rounded-lg w-8 h-8 text-center flex items-center absolute lg:top-[290px] lg:right-[150px]">
+        <div className=" text-black rounded-lg w-8 h-8 text-center flex items-center absolute lg:top-[290px] lg:right-[150px] md:top-[290px] md:right-[345px] top-[250px] right-[70px]">
           <div className="">
             <NextIcon2 />
           </div>
