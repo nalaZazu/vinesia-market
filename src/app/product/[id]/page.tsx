@@ -28,6 +28,7 @@ import Appactivity from "@/components/charts/page";
 import UpperFooter from "@/components/upperfooter/page";
 import ProductTopSection from "@/components/productDetail/ProductTopSection";
 import AssetDetails from "@/components/productDetail/AssetDetails";
+import OtherEditions from "@/components/otherEditions/page";
 
 export default function Product() {
   const { id } = useParams();
@@ -253,7 +254,6 @@ export default function Product() {
 
       {/* You may also like start */}
       <YouMayAlso products={products} />
-
       {/* Be the first to know start */}
       <UpperFooter />
       {/* Be the first to know end */}
