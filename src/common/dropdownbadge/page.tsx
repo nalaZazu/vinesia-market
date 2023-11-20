@@ -3,8 +3,15 @@ import DropDownButton from "../DropDownButton";
 import Badges from "@/components/badage/page";
 import DropDown from "@/components/dropdown/page";
 
-const DropDownBadge = ({ filtersList, setSelectedFilters, selectedFilters }:{ filtersList:any, setSelectedFilters: any, selectedFilters: any }
-) => {
+const DropDownBadge = ({
+  filtersList,
+  setSelectedFilters,
+  selectedFilters,
+}: {
+  filtersList: any;
+  setSelectedFilters: any;
+  selectedFilters: any;
+}) => {
   return (
     <>
       <div className="flex justify-between md:pt-5 md:pb-14 flex-wrap gap-2">
@@ -31,12 +38,14 @@ const DropDownBadge = ({ filtersList, setSelectedFilters, selectedFilters }:{ fi
         </div>
       </div>
       {/* badge */}
-      {
-        <Badges
-          data={selectedFilters}
-          setSelectedFilters={setSelectedFilters}
-        />
-      }
+      <div className="pt-4">
+        {
+          <Badges
+            data={selectedFilters}
+            setSelectedFilters={setSelectedFilters}
+          />
+        }
+      </div>
     </>
   );
 };

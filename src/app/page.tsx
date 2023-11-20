@@ -9,7 +9,6 @@ import { getHomePage } from "../services/Home";
 import Popup from "@/components/popup/page";
 import ExploreRegion from "@/components/exploreRegion/page";
 import UpperFooter from "@/components/upperfooter/page";
-import { getProductSearch } from "@/services/ProductSerach";
 export default function Home() {
   const [criticsSelection, setCriticsSelection] = useState([]);
   const [products, setProducts] = useState([]);

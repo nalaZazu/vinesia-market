@@ -37,7 +37,7 @@ const Badges = ({
   };
   return (
     <>
-      <div className="pt-4 md:pt-0 pb-8 flex gap-2 flex-wrap">
+      <div className="pt-4  md:pt-0 pb-8 flex gap-2 flex-wrap">
         {selectedData &&
           selectedData?.map((item: any, i: any) => {
             return (

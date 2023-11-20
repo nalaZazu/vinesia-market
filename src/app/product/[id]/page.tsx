@@ -29,6 +29,7 @@ import UpperFooter from "@/components/upperfooter/page";
 import ProductTopSection from "@/components/productDetail/ProductTopSection";
 import AssetDetails from "@/components/productDetail/AssetDetails";
 import OtherEditions from "@/components/otherEditions/page";
+import DisclosureModal from "@/components/disclosure/page";
 
 export default function Product() {
   const { id } = useParams();
@@ -100,15 +101,11 @@ export default function Product() {
         />
       )}
       {/* hero section end*/}
-
+  
       {isAuthenticted ? <Collection /> : <></>}
 
-      {/* our peace of mind pledge section start */}
-
       <PeaceOfMind />
-      {/* our peace of mind pledge section end */}
-      {/* Release details section start */}
-      {/* {releaseDetails ? <ReleaseDateSection release={releaseDetails} /> : null} */}
+
       {isAuthenticted ? (
         <AssetDetails />
       ) : (
@@ -157,8 +154,14 @@ export default function Product() {
 
       {/* Release details section end */}
       {/* All editions start */}
+      {isAuthenticted ? (
+        <>
+          <OtherEditions data={products} />{" "}
+        </>
+      ) : (
+        <AllEditions products={products} />
+      )}
 
-      <AllEditions products={products} />
       {/* All editions end */}
       {/* How to invest in wine start */}
       {isAuthenticted ? (

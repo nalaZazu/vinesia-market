@@ -6,9 +6,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { NextIcon2, PrevIcon2 } from "@/assets/icon/Icons";
-import ProductCard from "../cards/ProductCard";
 
 export default function ProductCarousel() {
+  // const [dashboard, setDashBoard] = useState();
+  // const toggleColor = (category: any) => {
+  //   // router.push(category.href)
+  //   setDashBoard();
+  // };
   const sliderSettings = {
     customPaging: function () {
       return (
@@ -69,7 +73,10 @@ export default function ProductCarousel() {
         {[1, 2, 3, 4]?.map((item: any, i: any) => {
           return (
             <div key={i}>
-              <div key={i} className=" justify-center items-center">
+              <div
+                key={i}
+                className=" justify-center items-center"
+              >
                 <div className="relative">
                   <Image
                     src={big1}
