@@ -7,9 +7,6 @@ const Heritage = ({ data }: { data: any }) => {
  
   const [currentSlide, setCurrentSlide] = useState(0);
 
-console.log("current" , currentSlide);
-
-
   const sliderSettings = {
     // dots: true,
     infinite: true,
@@ -46,7 +43,7 @@ console.log("current" , currentSlide);
         </div>
       </div>
     ),
-    //  currentSlide === data.length - 2 ? 'hidden' : ''
+ 
     nextArrow:currentSlide === data.length - 2 ? <></> : (
       <div className="slick-custom-arrow slick-next top-full" >
         <div className="border border-gray-600 rounded-lg w-8 h-8 text-center flex items-center">

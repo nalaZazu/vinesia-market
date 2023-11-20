@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import infologo from "@/assets/icon/info.svg";
 import Appactivity from "@/components/charts/page";
@@ -9,6 +9,8 @@ import logo3 from "@/assets/icon/img3.png";
 import logo4 from "@/assets/icon/img4.svg";
 
 export default function AssetDetails() {
+  const [selected, setSelected] = useState(0);
+  const list = ["All", "Transactions", "Bid", "Asks"];
   return (
     <section className="container mx-auto">
       <div className="flex justify-between py-7">
@@ -178,90 +180,30 @@ export default function AssetDetails() {
                   data-tabs-toggle="#default-tab-content"
                   role="tablist"
                 >
-                  <li
-                    className="text-center text-zinc-700 text-xxs font-medium"
-                    role="presentation"
-                  >
-                    <button
-                      className="px-8 py-1.5 rounded-lg bg-white shadow-md"
-                      id="profile-tab"
-                      data-tabs-target="#profile"
-                      type="button"
-                      role="tab"
-                      aria-controls="profile"
-                      aria-selected="false"
-                    >
-                      All
-                    </button>
-                  </li>
-                  <li
-                    className="text-center text-zinc-700 text-xxs font-medium"
-                    role="presentation"
-                  >
-                    <button
-                      className="px-9 py-1.5 rounded-md "
-                      id="profile-tab"
-                      data-tabs-target="#profile"
-                      type="button"
-                      role="tab"
-                      aria-controls="profile"
-                      aria-selected="false"
-                    >
-                      Transactions
-                    </button>
-                  </li>
-                  <li
-                    className="text-center text-zinc-700 text-xxs font-medium"
-                    role="presentation"
-                  >
-                    <button
-                      className="px-9 py-1.5 rounded-md"
-                      id="profile-tab"
-                      data-tabs-target="#profile"
-                      type="button"
-                      role="tab"
-                      aria-controls="profile"
-                      aria-selected="false"
-                    >
-                      Bids
-                    </button>
-                  </li>
-                  <li
-                    className="text-center text-zinc-700 text-xxs font-medium"
-                    role="presentation"
-                  >
-                    <button
-                      className="px-8 py-1.5 rounded-md"
-                      id="profile-tab"
-                      data-tabs-target="#profile"
-                      type="button"
-                      role="tab"
-                      aria-controls="profile"
-                      aria-selected="false"
-                    >
-                      Asks
-                    </button>
-                  </li>
+                  {list.map((l, i) => {
+                    return (
+                      <li
+                        className="text-center text-zinc-700 text-xxs font-medium"
+                        role="presentation"
+                      >
+                        <button
+                          onClick={() => setSelected(i)}
+                          className={`px-8 py-1.5 rounded-lg   ${
+                            selected == i ? "bg-white shadow-md" : ""
+                          } `}
+                          id="profile-tab"
+                          data-tabs-target="#profile"
+                          type="button"
+                          role="tab"
+                          aria-controls="profile"
+                          aria-selected="false"
+                        >
+                          {l}
+                        </button>
+                      </li>
+                    );
+                  })}
                 </ul>
-                {/* <div id="default-tab-content">
-              Name
-              <div
-                className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
-                id="profile"
-                role="tabpanel"
-                aria-labelledby="profile-tab"
-              >
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  This is some placeholder content the{" "}
-                  <strong className="font-medium text-gray-800 dark:text-white">
-                    Profile tab's associated content
-                  </strong>
-                  . Clicking another tab will toggle the visibility of this one
-                  for the next. The tab JavaScript swaps classes to control the
-                  content visibility and styling.
-                </p>
-              </div>
-            </div> */}
                 <div className="pt-6">
                   <div className="flow-root">
                     <ul role="list" className=" space-y-3">

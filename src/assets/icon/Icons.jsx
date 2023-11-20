@@ -101,10 +101,15 @@ export function InfoIcon() {
   );
 }
 
-export const TextIcon = ({ label , width,letter ,startOffset , fontSize}) => {
+export const TextIcon = ({ label, width, letter, startOffset, fontSize }) => {
   return (
     <>
-      <svg viewBox="0 0 300 300" width={width} height='100%' xmlns="http://www.w3.org/2000/svg">
+      <svg
+        viewBox="0 0 300 300"
+        width={width}
+        height="100%"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           id="SunCatcherStudio"
           fill="none"
@@ -118,7 +123,11 @@ export const TextIcon = ({ label , width,letter ,startOffset , fontSize}) => {
           font-family="sans-serif"
           font-weight="normal"
         >
-          <textPath href="#SunCatcherStudio" side="left" startOffset={startOffset}>
+          <textPath
+            href="#SunCatcherStudio"
+            side="left"
+            startOffset={startOffset}
+          >
             {/* Secure Ownership */} {label}
           </textPath>
         </text>
@@ -127,35 +136,80 @@ export const TextIcon = ({ label , width,letter ,startOffset , fontSize}) => {
   );
 };
 
-
-
-export const Xmark=()=>{
-  return(
+export const Xmark = () => {
+  return (
     <>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-</svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-7 h-7"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
     </>
-  )
-}
+  );
+};
 
 export function NextIcon2() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-</svg>
-
-  )
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+      />
+    </svg>
+  );
 }
-
 
 export function PrevIcon2() {
   return (
-   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-</svg>
-
-
-  )
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M15.75 19.5L8.25 12l7.5-7.5"
+      />
+    </svg>
+  );
 }
 
+export const ArrowBtn = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      className="w-3.5 h-3.5"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
+      />
+    </svg>
+  );
+};

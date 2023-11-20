@@ -37,8 +37,3 @@ export interface Wine {
   source: String;
   winery?: Winery;
 }
-
-
-export interface chart{
-  
-}
