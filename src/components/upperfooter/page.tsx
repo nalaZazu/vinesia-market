@@ -4,7 +4,7 @@ const UpperFooter = () => {
   return (
     <>
       {/* Be the first to know start */}
-      <section className="px-4 lg:px-0 md:px-4 pt-40">
+      <section className="px-4 lg:px-0 md:px-4 pt-16">
         <div className=" flex lg:justify-end lg:items-center">
           <div className="lg:w-1/3 w-full bg-themegray p-3 lg:border-y-2 lg:border-l-2  border-spacegray  lg:rounded-s-md rounded">
             <div className="flex justify-between w-full lg:max-w-sm max-w-full mx-auto">

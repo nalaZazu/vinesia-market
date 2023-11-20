@@ -5,14 +5,10 @@ import case1 from "@/assets/icon/Case.svg";
 import redwine from "@/assets/icon/redwine.svg";
 import big from "@/assets/icon/big.png";
 import big1 from "@/assets/icon/big1.png";
-import Vector from "@/assets/icon/Vector.svg";
-import ownership from "@/assets/icon/ownership.svg";
-import frame from "@/assets/icon/Frame.svg";
-import playvideo from "@/assets/icon/Playvideo.svg";
 import logo1 from "@/assets/icon/logo1.svg";
 import award from "@/assets/icon/award.svg";
-import infologo from "@/assets/icon/info.svg";
 import { Wine, releaseDetails, rating } from "@/propTypes/page";
+import ProductCarousel from "../productsCarousel/page";
 
 const ProductTopSection = ({
   wine,
@@ -180,7 +176,6 @@ const ProductTopSection = ({
           </div>
         </div>
         {/* first section end */}
-
         {/* slider start */}
         <div>
           <div className="flex justify-center items-center">
