@@ -6,7 +6,7 @@ import logo2 from "@/assets/icon/img2.png";
 import logo3 from "@/assets/icon/img3.png";
 import logo4 from "@/assets/icon/img4.svg";
 import Image from "next/image";
-import { ArrowBtn } from "@/assets/icon/Icons";  
+import { ArrowBtn } from "@/assets/icon/Icons";
 const DisclosureModal = () => {
   const [selected, setSelected] = useState(0);
   const list = ["All", "Transactions", "Bid", "Asks"];
@@ -25,11 +25,13 @@ const DisclosureModal = () => {
                 <div className="basis-4/5 ">
                   <hr className=" border-black" />
                 </div>
-                <ArrowBtn
+                <span
                   className={`${
                     open ? "rotate-180 transform" : ""
                   } h-5 w-5 text-purple-500`}
-                />
+                >
+                  <ArrowBtn />
+                </span>
               </Disclosure.Button>
 
               <Disclosure.Panel className="px-4 pb-2 pt-4 text-sm text-gray-500">
@@ -45,6 +47,7 @@ const DisclosureModal = () => {
                         {list.map((l, i) => {
                           return (
                             <li
+                              key={i}
                               className="text-center text-zinc-700 text-xxs font-medium"
                               role="presentation"
                             >
