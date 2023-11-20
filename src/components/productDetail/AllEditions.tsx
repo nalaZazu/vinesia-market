@@ -12,7 +12,7 @@ export default function AllEditions({ products }: { products: any }) {
 
   return (
     <div>
-      <section className="container mx-auto pt-24 px-4  lg:px-0">
+      <section className="container mx-auto pt-24 pb-16 px-4  lg:px-0">
         <div>
           <div className="flex justify-between items-center gap-5">
             <div className="basis-1/6">
@@ -65,7 +65,7 @@ export default function AllEditions({ products }: { products: any }) {
               products.map((item: any, index: any) => {
                 return (
                   <Link href={`/product/${index + 1}`} key={index}>
-                    <div >
+                    <div>
                       <ProductCard item={item} />
                     </div>
                   </Link>

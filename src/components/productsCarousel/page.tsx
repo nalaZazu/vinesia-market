@@ -12,7 +12,7 @@ export default function ProductCarousel() {
   const sliderSettings = {
     customPaging: function () {
       return (
-        <div className="image.dots z-0">
+        <div className="image.dots z-0 flx-img-border">
           <Image src={big} alt="" width={56} height={74} />
         </div>
       );
