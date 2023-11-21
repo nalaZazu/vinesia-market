@@ -101,7 +101,7 @@ export default function Appactivity({ data }: { data?: any }) {
     data?.map((_v: any, i: any) => {
       const date = new Date();
       date.setDate(date.getDate() + i);
-      return `${moment(_v[0]).format("MMM")}`;
+      return `${moment(_v[0]).format("MMM YY")}`;
     });
   const dataa = {
     labels: labels,
@@ -116,7 +116,7 @@ export default function Appactivity({ data }: { data?: any }) {
         yAxisID: "y",
         borderWidth: 2,
         tension: 0.4,
-        pointRadius: 4,
+        pointRadius: 0,
       },
     ],
   };
@@ -128,8 +128,8 @@ export default function Appactivity({ data }: { data?: any }) {
         <div className="flex">
           <p className=" text-blue-600">Current Period</p>
           <div className="w-2 h-2 mt-1 mx-2 rounded-full bg-blue-600 "></div>
-          <p className=" text-red-600">Previous Period</p>
-          <div className="w-2 h-2 mt-1 mx-2 rounded-full bg-red-600 "></div>
+          {/* <p className=" text-red-600">Previous Period</p>
+          <div className="w-2 h-2 mt-1 mx-2 rounded-full bg-red-600 "></div> */}
         </div>
       </div>
       <div className="mt-2 ml-5  text-2xl ">{/* <p>$1677787</p> */}</div>

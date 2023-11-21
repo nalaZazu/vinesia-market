@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import ProductCard from "../cards/ProductCard";
 import Link from "next/link";
@@ -11,9 +12,7 @@ const Listing = ({ data }: { data: any }) => {
           data.map((item: any, index: any) => {
             return (
               <Link href={`product/${index + 1}`} key={item?.id}>
-                <div >
-                  {item && <ProductCard item={item}  />}
-                </div>
+                <div>{item && <ProductCard item={item} />}</div>
               </Link>
             );
           })}

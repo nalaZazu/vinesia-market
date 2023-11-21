@@ -61,12 +61,10 @@ function Region() {
         />
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products?.data &&
-            products?.data?.map((item: any , index:any) => {
+            products?.data?.map((item: any, index: any) => {
               return (
                 <Link href={`/product/${index + 1}`} key={item?.id}>
-                  <div >
-                    {item && <ProductCard item={item} />}
-                  </div>
+                  <div>{item && <ProductCard item={item} />}</div>
                 </Link>
               );
             })}
