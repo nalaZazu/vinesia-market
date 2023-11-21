@@ -128,8 +128,8 @@ export default function Appactivity({ data }: { data?: any }) {
         <div className="flex">
           <p className=" text-blue-600">Current Period</p>
           <div className="w-2 h-2 mt-1 mx-2 rounded-full bg-blue-600 "></div>
-          <p className=" text-red-600">Previous Period</p>
-          <div className="w-2 h-2 mt-1 mx-2 rounded-full bg-red-600 "></div>
+          {/* <p className=" text-red-600">Previous Period</p>
+          <div className="w-2 h-2 mt-1 mx-2 rounded-full bg-red-600 "></div> */}
         </div>
       </div>
       <div className="mt-2 ml-5  text-2xl ">{/* <p>$1677787</p> */}</div>
