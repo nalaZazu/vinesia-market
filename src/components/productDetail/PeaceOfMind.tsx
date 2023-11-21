@@ -15,14 +15,14 @@ export default function PeaceOfMind() {
   const isAuthenticted = useSelector<any>(
     (state) => state?.account?.isAuthenticated
   );
-   const handleOpen = () => {
+  const handleOpen = () => {
     setOpen(!open);
   };
   const handleNext = () => {
     setOpenModal2(!openModal2);
     setOpen(!open);
   };
- 
+
   return (
     <>
       <CollectionPopup
@@ -127,18 +127,18 @@ export default function PeaceOfMind() {
             </div>
             <div className="flex justify-center pt-7">
               {isAuthenticted ? (
-                <div className="text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center flex gap-1 items-center">
+                <button className="text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center flex gap-1 items-center">
                   <button type="button">See all certificates</button>
                   <Image src={arrow} alt="arrow" />
-                </div>
+                </button>
               ) : (
-                <div className="text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center flex gap-1 items-center">
-                  <button type="button"  onClick={handleOpen}>
-                    {" "}
+                <button className="text-white bg-spacegray focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-6 py-2.5 text-center flex gap-1 items-center">
+                  <button type="button" onClick={handleOpen}>
+                     
                     Read more
                   </button>
                   <Image src={arrow} alt="arrow" />
-                </div>
+                </button>
               )}
             </div>
           </div>
