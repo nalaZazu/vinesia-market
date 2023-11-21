@@ -27,24 +27,24 @@ export const menuBar = [
     id: 4,
     name: "Regions",
     href: "/region",
-    icon: regionicon
+    icon: regionicon,
   },
   {
     id: 5,
     name: "Wine & Art Collections",
     href: "/wine&artcollections",
-    icon:wineicon
+    icon: wineicon,
   },
   {
     id: 6,
     name: "Limited collections",
     href: "/limitedcollections",
-    icon: winericon
+    icon: winericon,
   },
   {
     id: 7,
     name: "Wineries",
     href: "/wineries",
-    icon: winericon
+    icon: winericon,
   },
 ];
