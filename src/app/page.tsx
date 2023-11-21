@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import Available from "@/components/available/page";
 import Banner from "@/components/banner/page";
 import Critics from "@/components/critics/page";
@@ -9,7 +9,8 @@ import Popup from "@/components/popup/page";
 import ExploreRegion from "@/components/exploreRegion/page";
 import UpperFooter from "@/components/upperfooter/page";
 import { useQuery } from "@tanstack/react-query";
-export default function Home() {
+
+export default async function Home() {
   // const [criticsSelection, setCriticsSelection] = useState([]);
   // const [products, setProducts] = useState([]);
   // const [drops, setDrops] = useState([]);
@@ -21,15 +22,16 @@ export default function Home() {
   //     // setDrops(res?.data?.drops);
   //   });
   // }, []);
+  const data = await getHomePage();
 
-  const {
-    isLoading: filtersLoading,
-    error: filtersError,
-    data,
-  } = useQuery({
-    queryKey: ["getHomePage"],
-    queryFn: getHomePage,
-  });
+  // const {
+  //   isLoading: filtersLoading,
+  //   error: filtersError,
+  //   data,
+  // } = useQuery({
+  //   queryKey: ["getHomePage"],
+  //   queryFn: getHomePage,
+  // });
 
   let products = data?.data?.products;
   let criticsSelection = data?.data?.selection;

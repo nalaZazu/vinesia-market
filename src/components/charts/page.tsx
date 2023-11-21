@@ -101,7 +101,7 @@ export default function Appactivity({ data }: { data?: any }) {
     data?.map((_v: any, i: any) => {
       const date = new Date();
       date.setDate(date.getDate() + i);
-      return `${moment(_v[0]).format("MMM")}`;
+      return `${moment(_v[0]).format("MMM YY")}`;
     });
   const dataa = {
     labels: labels,
@@ -116,7 +116,7 @@ export default function Appactivity({ data }: { data?: any }) {
         yAxisID: "y",
         borderWidth: 2,
         tension: 0.4,
-        pointRadius: 4,
+        pointRadius: 0,
       },
     ],
   };
