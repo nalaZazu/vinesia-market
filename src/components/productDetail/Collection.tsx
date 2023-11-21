@@ -1,21 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import collection from "@/assets/icon/big1.png";
 import bottle1 from "@/assets/icon/bottle1.svg";
 import redwine from "@/assets/icon/redwine.svg";
-import ProductCard from "../cards/ProductCard";
 import Slider from "react-slick";
 import { NextIcon, PrevIcon } from "@/assets/icon/Icons";
-import CollectionPopup from "../collectionPopup/page";
-import CollectionPopup2 from "@/components/collectionPopup2/page";
 
 export default function Collection() {
-  const [open, setOpen] = useState(false);
-  const [openModal2, setOpenModal2] = useState(false);
 
-  const handleOpen = () => {
-    setOpen(!open);
-  };
   const sliderSettings = {
     // dots: true,
     infinite: true,
@@ -62,23 +54,8 @@ export default function Collection() {
       </div>
     ),
   };
-
-  const handleNext = () => {
-    setOpenModal2(!openModal2);
-    setOpen(!open);
-  };
   return (
     <div>
-      <CollectionPopup
-        open={open}
-        setOpen={handleOpen}
-        handleNext={handleNext}
-      />
-
-      <CollectionPopup2
-        open={openModal2}
-        setOpen={() => setOpenModal2(!openModal2)}
-      />
       <div className=" container mx-auto pt-7 px-4 md:px-0">
         <div className="flex justify-between items-center gap-5">
           <h2 className="basis-1/4 capitalize text-2xl font-medium">
@@ -125,7 +102,6 @@ export default function Collection() {
                             </p>
                           </div>
                           <p
-                            onClick={handleOpen}
                             className="w-[79px] h-[19px] text-right text-indigo-500 text-sm font-normal font-['Jost'] underline tracking-tight cursor-pointer"
                           >
                             See details

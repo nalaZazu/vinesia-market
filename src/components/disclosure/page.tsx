@@ -18,7 +18,7 @@ const DisclosureModal = () => {
             <>
               <Disclosure.Button className="w-full flex justify-between items-center gap-5 mt-10">
                 <div className="basis-1/4">
-                  <h2 className="text-black text-lg font-semibold tracking-tight">
+                  <h2 className="text-black text-lg font-semibold tracking-tight text-left">
                     Transactions history
                   </h2>
                 </div>
@@ -28,7 +28,7 @@ const DisclosureModal = () => {
                 <span
                   className={`${
                     open ? "rotate-180 transform" : ""
-                  } h-5 w-5 text-purple-500`}
+                  } h-5 w-5 text-primary`}
                 >
                   <ArrowBtn />
                 </span>

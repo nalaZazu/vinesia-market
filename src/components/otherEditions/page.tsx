@@ -1,8 +1,5 @@
-import React, { useState } from "react";
-import Image from "next/image";
-import Slider from "react-slick";
-import winbottle from "@/assets/image/otheredition.png";
-import { InfoIcon } from "@/assets/icon/Icons";
+import React, { useState } from "react"; 
+import Slider from "react-slick"; 
 import { NextIcon, PrevIcon } from "@/assets/icon/Icons";
 import ProductCard from "../cards/ProductCard";
 import Link from "next/link";
@@ -63,7 +60,7 @@ export default function OtherEditions({ data }: { data: any }) {
       ),
   };
   return (
-    <div>
+    <>
       <div className=" container mx-auto pt-7 px-4 md:px-0">
         <div className="flex justify-between items-center gap-5">
           <h2 className="basis-1/4 capitalize text-2xl font-medium">
@@ -75,8 +72,7 @@ export default function OtherEditions({ data }: { data: any }) {
         </div>
         <div className="mx-auto">
           <div className=" md:py-16 py-5 px-20 mx-auto collection_carousel">
-            <Slider {...sliderSettings}>
-               
+            <Slider {...sliderSettings}>   
               {data?.map((item: any, index: any) => {
                 return (
                   <Link href={`/product/${index + 1}`} key={index}>
@@ -90,6 +86,6 @@ export default function OtherEditions({ data }: { data: any }) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
