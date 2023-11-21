@@ -59,7 +59,7 @@ const OverviweTopSection = ({
             </>
           )}
         </div>
-        {/* first section end */}
+  
         {/* slider start */}
         <ProductCarousel />
         {/* slider end */}
