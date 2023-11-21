@@ -4,23 +4,36 @@ import Banner from "@/components/banner/page";
 import Critics from "@/components/critics/page";
 import Heritage from "@/components/heritage/page";
 import Listing from "@/components/winelisting/page";
-import { useEffect, useState } from "react";
 import { getHomePage } from "../services/Home";
 import Popup from "@/components/popup/page";
 import ExploreRegion from "@/components/exploreRegion/page";
 import UpperFooter from "@/components/upperfooter/page";
+import { useQuery } from "@tanstack/react-query";
 export default function Home() {
-  const [criticsSelection, setCriticsSelection] = useState([]);
-  const [products, setProducts] = useState([]);
-  const [drops, setDrops] = useState([]);
-  useEffect(() => {
-    getHomePage().then((res) => {
-      console.log("Response From APi Home Api", res?.data);
-      setProducts(res?.data?.products);
-      setCriticsSelection(res?.data?.selection);
-      setDrops(res?.data?.drops);
-    });
-  }, []);
+  // const [criticsSelection, setCriticsSelection] = useState([]);
+  // const [products, setProducts] = useState([]);
+  // const [drops, setDrops] = useState([]);
+  // useEffect(() => {
+  //   getHomePage().then((res) => {
+  //     console.log("Response From APi Home Api", res?.data);
+  //     // setProducts(res?.data?.products);
+  //     // setCriticsSelection(res?.data?.selection);
+  //     // setDrops(res?.data?.drops);
+  //   });
+  // }, []);
+
+  const {
+    isLoading: filtersLoading,
+    error: filtersError,
+    data,
+  } = useQuery({
+    queryKey: ["getHomePage"],
+    queryFn: getHomePage,
+  });
+
+  let products = data?.data?.products;
+  let criticsSelection = data?.data?.selection;
+  let drops = data?.data?.drops;
 
   return (
     <>
@@ -34,7 +47,7 @@ export default function Home() {
         <ExploreRegion />
         <Popup open={false} setOpen={false} />
       </div>
-      <UpperFooter/>
+      <UpperFooter />
     </>
   );
 }

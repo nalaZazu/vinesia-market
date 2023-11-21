@@ -1,10 +1,10 @@
+"use client";
 import React, { useRef, useState } from "react";
 import ProductCard from "../cards/ProductCard";
 import Slider from "react-slick";
 import { NextIcon, PrevIcon } from "@/assets/icon/Icons";
 import Link from "next/link";
 const Heritage = ({ data }: { data: any }) => {
- 
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const sliderSettings = {
@@ -16,7 +16,7 @@ const Heritage = ({ data }: { data: any }) => {
     autoplay: true,
     autoplaySpeed: 3000,
     centerPadding: "100px",
-    beforeChange: (current:any, next:any) => setCurrentSlide(next),
+    beforeChange: (current: any, next: any) => setCurrentSlide(next),
     responsive: [
       {
         breakpoint: 1024,
@@ -34,25 +34,31 @@ const Heritage = ({ data }: { data: any }) => {
         },
       },
     ],
-    prevArrow:currentSlide === 0  ? <></> : (
-      <div className="slick-custom-arrow slick-prev top-full " >
-        <div className="border border-gray-600 rounded-lg w-8 h-8 text-center flex items-center">
-          <div className="mx-auto">
-            <PrevIcon />
+    prevArrow:
+      currentSlide === 0 ? (
+        <></>
+      ) : (
+        <div className="slick-custom-arrow slick-prev top-full ">
+          <div className="border border-gray-600 rounded-lg w-8 h-8 text-center flex items-center">
+            <div className="mx-auto">
+              <PrevIcon />
+            </div>
           </div>
         </div>
-      </div>
-    ),
- 
-    nextArrow:currentSlide === data.length - 2 ? <></> : (
-      <div className="slick-custom-arrow slick-next top-full" >
-        <div className="border border-gray-600 rounded-lg w-8 h-8 text-center flex items-center">
-          <div className="mx-auto">
-            <NextIcon />
+      ),
+
+    nextArrow:
+      currentSlide === data?.length - 2 ? (
+        <></>
+      ) : (
+        <div className="slick-custom-arrow slick-next top-full">
+          <div className="border border-gray-600 rounded-lg w-8 h-8 text-center flex items-center">
+            <div className="mx-auto">
+              <NextIcon />
+            </div>
           </div>
         </div>
-      </div>
-    ),
+      ),
   };
   return (
     <div className="">

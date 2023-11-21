@@ -12,23 +12,25 @@ import DropDownBadge from "@/common/dropdownbadge/page";
 import { useQuery } from "@tanstack/react-query";
 import { getFilters } from "@/services/Common";
 import { getProductSearch } from "@/services/ProductSerach";
-const France = ({ params }:{ params: any }) => {
-  console.log("param" , params);
+const France = ({ params }: { params: any }) => {
+  console.log("param", params);
   const pathname = usePathname();
-  const {france} = params;
-  
+  console.log("path Name ", pathname);
+
+  const { slug } = params;
+
   const regionparagraph = `France is renowned worldwide for its exquisite wines, each region offering a unique and  distinct flavor profile. Bordeaux, in the
     southwest, is celebrated for its robust reds, notably blends of
     Merlot, Cabernet Sauvignon, and Cabernet Franc. Burgundy, in the
     east, is famed for its Pinot Noir and Chardonnay, reflecting the
     region's terroir with elegance and finesse.`;
-    const regionparagraphs=`Champagne, a region in the northeast, is synonymous with sparkling
+  const regionparagraphs = `Champagne, a region in the northeast, is synonymous with sparkling
     wine, using the traditional méthode champenoise to produce the
     iconic bubbly. The Loire Valley is diverse, boasting a range of
     white, red, rosé, and sparkling wines, with Sauvignon Blanc and
     Cabernet Franc being prominent.`;
-    const [selectedFilters, setSelectedFilters] = useState<any>([]);
-    const [products, setProducts] = useState<any>([]);
+  const [selectedFilters, setSelectedFilters] = useState<any>([]);
+  const [products, setProducts] = useState<any>([]);
 
   const {
     isLoading: filtersLoading,
@@ -38,6 +40,13 @@ const France = ({ params }:{ params: any }) => {
     queryKey: ["getAllFilters"],
     queryFn: getFilters,
   });
+
+  useEffect(() => {
+    if (filtersData && slug) {
+      setSelectedFilters([slug]);
+    }
+  }, [filtersData, slug]);
+
   const filtersList = filtersData?.data;
   useEffect(() => {
     let postData = {
@@ -48,10 +57,10 @@ const France = ({ params }:{ params: any }) => {
     console.log("postData", postData);
 
     getProductSearch(postData).then((res) => {
-      setProducts(res?.data);  
+      setProducts(res?.data);
     });
   }, [selectedFilters]);
-    
+
   return (
     <>
       <div className="container mx-auto  pt-3 md:pt-5  px-4 flex gap-4">
@@ -65,16 +74,20 @@ const France = ({ params }:{ params: any }) => {
           / Regions
         </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
-          / { france}
+          / {slug}
         </p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">
         <h1 className="text-primary text-xxl font-semibold  tracking-tight capitalize">
-          {france}
+          {slug}
         </h1>
-        <RegionCountry regionparagraph={regionparagraph} regionparagraphs={regionparagraphs} image={countryregion}/>
+        <RegionCountry
+          regionparagraph={regionparagraph}
+          regionparagraphs={regionparagraphs}
+          image={countryregion}
+        />
         {/* dropdown  */}
-       
+
         <DropDownBadge
           filtersList={filtersList}
           selectedFilters={selectedFilters}

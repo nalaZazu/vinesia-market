@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import alert from "@/assets/icon/alert-circle.svg";
@@ -52,7 +53,6 @@ const Banner = () => {
   };
   return (
     <>
-    
       <Popup open={open} setOpen={hideModal} />
       <div className=" container mx-auto grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 items-center mt-10 md:mt-10 lg:mt-16">
         <div>
