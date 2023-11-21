@@ -28,7 +28,7 @@ export default async function Home() {
   //   isLoading: filtersLoading,
   //   error: filtersError,
   //   data,
-  // } = useQuery({
+  // } = useQuery({signature
   //   queryKey: ["getHomePage"],
   //   queryFn: getHomePage,
   // });

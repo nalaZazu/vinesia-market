@@ -1,20 +1,17 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import logo from "../../assets/img/Logo1.png";
-import arrowTray from "../../assets/icon/log-in.svg";
 import Image from "next/image";
 import { menuBar } from "@/constants/navigate";
-import { useRouter } from "next/navigation";
 import SidePannel from "./sidepannel/page";
-import { useDispatch } from "react-redux";
-import { handleAllModals } from "@/redux/modalVisibility";
-import LoginModal from "../auth/LoginModal";
 import UserDropDown from "@/common/UserDropDown";
+import { useRouter } from "next/navigation";
 export default function Header() {
-  const dispatch = useDispatch();
-  const handleModal = () => {
-    dispatch(handleAllModals({ loginModal: { isVisible: true } }));
+  
+  const [isActive, setIsActive] = useState("");
+  const handleColor = (item: any) => {
+    setIsActive(item.name);
   };
   return (
     <div>
@@ -100,10 +97,19 @@ export default function Header() {
           <ul className="hidden lg:flex gap-14">
             {menuBar?.map((item: any) => {
               const { id, name, href } = item;
+              
               return (
-                <Link href={href} key={id}>
-                  <li>{name}</li>
-                </Link>
+                <li
+                  onClick={() => handleColor(item)}
+                  key={id}
+                  className={`${
+                    isActive === item.name
+                      ? "text-primary border-b-2 border-primary"
+                      : ""
+                  } `}
+                >
+                  <Link href={href}>{name}</Link>
+                </li>
               );
             })}
           </ul>
