@@ -19,15 +19,17 @@ const DisclosureModals = () => {
                 <div className="basis-4/5 ">
                   <hr className=" border-black" />
                 </div>
-                <ArrowBtn
+
+                <span
                   className={`${
                     open ? "rotate-180 transform" : ""
                   } h-5 w-5 text-purple-500`}
-                />
+                >
+                  <ArrowBtn />
+                </span>
               </Disclosure.Button>
 
               <Disclosure.Panel className="px-4 pb-2 pt-4 text-sm text-gray-500">
-             
                 {[1, 2, 3, 4].map((d, i) => {
                   return (
                     <div

@@ -183,6 +183,7 @@ export default function AssetDetails() {
                   {list.map((l, i) => {
                     return (
                       <li
+                        key={i}
                         className="text-center text-zinc-700 text-xxs font-medium"
                         role="presentation"
                       >
