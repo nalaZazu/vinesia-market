@@ -37,6 +37,13 @@ module.exports = {
         maxWidth: {
           "2xl": "1280px",
         },
+        padding: {
+          DEFAULT: "1rem", // Default padding
+          sm: "1rem", // Small screen padding
+          lg: "1rem", // Large screen padding
+          xl: "1rem", // Extra large screen padding
+          "2xl": "1rem", // 2x large screen padding
+        },
       },
     },
   },

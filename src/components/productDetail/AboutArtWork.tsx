@@ -5,7 +5,7 @@ import group from "@/assets/icon/Group.png";
 export default function AboutArtWork() {
   return (
     <div>
-      <section className="pt-10 px-4 lg:px-0 md:px-4">
+      <section className="pt-10">
         <div className="container mx-auto">
           <h2 className=" capitalize text-4xl font-medium text-zinc-700 tracking-tight">
             <span className=" text-3xl font-normal text-neutral-400  tracking-tight">
