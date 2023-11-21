@@ -5,7 +5,8 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { loginAction } from "@/redux/account";
 import { handleAllModals } from "@/redux/modalVisibility";
-
+import { getJWTToken, login } from "@/services/Account";
+import WagmiAuth from "@/wagmiAuth/app/page";
 export default function LoginModal({}) {
   const [loading, setLoading] = useState(false);
   const {
@@ -27,10 +28,38 @@ export default function LoginModal({}) {
   const handleSignupModal = () => {
     dispatch(handleAllModals({ signupModal: { isVisible: true } }));
     hideModal();
-  };  
+  };
   const onSubmit = (data: any) => {
+    let postData = {
+      message: {
+        domain: "wine-auth.vercel.app",
+        address: "0x1D5B4c24F6dC8f1f4ddedfD20CF37aEB5f1502f4",
+        statement: "Sign in with Ethereum to the app.",
+        uri: "https://wine-auth.vercel.app",
+        version: "1",
+        chainId: 1,
+        nonce: "4waszA4ZeDL0ps5bo",
+        issuedAt: "2023-11-21T12:44:25.780Z",
+      },
+      signature:
+        "0x6e84e437526239e6d70d5b4adcfda237c8ca4a71d22ac05328f335a629db50b66c52b1fc28f3a72749b36246dcaac3c03f835341b2d1d499efd1c8bb08121fa31b",
+    };
+    getJWTToken(postData)
+      .then((res:any) => {
+        console.log("JWT Token REsponse ", res);
+        login(res?.data?.access_token)
+          .then((logRes) => {
+            console.log("Log From Login ", logRes);
+          })
+          .catch((errLogin) => {
+            console.log("Err login ", errLogin);
+          });
+      })
+      .catch((err:any) => {
+        console.log("jwt Token Error ", err);
+      });
     dispatch(loginAction({ token: "Loremipsumdolorsitametconsectetur" }));
-    hideModal();
+    // hideModal();
   };
   const openRegisterModal = () => {
     hideModal();
@@ -39,7 +68,7 @@ export default function LoginModal({}) {
 
   return (
     <ModalContainer hideModal={hideModal} title="Login">
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      {/* <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div>
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
             Your email
@@ -105,7 +134,8 @@ export default function LoginModal({}) {
             Create account
           </button>
         </div>
-      </form>
+      </form> */}
+      <WagmiAuth />
     </ModalContainer>
   );
 }
