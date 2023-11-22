@@ -78,6 +78,7 @@ export function Connect() {
     if (isConnected) {
       login();
     }
+    
   }, [isConnected]);
   // useEffect(() => {
   //   if (isAuthenticated) {
