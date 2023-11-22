@@ -20,7 +20,7 @@ export const menuBar = [
   {
     id: 3,
     name: "Available soon",
-    href: "/",
+    href: "/availablesoon",
     icon: soonicon,
   },
   {
