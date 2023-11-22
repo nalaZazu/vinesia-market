@@ -101,8 +101,6 @@ export default function Product() {
       {/* hero section end*/}
 
       <Collection />
-
-      {isAuthenticted ? <Collection /> : <></>}
       <PeaceOfMind />
       {isAuthenticted ? (
         <AssetDetails />
