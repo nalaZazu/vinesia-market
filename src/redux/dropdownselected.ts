@@ -5,8 +5,7 @@ export const dropdownReducer = createSlice({
   name: "dropVisibility",
   initialState :{dropdownData:<any>[]},
   reducers: {
-    handleSelected: (state, action: PayloadAction<any>) => {
-      console.log("from action",action.payload)
+    handleSelected: (state, action: PayloadAction<any>) => { 
       const  selectedValue  = action.payload;
       return {dropdownData : action.payload }
       // if (!state.dropdownData.includes(selectedValue)) {

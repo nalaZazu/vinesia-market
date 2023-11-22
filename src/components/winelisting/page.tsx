@@ -3,7 +3,7 @@ import React from "react";
 import ProductCard from "../cards/ProductCard";
 import Link from "next/link";
 const Listing = ({ data }: { data: any }) => {
-  console.log("dataapi", data);
+ 
 
   return (
     <>

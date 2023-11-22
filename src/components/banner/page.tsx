@@ -42,19 +42,20 @@ const Banner = () => {
   const handleOpen = () => {
     setOpen(!open);
   };
-  const dispatch = useDispatch();
-  const hideModal = () => {
-    dispatch(
-      isModel({
-        isLoading: false,
-        loginModal: { isVisible: false },
-      })
-    );
-  };
+  // const dispatch = useDispatch();
+  // const hideModal = () => {
+  //   dispatch(
+  //     isModel({
+  //       isLoading: false,
+  //       loginModal: { isVisible: false },
+  //     })
+  //   );
+  // };
   return (
     <>
-      <Popup open={open} setOpen={hideModal} />
-      <div className=" container mx-auto grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 items-center mt-10 md:mt-10 lg:mt-16">
+      <Popup open={open} setOpen={handleOpen} />
+      <div className="  grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 items-center mt-10 md:mt-10 lg:mt-16">
+        {/* // container mx-auto */}
         <div>
           <h1 className="font-semibold text-primary tracking-tight text-xxl ">
             Marketplace
@@ -256,7 +257,7 @@ const Banner = () => {
 
                   <div
                     className=" absolute 
-                   -left-7 -top-8 z-10"
+                   -left-7 -top-8 "
                   >
                     <TextIcon
                       label="Critic score"

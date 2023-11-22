@@ -26,21 +26,18 @@ const DropDown = ({
       let tempArr = [...tempSelected];
       tempArr.splice(index, 1);
       setTempSelected(tempArr);
-    }
-    console.log("handle Change ", e);
+    } 
   };
   const filteredOptions = data?.options?.filter((item: any) =>
     item.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  const handleApply = (close: any) => {
-    console.log("Temp List ", tempSelected);
+  const handleApply = (close: any) => { 
     setSelectedFilters(tempSelected);
     dispatch(handleSelected(tempSelected))
     close();
   };
   const handleClear = (close: any) => {
-    setSearchTerm("");
-    console.log(searchTerm);
+    setSearchTerm(""); 
     // setSelectedFilters([]);
     close();
   };
@@ -49,9 +46,7 @@ const DropDown = ({
     if (selectedFilters) {
       setTempSelected(selectedFilters);
     }
-  }, [selectedFilters]);
-
-  console.log("products-data", products?.data);
+  }, [selectedFilters]); 
   return (
     <>
       {data?.options?.length > 0 && (

@@ -10,8 +10,7 @@ import wine from "@/assets/image/group2.png";
 import signature from "@/assets/image/Zrzut ekranu 2023-10-1 o 11.17 1.png";
 import { NextIcon, PrevIcon } from "@/assets/icon/Icons";
 const Critics = ({ data }: { data: any }) => {
-  const [selectedTab, setSelectedTab] = useState(0);
-  console.log("Critics Data ", data);
+  const [selectedTab, setSelectedTab] = useState(0); 
 
   return (
     <div className="pt-16 pb-5 sm:py-8">
