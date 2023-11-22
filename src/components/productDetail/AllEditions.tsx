@@ -3,6 +3,7 @@ import ProductCard from "../cards/ProductCard";
 import TabButton from "@/common/TabButton";
 import DropDownButton from "@/common/DropDownButton";
 import Link from "next/link";
+import { ArrowBtn } from "@/assets/icon/Icons";
 
 export default function AllEditions({ products }: { products: any }) {
   const toggleDropdown = () => {
@@ -11,7 +12,7 @@ export default function AllEditions({ products }: { products: any }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
+    <>
       <section className="container mx-auto pt-24 pb-16 px-4  lg:px-0">
         <div>
           <div className="flex justify-between items-center gap-5">
@@ -24,7 +25,8 @@ export default function AllEditions({ products }: { products: any }) {
               <hr className=" border-black" />
             </div>
             <div className="flex text-spacegray">
-              <svg
+              <ArrowBtn />
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -37,7 +39,7 @@ export default function AllEditions({ products }: { products: any }) {
                   stroke-linejoin="round"
                   d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
                 />
-              </svg>
+              </svg> */}
             </div>
           </div>
           <div className="flex justify-between mx-auto pt-14 max-w-[1170px]">
@@ -79,6 +81,6 @@ export default function AllEditions({ products }: { products: any }) {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
