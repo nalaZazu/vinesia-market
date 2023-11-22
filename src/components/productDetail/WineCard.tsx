@@ -130,8 +130,7 @@ export default function WineCard1({
                   rating,
                   max,
                   description,
-                } = item;
-                console.log("item", item);
+                } = item; 
                 return (
                   <div
                     key={i}

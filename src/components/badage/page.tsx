@@ -18,8 +18,7 @@ const Badges = ({
 
   const datadropdown = useSelector<any>(
     (state) => state?.dropdown?.dropdownData
-  );
-  console.log("datadropdown", datadropdown);
+  ); 
 
   const handleRemoved = (item: any) => {
     let index = data?.findIndex((d: any) => d == item);
@@ -29,8 +28,7 @@ const Badges = ({
       let tempArr = [...data];
       tempArr.splice(index, 1);
       setSelectedFilters(tempArr);
-    }
-    console.log("handle Change ", item);
+    } 
   };
   const handleClear = () => {
     setSelectedFilters([]);

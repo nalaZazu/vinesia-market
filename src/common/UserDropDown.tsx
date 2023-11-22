@@ -13,8 +13,7 @@ export default function UserDropDown() {
   const dispatch = useDispatch();
   const isAuthenticted = useSelector<any>(
     (state) => state?.account?.isAuthenticated
-  );
-  console.log("is Authent", isAuthenticted);
+  ); 
   const handleModal = () => {
     dispatch(handleAllModals({ loginModal: { isVisible: true } }));
   };

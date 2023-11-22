@@ -26,16 +26,12 @@ function Invest() {
       filters: selectedFilters,
       // "sort": "string",
       first: 0,
-    };
-    console.log("postData", postData);
+    }; 
 
     getProductSearch(postData).then((res) => {
-      setProducts(res?.data);
-      console.log("resposne ", res?.data);
-      console.log("resposne setProduct", setProducts(res?.data));
+      setProducts(res?.data); 
     });
-  }, [selectedFilters]);
-  console.log("Selected-data", selectedFilters);
+  }, [selectedFilters]); 
   return (
     <>
       <div className="container mx-auto  pt-3 md:pt-5  px-4 flex gap-4">

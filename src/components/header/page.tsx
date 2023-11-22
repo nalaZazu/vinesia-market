@@ -6,13 +6,9 @@ import Image from "next/image";
 import { menuBar } from "@/constants/navigate";
 import SidePannel from "./sidepannel/page";
 import UserDropDown from "@/common/UserDropDown";
-import { useRouter } from "next/navigation";
-export default function Header() {
-  
-  const [isActive, setIsActive] = useState("");
-  const handleColor = (item: any) => {
-    setIsActive(item.name);
-  };
+import {  usePathname } from "next/navigation";
+export default function Header() { 
+  const pathname = usePathname(); 
   return (
     <div>
       <nav className="p-4">
@@ -97,16 +93,13 @@ export default function Header() {
           <ul className="hidden lg:flex gap-14">
             {menuBar?.map((item: any) => {
               const { id, name, href } = item;
-              
+              const isActive = pathname === href; 
               return (
                 <li
-                  onClick={() => handleColor(item)}
                   key={id}
-                  className={`${
-                    isActive === item.name
-                      ? "text-primary border-b-2 border-primary"
-                      : ""
-                  } `}
+                  className={`  ${
+                    pathname === href ? "border-b-2 border-primary" : ""
+                  }`}
                 >
                   <Link href={href}>{name}</Link>
                 </li>

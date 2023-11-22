@@ -24,8 +24,7 @@ export default function Product() {
   const { id } = useParams();
   const [data, setData] = useState<any>({});
   const [products, setProducts] = useState([]);
-
-  console.log("Params", id);
+ 
 
   const [show, setShow] = useState([]);
   const toggleDropdown = () => {
@@ -35,16 +34,14 @@ export default function Product() {
   useEffect(() => {
     if (id) {
       getProductDetail(id)
-        .then((res) => {
-          console.log("Res from Product Detail ", res?.data?.wine);
+        .then((res) => { 
           setData(res?.data);
         })
         .catch((err) => {
           console.log("Err from Product Detail", err);
         });
     }
-    getHomePage().then((res) => {
-      console.log("Response From APi Home Api", res?.data);
+    getHomePage().then((res) => { 
       setProducts(res?.data?.products);
     });
   }, [id]);

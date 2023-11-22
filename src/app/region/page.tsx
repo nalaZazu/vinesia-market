@@ -26,8 +26,7 @@ function Region() {
       filters: selectedFilters,
       // "sort": "string",
       first: 0,
-    };
-    console.log("postData", postData);
+    }; 
 
     getProductSearch(postData).then((res) => {
       setProducts(res?.data);

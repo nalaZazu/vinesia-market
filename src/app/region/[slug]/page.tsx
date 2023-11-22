@@ -13,10 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getFilters } from "@/services/Common";
 import { getProductSearch } from "@/services/ProductSerach";
 const France = ({ params }: { params: any }) => {
-  console.log("param", params);
-  const pathname = usePathname();
-  console.log("path Name ", pathname);
-
+  const pathname = usePathname(); 
   const { slug } = params;
 
   const regionparagraph = `France is renowned worldwide for its exquisite wines, each region offering a unique and  distinct flavor profile. Bordeaux, in the
@@ -53,8 +50,7 @@ const France = ({ params }: { params: any }) => {
       filters: selectedFilters,
       // "sort": "string",
       first: 0,
-    };
-    console.log("postData", postData);
+    }; 
 
     getProductSearch(postData).then((res) => {
       setProducts(res?.data);

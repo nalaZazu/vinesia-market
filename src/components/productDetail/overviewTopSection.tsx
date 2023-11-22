@@ -12,9 +12,7 @@ const OverviweTopSection = ({
   wine: Wine;
   release: releaseDetails;
   rating: any;
-}) => {
-  console.log("Wine ", wine);
-  console.log("rating ", rating);
+}) => { 
   const [selectedTab, setSelectedTab] = useState(0);
   return (
     <section className="bg-themegray mt-5 px-4 pb-20">

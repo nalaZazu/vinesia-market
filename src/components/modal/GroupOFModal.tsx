@@ -10,15 +10,11 @@ export default function GroupOFModal() {
   );
   const signModalState: any = useSelector<any>(
     (state) => state?.modalState?.signModal
-  );
-  console.log("signModel" , signModalState);
+  ); 
   
   const videoModaState: any = useSelector<any>(
     (state) => state?.modalState?.videoModal
-  );
-  console.log("videoModel", videoModaState);
-
-  console.log("Login State ", loginModalState);
+  ); 
   return (
     <div>
       {loginModalState?.isVisible && <LoginModal />}

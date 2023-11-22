@@ -11,8 +11,7 @@ import { getFilters } from "@/services/Common";
 import { getProductSearch } from "@/services/ProductSerach";
 import Link from "next/link";
 import ProductCard from "@/components/cards/ProductCard";
-const Rao = ({ params }: { params: any }) => {
-  console.log("paramRes", params);
+const Rao = ({ params }: { params: any }) => { 
   const pathname = usePathname();
   const [products, setProducts] = useState<any>([]);
   const [selectedFilters, setSelectedFilters] = useState<any>([]);
@@ -30,8 +29,7 @@ const Rao = ({ params }: { params: any }) => {
       filters: selectedFilters,
       // "sort": "string",
       first: 0,
-    };
-    console.log("postData", postData);
+    }; 
 
     getProductSearch(postData).then((res) => {
       setProducts(res?.data);

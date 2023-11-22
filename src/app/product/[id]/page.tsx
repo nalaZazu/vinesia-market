@@ -55,8 +55,7 @@ export default function Product() {
         .catch((err) => {});
     }
     getHomePage().then((res) => {
-      setProducts(res?.data?.products);
-      console.log("id-page", setProducts(res?.data?.products));
+      setProducts(res?.data?.products); 
     });
   }, [id]);
   const isAuthenticted = useSelector<any>(
@@ -65,8 +64,7 @@ export default function Product() {
   /**
    *Api -Data variable
    */
-
-  console.log("data ", priceHistory);
+ 
 
   const { wine } = data;
   const { releaseDetails } = data;

@@ -90,7 +90,10 @@ const ExploreRegion = () => {
 
           {/* column two */}
           <div className="col-span-2 flex flex-col gap-4">
-            <div className="border  border-[#7c7b83] h-40 items-end justify-left p-3 ">
+            <div
+              className="border  border-[#7c7b83] h-40 items-end justify-left p-3 "
+              onClick={handleOpen}
+            >
               <div className="flex items-end justify-center h-1/2">
                 <Image src={play} alt="play-button" />
               </div>
@@ -100,7 +103,10 @@ const ExploreRegion = () => {
                 </h1>
               </div>
             </div>
-            <div className="border  border-[#7c7b83] h-40 items-end justify-left p-3  ">
+            <div
+              className="border  border-[#7c7b83] h-40 items-end justify-left p-3 "
+              onClick={handleOpen}
+            >
               <div className="flex items-end justify-center h-1/2">
                 <Image src={play} alt="play-button" />
               </div>
@@ -114,7 +120,10 @@ const ExploreRegion = () => {
 
           {/* column two */}
           <div className="flex flex-col gap-4">
-            <div className="border  border-[#7c7b83] h-40 items-end justify-left p-3  ">
+            <div
+              className="border  border-[#7c7b83] h-40 items-end justify-left p-3"
+              onClick={handleOpen}
+            >
               <div className="flex items-end justify-center h-1/2">
                 <Image src={play} alt="play-button" />
               </div>
@@ -126,7 +135,10 @@ const ExploreRegion = () => {
             </div>
 
             {/* next div */}
-            <div className="border  border-[#7c7b83] h-40 items-end justify-left p-3  ">
+            <div
+              className="border  border-[#7c7b83] h-40 items-end justify-left p-3 "
+              onClick={handleOpen}
+            >
               <div className="flex items-end justify-center h-1/2">
                 <Image src={play} alt="play-button" />
               </div>
@@ -164,7 +176,7 @@ const ExploreRegion = () => {
 
             {/* next div */}
             <div className=" h-40 items-end justify-left p-3  ">
-              <ul className="text-secondary text-sm font-normal   leading-[49px] tracking-tight">
+              <ul className="text-secondary text-sm font-normal  leading-[49px] tracking-tight">
                 <Link href="/">
                   <li className="flex items-center justify-between">
                     <span>California</span>
