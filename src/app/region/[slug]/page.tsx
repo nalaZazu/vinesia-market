@@ -1,9 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import DropDown from "@/components/dropdown/page";
-
-import Recomend from "@/components/dropdown/recomend/page";
 import { productlist } from "@/constants/winelist";
 import { usePathname } from "next/navigation";
 import RegionCountry from "@/components/regioncountry/page";
@@ -50,7 +47,7 @@ const France = ({ params }: { params: any }) => {
       filters: selectedFilters,
       // "sort": "string",
       first: 0,
-    }; 
+    };
 
     getProductSearch(postData).then((res) => {
       setProducts(res?.data);

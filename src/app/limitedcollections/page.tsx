@@ -1,21 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { productlist } from "@/constants/winelist";
-import Image from "next/image";
-import DropDown from "@/components/dropdown/page";
-import {
-  winary,
-  bottleSize,
-  casing,
-  ratingCritics,
-  regions,
-  color,
-  artCollect,
-  other,
-} from "@/constants/invesdropdown";
-import Recomend from "@/components/dropdown/recomend/page";
-import resoImage from "@/assets/image/frame-1.png";
+ import resoImage from "@/assets/image/frame-1.png";
 import RegionCountry from "@/components/regioncountry/page";
 import { getProductSearch } from "@/services/ProductSerach";
 import { useQuery } from "@tanstack/react-query";
