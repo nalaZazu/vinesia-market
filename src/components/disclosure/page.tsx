@@ -27,7 +27,7 @@ const DisclosureModal = () => {
                 </div>
                 <span
                   className={`${
-                    open ? "rotate-180 transform" : ""
+                    open ? "" : "rotate-180 transform"
                   } h-5 w-5 text-primary`}
                 >
                   <ArrowBtn />
