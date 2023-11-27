@@ -3,15 +3,13 @@ import React from "react";
 import ProductCard from "../cards/ProductCard";
 import Link from "next/link";
 const Listing = ({ data }: { data: any }) => {
- 
-
   return (
     <>
       <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
         {data &&
           data.map((item: any, index: any) => {
             return (
-              <Link href={`product/${index + 1}`} key={item?.id}>
+              <Link href={`product/${index + 1}`} key={index}>
                 <div>{item && <ProductCard item={item} />}</div>
               </Link>
             );

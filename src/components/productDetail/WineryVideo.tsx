@@ -11,7 +11,6 @@ export default function WineryVideo() {
         </div>
 
         <div className="container mt-5  items-center grid  gap-5 grid-cols-1 md:grid-cols-3 mx-auto py-1 border-bordergray ">
-
           {[1, 2, 3].map((d, i) => {
             return (
               <div
@@ -22,18 +21,18 @@ export default function WineryVideo() {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
                   className="w-6 h-6 absolute right-1/2 left-1/2 bottom-1/2"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"
                   />
                 </svg>

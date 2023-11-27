@@ -62,13 +62,13 @@ export default function CollectionPopup2({
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
-                          stroke-width="1.5"
+                          strokeWidth="1.5"
                           stroke="currentColor"
                           className="w-10 h-10"
                         >
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                             d="M6 18L18 6M6 6l12 12"
                           />
                         </svg>
@@ -154,13 +154,13 @@ export default function CollectionPopup2({
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
-                          stroke-width="1.5"
+                          strokeWidth="1.5"
                           stroke="currentColor"
                           className="w-5 text-white"
                         >
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                             d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
                           />
                         </svg>
@@ -234,17 +234,17 @@ export default function CollectionPopup2({
                                       id="Vector"
                                       d="M18.3327 9.73333V10.5C18.3317 12.297 17.7498 14.0456 16.6738 15.4849C15.5978 16.9241 14.0854 17.9771 12.3621 18.4866C10.6389 18.9961 8.79707 18.9349 7.11141 18.3122C5.42575 17.6894 3.98656 16.5384 3.00848 15.0309C2.0304 13.5234 1.56584 11.7401 1.68408 9.94693C1.80232 8.1538 2.49702 6.44694 3.66458 5.08089C4.83214 3.71485 6.41 2.76282 8.16284 2.36679C9.91568 1.97076 11.7496 2.15195 13.391 2.88333"
                                       stroke="#198754"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
+                                      strokeWidth="2"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
                                     />
                                     <path
                                       id="Vector_2"
                                       d="M18.3333 3.83333L10 12.175L7.5 9.675"
                                       stroke="#198754"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
+                                      strokeWidth="2"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
                                     />
                                   </g>
                                 </svg>
@@ -263,13 +263,13 @@ export default function CollectionPopup2({
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
-                                    stroke-width="1.5"
+                                    strokeWidth="1.5"
                                     stroke="currentColor"
                                     className="w-4 h-4"
                                   >
                                     <path
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
                                       d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
                                     />
                                   </svg>
@@ -293,13 +293,13 @@ export default function CollectionPopup2({
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
-                          stroke-width="1.5"
+                          strokeWidth="1.5"
                           stroke="currentColor"
                           className="w-5 text-white"
                         >
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                             d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
                           />
                         </svg>
@@ -386,17 +386,17 @@ export default function CollectionPopup2({
                                           id="Vector"
                                           d="M18.3327 9.73333V10.5C18.3317 12.297 17.7498 14.0456 16.6738 15.4849C15.5978 16.9241 14.0854 17.9771 12.3621 18.4866C10.6389 18.9961 8.79707 18.9349 7.11141 18.3122C5.42575 17.6894 3.98656 16.5384 3.00848 15.0309C2.0304 13.5234 1.56584 11.7401 1.68408 9.94693C1.80232 8.1538 2.49702 6.44694 3.66458 5.08089C4.83214 3.71485 6.41 2.76282 8.16284 2.36679C9.91568 1.97076 11.7496 2.15195 13.391 2.88333"
                                           stroke="#198754"
-                                          stroke-width="2"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round"
+                                          strokeWidth="2"
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
                                         />
                                         <path
                                           id="Vector_2"
                                           d="M18.3333 3.83333L10 12.175L7.5 9.675"
                                           stroke="#198754"
-                                          stroke-width="2"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round"
+                                          strokeWidth="2"
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
                                         />
                                       </g>
                                     </svg>
@@ -414,13 +414,13 @@ export default function CollectionPopup2({
                                           xmlns="http://www.w3.org/2000/svg"
                                           fill="none"
                                           viewBox="0 0 24 24"
-                                          stroke-width="1.5"
+                                          strokeWidth="1.5"
                                           stroke="currentColor"
                                           className="w-4 h-4"
                                         >
                                           <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
                                             d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
                                           />
                                         </svg>
@@ -497,13 +497,13 @@ export default function CollectionPopup2({
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
                                   viewBox="0 0 24 24"
-                                  stroke-width="1.5"
+                                  strokeWidth="1.5"
                                   stroke="currentColor"
                                   className="w-5 h-5"
                                 >
                                   <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                     d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
                                   />
                                 </svg>
@@ -516,13 +516,13 @@ export default function CollectionPopup2({
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
                                   viewBox="0 0 24 24"
-                                  stroke-width="1.5"
+                                  strokeWidth="1.5"
                                   stroke="currentColor"
                                   className="w-5 h-5"
                                 >
                                   <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                     d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
                                   />
                                 </svg>

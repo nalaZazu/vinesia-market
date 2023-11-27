@@ -10,9 +10,13 @@ import { getJWTToken, getProfile } from "@/services/Account";
 import { SiweMessage } from "siwe";
 import { type Address, useSignMessage, useNetwork } from "wagmi";
 import session from "@/services/utils/session";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { loginAction } from "@/redux/account";
+import { handleAllModals } from "@/redux/modalVisibility";
 
 export function Connect() {
+  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
   const isAuthenticated = useSelector<any>(
     (state) => state?.account?.isAuthenticated
   );
@@ -33,6 +37,7 @@ export function Connect() {
   const [token, setToken] = useState();
 
   async function login() {
+    setLoading(true);
     // debugger;
     const chainId = chain?.id;
     if (!address || !chainId) return;
@@ -62,7 +67,15 @@ export function Connect() {
     // const resp = await verifyRes.json()
     await getJWTToken({ message, signature }).then(async (resp: any) => {
       setToken(resp?.data.access_token);
-      session.set("token", resp?.data.access_token);
+      dispatch(loginAction(resp?.data));
+      dispatch(
+        handleAllModals({
+          loginModal: {
+            isVisible: false,
+          },
+        })
+      );
+      setLoading(false);
       console.log("JWT Token ***", resp);
 
       // await loginApi(resp?.data?.access_token).then((loginRes) => {
@@ -75,10 +88,9 @@ export function Connect() {
   }
 
   useEffect(() => {
-    if (isConnected) {
+    if (isConnected && !isAuthenticated) {
       login();
     }
-    
   }, [isConnected]);
   // useEffect(() => {
   //   if (isAuthenticated) {
@@ -99,7 +111,7 @@ export function Connect() {
           </button>
         )}
 
-        {isConnecting && <div>Connecting ...</div>}
+        {(isConnecting || loading) && <div>Connecting ...</div>}
 
         {isReconnecting && <div>Reconnecting ...</div>}
         <div>

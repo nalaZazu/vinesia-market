@@ -19,12 +19,10 @@ import AboutArtWork from "@/components/productDetail/AboutArtWork";
 import AboutWinerySection from "@/components/productDetail/AboutWinerySection";
 import YouMayAlso from "@/components/productDetail/YouMayAlso";
 
-
 export default function Product() {
   const { id } = useParams();
   const [data, setData] = useState<any>({});
   const [products, setProducts] = useState([]);
- 
 
   const [show, setShow] = useState([]);
   const toggleDropdown = () => {
@@ -33,15 +31,15 @@ export default function Product() {
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     if (id) {
-      getProductDetail(id)
-        .then((res) => { 
+      getProductDetail(parseInt(id))
+        .then((res) => {
           setData(res?.data);
         })
         .catch((err) => {
           console.log("Err from Product Detail", err);
         });
     }
-    getHomePage().then((res) => { 
+    getHomePage().then((res) => {
       setProducts(res?.data?.products);
     });
   }, [id]);
@@ -158,13 +156,13 @@ export default function Product() {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 className="w-6 h-6"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>

@@ -78,7 +78,7 @@ const Banner = () => {
               <li className=" text-xs font-extrabold ">Peace of Mind pledge</li>
               <li className="flex relative font-normal gap-2">
                 Proof of Authenticity
-                <li
+                <span
                   onMouseEnter={showTooltipExtra}
                   onMouseLeave={hideTooltipExtra}
                 >
@@ -106,12 +106,12 @@ const Banner = () => {
                       ></span>
                     </div>
                   </div>
-                </li>
+                </span>
               </li>
 
               <li className="flex relative font-normal gap-2">
                 Proof of Ownership
-                <li onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
+                <span onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
                   <Image
                     src={alert}
                     alt="Picture of the author"
@@ -137,11 +137,11 @@ const Banner = () => {
                       ></span>
                     </div>
                   </div>
-                </li>
+                </span>
               </li>
               <li className="flex relative gap-2  font-normal">
                 Proof of Storage conditions
-                <li
+                <span
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -165,7 +165,7 @@ const Banner = () => {
                       ></span>
                     </div>
                   </div>
-                </li>
+                </span>
               </li>
             </ul>
           </div>
