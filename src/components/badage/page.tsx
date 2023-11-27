@@ -41,7 +41,7 @@ const Badges = ({
             return (
               <div key={i}>
                 <span className=" px-3 py-2 bg-gray-50 rounded-[100px] border border-neutral-200 justify-center items-center gap-1 inline-flex">
-                  <p className="text-primary text-xxs font-normal tracking-wide">
+                  <p className="text-primary text-xxs font-normal tracking-wide capitalize">
                     {item}
                   </p>
                   <Image

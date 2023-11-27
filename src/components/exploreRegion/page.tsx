@@ -5,6 +5,11 @@ import play from "@/assets/icon/Play_Circle.svg";
 import arrow from "@/assets/icon/arrow-right2.svg";
 import Link from "next/link";
 import Popup from "../popup/page";
+import {
+  regionItaly,
+  regionUs,
+  regionexplor,
+} from "@/constants/regionexplor";
 const ExploreRegion = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
@@ -40,50 +45,19 @@ const ExploreRegion = () => {
           <div className=" h-[21rem] items-end justify-left p-3">
             <div>
               <ul className="text-secondary text-sm font-normal   leading-[49px] tracking-tight">
-                <Link href="/region/france">
-                  <li className="flex items-center justify-between">
-                    <span>Bordeaux</span>
-                    <span>
-                      <Image src={arrow} alt="arrow" />
-                    </span>
-                  </li>
-                </Link>
-
-                <Link href="/">
-                  <li className="flex items-center justify-between">
-                    <span>Burgundy</span>
-                    <span>
-                      <Image src={arrow} alt="arrow" />
-                    </span>
-                  </li>
-                </Link>
-
-                <Link href="/">
-                  <li className="flex items-center justify-between">
-                    <span>Champagne</span>
-                    <span>
-                      <Image src={arrow} alt="arrow" />
-                    </span>
-                  </li>
-                </Link>
-
-                <Link href="/">
-                  <li className="flex items-center justify-between">
-                    <span>Rhône</span>
-                    <span>
-                      <Image src={arrow} alt="arrow" />
-                    </span>
-                  </li>
-                </Link>
-
-                <Link href="/">
-                  <li className="flex items-center justify-between">
-                    <span>Alsace</span>
-                    <span>
-                      <Image src={arrow} alt="arrow" />
-                    </span>
-                  </li>
-                </Link>
+                {regionexplor?.map((reg) => {
+                  const { id, name, href } = reg;
+                  return (
+                    <Link href={href} key={id}>
+                      <li className="flex items-center justify-between">
+                        <span>{name}</span>
+                        <span>
+                          <Image src={arrow} alt="arrow" />
+                        </span>
+                      </li>
+                    </Link>
+                  );
+                })}
               </ul>
             </div>
           </div>
@@ -154,37 +128,38 @@ const ExploreRegion = () => {
           <div className="flex flex-col gap-4">
             <div className=" h-40 items-end justify-left p-3  ">
               <ul className="text-secondary text-sm font-normal   leading-[49px] tracking-tight">
-                <Link href="/">
-                  <li className="flex items-center justify-between">
-                    <span>Tuscany</span>
-                    <span>
-                      <Image src={arrow} alt="arrow" />
-                    </span>
-                  </li>
-                </Link>
-
-                <Link href="/">
-                  <li className="flex items-center justify-between">
-                    <span>Piedmont</span>
-                    <span>
-                      <Image src={arrow} alt="arrow" />
-                    </span>
-                  </li>
-                </Link>
+                {regionItaly?.map((itly) => {
+                  const { id, name, href } = itly;
+                  return (
+                    <Link href={href} key={id}>
+                      <li className="flex items-center justify-between">
+                        <span>{name}</span>
+                        <span>
+                          <Image src={arrow} alt="arrow" />
+                        </span>
+                      </li>
+                    </Link>
+                  );
+                })}
               </ul>
             </div>
 
             {/* next div */}
             <div className=" h-40 items-end justify-left p-3  ">
               <ul className="text-secondary text-sm font-normal  leading-[49px] tracking-tight">
-                <Link href="/">
-                  <li className="flex items-center justify-between">
-                    <span>California</span>
-                    <span>
-                      <Image src={arrow} alt="arrow" />
-                    </span>
-                  </li>
-                </Link>
+                {regionUs?.map((us) => {
+                  const { id, name, href } = us;
+                  return (
+                    <Link href={href} key={id}>
+                      <li className="flex items-center justify-between">
+                        <span>{name}</span>
+                        <span>
+                          <Image src={arrow} alt="arrow" />
+                        </span>
+                      </li>
+                    </Link>
+                  );
+                })}
               </ul>
             </div>
           </div>

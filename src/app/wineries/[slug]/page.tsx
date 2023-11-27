@@ -26,7 +26,6 @@ import ProductCard from "@/components/cards/ProductCard";
 import { getProductSearch } from "@/services/ProductSerach";
 
 const WinerRegion = ({ params }: { params: any }) => {
- 
   const pathname = usePathname();
   const { slug } = params;
   const [products, setProducts] = useState<any>([]);
@@ -45,16 +44,14 @@ const WinerRegion = ({ params }: { params: any }) => {
       filters: selectedFilters,
       // "sort": "string",
       first: 0,
-    }; 
+    };
 
     getProductSearch(postData).then((res) => {
       setProducts(res?.data);
     });
   }, [selectedFilters]);
   const regionparagraph = `Not all great wine producers come from traditional families or have a long history in winemaking. A notable example is Jérôme Galeyrand, whose journey in the world of wine began when he purchased his first half-hectare vineyard in 2002.`;
-  const regionparagraphs = `Up until then, Jérôme Galeyrand worked in the food industry, and his first immersion into the Burgundy world happened during two harvests at Domaine Alain Burguet in Gevrey-Chambertin.
-  `;
-
+  const regionparagraphs = `Up until then, Jérôme Galeyrand worked in the food industry, and his first immersion into the Burgundy world happened during two harvests at Domaine Alain Burguet in Gevrey-Chambertin.`;
   const explorParagraph = ` This encounter sparked an overwhelming passion for wine in him, leading him to enroll in the renowned wine school in Beaune and decide to completely change direction.`;
   const explorParagraphs = `
   Despite not owning vineyards in the prestigious terroirs of Grand Cru or Premier Cru in Burgundy, Jérôme Galeyrand produces regional-level wines that surprisingly managed to break the barriers of Burgundy’s appellation system, achieving a quality and recognition far beyond expectations.`;
@@ -68,14 +65,19 @@ const WinerRegion = ({ params }: { params: any }) => {
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           Vinesia Marketplace
         </p>
+        <p className="text-xxs font-normal text-breadcrumb tracking-wide">/</p>
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
-          / Home Page
+          Home Page
         </p>
+        <p className="text-xxs font-normal text-breadcrumb tracking-wide">/</p>
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
-          / Winery
+          Winery
         </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
-          / {slug}
+          /
+        </p>
+        <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
+          {slug}
         </p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">

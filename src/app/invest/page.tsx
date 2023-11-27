@@ -39,8 +39,9 @@ function Invest() {
           Vinesia Marketplace
         </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
-          / {pathname.split("/")}
+          / 
         </p>
+        <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">{pathname.split("/")}</p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4">
         <h1 className="text-primary text-xxl font-semibold  tracking-tight">
