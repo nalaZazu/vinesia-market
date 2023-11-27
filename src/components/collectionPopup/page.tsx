@@ -9,11 +9,11 @@ import Image from "next/image";
 export default function CollectionPopup({
   open = false,
   setOpen,
-  handleNext
+  handleNext,
 }: {
   open: any;
   setOpen: any;
-  handleNext?:any
+  handleNext?: any;
 }) {
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -69,7 +69,7 @@ export default function CollectionPopup({
                       </svg>
                     </button>
                   </div>
-                  
+
                   <div className="pb-8 pt-16 grid grid-cols-1 md:grid-cols-3 gap-7">
                     <div className=" col-span-2">
                       <div className="flex-col justify-center items-start gap-2.5 flex">
@@ -139,7 +139,11 @@ export default function CollectionPopup({
                   <div className="container mt-8  items-center grid  md:grid-cols-2 lg:grid-cols-3 mx-auto py-1 border-2 border-bordergray px-4 lg:px-6 md:px-4">
                     {[1, 2, 3].map((d, i) => {
                       return (
-                        <div key={i} className=" border-e-2  py-2 px-4">
+                        <div
+                          key={i}
+                          className={`py-2 px-4${i < 2 ? " border-e-2" : ""}`}
+                          //  className=" border-e-2  py-2 px-4"
+                        >
                           <div className=" flex justify-between items-center">
                             <div>
                               <h3 className=" opacity-60 text-zinc-700 text-base font-medium tracking-tight">
@@ -192,7 +196,10 @@ export default function CollectionPopup({
                         Back
                       </span>
                     </button>
-                    <button onClick={handleNext} className=" px-10 py-2.5 bg-gray-500 rounded-lg justify-center items-center gap-2 inline-flex">
+                    <button
+                      onClick={handleNext}
+                      className=" px-10 py-2.5 bg-gray-500 rounded-lg justify-center items-center gap-2 inline-flex"
+                    >
                       <span className="text-white text-base font-medium tracking-tight">
                         Next wine
                       </span>
