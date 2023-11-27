@@ -17,10 +17,16 @@ const Wineries = () => {
           Vinesia Marketplace
         </p>
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
-          / Home Page
+          /  
+        </p>
+        <p className="text-xxs font-normal text-breadcrumb tracking-wide">
+           Home Page
         </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
-          / {pathname.split("/")}
+          / 
+        </p>
+        <p className="text-xxs font-normal text-bgtertiary tracking-wide">
+        {pathname.split("/")}
         </p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">

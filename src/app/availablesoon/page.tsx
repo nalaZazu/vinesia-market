@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { usePathname } from "next/navigation"; 
+import { usePathname } from "next/navigation";
 import { getFilters } from "@/services/Common";
-import { useQuery } from "@tanstack/react-query"; 
+import { useQuery } from "@tanstack/react-query";
 import { getProductSearch } from "@/services/ProductSerach";
 import resoImage from "@/assets/image/frame-1.png";
 import RegionCountry from "@/components/regioncountry/page";
@@ -38,11 +38,15 @@ function Availablesoon() {
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           Vinesia Marketplace
         </p>
+        <p className="text-xxs font-normal text-breadcrumb tracking-wide">/</p>
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
-          / Home Page
+          Home Page
         </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
-          / {pathname.split("/")}
+          /
+        </p>
+        <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
+          {pathname.split("/")}
         </p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">

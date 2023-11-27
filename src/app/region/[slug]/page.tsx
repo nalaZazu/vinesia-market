@@ -10,7 +10,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getFilters } from "@/services/Common";
 import { getProductSearch } from "@/services/ProductSerach";
 const France = ({ params }: { params: any }) => {
-  const pathname = usePathname(); 
+ 
   const { slug } = params;
 
   const regionparagraph = `France is renowned worldwide for its exquisite wines, each region offering a unique and  distinct flavor profile. Bordeaux, in the
@@ -60,14 +60,19 @@ const France = ({ params }: { params: any }) => {
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           Vinesia Marketplace
         </p>
+        <p className="text-xxs font-normal text-breadcrumb tracking-wide">/</p>
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
-          / Home Page
+          Home Page
         </p>
+        <p className="text-xxs font-normal text-breadcrumb tracking-wide">/</p>
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
-          / Regions
+          Regions
         </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
-          / {slug}
+          /
+        </p>
+        <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
+          {slug}
         </p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">

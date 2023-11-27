@@ -101,9 +101,9 @@ const DropDown = ({
                                   <input
                                     id={`${item}-${itemId}`}
                                     name="checkbox"
-                                    onChange={(e) => handleChange(item)}
+                                    onChange={(e) => handleChange(item?.toLowerCase())}
                                     type="checkbox"
-                                    checked={tempSelected?.includes(item)}  
+                                    checked={tempSelected?.includes(item?.toLowerCase())}  
                                   />
                                   <label htmlFor={`${item}-${itemId}`}>
                                     {item}

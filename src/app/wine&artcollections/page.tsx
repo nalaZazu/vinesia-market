@@ -33,7 +33,7 @@ const WineArt = () => {
       filters: selectedFilters,
       // "sort": "string",
       first: 0,
-    }; 
+    };
 
     getProductSearch(postData).then((res) => {
       setProducts(res?.data);
@@ -46,11 +46,15 @@ const WineArt = () => {
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           Vinesia Marketplace
         </p>
+        <p className="text-xxs font-normal text-breadcrumb tracking-wide">/</p>
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
-          / Home Page
+          Home Page
         </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize ">
-          / {pathname.split("/")}
+          /
+        </p>
+        <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize ">
+          {pathname.split("/")}
         </p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">
@@ -88,9 +92,7 @@ const WineArt = () => {
             products?.data?.map((item: any, index: any) => {
               return (
                 <Link href={`/product/${index + 1}`} key={item?.id}>
-                  <div >
-                    {item && <ProductCard item={item} />}
-                  </div>
+                  <div>{item && <ProductCard item={item} />}</div>
                 </Link>
               );
             })}
