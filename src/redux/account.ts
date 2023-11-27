@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import session from "../services/utils/session";
 
 const initialState = {
-  isAuthenticated: session.get("adr_token") ? true : false,
+  isAuthenticated: session.get("vinesia_token") ? true : false,
   user: session.get("user"),
   shipmentType: session.get("shipmentType") || "1136",
   lang: session.get("lang") || "it",
@@ -13,18 +13,18 @@ export const accountReducer = createSlice({
   initialState,
   reducers: {
     loginAction: (state, action) => {
-      session.set("user", action?.payload);
-      session.set("token", action?.payload?.token);
+      session.set("user", action?.payload?.payload?.user);
+      session.set("vinesia_token", action?.payload?.access_token);
       return {
         ...state,
-        isAuthenticated: action?.payload?.token ? true : false,
-        user: action?.payload,
+        isAuthenticated: action?.payload?.access_token ? true : false,
+        user: action?.payload?.payload?.user,
       };
     },
     logoutAction: (state) => {
       state.isAuthenticated = false;
       session.set("user", null);
-      session.set("token", null);
+      session.set("vinesia_token", null);
     },
    
   },

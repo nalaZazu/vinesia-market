@@ -16,7 +16,7 @@ const customAxios = axios.create({
 });
 
 // Step-2: Create request, response & error handlers
-const requestHandler = (request) => {
+const requestHandler = (request: any) => {
   // Token will be dynamic so we can use any app-specific way to always
   // fetch the new token before making the call
   //   document.body.classList.add("loading-indicator");
@@ -25,7 +25,7 @@ const requestHandler = (request) => {
   return request;
 };
 
-const responseHandler = (response) => {
+const responseHandler = (response: any) => {
   //   document.body.classList.remove("loading-indicator");
   // console.log("Log From Response Handler ", response);
   if (response.status === 401 || response.status === 403) {
@@ -35,7 +35,7 @@ const responseHandler = (response) => {
   return response;
 };
 
-function ErrorHandler(error) {
+function ErrorHandler(error: any) {
   // const { clear } = useSession();
   // const dispatch = useDispatch();
   return error;

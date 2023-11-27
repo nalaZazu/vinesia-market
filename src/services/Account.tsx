@@ -1,9 +1,9 @@
 import { POST, GET } from "./Adapter/base";
 
-export const login = (jwtToken) => {
+export const login = (jwtToken: any) => {
   return POST(`auth/login?token=${jwtToken}`);
 };
-export const getJWTToken = (data) => {
+export const getJWTToken = (data: any) => {
   return POST(`auth/verify`, data);
 };
 export const getProfile = () => {
@@ -16,6 +16,6 @@ export const getProfile = () => {
 //   return POST(`reset_password`, data);
 // };
 
-export const signup = (user) => {
+export const signup = (user: any) => {
   return POST(`auth/register`, user);
 };

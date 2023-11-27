@@ -34,31 +34,37 @@ const Heritage = ({ data }: { data: any }) => {
         },
       },
     ],
-    prevArrow:
-      currentSlide === 0 ? (
-        <></>
-      ) : (
-        <div className="slick-custom-arrow slick-prev top-full ">
-          <div className="border border-gray-600 rounded-lg w-8 h-8 text-center flex items-center">
-            <div className="mx-auto">
-              <PrevIcon />
+    prevArrow: (
+      <div>
+        {currentSlide === 0 ? (
+          <></>
+        ) : (
+          <div className="slick-custom-arrow slick-prev top-full ">
+            <div className="border border-gray-600 rounded-lg w-8 h-8 text-center flex items-center">
+              <div className="mx-auto">
+                <PrevIcon />
+              </div>
             </div>
           </div>
-        </div>
-      ),
+        )}
+      </div>
+    ),
 
-    nextArrow:
-      currentSlide === data?.length - 2 ? (
-        <></>
-      ) : (
-        <div className="slick-custom-arrow slick-next top-full">
-          <div className="border border-gray-600 rounded-lg w-8 h-8 text-center flex items-center">
-            <div className="mx-auto">
-              <NextIcon />
+    nextArrow: (
+      <div>
+        {currentSlide === data?.length - 2 ? (
+          <></>
+        ) : (
+          <div className="slick-custom-arrow slick-next top-full">
+            <div className="border border-gray-600 rounded-lg w-8 h-8 text-center flex items-center">
+              <div className="mx-auto">
+                <NextIcon />
+              </div>
             </div>
           </div>
-        </div>
-      ),
+        )}
+      </div>
+    ),
   };
   return (
     <div className="">
