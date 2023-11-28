@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import logo from "../../assets/img/Logo1.png";
 import Image from "next/image";
@@ -93,7 +93,6 @@ export default function Header() {
           <ul className="hidden lg:flex gap-14">
             {menuBar?.map((item: any) => {
               const { id, name, href } = item;
-              const isActive = pathname === href;
               return (
                 <li
                   key={id}

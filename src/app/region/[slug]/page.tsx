@@ -2,30 +2,17 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { productlist } from "@/constants/winelist";
-import { usePathname } from "next/navigation";
 import RegionCountry from "@/components/regioncountry/page";
 import countryregion from "@/assets/image/frame-1.png";
 import DropDownBadge from "@/common/dropdownbadge/page";
 import { useQuery } from "@tanstack/react-query";
 import { getFilters } from "@/services/Common";
 import { getProductSearch } from "@/services/ProductSerach";
+import { regionSlug, regionSlugs } from "@/constants/paragraph";
 const France = ({ params }: { params: any }) => {
- 
   const { slug } = params;
-
-  const regionparagraph = `France is renowned worldwide for its exquisite wines, each region offering a unique and  distinct flavor profile. Bordeaux, in the
-    southwest, is celebrated for its robust reds, notably blends of
-    Merlot, Cabernet Sauvignon, and Cabernet Franc. Burgundy, in the
-    east, is famed for its Pinot Noir and Chardonnay, reflecting the
-    region's terroir with elegance and finesse.`;
-  const regionparagraphs = `Champagne, a region in the northeast, is synonymous with sparkling
-    wine, using the traditional méthode champenoise to produce the
-    iconic bubbly. The Loire Valley is diverse, boasting a range of
-    white, red, rosé, and sparkling wines, with Sauvignon Blanc and
-    Cabernet Franc being prominent.`;
   const [selectedFilters, setSelectedFilters] = useState<any>([]);
-  const [products, setProducts] = useState<any>([]);
-
+  const [products,setProducts] = useState<any>([]);
   const {
     isLoading: filtersLoading,
     error: filtersError,
@@ -80,8 +67,8 @@ const France = ({ params }: { params: any }) => {
           {slug}
         </h1>
         <RegionCountry
-          regionparagraph={regionparagraph}
-          regionparagraphs={regionparagraphs}
+          regionparagraph={regionSlug}
+          regionparagraphs={regionSlugs}
           image={countryregion}
         />
         {/* dropdown  */}

@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import xDelete from "@/assets/icon/X-delete.svg";
 import { useSelector } from "react-redux";
+import { usePathname, useRouter } from "next/navigation";
 const Badges = ({
   data,
   setSelectedFilters,
@@ -16,10 +17,7 @@ const Badges = ({
     }
   }, [data]);
 
-  const datadropdown = useSelector<any>(
-    (state) => state?.dropdown?.dropdownData
-  ); 
-
+  
   const handleRemoved = (item: any) => {
     let index = data?.findIndex((d: any) => d == item);
     if (index == -1) {
@@ -28,13 +26,13 @@ const Badges = ({
       let tempArr = [...data];
       tempArr.splice(index, 1);
       setSelectedFilters(tempArr);
-    } 
+    }
   };
   const handleClear = () => {
     setSelectedFilters([]);
   };
   return (
-    <>
+    <React.Fragment>
       <div className="pt-4  md:pt-0 pb-8 flex gap-2 flex-wrap">
         {selectedData &&
           selectedData?.map((item: any, i: any) => {
@@ -63,7 +61,7 @@ const Badges = ({
           </button>
         )}
       </div>
-    </>
+    </React.Fragment>
   );
 };
 

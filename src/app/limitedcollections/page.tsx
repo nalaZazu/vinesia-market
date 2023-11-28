@@ -9,10 +9,9 @@ import { getFilters } from "@/services/Common";
 import DropDownBadge from "@/common/dropdownbadge/page";
 import ProductCard from "@/components/cards/ProductCard";
 import Link from "next/link";
+import { limit, limits } from "@/constants/paragraph";
 const LimitedCollections = () => {
   const pathname = usePathname();
-  const regionparagraph = `Bordeaux, a renowned wine region, is acclaimed for its bold red blends, predominantly featuring Merlot, Cabernet Sauvignon, and Cabernet Franc. The wines exhibit rich flavors and a superb balance, making Bordeaux a global wine capital. Burgundy, in eastern France, is famous for its exquisite Pinot Noir and Chardonnay wines. The terroir of Burgundy imparts a unique character, resulting in elegant, nuanced, and often complex flavors, highly sought after by wine connoisseurs. Champagne, located in northeastern France, is synonymous with sparkling wine. Using the traditional méthode champenoise, this region crafts the world's most celebrated bubbly. Champagne is known  `;
-  const regionparagraphs = `for its effervescence, finesse, and celebratory nature.`;
   const [products, setProducts] = useState<any>([]);
   const [selectedFilters, setSelectedFilters] = useState<any>([]);
 
@@ -58,8 +57,8 @@ const LimitedCollections = () => {
           Limited collections
         </h1>
         <RegionCountry
-          regionparagraph={regionparagraph}
-          regionparagraphs={regionparagraphs}
+          regionparagraph={limit}
+          regionparagraphs={limits}
           image={resoImage}
         />
         {/* dropdown  */}

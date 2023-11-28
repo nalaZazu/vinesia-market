@@ -38,14 +38,13 @@ const DropDownBadge = ({
         </div>
       </div>
       {/* badge */}
-      <div className="pt-4">
-        {
-          <Badges
-            data={selectedFilters}
-            setSelectedFilters={setSelectedFilters}
-          />
-        }
-      </div>
+
+      {
+        <Badges
+          data={selectedFilters}
+          setSelectedFilters={setSelectedFilters}
+        />
+      }
     </>
   );
 };
