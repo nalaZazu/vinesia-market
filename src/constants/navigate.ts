@@ -38,7 +38,7 @@ export const menuBar = [
   {
     id: 6,
     name: "Limited collections",
-    href: "/limitedcollections",
+    href: "/collections",
     icon: winericon,
   },
   {

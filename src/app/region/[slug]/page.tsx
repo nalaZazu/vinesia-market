@@ -9,6 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getFilters } from "@/services/Common";
 import { getProductSearch } from "@/services/ProductSerach";
 import { regionSlug, regionSlugs } from "@/constants/paragraph";
+import PTSSkelton from "@/components/productDetail/PTSSkelton";
 const France = ({ params }: { params: any }) => {
   const { slug } = params;
   const [selectedFilters, setSelectedFilters] = useState<any>([]);
@@ -73,11 +74,19 @@ const France = ({ params }: { params: any }) => {
         />
         {/* dropdown  */}
 
-        <DropDownBadge
-          filtersList={filtersList}
-          selectedFilters={selectedFilters}
-          setSelectedFilters={setSelectedFilters}
-        />
+        {filtersList ? (
+          <>
+            <DropDownBadge
+              filtersList={filtersList}
+              selectedFilters={selectedFilters}
+              setSelectedFilters={setSelectedFilters}
+            />
+          </>
+        ) : (
+          <>
+            <PTSSkelton/>
+          </>
+        )}
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {productlist?.map((item) => {
             const {

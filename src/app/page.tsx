@@ -8,7 +8,6 @@ import { getHomePage } from "../services/Home";
 import Popup from "@/components/popup/page";
 import ExploreRegion from "@/components/exploreRegion/page";
 import UpperFooter from "@/components/upperfooter/page";
-import { useQuery } from "@tanstack/react-query";
 
 export default async function Home() {
   // const [criticsSelection, setCriticsSelection] = useState([]);
