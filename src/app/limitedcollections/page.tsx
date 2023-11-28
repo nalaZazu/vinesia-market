@@ -13,8 +13,6 @@ import { limit, limits } from "@/constants/paragraph";
 const LimitedCollections = () => {
   const pathname = usePathname();
 
-  console.log("Path Name ", pathname);
-
   const [products, setProducts] = useState<any>([]);
   const [selectedFilters, setSelectedFilters] = useState<any>([]);
   useEffect(() => {

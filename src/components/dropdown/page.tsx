@@ -115,7 +115,7 @@ const DropDown = ({
                                 (item: any, itemId: any) => {
                                   return (
                                     <Menu.Item key={itemId}>
-                                      <p className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-xxs font-normal  tracking-wide flex gap-3">
+                                      <p className="p-2 cursor-pointer hover:bg-secondary-dark   text-secondary text-xxs font-normal  tracking-wide flex gap-2">
                                         <input
                                           id={`${item}-${itemId}`}
                                           name="checkbox"
@@ -126,8 +126,12 @@ const DropDown = ({
                                           checked={tempSelected?.includes(
                                             item?.toLowerCase()
                                           )}
+                                          className="h-6 w-6 form-checkbox rounded-full"
                                         />
-                                        <label htmlFor={`${item}-${itemId}`}>
+                                        <label
+                                          htmlFor={`${item}-${itemId}`}
+                                          className="text-zinc-800 text-sm font-medium tracking-tight"
+                                        >
                                           {item}
                                         </label>
                                       </p>
