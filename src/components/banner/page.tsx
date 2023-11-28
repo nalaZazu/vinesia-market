@@ -8,8 +8,6 @@ import drop from "@/assets/icon/drop.svg";
 import { TextIcon } from "@/assets/icon/Icons";
 import frame from "@/assets/image/01 Images.png";
 import Popup from "../popup/page";
-import { useDispatch } from "react-redux";
-import { isModel } from "@/redux/modalVisibility";
 const Banner = () => {
   const [tooltipExtraVisible, setTooltipExtraVisible] = useState(false);
   const [tooltipVisible, setTooltipVisible] = useState(false);
@@ -42,15 +40,6 @@ const Banner = () => {
   const handleOpen = () => {
     setOpen(!open);
   };
-  // const dispatch = useDispatch();
-  // const hideModal = () => {
-  //   dispatch(
-  //     isModel({
-  //       isLoading: false,
-  //       loginModal: { isVisible: false },
-  //     })
-  //   );
-  // };
   return (
     <>
       <Popup open={open} setOpen={handleOpen} />
