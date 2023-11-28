@@ -26,12 +26,12 @@ function Invest() {
       filters: selectedFilters,
       // "sort": "string",
       first: 0,
-    }; 
+    };
 
     getProductSearch(postData).then((res) => {
-      setProducts(res?.data); 
+      setProducts(res?.data);
     });
-  }, [selectedFilters]); 
+  }, [selectedFilters]);
   return (
     <>
       <div className="container mx-auto  pt-3 md:pt-5  px-4 flex gap-4">
@@ -39,9 +39,11 @@ function Invest() {
           Vinesia Marketplace
         </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
-          / 
+          /
         </p>
-        <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">{pathname.split("/")}</p>
+        <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
+          {pathname.split("/")}
+        </p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4">
         <h1 className="text-primary text-xxl font-semibold  tracking-tight">
@@ -53,15 +55,12 @@ function Invest() {
           selectedFilters={selectedFilters}
           setSelectedFilters={setSelectedFilters}
         />
-
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products?.data &&
             products?.data?.map((item: any, index: any) => {
               return (
                 <Link href={`product/${index + 1}`} key={item?.id}>
-                  <div >
-                    {item && <ProductCard item={item} />}
-                  </div>
+                  <div>{item && <ProductCard item={item} />}</div>
                 </Link>
               );
             })}

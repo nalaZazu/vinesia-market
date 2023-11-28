@@ -1,8 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
-
-import { productlist } from "@/constants/winelist";
 import { usePathname } from "next/navigation";
 import RegionCountry from "@/components/regioncountry/page";
 import countryregion from "@/assets/image/frame-1.png";
@@ -12,11 +9,9 @@ import { getProductSearch } from "@/services/ProductSerach";
 import ProductCard from "@/components/cards/ProductCard";
 import { getFilters } from "@/services/Common";
 import { useQuery } from "@tanstack/react-query";
-
+import { wineart, winearts } from "@/constants/paragraph";
 const WineArt = () => {
   const pathname = usePathname();
-  const regionparagraph = `Thanks to our Chief Wine Officer’s 30 years’ experience in the world of wine as a sommelier and wine distributor, we enjoy privileged relationships with the world’s`;
-  const regionparagraphs = `leading wineries, who place their trust in us by supplying their wines directly from their cellars. Likewise, our close relationships with the wine world enable us to identify the most talented young winemakers, whose sublime wines will be among tomorrow’s most sought-after.`;
   const [products, setProducts] = useState<any>([]);
   const [selectedFilters, setSelectedFilters] = useState<any>([]);
   const {
@@ -62,11 +57,10 @@ const WineArt = () => {
           Wine & art collections
         </h1>
         <RegionCountry
-          regionparagraph={regionparagraph}
-          regionparagraphs={regionparagraphs}
+          regionparagraph={wineart}
+          regionparagraphs={winearts}
           image={countryregion}
         />
-
         {/* card */}
         <div className=" rounded-tl-lg rounded-tr-lg shadow-lg pb-7 md:pb-7">
           <Link href="/wine&artcollections/reso">
@@ -78,7 +72,6 @@ const WineArt = () => {
             </div>
           </Link>
         </div>
-
         {/* dropdown  */}
         {/* defined dropdown */}
         <DropDownBadge

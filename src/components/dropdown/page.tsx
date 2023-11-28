@@ -15,9 +15,8 @@ const DropDown = ({
   setSelectedFilters: any;
 }) => {
   const dispatch = useDispatch();
-  const [products, setProducts] = useState<any>([]);
+  // const [products, setProducts] = useState<any>([]);
   const [tempSelected, setTempSelected] = useState<any>([]);
-
   const [searchTerm, setSearchTerm] = useState("");
   const handleChange = (e: any) => {
     let index = tempSelected?.findIndex((d: any) => d == e);

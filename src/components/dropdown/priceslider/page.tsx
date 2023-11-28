@@ -52,3 +52,50 @@ const PriceSlider = ({
 };
 
 export default PriceSlider;
+
+
+
+// import { useState } from "react";
+
+// const Home = () => {
+//   const [priceRange, setPriceRange] = useState({ min: 0, max: 100 });
+
+//   const handlePriceChange = (e: any, type: any) => {
+//     const value = parseInt(e.target.value, 10);
+//     setPriceRange((prevRange) => ({ ...prevRange, [type]: value }));
+//   };
+
+//   const handleSubmit = (e: any) => {
+//     e.preventDefault();
+//     // Handle form submission with the selected price range
+//     console.log("Selected Price Range:", priceRange);
+//   };
+
+//   return (
+//     <div>
+//       <form onSubmit={handleSubmit}>
+//         <label>
+//           Min Price:
+//           <input
+//             type="number"
+//             value={priceRange.min}
+//             onChange={(e) => handlePriceChange(e, "min")}
+//           />
+//         </label>
+//         <br />
+//         <label>
+//           Max Price:
+//           <input
+//             type="number"
+//             value={priceRange.max}
+//             onChange={(e) => handlePriceChange(e, "max")}
+//           />
+//         </label>
+//         <br />
+//         <button type="submit">Submit</button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default Home;

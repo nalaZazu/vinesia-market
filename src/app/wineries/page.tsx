@@ -6,27 +6,24 @@ import RegionCountry from "@/components/regioncountry/page";
 import { NextIcon } from "@/assets/icon/Icons";
 import { wineCountry } from "@/constants/winelist";
 import Link from "next/link";
+import { wine, wines } from "@/constants/paragraph";
 const Wineries = () => {
   const pathname = usePathname();
-  const regionparagraph = `Bordeaux, a renowned wine region, is acclaimed for its bold red blends, predominantly featuring Merlot, Cabernet Sauvignon, and Cabernet Franc. The wines exhibit rich flavors and a superb balance, making Bordeaux a global wine capital. Burgundy, in eastern France, is famous for its exquisite Pinot Noir and Chardonnay wines. The terroir of Burgundy imparts a unique character, resulting in elegant, nuanced, and often complex flavors, highly sought after by wine connoisseurs. Champagne, located in northeastern `;
-  const regionparagraphs = `France, is synonymous with sparkling wine. Using the traditional méthode champenoise, this region crafts the world's most celebrated bubbly.`;
   return (
     <>
       <div className="container mx-auto  pt-3 md:pt-5  px-4 flex gap-4">
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
           Vinesia Marketplace
         </p>
+        <p className="text-xxs font-normal text-breadcrumb tracking-wide">/</p>
         <p className="text-xxs font-normal text-breadcrumb tracking-wide">
-          /  
-        </p>
-        <p className="text-xxs font-normal text-breadcrumb tracking-wide">
-           Home Page
+          Home Page
         </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
-          / 
+          /
         </p>
         <p className="text-xxs font-normal text-bgtertiary tracking-wide">
-        {pathname.split("/")}
+          {pathname.split("/")}
         </p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">
@@ -35,12 +32,11 @@ const Wineries = () => {
         </h1>
         <div className=" lg:max-w-[1172px] xl:max-w-8xl xl:max-auto ">
           <RegionCountry
-            regionparagraph={regionparagraph}
-            regionparagraphs={regionparagraphs}
+            regionparagraph={wine}
+            regionparagraphs={wines}
             image={resoImage}
           />
         </div>
-
         {wineCountry?.map((item: any) => {
           const {
             id,
@@ -65,7 +61,7 @@ const Wineries = () => {
                     </h2>
                   </div>
                   <div className="basis-4/5">
-                    <hr className=" border-secondary" /> 
+                    <hr className=" border-secondary" />
                   </div>
                 </div>
                 {/* 1st div */}

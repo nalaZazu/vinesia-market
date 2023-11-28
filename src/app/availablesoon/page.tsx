@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getProductSearch } from "@/services/ProductSerach";
 import resoImage from "@/assets/image/frame-1.png";
 import RegionCountry from "@/components/regioncountry/page";
+import { avaliablesoon, avaliablesoons } from "@/constants/paragraph";
 function Availablesoon() {
   const pathname = usePathname();
   const [products, setProducts] = useState<any>([]);
@@ -30,8 +31,7 @@ function Availablesoon() {
       setProducts(res?.data);
     });
   }, [selectedFilters]);
-  const regionparagraph = `Bordeaux, a renowned wine region, is acclaimed for its bold red blends, predominantly featuring Merlot, Cabernet Sauvignon, and Cabernet Franc. The wines exhibit rich flavors and a superb balance, making Bordeaux a global wine capital. Burgundy, in eastern France, is famous for its exquisite Pinot Noir and Chardonnay wines. The terroir of Burgundy imparts a unique character, resulting in elegant, nuanced, and often complex flavors, highly sought after by wine connoisseurs. Champagne, located in northeastern France, is synonymous with sparkling wine. Using the traditional méthode champenoise, this region crafts the world's most celebrated bubbly. Champagne is known  `;
-  const regionparagraphs = `for its effervescence, finesse, and celebratory nature.`;
+
   return (
     <>
       <div className="container mx-auto  pt-3 md:pt-5  px-4 flex gap-4">
@@ -55,8 +55,8 @@ function Availablesoon() {
         </h1>
         {/* defined card */}
         <RegionCountry
-          regionparagraph={regionparagraph}
-          regionparagraphs={regionparagraphs}
+          regionparagraph={avaliablesoon}
+          regionparagraphs={avaliablesoons}
           image={resoImage}
         />
       </div>
