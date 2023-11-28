@@ -7,7 +7,6 @@ import DropDownBadge from "@/common/dropdownbadge/page";
 import { getProductSearch } from "@/services/ProductSerach";
 import ProductCard from "@/components/cards/ProductCard";
 import Link from "next/link";
-import PriceSlider from "@/components/dropdown/priceslider/page";
 function Invest() {
   const pathname = usePathname();
   const [products, setProducts] = useState<any>([]);
@@ -56,7 +55,6 @@ function Invest() {
           selectedFilters={selectedFilters}
           setSelectedFilters={setSelectedFilters}
         />
-        <PriceSlider />
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products?.data &&
             products?.data?.map((item: any, index: any) => {
