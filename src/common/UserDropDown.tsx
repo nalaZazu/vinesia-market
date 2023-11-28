@@ -1,7 +1,7 @@
 "use client";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutAction } from "@/redux/account";
 import Image from "next/image";
@@ -10,15 +10,23 @@ import { handleAllModals } from "@/redux/modalVisibility";
 
 export default function UserDropDown() {
   const dispatch = useDispatch();
-  const isAuthenticted = useSelector<any>(
-    (state) => state?.account?.isAuthenticated
-  ); 
+  const isAuthenticatedRedux = useSelector<any>(
+    (state) => state?.account?.isAuthenticated || false
+  );
   const handleModal = () => {
     dispatch(handleAllModals({ loginModal: { isVisible: true } }));
   };
+
+  const [isAuthenticated, setIsAuthenticated] = useState<any>(false);
+
+  useEffect(() => {
+    // Synchronize with Redux state after component mounts
+    setIsAuthenticated(isAuthenticatedRedux);
+  }, [isAuthenticatedRedux]);
+
   return (
     <div>
-      {isAuthenticted ? (
+      {isAuthenticated ? (
         <Menu as="div" className="relative inline-block text-left">
           <div>
             <Menu.Button className="inline-flex w-full justify-center items-center rounded-md  px-4 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75   text-base  leading-7">
@@ -52,7 +60,7 @@ export default function UserDropDown() {
                       className={`${
                         active ? " text-black" : "text-gray-900"
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                    > 
+                    >
                       Logout
                     </button>
                   )}
