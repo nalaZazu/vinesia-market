@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import { NextIcon, PrevIcon } from "@/assets/icon/Icons";
 import Link from "next/link";
 const Heritage = ({ data }: { data: any }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentslide, setCurrentSlide] = useState(0);
 
   const sliderSettings = {
     // dots: true,
@@ -36,7 +36,7 @@ const Heritage = ({ data }: { data: any }) => {
     ],
     prevArrow: (
       <div>
-        {currentSlide === 0 ? (
+        {currentslide === 0 ? (
           <></>
         ) : (
           <div className="slick-custom-arrow slick-prev top-full ">
@@ -52,7 +52,7 @@ const Heritage = ({ data }: { data: any }) => {
 
     nextArrow: (
       <div>
-        {currentSlide === data?.length - 2 ? (
+        {currentslide === data?.length - 2 ? (
           <></>
         ) : (
           <div className="slick-custom-arrow slick-next top-full">

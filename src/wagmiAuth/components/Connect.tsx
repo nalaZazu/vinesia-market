@@ -22,7 +22,8 @@ export function Connect() {
   );
   console.log("Is Authenticated ", isAuthenticated);
 
-  const { connector, isConnected, isConnecting, isReconnecting } = useAccount();
+  const { connector, isConnected, isConnecting, isReconnecting, address } =
+    useAccount();
   const { connect, connectors, error, isLoading, pendingConnector } =
     useConnect();
   const { disconnect } = useDisconnect();
@@ -30,7 +31,6 @@ export function Connect() {
     "coinbase wallet": coinbaseIcon,
     walletconnect: walletConnectIcon,
   };
-  const { address } = useAccount();
   const { chain } = useNetwork();
   const { signMessageAsync } = useSignMessage();
 
@@ -92,16 +92,6 @@ export function Connect() {
       login();
     }
   }, [isConnected]);
-  // useEffect(() => {
-  //   if (isAuthenticated) {
-  //     getProfile().then((profileRes: any) => {
-  //       console.log("Profile Respoce  ", profileRes);
-  //     });
-  //   }
-  // }, [isAuthenticated]);
-
-  console.log("is connected ", isConnected);
-
   return (
     <div>
       <div>
