@@ -15,9 +15,7 @@ const LimitedCollections = () => {
   const pathname = usePathname();
   const [products, setProducts] = useState<any>([]);
   const [selectedFilters, setSelectedFilters] = useState<any>([]);
-  // const modifiedPathname = pathname.replace(/limitscollection/, "collections");
-  const modifiedCollection = pathname.replace(/collection/, "limitscollection");
-  console.log("pathname", modifiedCollection);
+  console.log("param slug", pathname);
 
   const {
     isLoading: filtersLoading,
@@ -83,7 +81,7 @@ const LimitedCollections = () => {
           </>
         ) : (
           <>
-            <PTSSkelton/>
+            <PTSSkelton />
           </>
         )}
 

@@ -27,10 +27,10 @@ const ExploreRegion = () => {
         <div className=" grid lg:grid-cols-6 gap-4">
           {/* column one */}
           <div
-            className="border border-[#7c7b83] h-[21rem] items-end justify-left p-3"
+            className="border border-[#7c7b83] h-[21rem] items-end justify-left p-3 cursor-pointer"
             onClick={handleOpen}
           >
-            <div className="flex items-end justify-center h-1/2 cursor-pointer">
+            <div className="flex items-end justify-center h-1/2 ">
               <Image src={play} alt="play-button" />
             </div>
             <div className=" flex items-end justify-left h-1/2">
@@ -65,7 +65,7 @@ const ExploreRegion = () => {
           {/* column two */}
           <div className="col-span-2 flex flex-col gap-4">
             <div
-              className="border  border-[#7c7b83] h-40 items-end justify-left p-3 "
+              className="border  border-[#7c7b83] h-40 items-end justify-left p-3 cursor-pointer"
               onClick={handleOpen}
             >
               <div className="flex items-end justify-center h-1/2">
@@ -78,7 +78,7 @@ const ExploreRegion = () => {
               </div>
             </div>
             <div
-              className="border  border-[#7c7b83] h-40 items-end justify-left p-3 "
+              className="border  border-[#7c7b83] h-40 items-end justify-left p-3 cursor-pointer"
               onClick={handleOpen}
             >
               <div className="flex items-end justify-center h-1/2">
@@ -93,9 +93,9 @@ const ExploreRegion = () => {
           </div>
 
           {/* column two */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 ">
             <div
-              className="border  border-[#7c7b83] h-40 items-end justify-left p-3"
+              className="border  border-[#7c7b83] h-40 items-end justify-left p-3 cursor-pointer"
               onClick={handleOpen}
             >
               <div className="flex items-end justify-center h-1/2">
@@ -110,7 +110,7 @@ const ExploreRegion = () => {
 
             {/* next div */}
             <div
-              className="border  border-[#7c7b83] h-40 items-end justify-left p-3 "
+              className="border  border-[#7c7b83] h-40 items-end justify-left p-3 cursor-pointer "
               onClick={handleOpen}
             >
               <div className="flex items-end justify-center h-1/2">
