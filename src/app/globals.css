@@ -181,6 +181,34 @@
   margin: auto;
 }
 
+/* second slider */
+.slidersec ul{
+  display: flex !important;
+  justify-content: center;
+  width: 411px;
+  margin-left: 15px;
+  height: 92px;
+  padding: 10px 0px;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 0;
+}
+.slidersec .slick-dotss li {
+  width: 56px !important;
+  height: 0;
+}
+
+
+
+.slick-dotss li {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}
 /* Styles for buttons at large screens */
 @media screen and (max-width: 768px) {
   .product_slider ul {

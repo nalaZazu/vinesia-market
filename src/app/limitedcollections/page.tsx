@@ -13,9 +13,14 @@ import { limit, limits } from "@/constants/paragraph";
 import PTSSkelton from "@/components/productDetail/PTSSkelton";
 const LimitedCollections = () => {
   const pathname = usePathname();
+
   const [products, setProducts] = useState<any>([]);
   const [selectedFilters, setSelectedFilters] = useState<any>([]);
-  console.log("param slug", pathname);
+  useEffect(() => {
+    if (pathname === "/limitedcollections") {
+      setSelectedFilters(["collection"]);
+    }
+  }, [pathname]);
 
   const {
     isLoading: filtersLoading,
@@ -26,13 +31,7 @@ const LimitedCollections = () => {
     queryFn: getFilters,
   });
   const filtersList = filtersData?.data;
-  console.log("filter", filtersList);
 
-  useEffect(() => {
-    if (filtersData && pathname) {
-      setSelectedFilters([pathname]);
-    }
-  }, [filtersData, pathname]);
   useEffect(() => {
     let postData = {
       filters: selectedFilters,

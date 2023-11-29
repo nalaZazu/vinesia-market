@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import bottle from "@/assets/icon/bottle.svg";
 import case1 from "@/assets/icon/Case.svg";
 import redwine from "@/assets/icon/redwine.svg";
@@ -7,8 +7,8 @@ import big from "@/assets/icon/big.png";
 import big1 from "@/assets/icon/big1.png";
 import logo1 from "@/assets/icon/logo1.svg";
 import award from "@/assets/icon/award.svg";
-import { Wine, releaseDetails, rating } from "@/propTypes/page";
-import ProductCarousel from "../productsCarousel/page";
+import { Wine, releaseDetails } from "@/propTypes/page";
+import ProductSecCarousel from "./secondslider";
 
 const ProductTopSection = ({
   wine,
@@ -175,82 +175,7 @@ const ProductTopSection = ({
         </div>
         {/* first section end */}
         {/* slider start */}
-        <div>
-          <div className="flex justify-center items-center">
-            <span>
-              <Image
-                src={big1}
-                alt="Picture of the author"
-                className="lg:h-full md:h-full h-1/2"
-              />
-            </span>
-          </div>
-          <div className="flex justify-center">
-            <div className="flex bg-white items-center gap-5 py-2 px-5 text-spacegray shadow-md rounded-md">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
-
-              <div>
-                <Image
-                  src={big1}
-                  alt="Picture of the author"
-                  width={55}
-                  className=" flex justify-center rounded-sm shadow-sm border border-spacegray"
-                />
-              </div>
-              <div>
-                <Image
-                  src={big}
-                  alt="Picture of the author"
-                  width={55}
-                  className=" flex justify-center rounded-sm shadow-sm border border-spacegray"
-                />
-              </div>
-              <div>
-                <Image
-                  src={big1}
-                  alt="Picture of the author"
-                  width={55}
-                  className=" flex justify-center rounded-sm shadow-sm border border-spacegray"
-                />
-              </div>
-              <div>
-                <Image
-                  src={big}
-                  alt="Picture of the author"
-                  width={55}
-                  className=" flex justify-center rounded-sm shadow-sm border border-spacegray"
-                />
-              </div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
+        <ProductSecCarousel />
         {/* slider end */}
         {/* second section start */}
         <div className=" md:col-span-2 lg:col-span-1">
