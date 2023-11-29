@@ -28,13 +28,14 @@ import ProductTopSection from "@/components/productDetail/ProductTopSection";
 import AssetDetails from "@/components/productDetail/AssetDetails";
 import OtherEditions from "@/components/otherEditions/page";
 import DisclosureModal from "@/components/disclosure/page";
+import { getProductSearch } from "@/services/ProductSerach";
 
 export default function Product() {
   const { id } = useParams();
   const [data, setData] = useState<any>({});
   const [priceHistory, setPriceHistory] = useState<any>([]);
   const [products, setProducts] = useState([]);
-
+  const [firstSale, setFirstSale] = useState(0);
   const [show, setShow] = useState([]);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -54,10 +55,22 @@ export default function Product() {
         })
         .catch((err) => {});
     }
-    getHomePage().then((res) => {
-      setProducts(res?.data?.products);
-    });
+    // getHomePage().then((res) => {
+    //   setProducts(res?.data?.products);
+    // });
   }, [id]);
+
+  useEffect(() => {
+    let postData = {
+      filters: [],
+      // "sort": "string",
+      first: firstSale,
+    };
+    getProductSearch(postData).then((res) => {
+      setProducts(res?.data?.data);
+    });
+  }, [firstSale]);
+
   const isAuthenticted = useSelector<any>(
     (state) => state?.account?.isAuthenticated
   );
@@ -152,7 +165,11 @@ export default function Product() {
           <OtherEditions data={products} />{" "}
         </>
       ) : (
-        <AllEditions products={products} />
+        <AllEditions
+          firstSale={firstSale}
+          setFirstSale={setFirstSale}
+          products={products}
+        />
       )}
       {/* All editions end */}
       {/* How to invest in wine start */}
