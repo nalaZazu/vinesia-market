@@ -19,6 +19,7 @@ import {
   regionparagraphs,
   winaryOwner,
 } from "@/constants/paragraph";
+import PTSSkelton from "@/components/productDetail/PTSSkelton";
 
 const WinerRegion = ({ params }: { params: any }) => {
   const { slug } = params;
@@ -92,12 +93,19 @@ const WinerRegion = ({ params }: { params: any }) => {
         />
 
         {/* dropdown  */}
-        <DropDownBadge
-          filtersList={filtersList}
-          selectedFilters={selectedFilters}
-          setSelectedFilters={setSelectedFilters}
-        />
-
+        {filtersList ? (
+          <>
+            <DropDownBadge
+              filtersList={filtersList}
+              selectedFilters={selectedFilters}
+              setSelectedFilters={setSelectedFilters}
+            />
+          </>
+        ) : (
+          <>
+            <PTSSkelton />
+          </>
+        )}
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products?.data &&
             products?.data?.map((item: any, index: any) => {

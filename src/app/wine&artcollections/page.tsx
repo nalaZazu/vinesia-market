@@ -10,6 +10,7 @@ import ProductCard from "@/components/cards/ProductCard";
 import { getFilters } from "@/services/Common";
 import { useQuery } from "@tanstack/react-query";
 import { wineart, winearts } from "@/constants/paragraph";
+import PTSSkelton from "@/components/productDetail/PTSSkelton";
 const WineArt = () => {
   const pathname = usePathname();
   const [products, setProducts] = useState<any>([]);
@@ -74,11 +75,19 @@ const WineArt = () => {
         </div>
         {/* dropdown  */}
         {/* defined dropdown */}
-        <DropDownBadge
-          filtersList={filtersList}
-          selectedFilters={selectedFilters}
-          setSelectedFilters={setSelectedFilters}
-        />
+        {filtersList ? (
+          <>
+            <DropDownBadge
+              filtersList={filtersList}
+              selectedFilters={selectedFilters}
+              setSelectedFilters={setSelectedFilters}
+            />
+          </>
+        ) : (
+          <>
+            <PTSSkelton/>
+          </>
+        )}
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products?.data &&

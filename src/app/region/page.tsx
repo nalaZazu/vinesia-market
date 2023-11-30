@@ -8,6 +8,7 @@ import ProductCard from "@/components/cards/ProductCard";
 import { getProductSearch } from "@/services/ProductSerach";
 import DropDownBadge from "@/common/dropdownbadge/page";
 import Link from "next/link";
+import PTSSkelton from "@/components/productDetail/PTSSkelton";
 function Region() {
   const pathname = usePathname();
   const [products, setProducts] = useState<any>([]);
@@ -57,11 +58,19 @@ function Region() {
         {/* defined card */}
         <Card />
         {/* defined dropdown */}
-        <DropDownBadge
-          filtersList={filtersList}
-          selectedFilters={selectedFilters}
-          setSelectedFilters={setSelectedFilters}
-        />
+        {filtersList ? (
+          <>
+            <DropDownBadge
+              filtersList={filtersList}
+              selectedFilters={selectedFilters}
+              setSelectedFilters={setSelectedFilters}
+            />
+          </>
+        ) : (
+          <>
+            <PTSSkelton/>
+          </>
+        )}
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products?.data &&
             products?.data?.map((item: any, index: any) => {

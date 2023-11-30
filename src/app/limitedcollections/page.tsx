@@ -10,6 +10,7 @@ import DropDownBadge from "@/common/dropdownbadge/page";
 import ProductCard from "@/components/cards/ProductCard";
 import Link from "next/link";
 import { limit, limits } from "@/constants/paragraph";
+import PTSSkelton from "@/components/productDetail/PTSSkelton";
 const LimitedCollections = () => {
   const pathname = usePathname();
 
@@ -30,6 +31,7 @@ const LimitedCollections = () => {
     queryFn: getFilters,
   });
   const filtersList = filtersData?.data;
+
   useEffect(() => {
     let postData = {
       filters: selectedFilters,
@@ -55,7 +57,7 @@ const LimitedCollections = () => {
           /
         </p>
         <p className="text-xxs font-normal text-bgtertiary tracking-wide">
-          {pathname.split("/")}
+          limitedcollections
         </p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">
@@ -68,11 +70,19 @@ const LimitedCollections = () => {
           image={resoImage}
         />
         {/* dropdown  */}
-        <DropDownBadge
-          filtersList={filtersList}
-          selectedFilters={selectedFilters}
-          setSelectedFilters={setSelectedFilters}
-        />
+        {filtersList ? (
+          <>
+            <DropDownBadge
+              filtersList={filtersList}
+              selectedFilters={selectedFilters}
+              setSelectedFilters={setSelectedFilters}
+            />
+          </>
+        ) : (
+          <>
+            <PTSSkelton />
+          </>
+        )}
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products?.data &&

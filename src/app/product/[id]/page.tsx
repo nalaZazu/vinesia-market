@@ -108,6 +108,7 @@ export default function Product() {
           rating={ratings}
         />
       )}
+
       {/* hero section end*/}
 
       <Collection />
