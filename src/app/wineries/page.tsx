@@ -51,6 +51,7 @@ const Wineries = () => {
             explor1,
             explor2,
           } = item;
+
           return (
             <div className="max-w-[1172px] ms-auto" key={id}>
               <div className="ms-auto">
@@ -73,7 +74,7 @@ const Wineries = () => {
                     <h3 className=" text-secondary text-2xl font-semibold tracking-tight pt-3">
                       {regionName1}
                     </h3>
-                    <Link href={`${explor}`}>
+                    <Link href={`/wineries/${explor?.replace(/ /g, "_")}`}>
                       <span className="flex gap-3 pt-11">
                         <p className="text-secondary text-lg font-semibold tracking-tight">
                           Explore
@@ -105,7 +106,7 @@ const Wineries = () => {
                     <h3 className=" text-secondary text-2xl font-semibold tracking-tight pt-3">
                       {regionName3}
                     </h3>
-                    <Link href={`${explor1}`}>
+                    <Link href={`/wineries/${explor1?.replace(/ /g, "_")}`}>
                       <span className="flex gap-3 pt-11">
                         <p className="text-secondary text-lg font-semibold tracking-tight">
                           Explore
@@ -137,7 +138,7 @@ const Wineries = () => {
                     <h3 className=" text-secondary text-2xl font-semibold tracking-tight pt-3">
                       {regionName5}
                     </h3>
-                    <Link href={`${explor2}`}>
+                    <Link href={`/wineries/${explor2?.replace(/ /g, "_")}`}>
                       <span className="flex gap-3 pt-11">
                         <p className="text-secondary text-lg font-semibold tracking-tight">
                           Explore

@@ -37,7 +37,7 @@ const WinerRegion = ({ params }: { params: any }) => {
   // here  is defined the slug param pass to other page
   useEffect(() => {
     if (filtersData && slug) {
-      setSelectedFilters([slug]);
+      setSelectedFilters([slug?.replace(/_/g, " ")]);
     }
   }, [filtersData, slug]);
   useEffect(() => {
@@ -70,12 +70,12 @@ const WinerRegion = ({ params }: { params: any }) => {
           /
         </p>
         <p className="text-bgtertiary text-xxs font-normal  tracking-wide capitalize">
-          {slug}
+          {slug?.replace(/_/g, " ")}
         </p>
       </div>
       <div className="container mx-auto pt-3 md:pt-5 lg:pt-10 pb-7 px-4 ">
         <h1 className="text-primary text-xxl font-semibold  tracking-tight capitalize">
-          {slug}
+          {slug?.replace(/_/g, " ")}
         </h1>
         <RegionCountry
           regionparagraph={regionparagraph}

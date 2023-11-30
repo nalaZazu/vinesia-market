@@ -5,7 +5,15 @@ import DropDownButton from "@/common/DropDownButton";
 import Link from "next/link";
 import { ArrowBtn } from "@/assets/icon/Icons";
 
-export default function AllEditions({ products }: { products: any }) {
+export default function AllEditions({
+  products,
+  firstSale,
+  setFirstSale,
+}: {
+  products: any;
+  firstSale?: any;
+  setFirstSale?: any;
+}) {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -46,7 +54,12 @@ export default function AllEditions({ products }: { products: any }) {
             <div className=" pt-5">
               <TabButton />
               <div className=" flex items-center py-3 gap-2">
-                <input type="checkbox" className="w-5 h-5" />
+                <input
+                  checked={firstSale}
+                  onChange={(e) => setFirstSale(e?.target?.checked ? 1 : 0)}
+                  type="checkbox"
+                  className="w-5 h-5"
+                />
                 <div className="text-neutral-900 text-sm font-normal tracking-tight">
                   First sale
                 </div>
